@@ -1,0 +1,148 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-slideshow-v5" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  <div class="section-slideshow-v5">
+    <div class="">
+      <div class="slick-side-h5">       
+        {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+        {% if block.type == "slideshow" %}
+        <div class="item-slide">
+          <img data-src="{% if block.settings.img_slider != blank %} {{block.settings.img_slider | img_url: 'master'}}{% else %}//via.placeholder.com/800x800{% endif %}" class="lazyload img-fluid w-100" alt="slideshow">
+          <div class="box-content">
+            <div class="content">
+              {% if block.settings.title_slide != blank %}
+              <h3 style="color: {{block.settings.color_title}}">{{block.settings.title_slide}}</h3>
+              {% endif %}
+              <a class="btn-slide-{{ section.id }}" href="{{block.settings.url_link_collection}}" class="">{{block.settings.link_collection}}<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  {% for block in section.blocks %}
+  {% if block.type == 'slideshow' %}
+  .section-slideshow-v5 .slick-side-h5 .item-slide .box-content .content .btn-slide-{{ section.id }} {
+    color: {{block.settings.color_btn}};
+  }
+  .section-slideshow-v5 .slick-side-h5 .item-slide .box-content .content .btn-slide-{{ section.id }}:hover {
+    color:  {{block.settings.color_btn_hover}};
+  }
+  {% endif %}
+  {% endfor %}
+</style>
+
+{% schema %}
+{
+  "name": "SLIDESHOW V5",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slideshow",
+      "name": "slideshow",
+      "settings": [
+    {
+          "type": "image_picker",
+          "id": "img_slider",
+          "label": "Image slideshow",
+          "info": "800 x 800px recommended"
+        },
+        {
+          "type": "text",
+          "id": "title_slide",
+          "label": "Title ",
+          "default": "Basic Collection"
+        },
+    {   
+           "type": "color",
+           "id": "color_title",
+           "label": "Color Title",
+           "default": "#010101"
+        },
+        {
+          "type": "text",
+          "id": "link_collection",
+          "label": "Link Collection",
+          "default": "Go to Collection"
+        },
+    {   
+           "type": "color",
+           "id": "color_btn",
+           "label": "Color Link",
+           "default": "#7D7B7B"
+        },
+    {   
+           "type": "color",
+           "id": "color_btn_hover",
+           "label": "Color Link Hover",
+           "default": "#010101"
+        },
+        {
+          "type": "url",
+          "id": "url_link_collection",
+          "label": "URL Collection",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SLIDESHOW V5",
+      "category": "HOME",
+    "blocks": [
+        {
+          "type": "slideshow",
+          "settings": {
+            "title_slide": "Basic Collection",
+      "link_collection": "Go to Collection"
+          }
+        },
+     {
+          "type": "slideshow",
+          "settings": {
+            "title_slide": "Basic Collection",
+      "link_collection": "Go to Collection"
+          }
+        },
+     {
+          "type": "slideshow",
+          "settings": {
+            "title_slide": "Basic Collection",
+      "link_collection": "Go to Collection"
+          }
+        }   
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
