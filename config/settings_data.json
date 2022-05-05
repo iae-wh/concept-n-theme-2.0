@@ -5211,7 +5211,8 @@
           "16189031977d260213-2": {
             "type": "slideshow",
             "settings": {
-              "title_slide": "Basic Collection",
+              "img_slider": "shopify:\/\/shop_images\/Rolex_Cosmograph_Daytona.jpg",
+              "title_slide": "Watches",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
