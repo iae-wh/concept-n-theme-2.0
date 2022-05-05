@@ -5140,14 +5140,16 @@
           "1618903122b4f6819b-0": {
             "type": "colection",
             "settings": {
-              "title_collection": "ADIDAS",
+              "brand_img": "shopify:\/\/shop_images\/ryan-plomp-76w_eDO1u1E-unsplash.jpg",
+              "title_collection": "Sneakers",
               "brand_url": "shopify:\/\/collections\/adidas"
             }
           },
           "1618903122b4f6819b-1": {
             "type": "colection",
             "settings": {
-              "title_collection": "Necklaces",
+              "brand_img": "shopify:\/\/shop_images\/Component_1_1.jpg",
+              "title_collection": "Travel Bags",
               "brand_url": "shopify:\/\/collections\/all"
             }
           },
