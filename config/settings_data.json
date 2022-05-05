@@ -5150,14 +5150,15 @@
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/Component_1_1.jpg",
               "title_collection": "Travel Bags",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_url": "shopify:\/\/collections\/herschel"
             }
           },
           "1618903122b4f6819b-2": {
             "type": "colection",
             "settings": {
-              "title_collection": "Earrings",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_img": "shopify:\/\/shop_images\/PINTEREST_manyaaryaa.jpg",
+              "title_collection": "Handbags",
+              "brand_url": "shopify:\/\/collections\/herschel"
             }
           },
           "1618903122b4f6819b-3": {
