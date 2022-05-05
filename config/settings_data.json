@@ -5187,18 +5187,20 @@
           "16189031977d260213-0": {
             "type": "slideshow",
             "settings": {
-              "title_slide": "Basic Collection",
-              "color_title": "#010101",
+              "img_slider": "shopify:\/\/shop_images\/norbert-kowalczyk-ndhZldib3ck-unsplash.jpg",
+              "title_slide": "Shoes",
+              "color_title": "#5e3333",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/all"
+              "url_link_collection": "shopify:\/\/collections\/asics-tiger"
             }
           },
           "16189031977d260213-1": {
             "type": "slideshow",
             "settings": {
-              "title_slide": "Basic Collection",
+              "img_slider": "shopify:\/\/shop_images\/fc1b16194fa5f57eeb4b70622a3b724f.jpg",
+              "title_slide": "Bags",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
