@@ -5164,8 +5164,9 @@
           "1618903122b4f6819b-3": {
             "type": "colection",
             "settings": {
-              "title_collection": "Bracelets",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_img": "shopify:\/\/shop_images\/7bd032bb496f181cb56a647a231e428d.jpg",
+              "title_collection": "Watches",
+              "brand_url": "shopify:\/\/collections\/asics-tiger"
             }
           }
         },
