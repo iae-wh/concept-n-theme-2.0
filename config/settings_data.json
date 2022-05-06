@@ -3805,7 +3805,7 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "spd_style": "pd_gallery_mordern",
+          "spd_style": "pd_extended",
           "style_page": "left",
           "style_sidebar": "no_sidebar",
           "show_rating": true,
