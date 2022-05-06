@@ -3807,7 +3807,7 @@
         "settings": {
           "spd_style": "pd_sticky",
           "style_page": "left",
-          "style_sidebar": "no_sidebar",
+          "style_sidebar": "left",
           "show_rating": true,
           "show_sdes": true,
           "show_social_share": true,
