@@ -5263,12 +5263,13 @@
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
-          "title_banner": "ENGAGEMENT RINGS",
-          "color_title": "#ffffff",
-          "content_banner": "Discover our collection of diamond engagement rings, for love in all its many forms.",
-          "color_content_banner": "#ffffff",
-          "button_banner": "READ NOW",
-          "url_button": "shopify:\/\/collections\/all"
+          "title_banner": "STREETWEAR",
+          "color_title": "#000000",
+          "content_banner": "Discover our collection of streetwear, in all its many forms.",
+          "color_content_banner": "#000000",
+          "button_banner": "Go To Collection",
+          "url_button": "shopify:\/\/collections\/all",
+          "img_banner": "shopify:\/\/shop_images\/Untitled-1.jpg"
         }
       },
       "1619146574e0265060": {
