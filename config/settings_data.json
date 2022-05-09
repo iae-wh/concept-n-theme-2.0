@@ -3783,7 +3783,6 @@
         "settings": {
           "select_style_bread": "style_2",
           "ena_bg_img": true,
-          "bg_breadcrumb": "shopify:\/\/shop_images\/colection-3_3303c48c-c697-45f8-93ec-e507896b4eee.jpg",
           "bg_color_breadcrumb": "#f2f2f2",
           "color_breadcrumb": "#ffffff",
           "collection_layout": "sidebar",
@@ -5189,7 +5188,7 @@
           "16189031977d260213-0": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/norbert-kowalczyk-ndhZldib3ck-unsplash.jpg",
+              "img_slider": "shopify:\/\/shop_images\/morning-running-african-american-girl-tying-shoel-2021-08-28-11-04-28-utc.jpg",
               "title_slide": "Shoes",
               "color_title": "#5e3333",
               "link_collection": "Go to Collection",
@@ -5201,7 +5200,7 @@
           "16189031977d260213-1": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/fc1b16194fa5f57eeb4b70622a3b724f.jpg",
+              "img_slider": "shopify:\/\/shop_images\/stylish-young-woman-carrying-a-purse-leaning-again-2021-08-26-23-05-21-utc.jpg",
               "title_slide": "Bags",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
@@ -5213,7 +5212,7 @@
           "16189031977d260213-2": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/Rolex_Cosmograph_Daytona.jpg",
+              "img_slider": "shopify:\/\/shop_images\/Rolex_Cosmograph_Daytona_97186f94-6f45-47db-a1a0-19acc87a9108.jpg",
               "title_slide": "Watches",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
