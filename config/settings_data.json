@@ -4016,7 +4016,6 @@
       "page-cart": {
         "type": "page-cart",
         "settings": {
-          "bg_breadcrumb": "shopify:\/\/shop_images\/shutterstock_740474782.jpg",
           "page_title": "Cart"
         }
       },
