@@ -371,7 +371,7 @@
     "url_sc_fv2_4": "",
     "icon_sc_fv2_5": "fa fa-pinterest-p",
     "icon_sc_fv2_6": "fa fa-youtube-play",
-    "enable_fv2_bottom": true,
+    "enable_fv2_bottom": false,
     "fv2_bottom_copyright": "",
     "fv2_bottom_payment_img": "shopify:\/\/shop_images\/pay_copyright.png",
     "title_newletter": "Our Newsletter",
