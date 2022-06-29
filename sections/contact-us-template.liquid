@@ -1,0 +1,287 @@
+<div class="wrap-bread-crumb breadcrumb_collection2">
+  <div class="text-center bg-breadcrumb">
+    <div class="title-page">
+
+      <h2 class="">{{page.title}}</h2>
+
+    </div>
+    {% include 'breadcrumb' %}
+  </div>
+</div>
+<section>
+  <div class="aboutus-pages">
+    <div class="container container-v2">
+      <div class="contact-us-container">
+        <div class="img-container">
+          <img src="{{ 'contact-us1.png' | asset_url }}">
+        </div>
+        <div class="text-container">
+          <div>
+            <p>Customer Care Team is available 7 days a week from 9:00 am to 6:00 pm.</p>
+    
+            <p>Our friendly Customer Care Team answer any order and/or service related inquiries. They also love to hear your feedback.</p>
+    
+            <p>Manage your order using ‘Manage my order’:</p>
+    
+            <p>You can manage your orders 24-hours a day, 7-days a week by accessing your account. Please contact us to find out how to cancel orders, change your delivery address, inform us of missing orders or damaged items</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-us-container reverse">
+        <div class="text-container">
+          <div>
+            <h5>WhatsApp Support:</h5>
+  
+            <p>You can chat to our teams now by sending us a WhatsApp message.</p>
+  
+            <p>Please add our WhatsApp number 00971504508296 to your contacts to receive our updates.</p>
+  
+            <p>You can send also us a message on our Instagram or Facebook pages.</p>
+          </div>
+        </div>
+        <div class="img-container">
+          <img src="{{ 'contact-us2.png' | asset_url }}">
+        </div>
+      </div>
+      <div class="contact-us-container">
+        <div class="img-container">
+          <img src="{{ 'contact-us3.png' | asset_url }}">
+        </div>
+        <div class="text-container">
+          <div>
+  
+            <h5>Email/Webform:</h5>
+  
+            <p>To contact our Customer Care Team, please scroll to the bottom of this page to complete our simple webform. Here you can view your previous order numbers and tell us which order you are referring to. Alternatively, you can send an email to customercare@Concept-n.com</p>
+            <p>For information on how to return a product please click here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Contact Us",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_breadcrumb",
+      "label": "Background Image BreadCrumb",
+      "info": "1920x510px recommended"
+    },
+    {
+      "type": "header",
+      "content": "Introduce"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_intro",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Service Box"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_s_servicebox",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image ServiceBox",
+      "info": "1920x650px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_servicebox",
+      "label": "Title",
+      "default": "Reasons to shop with us"
+    },
+    {
+      "type": "header",
+      "content": "Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_insta",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title_icon",
+      "label": "Icon title",
+      "default": "icon-icon-intagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    },
+    {
+      "type": "text",
+      "id": "title_content",
+      "label": "Title",
+      "default": "Instagram Feed"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description",
+      "default": "Get Update & Emails From Us"
+    },
+    {
+      "type": "text",
+      "id": "ins_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "ins_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+    {
+      "type": "text",
+      "id": "ins_limit_number",
+      "label": "Limit Image",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "item_icon",
+      "label": "Icon",
+      "default": "fa fa-instagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service V1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": " FREE SHIPPING & RETURN"
+        },
+        {
+          "type": "text",
+          "id": "block_content",
+          "label": "Content",
+          "default": " If your glasses aren't perfect, return them within 30 days<br> for a full refund. We'll even pay shipping."
+        }
+      ]
+    },
+    {
+      "type": "introduce",
+      "name": "Introduce",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_intro",
+          "label": "Image Introduce",
+          "info": "670x600px recommended"
+        },
+        {
+          "type": "text",
+          "id": "title_intro",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "des_intro",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "content_intro",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "blocks": [
+      
+      ]
+    }
+  ]
+}
+{% endschema %}
+{% stylesheet %}
+.contact-us-container {
+      overflow-x: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+      padding: 10px;
+  }
+  .contact-us-container .img-container{
+      width: 50%;
+      padding-right: 30px;
+  }
+  .contact-us-container .text-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+  }
+  .contact-us-container.reverse .text-container{
+      align-items: flex-end;
+      text-align: right;
+  }
+  .contact-us-container.reverse .text-container div h5{
+      margin-bottom: 20px;
+  }
+  .contact-us-container.reverse .img-container{
+      padding-right: 0px;
+      padding-left: 30px;
+  }
+  .contact-us-container .text-container div{
+      max-width: 320px;
+  }
+  @media (max-width: 990px) {
+
+      .contact-us-container {
+          display: block;
+      }
+      .contact-us-container .img-container{
+          width: unset;
+      }
+      .contact-us-container .text-container{
+          margin-top: 20px;
+          padding: 0;
+      }
+      .contact-us-container .text-container div{
+          width: unset;
+      }
+      .aboutus-pages p {
+          margin-bottom: 1rem;
+      }
+      .aboutus-pages {
+          font-size: .8rem;
+      }
+      .contact-us-container .reverse .text-container, .contact-us-container .reverse .img-container{
+          padding-right: 0px;
+          padding-left: 0px;
+      }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
