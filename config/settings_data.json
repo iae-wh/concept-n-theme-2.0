@@ -4012,6 +4012,7 @@
       "page-cart": {
         "type": "page-cart",
         "settings": {
+          "bg_breadcrumb": "shopify:\/\/shop_images\/Screenshot_2022-06-30_032531_0819d365-4fe3-4c29-8c30-545b7a17ec78.png",
           "page_title": "Cart"
         }
       },
