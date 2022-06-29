@@ -4272,6 +4272,18 @@
         "label": "URL social 5"
       },
       {
+        "type": "text",
+        "id": "icon_sc_fv2_6",
+        "label": "Icon 6",
+        "default": "fa fa-instagram",
+        "info": "[Get icon in here](https:\/\/fontawesome.com\/v4.7.0\/icons)"
+      },
+      {
+        "type": "url",
+        "id": "url_sc_fv2_6",
+        "label": "URL social 6"
+      },
+      {
         "type": "header",
         "content": "Footer Bottom"
       },
