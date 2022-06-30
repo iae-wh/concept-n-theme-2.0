@@ -560,18 +560,18 @@
     "max_prod2": "30",
     "random_text2": "Hour",
     "settime_random_sold": 5,
-    "ena_countdown": true,
+    "ena_countdown": false,
     "max_product": "50",
     "countdown_text1": "HURRY! ONLY",
     "countdown_text2": "LEFT IN STOCK",
-    "settime_hurry_stock": 10,
+    "settime_hurry_stock": 70,
     "ena_random_visit": false,
     "min_visit": "5",
     "max_visit": "30",
     "visit_text1": "Real time",
     "visit_text2": "visitor right now",
     "settime_random_visitor": 5,
-    "trust_badge": "",
+    "trust_badge": "shopify:\/\/shop_images\/output-onlinepngtools_4.png",
     "img_col_1": "shopify:\/\/shop_images\/123456.jpg",
     "title_col_1": "Bags",
     "color_title_col_1": "#000",
@@ -3813,7 +3813,7 @@
           "show_cate": true,
           "ena_sticky_addcart": false,
           "style_stickyaddcart": "bottom",
-          "ena_zoom": false
+          "ena_zoom": true
         }
       },
       "article-template": {
