@@ -9,7 +9,7 @@
       <div class="product-info">
         <h3 class="title14 product-title dosis-font text-uppercase"><a href="{{item.url}}">{{item.title}}</a></h3>
         <div class="mini-cart-qty">
-          <span>{{ item.quantity }} x {{ item.price | money }}</span>
+          <span>{{ item.quantity }} x {{ item.price | money_with_currency }}</span>
         </div>
       </div>
       <div class="product-delete text-right">

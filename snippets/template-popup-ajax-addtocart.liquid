@@ -179,7 +179,7 @@
 
               <p class="price-product mb-0">
                 {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-                <span class="price">{{ product.price | money }}</span>
+                <span class="price">{{ product.price | money_with_currency }}</span>
               </p>
               <!-- END PRODUCT     -->
 

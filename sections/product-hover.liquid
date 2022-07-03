@@ -206,7 +206,7 @@
               {% endif %}
               {% if settings.enable_catalog_mode == false%}
               <p class="price-product">
-                <span class="price">{{ product.price | money }}</span>
+                <span class="price">{{ product.price | money_with_currency }}</span>
                 {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
               </p>
               {% endif %}
@@ -429,7 +429,7 @@
               <a href="{{ product.url | within: collection }}">{{ product.title}}</a> 
               <p class="price-product mb-0">
                 {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-                <span class="price">{{ product.price | money }}</span>
+                <span class="price">{{ product.price | money_with_currency }}</span>
               </p>
             </h4>
             <!--     PRICE -->
@@ -683,7 +683,7 @@
 
               <p class="price-product mb-0">
                 {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-                <span class="price">{{ product.price | money }}</span>
+                <span class="price">{{ product.price | money_with_currency }}</span>
               </p>
             </h4>
 
@@ -934,7 +934,7 @@
 
               <p class="price-product mb-0">
                 {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-                <span class="price">{{ product.price | money }}</span>
+                <span class="price">{{ product.price | money_with_currency }}</span>
               </p>
             </h4>
             <!--     PRICE -->
@@ -1188,7 +1188,7 @@
             {% endif %}
 
             <p class="price-product mb-0">
-              <span class="price">{{ product.price | money }}</span>
+              <span class="price">{{ product.price | money_with_currency }}</span>
               {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
 
             </p>
@@ -1427,7 +1427,7 @@
 
             <p class="price-product mb-0">
               {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-              <span class="price">{{ product.price | money }}</span>
+              <span class="price">{{ product.price | money_with_currency }}</span>
             </p>
             <!-- END PRODUCT     -->
 
@@ -1679,7 +1679,7 @@
 
             <p class="price-product mb-0">
               {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-              <span class="price">{{ product.price | money }}</span>
+              <span class="price">{{ product.price | money_with_currency }}</span>
             </p>
             <!-- END PRODUCT     -->
 
@@ -1871,7 +1871,7 @@
 
             <p class="price-product mb-0">
               {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-              <span class="price">{{ product.price | money }}</span>
+              <span class="price">{{ product.price | money_with_currency }}</span>
             </p>
             <!-- END PRODUCT     -->
 
@@ -2173,7 +2173,7 @@
 
             <p class="price-product mb-0">
               {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-              <span class="price">{{ product.price | money }}</span>
+              <span class="price">{{ product.price | money_with_currency }}</span>
             </p>
             <!-- END PRODUCT     -->
 
