@@ -1,5 +1,12 @@
 {
   "current": {
+    "colors_solid_button_labels": "#FFFFFF",
+    "colors_accent_1": "#1d1d1b",
+    "colors_accent_2": "#ff6f61",
+    "colors_text": "#1d1d1b",
+    "colors_outline_button_labels": "#1d1d1b",
+    "colors_background_1": "#fbfbfb",
+    "colors_background_2": "#F3F3F3",
     "show_multiple_currencies": true,
     "currency_format": "money_format",
     "supported_currencies": "AED",
