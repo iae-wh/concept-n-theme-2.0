@@ -1,7 +1,7 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
 {% assign init_tracking_data_availble_date = '2022-01-01 00:00:00' | datetime %}
-<div class="customer order">
+<div class="customer order container-v1">
   <div class="order-page-header">
     <h1>{{ 'customer.order.title' | t: name: order.name }}</h1>
     <button onclick="window.location = '{{ routes.account_url }}?path=orders'">{{- 'customer.order.return' | t -}}</button>
@@ -259,7 +259,7 @@
           <div class="inlined">
             <!-- Start component -->
             <div class="progress-meter">
-              <div class="track" style="width: 90%">
+              <div class="track" style="width: 93%">
                 <span class="progress" style="width: {{ progressWidth }}%"></span>
               </div>
               <ul class="progress-points" data-current="4">

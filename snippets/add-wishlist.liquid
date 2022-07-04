@@ -16,36 +16,12 @@
 
 {% if check == 0 %}{% assign display = 'true' %}{%else%}{% assign display = 'false' %}{% endif %}
 {% if display == 'true' %}
-{% form 'customer' %}
-<input type="hidden" name="contact[email]" value="{{ customer.email }}"/>
-<input type="hidden" name="contact[tags]" value="{{ value }}" />
-<button class="box-shadow maxus-product__wishlist engoj_add_to_wishlist inline-block text-center" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_wishlist_name}}">
-  {% if settings.pia_wishlist_svg != blank %}
-  <i class="fsz-unset">{{settings.pia_wishlist_svg}}</i>
-  {% else %}
-  <i class="{{settings.pia_wishlist}}"></i>
-  {% endif %}
-
-</button>
-
-{% endform %}
+<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></span>
 
 {% else %}
-<a href="/pages/wishlist" class="box-shadow inline-block maxus-product__wishlist added wish text-center" data-toggle="tooltip" data-placement="top" data-original-title="{{ 'wishlist.general.added' | t }}">
-  {% if settings.pia_wishlist_svg != blank %}
-  <i class="fsz-unset">{{settings.pia_wishlist_svg}}</i>
-  {% else %}
-  <i class="{{settings.pia_wishlist}}"></i>
-  {% endif %}
-</a>
+<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></span>
 {% endif %}
 
 {% else %}
-<a href="/account/login" class="box-shadow  inline-block maxus-product__wishlist wish text-center" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_wishlist_name}}">
-  {% if settings.pia_wishlist_svg != blank %}
-  <i class="fsz-unset">{{settings.pia_wishlist_svg}}</i>
-  {% else %}
-  <i class="{{settings.pia_wishlist}}"></i>
-  {% endif %}
-</a>
+<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></span>
 {% endif %}

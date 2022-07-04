@@ -52,7 +52,12 @@ $font-primary: Arima Madurai;
 $font-primary2: Cormorant;
 $font-primary3: Amatic SC;
 
-
+.unbookmarked span:before {
+  content: "\f08a";
+}
+.bookmarked span:before {
+  content: "\f004";
+}
 
 /* ========================================
 CUSTOM COLORS
