@@ -16,12 +16,12 @@
 
 {% if check == 0 %}{% assign display = 'true' %}{%else%}{% assign display = 'false' %}{% endif %}
 {% if display == 'true' %}
-<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></span>
+<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}" style="margin-top: 5px;"></span>
 
 {% else %}
-<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></span>
+<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}" style="margin-top: 5px;"></span>
 {% endif %}
 
 {% else %}
-<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}"></span>
+<span class="smartwishlist" data-product="{{ product.id }}" data-variant="{{ product.variants.first.id }}" style="margin-top: 5px;"></span>
 {% endif %}
