@@ -275,7 +275,7 @@
         </div>
         <div class="col-lg-6 col-md-6 {% if settings.enable_rtl_mode %} text-lg-left text-md-left {% else %}text-lg-right text-md-right {% endif %} ">
           {% if settings.fv2_bottom_payment_img != blank %}
-          <img src="{{settings.fv2_bottom_payment_img | img_url:'master'}}"  alt="">
+          <img src="{{settings.fv2_bottom_payment_img | img_url:'master'}}" style="height: 50px;"  alt="">
           {% else %}
           <img src="//via.placeholder.com/247x23"  alt="">
           {% endif %}
