@@ -4,6 +4,14 @@
 <script src="{{ 'jquery.validate.min.js' | asset_url }}"></script>
 <link rel="stylesheet" href="{{ 'intlTelInput.min.css' | asset_url }}">
 <div class="customer account">
+  <div class="text-center bg-breadcrumb">
+    <div class="title-page">
+      
+      <h2 class="">My Account</h2>
+    
+    </div>
+    {% include 'breadcrumb' %}
+  </div>
   <div class="profile-main-container container container-v1">
     <div class="profile-side-bar">
       <div class="profile-user-details">
@@ -23,8 +31,10 @@
       </ul>
     </div>
     <div class="detail-container profile-detail-container" style="display:none">
-      <h1>Profile</h1>
-      <p>Manage your profile details</p>
+      <div class="account-header-text">
+        <h1>Profile</h1>
+        <p>Manage your profile details</p>
+      </div>
       <div class="account-details-card account-info-card">
         <h4 class="account-card-title">{{ 'customer.account.general_information' | t }}</h4>
         <div class="account-card-content">
@@ -79,7 +89,7 @@
     <div class="detail-container addresses-container addresses" data-customer-addresses data-address
          style="display:none">
       <div class="account-header-container">
-        <div class="">
+        <div class="account-header-text">
           <h1>{{ 'customer.addresses.title' | t }}</h1>
           <p>Manage your addresses</p>
         </div>
@@ -292,8 +302,10 @@
     
     
     <div class="detail-container orders-container" style="display:none">
-      <h1>Orders</h1>
-      <p>Manage your orders</p>
+      <div class="account-header-text">
+        <h1>Orders</h1>
+        <p>Manage your orders</p>
+      </div>
       {% paginate customer.orders by 10 %}
         {%- if customer.orders.size > 0 -%}
           <div>
@@ -415,7 +427,9 @@
             {%- endif -%}
           {%- endif -%}
         {% else %}
-        <div class="btn-wrp">
+        <div class="btn-wrp" style="    height: 300px;
+    display: flex;    align-items: center;
+    justify-content: space-around;">
          <button type="button" onclick="window.location.href='/'">Let's place your first order</button>
         </div>
         {%- endif -%}
@@ -425,7 +439,7 @@
     
     <div class="detail-container wishlist-container" style="display:none">
       <div class="account-header-container">
-        <div>
+        <div class="account-header-text">
           <h1>Wish List</h1>
           <p>Manage your wish list</p>
         </div>

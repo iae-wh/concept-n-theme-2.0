@@ -2236,3 +2236,7 @@ input[type="checkbox"] {
    border-radius: 3px;
    border: calc(1px) solid rgba(var(--color-foreground),.04);
  }
+/*.account-header-text {*/
+/*  text-align: center;*/
+/*  margin: 50px 0;*/
+/*}*/
