@@ -132,8 +132,7 @@
               {% if product.available %}
               {% assign sold_out = false %}
               {% endif %}
-              <div class="product-icon-action d-flex mb-0 text-center">      
-
+              <div class="product-icon-action d-flex mb-0 text-center">
                 <div class="add-wishlist mr-0 w-50">
                   {% include 'add-wishlist' %} 
                 </div>
@@ -194,6 +193,7 @@
             <h4 class="des-font capital title-product mb-0">
               <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
             </h4>
+            <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
             <!--     PRICE -->
             {% assign on_sale = false %}
             {% if product.compare_at_price > product.price %}

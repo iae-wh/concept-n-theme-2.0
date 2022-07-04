@@ -1,9 +1,7 @@
 
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
-<link rel="stylesheet" href="https://cloud.smartwishlist.webmarked.net/v6/bootstrap/css/bootstrap.css">
 <link href="//backend.smartwishlist.webmarked.net/v6/css/wishlist.css?20220108" rel="stylesheet">
-<script type="text/javascript" src="https://cloud.smartwishlist.webmarked.net/v6/bootstrap/js/modal2.min.js"></script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a600cf7d6f95a7"></script>
 
 
@@ -305,20 +303,18 @@ function setCookieSW(cname,cvalue) {
 
     $("body").on("click", ".sharebutton", function(event){
         hostname=$(location).attr('hostname');
-        event.preventDefault();
         var wishlist_url=window.location.protocol+"//"+hostname+proxy_base+"/"+getCookieSW('wishlist_id');
 
         if((enable_addthis==1)&&((typeof addthis_share) !="undefined")) {	addthis_share.url=wishlist_url;	addthis_share.title=addthis_share_title;}
         $("#wishlist_url").html(wishlist_url);
-        $("#wishlist_share_modal").modal('show');
     });
 
 </script>
 
 
-<div class="modal fade" id="wishlist_share_modal" tabindex="-1" role="dialog" aria-labelledby="share_modal_label" style="display: none;">
+<div class="modal fade" id="wishlist_share_modal" tabindex="-1" role="dialog" aria-labelledby="share_modal_label">
   <div class="vertical-alignment-helper">
-    <div class="modal-dialog vertical-align-center" role="document">
+    <div class="modal-dialog vertical-align-center" role="document" style="width: 100%;">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

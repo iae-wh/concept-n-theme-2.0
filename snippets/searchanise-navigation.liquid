@@ -431,7 +431,20 @@
                 var delayInMilliseconds = 500;
 
                 setTimeout(function() {
-                    SmartWishlistScripts()
+                    SmartWishlistScripts();
+                    SPR.loadjQuery(function() {
+                        return SPR.$.ajaxSetup({
+                            cache: !0
+                        }),
+                            SPR.loadjQueryExtentions(SPR.$),
+                            SPR.$(document).ready(function() {
+                                return SPR.registerCallbacks(),
+                                    SPR.initRatingHandler(),
+                                    SPR.initDomEls(),
+                                    SPR.loadProducts(),
+                                    SPR.loadBadges()
+                            })
+                    });
                 }, delayInMilliseconds);
             });
             $(document).on('Searchanise.DataRequestAfter', function(event, container) {

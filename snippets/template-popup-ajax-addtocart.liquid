@@ -171,6 +171,7 @@
               <h4 class="des-font capital title-product mb-0">
                 <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
               </h4>
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
               <!--     PRICE -->
               {% assign on_sale = false %}
               {% if product.compare_at_price > product.price %}
