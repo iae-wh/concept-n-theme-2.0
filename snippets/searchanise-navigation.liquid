@@ -398,18 +398,13 @@
 <script>
     document.addEventListener('Searchanise.Loaded', function() {
         (function($) {
-            $(document).on('Searchanise.ResultsUpdated', function(event, container) {
-                $("#snize_filters_block_vendor>div>span").html("Brand");
-                $(".snize-search-results-content").addClass("grid grid--2-col product-grid grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max slider slider--desktop negative-margin");
-                $(".snize-overhidden > div:first-child").after();
-            });
             $(document).on('Searchanise.DataRequestBefore', function(event, container) {
                 window.Searchanise.SetOptions({
                     //ResultsItemGrid: '<li class="snize-product t1 ${product_classes}" id="snize-product-${product_id}"><a href="${results_link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-item clearfix ${results_show_top_right_label_class}">${results_wishlist_button_html}<div class="snize-thumbnail-wrapper">${results_product_top_right_label_clone_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span>${results_product_code_html}${results_product_attribute_html}<span class="snize-description">${description}</span>${results_prices_list_html}${results_product_top_right_label_html}${action_button_html}${results_reviews_html}</span></div></a></li>',
                     //ResultsOptionsItemGrid: '<li class="snize-product t2 ${product_classes}" id="snize-product-${product_id}"><a href="${link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-item clearfix ${results_show_top_right_label_class}">${results_wishlist_button_html}<div class="snize-thumbnail-wrapper">${results_product_top_right_label_clone_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${results_image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span>${results_product_code_html}${results_product_attribute_html}<span class="snize-description">${description}</span><div class="snize-options-box">${results_color_swatches_html}${results_unmapped_colors_html}${results_size_squares_html}${results_other_options_html}</div>${results_prices_list_html}${results_product_top_right_label_html}${action_button_html}${results_reviews_html}</span></div></a></li>',
                     //ResultsItemGridWix: '<li class="snize-product t3 ${product_classes}" id="snize-product-${product_id}"><a href="${results_link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-item clearfix ${results_show_top_right_label_class}">${results_wishlist_button_html}<div class="snize-thumbnail-wrapper"><div class="snize-labels-wrapper">${results_product_ribbons_html}${results_product_top_right_label_html}${results_product_top_right_label_clone_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}</div><span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span><span class="snize-description">${description}</span>${results_product_code_html}${results_product_attribute_html}${results_prices_list_html}${action_button_html}${results_reviews_html}</span></div></a></li>',
-                    //ResultsItemGridNew: '<li class="grid__item"><div class="card-wrapper"><div class="card-information"><div class="card-information__wrapper"><h3 class="card-information__text h5"><a href="${results_link}" class="full-unstyled-link">${title}</a></h3><span class="shopify-product-reviews-badge" data-id="${product_id}"></span><span class="caption-large light"></span>${results_product_attribute_html}${results_prices_list_html}${action_button_html}</div></div><div class="card card--product card--outline" tabindex="-1"><div class="card__inner"><div><div class="media media--transparent media--square media--hover-effect"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0"  class="motion-reduce" width="1600" height="1600" ${additional_image_attributes}>${flip_image_html}</div></div><div class="card__badge">${results_product_top_left_label_html}</div><div class="produt_icon_fav"><span class="smartwishlist" data-product="${product_id}" data-variant="${product_id}"></span></div></div></div></div></li>',
-                    ResultsItemGridNew: '<li class="snize-product ${product_classes}" id="snize-product-${product_id}"><a href="${results_link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-thumbnail-wrapper"><div class="snize-product-label top-right produt_icon_fav"><span class="smartwishlist" data-product="${product_id}" data-variant="${product_id}"></span></div>${results_product_top_right_label_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span><span class="shopify-product-reviews-badge" data-id="${product_id}"></span><span class="snize-description">${description}</span>${results_product_code_html}${results_product_attribute_html}${results_prices_list_html}${results_reviews_html}${action_button_html}</span></div></a></li>',
+                    ResultsItemGridNew: '<li class="snize-product ${product_classes}" id="snize-product-${product_id}"><a href="${results_link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-item clearfix ${results_show_top_right_label_class}"><div class="snize-thumbnail-wrapper"><span class="smartwishlist" data-product="${product_id}" data-variant="${product_id}"></span>${results_product_top_right_label_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span><span class="snize-description">${description}</span>${results_product_code_html}${results_product_attribute_html}${results_prices_list_html}<span class="shopify-product-reviews-badge" data-id="${product_id}"></span>${action_button_html}</span></div></a></li>',
+                    //ResultsItemGridNew: '<li class="snize-product ${product_classes}" id="snize-product-${product_id}"><a href="${results_link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-thumbnail-wrapper"><div class="snize-product-label top-right produt_icon_fav"><span class="smartwishlist" data-product="${product_id}" data-variant="${product_id}"></span></div>${results_product_top_right_label_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span><span class="shopify-product-reviews-badge" data-id="${product_id}"></span><span class="snize-description">${description}</span>${results_product_code_html}${results_product_attribute_html}${results_prices_list_html}${results_reviews_html}${action_button_html}</span></div></a></li>',
                     //ResultsItemGridNew: '<li class="snize-product ${product_classes}" id="snize-product-${product_id}"><a href="${results_link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-item clearfix ${results_show_top_right_label_class}">${results_wishlist_button_html}<div class="snize-thumbnail-wrapper"><div class="snize-product-label top-right produt_icon_fav"><span class="smartwishlist" data-product="${product_id}" data-variant="${product_id}"></span></div>${results_product_top_right_label_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span><span class="snize-description">${description}</span>${results_product_code_html}${results_product_attribute_html}${results_prices_list_html}${results_reviews_html}${action_button_html}</span></div></a></li>',
                     //ResultsOptionsItemGridNew: '<li class="snize-product t5 ${product_classes}" id="snize-product-${product_id}"><a href="${results_link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-item clearfix ${results_show_top_right_label_class}">${results_wishlist_button_html}<div class="snize-thumbnail-wrapper">${results_product_top_right_label_html}${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span><span class="snize-description">${description}</span>${results_product_code_html}${results_product_attribute_html}${results_prices_list_html}<div class="snize-options-box">${results_reviews_html}${results_color_swatches_html}${results_unmapped_colors_html}${results_size_squares_html}${results_other_options_html}</div>${action_button_html}</span></div></a></li>',
                     //RecommendationItem: '<li class="snize-product t6 item ${product_classes}" id="snize-product-${product_id}"><a href="${link}" class="snize-view-link" data-no-instant="true" draggable="false"><div class="snize-item clearfix ${results_show_top_right_label_class}">${results_wishlist_button_html}<div class="snize-thumbnail-wrapper">${results_product_top_left_label_html}${results_product_down_left_label_html}${results_product_down_right_label_html}<span class="snize-thumbnail"><img src="${image_link}" class="snize-item-image ${additional_image_classes}" alt="${image_alt}" border="0" ${additional_image_attributes}>${flip_image_html}</span></div><span class="snize-overhidden"><span class="snize-title">${title}</span>${results_product_code_html}${results_product_attribute_html}${recommendation_prices_list_html}${recommendation_product_top_right_label_html}${recommendation_action_button_html}${reviews_html}</span></div></a></li>',
@@ -454,70 +449,46 @@
     });
 </script>
 <style>
-
-    .produt_icon_fav{
-        position: absolute!important;
-        top: 0px!important;
-        right: 0px!important;
-        z-index: 1!important;
-        font-size: 24px!important;
-        background: none!important;
-    }
-    .smartwishlist {
-        line-height: 20px!important;
+    
+    .snize-thumbnail-wrapper .smartwishlist {
+        position: absolute;
+        opacity: 1;
+        width: 20px;
+        height: 20px;
+        z-index: 999999!important;
+        margin: auto;
     }
 
-    .produt_icon_fav .fa.fa-heart-o:before{
-        content: "\f08a";
+    #snize-search-results-list-mode .snize-thumbnail-wrapper .smartwishlist {
+        top: -90px;
+        right: 38px;
     }
-    .spr-badge {
-        margin-bottom: 5px;
+
+    @media (max-width: 768px) {
+        #snize-search-results-list-mode .snize-thumbnail-wrapper .smartwishlist {
+            top: 5px;
+            right: 5px;
+        }
     }
-    .bookmarked {
-        color: #000000!important;
+    
+    #snize-search-results-grid-mode .snize-thumbnail-wrapper .smartwishlist {
+        top: 25px;
+        right: 5px;
     }
-    #snize-search-results-grid-mode span.snize-thumbnail {
-        height: 223px!important;
+    @media (max-width: 1200px) {
+        #snize-search-results-list-mode li.snize-product span.snize-thumbnail {
+            width: 25vw;
+            height: auto;
+        }
+
+        #snize-search-results-list-mode .snize-product .snize-item-image {
+            max-width: 25vw;
+            max-height: 380px;
+        }
     }
     .snize-filter-variant-count {
         right: 0!important;
         top: 5px!important;
         width: 10px!important;
     }
-    #snize-search-results-list-mode .snize-view-link {
-         display: flex;
-         flex-direction: row;
-         flex-wrap: nowrap;
-         align-content: center;
-         justify-content: flex-start;
-         align-items: stretch;
-     }
-    #snize-search-results-list-mode span.snize-thumbnail img {
-        bottom: auto!important;
-        top: -50px!important;
-    }
-    /*.media--square {*/
-    /*    position: relative!important;*/
-    /*    padding-bottom: 100%!important;*/
-    /*}*/
-    /*.produt_icon_fav {*/
-    /*    position: absolute!important;*/
-    /*    top: 6px!important;*/
-    /*    right: 8px!important;*/
-    /*    z-index: 1!important;*/
-    /*    font-size: 24px!important;*/
-    /*}*/
-    /*.card__inner {*/
-    /*    position: relative!important;*/
-    /*}*/
-    /*.card-wrapper {*/
-    /*    color: inherit;*/
-    /*    display: flex;*/
-    /*    flex-direction: column;*/
-    /*    position: relative!important;*/
-    /*    text-decoration: none;*/
-    /*}*/
-    /*.full-unstyled-link {*/
-    /*    overflow: hidden!important;*/
-    /*}*/
 </style>
