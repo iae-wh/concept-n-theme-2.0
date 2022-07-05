@@ -44,12 +44,6 @@
 CUSTOM GOOGLE FONTS
 ======================================== */
 
-.spr-badge-starrating .spr-icon {
-  color: #000000!important;
-}
-
-
-
 $font-primary: Arima Madurai;
 $font-primary2: Cormorant;
 $font-primary3: Amatic SC;
@@ -147,6 +141,7 @@ $color-main2: #48c8fd; */
 }
 .spr-badge .spr-icon, .spr-badge .spr-icon-star {
   margin-right: 1.6px;
+  color: #000000 !important;
 }
 
 /*Button Add to Wishlist*/
