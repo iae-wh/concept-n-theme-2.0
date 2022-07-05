@@ -107,7 +107,12 @@
     .modal-header .close span{
       font-size: 20px;
     }
-
+    .spr-badge {
+        margin-bottom: 5px;
+    }
+    .card-information__wrapper {
+         min-height: 90px;
+     }
     @media screen and (max-width: 480px) {
       .modal-footer {
         text-align: center;
@@ -241,6 +246,19 @@ function setCookieSW(cname,cvalue) {
             },
             complete: function(){
                 $("#wishlisthtml").html(gridhtml);
+                SPR.loadjQuery(function() {
+                    return SPR.$.ajaxSetup({
+                        cache: !0
+                    }),
+                        SPR.loadjQueryExtentions(SPR.$),
+                        SPR.$(document).ready(function() {
+                            return SPR.registerCallbacks(),
+                                SPR.initRatingHandler(),
+                                SPR.initDomEls(),
+                                SPR.loadProducts(),
+                                SPR.loadBadges()
+                        })
+                });
             }
         });
 
