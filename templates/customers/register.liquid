@@ -1,7 +1,7 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'social-login.js' | asset_url }}" defer="defer"></script>
 
-<section class="page-width narrow-page-container">
+<section class="page-width container">
   <h1 class="customer-header">
     {{ 'customer.register.title' | t }}
   </h1>
@@ -21,7 +21,7 @@
             <svg aria-hidden="true" focusable="false" role="presentation">
               <use href="#icon-error" />
             </svg>
-            {{ 'templates.contact.form.error_heading' | t }}
+            Registration failed
           </h2>
           <ul> 
             {%- for field in form.errors -%}
@@ -122,7 +122,7 @@
         <button class="register-main-button">
           {{ 'customer.register.submit' | t }}
         </button>
-        <input type="hidden" name="return_to" value="/" />
+        {% comment %}<input type="hidden" name="return_to" value="/" />{% endcomment %}
         
     </div>
     <div class="devider-container">
