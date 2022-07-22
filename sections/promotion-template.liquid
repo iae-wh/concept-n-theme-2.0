@@ -12,7 +12,7 @@
   <div class="aboutus-pages">
     <div class="container container-v2">
       <div class="" style="background-image : url({{ 'promotion-template.png' | asset_url }});background-size: cover;">
-        <div style="max-width: 550px;margin: auto;padding: 140px 0;">
+        <div class="page-header-block">
       
         <div>
           <h5>Promotion Codes</h5>
@@ -225,6 +225,19 @@
     }
     .page-table td:last-child{
         border-right: none;
+    }
+    .page-header-block {
+        max-width: 550px;
+        margin: auto;
+        padding: 140px 0;
+    }
+    @media (max-width: 990px) {
+
+        .page-header-block {
+            max-width: 550px;
+            margin: auto;
+            padding: 10px;
+        }
     }
 {% endstylesheet %}
 
