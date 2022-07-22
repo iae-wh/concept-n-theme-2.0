@@ -1,0 +1,274 @@
+<div class="wrap-bread-crumb breadcrumb_collection2">
+  <div class="text-center bg-breadcrumb">
+    <div class="title-page">
+
+      <h2 class="">{{page.title}}</h2>
+
+    </div>
+    {% include 'breadcrumb' %}
+  </div>
+</div>
+<section>
+  <div class="copyright-pages">
+    <div class="container container-v2">
+      <div class="copyright-container">
+        <div class="img-container">
+          <img src="{{ 'copyright-img1.png' | asset_url }}">
+        </div>
+        <div class="text-container">
+          <div>
+            <h5>Copyright & Warranties</h5>
+  
+            <p>This website and all of its content is protected by UAE and International Copyright law.</p>
+  
+            <p>Permission is granted to electronically copy and print only those areas of the site so required in the process of
+              using the site as a shopping resource. Copying, modifying, or distributing any part or content of the site for any
+              other reason, without prior written permission from mena.feeulunique.com, is expressly prohibited.</p>
+  
+            <p>Neither mena.feeulunique.com nor any of its Directors, will be responsible for any damage caused during the use or
+              misuse of the website or from any information contained therein. All material and information presented by
+              mena.feeulunique.com is intended to be used for educational or informational purposes only. The statements
+              and products are not intended to diagnose, treat, cure or prevent any condition or disease. Please consult
+              with your own doctor or health care practitioner regarding the suggestions and recommendations made at
+              mena.feeulunique.com. With regards to electrical products, the warranty will be valid with the manufacturer
+              and please consult your instructional manual and the packaging.</p>
+  
+            <p>mena.feeulunique.com is a shopping resource site operated by Webhouse Portal LLC. This site is provided on
+              an “as is” basis and mena.feeulunique.com makes no express or implied warranties of any kind relating to the service or information provided.</p>
+  
+            <p>Whilst every effort is made to maintain correct and current information on the site, mena.feeulunique.com reserves
+              the right to change or modify any content or terms and conditions at any time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Copyright",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_breadcrumb",
+      "label": "Background Image BreadCrumb",
+      "info": "1920x510px recommended"
+    },
+    {
+      "type": "header",
+      "content": "Introduce"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_intro",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Service Box"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_s_servicebox",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image ServiceBox",
+      "info": "1920x650px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_servicebox",
+      "label": "Title",
+      "default": "Reasons to shop with us"
+    },
+    {
+      "type": "header",
+      "content": "Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_insta",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title_icon",
+      "label": "Icon title",
+      "default": "icon-icon-intagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    },
+    {
+      "type": "text",
+      "id": "title_content",
+      "label": "Title",
+      "default": "Instagram Feed"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description",
+      "default": "Get Update & Emails From Us"
+    },
+    {
+      "type": "text",
+      "id": "ins_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "ins_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+    {
+      "type": "text",
+      "id": "ins_limit_number",
+      "label": "Limit Image",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "item_icon",
+      "label": "Icon",
+      "default": "fa fa-instagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service V1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": " FREE SHIPPING & RETURN"
+        },
+        {
+          "type": "text",
+          "id": "block_content",
+          "label": "Content",
+          "default": " If your glasses aren't perfect, return them within 30 days<br> for a full refund. We'll even pay shipping."
+        }
+      ]
+    },
+    {
+      "type": "introduce",
+      "name": "Introduce",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_intro",
+          "label": "Image Introduce",
+          "info": "670x600px recommended"
+        },
+        {
+          "type": "text",
+          "id": "title_intro",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "des_intro",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "content_intro",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "blocks": [
+      
+      ]
+    }
+  ]
+}
+{% endschema %}
+{% stylesheet %}
+.copyright-container {
+      overflow-x: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+      padding: 10px;
+  }
+  .copyright-container .img-container{
+      width: 50%;
+      padding-right: 30px;
+  }
+  .copyright-container .text-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+  }
+  .copyright-container.reverse .text-container{
+      align-items: flex-end;
+      text-align: right;
+  }
+  .copyright-container.reverse .text-container div h5{
+      margin-bottom: 20px;
+  }
+  .copyright-container.reverse .img-container{
+      padding-right: 0px;
+      padding-left: 30px;
+  }
+  .copyright-container .text-container div{
+      max-width: unset;
+  }
+  @media (max-width: 990px) {
+
+      .copyright-container {
+          display: block;
+      }
+      .copyright-container .img-container{
+          width: unset;
+      }
+      .copyright-container .text-container{
+          margin-top: 20px;
+          padding: 0;
+      }
+      .copyright-container .text-container div{
+          width: unset;
+      }
+      .aboutus-pages p {
+          margin-bottom: 1rem;
+      }
+      .aboutus-pages {
+          font-size: .8rem;
+      }
+      .copyright-container .reverse .text-container, .copyright-container .reverse .img-container{
+          padding-right: 0px;
+          padding-left: 0px;
+      }
+      .copyright-container .text-container{
+          width: 100%;
+      }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

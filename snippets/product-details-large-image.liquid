@@ -145,7 +145,7 @@
                 <div class="relative">
                   <h2 class="product-title ">{{product.title}}</h2>
                   <div class="product-price ">                      
-                    {% capture price %}{{ product.price | money }}{% endcapture %}
+                    {% capture price %}{{ product.price | money_with_currency }}{% endcapture %}
                     {% if on_sale %}<del class="enj-product-price-compare">{{ product.compare_at_price | money }}</del> {% endif %}
                     <ins class="enj-product-price engoj_price_main">{{ price }}</ins>
 

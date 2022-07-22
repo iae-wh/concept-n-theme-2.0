@@ -1,0 +1,245 @@
+<div class="wrap-bread-crumb breadcrumb_collection2">
+  <div class="text-center bg-breadcrumb">
+    <div class="title-page">
+
+      <h2 class="">{{page.title}}</h2>
+
+    </div>
+    {% include 'breadcrumb' %}
+  </div>
+</div>
+<section>
+  <div class="aboutus-pages">
+    <div class="container container-v2">
+      <div class="" style="background-image : url({{ 'promotion-template.png' | asset_url }});background-size: cover;">
+        <div class="page-header-block">
+      
+        <div>
+          <h5>Promotion Codes</h5>
+  
+          <p>Unless otherwise stated Promotion Codes exclude discounted items, electrical items, 3 for 2 offers,
+            Brand for Life discount, Gift Vouchers, Gift Voucher boxes, delivery fees, Pick & Mix, Beauty Kit and Subscribe Me.</p>
+  
+          <p>Promotion Codes exclude these brands;
+  
+          <p>The Ordinary, Sachajuan, Plant Apothecary, OUAI Haircare, Natasha Denona, MOR, Moroccanoil,
+            Le Prunier, Huda Beauty, ELLIS FAAS, Cover FX, Bobbi Brown, Dermalogica, L’Oréal Paris,
+            Maybelline New York, Molton Brown,Natura Bissé,Neal’s Yard Remedies ,NYX Professional Makeup,
+            Olaplex, OSKIA, Powered by Feelunique, SACHAJUAN, SILKE London, Spacemasks, Wishful</p>
+  
+  
+  
+          <p>Please note excluded brands and individual items may be amended from time to time at our discretion.</p>
+  
+          <p>Please note you may only redeem one Promotion Code at a time so we advise you to choose the promotion best suited to your purchase.</p>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Promotion Codes",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_breadcrumb",
+      "label": "Background Image BreadCrumb",
+      "info": "1920x510px recommended"
+    },
+    {
+      "type": "header",
+      "content": "Introduce"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_intro",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Service Box"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_s_servicebox",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image ServiceBox",
+      "info": "1920x650px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_servicebox",
+      "label": "Title",
+      "default": "Reasons to shop with us"
+    },
+    {
+      "type": "header",
+      "content": "Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_insta",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title_icon",
+      "label": "Icon title",
+      "default": "icon-icon-intagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    },
+    {
+      "type": "text",
+      "id": "title_content",
+      "label": "Title",
+      "default": "Instagram Feed"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description",
+      "default": "Get Update & Emails From Us"
+    },
+    {
+      "type": "text",
+      "id": "ins_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "ins_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+    {
+      "type": "text",
+      "id": "ins_limit_number",
+      "label": "Limit Image",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "item_icon",
+      "label": "Icon",
+      "default": "fa fa-instagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service V1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": " FREE SHIPPING & RETURN"
+        },
+        {
+          "type": "text",
+          "id": "block_content",
+          "label": "Content",
+          "default": " If your glasses aren't perfect, return them within 30 days<br> for a full refund. We'll even pay shipping."
+        }
+      ]
+    },
+    {
+      "type": "introduce",
+      "name": "Introduce",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_intro",
+          "label": "Image Introduce",
+          "info": "670x600px recommended"
+        },
+        {
+          "type": "text",
+          "id": "title_intro",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "des_intro",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "content_intro",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "blocks": [
+      
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+    .page-table tr{
+        border: 1px solid #d4d7db;
+        border-right-width: 0;
+        border-left-width: 0;
+    }
+    .page-table td{
+        border: 1px solid #d4d7db;
+        border-top-width: 0;
+        border-bottom-width: 0;
+        padding: 10px;
+    }
+    .page-table tr:first-child{
+      border-top: none;
+    }
+    .page-table tr:last-child{
+        border-bottom: none;
+    }
+    .page-table td:first-child{
+        border-left: none;
+    }
+    .page-table td:last-child{
+        border-right: none;
+    }
+    .page-header-block {
+        max-width: 550px;
+        margin: auto;
+        padding: 140px 0;
+    }
+    @media (max-width: 990px) {
+
+        .page-header-block {
+            max-width: 550px;
+            margin: auto;
+            padding: 10px;
+        }
+    }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

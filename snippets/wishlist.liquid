@@ -1,0 +1,409 @@
+
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+<link href="//backend.smartwishlist.webmarked.net/v6/css/wishlist.css?20220108" rel="stylesheet">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57a600cf7d6f95a7"></script>
+
+
+<style>
+
+    .wishlist-section .title-wrapper-with-link{
+        align-items: center;
+    }
+
+    .wishlist-section .addtocartbutton {
+        opacity: 0;
+        display: inline-block;
+        position: absolute !important;
+        bottom: 0;
+        transition: all 300ms ease !important;
+    }
+
+    .wishlist-section .btn{
+        transition: none;
+        height: 33px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        color: #fff;
+        margin: 0;
+        z-index: 1;
+        text-transform: uppercase;
+        background: #1d1d1b;
+        border: 1px solid #1d1d1b;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 2.5px 10px;
+        width: 100%;
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        font-family: inherit;
+    }
+
+    .wishlist-section .btn-remove{
+        height: 33px;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        margin: 0;
+        z-index: 1;
+        text-transform: uppercase;
+        width: 100%;
+        position: relative;
+        font-family: inherit;
+    }
+
+    .buttons-wrap .btn{
+        padding: 6px 20px;
+        font-size: 13px;
+        display: inline;
+    }
+
+    .buttons-wrap .btn:hover{
+      color: #fff;
+    }
+
+    .wishlist-section .grid__item .card a:hover{
+      color: #fff;
+    }
+
+    .wishlist-section  .grid__item .card-wrapper:hover .addtocartbutton{
+        opacity: 1;
+    }
+
+    .wishlist-section .card-wrapper{
+        margin-bottom: 5%;
+    }
+
+    .wishlist-section .grid__item a{
+      text-decoration: none;
+    }
+    .modal-open div:empty{
+        display: block;
+    }
+
+    #modal_remove_button{
+        background: #1d1d1b;
+        color: #fff;
+    }
+
+    #wishlist_url{
+      word-break: break-word;
+    }
+
+    .modal-header .close{
+      box-shadow: none;
+      border: none;
+      width: auto !important;
+      min-width: auto!important;
+      min-height: auto !important;
+    }
+
+    .modal-header .close:hover{
+      box-shadow: none;
+    }
+
+    .modal-header .close span{
+      font-size: 20px;
+    }
+    .spr-badge {
+        margin-bottom: 5px;
+    }
+    .card-information__wrapper {
+         min-height: 90px;
+     }
+    @media screen and (max-width: 480px) {
+      .modal-footer {
+        text-align: center;
+      }
+    }
+
+</style>
+
+<section class="page-width  wishlist-section">
+  <div class="title-wrapper-with-link">
+    <h1>{{ page.title }}</h1>
+  </div>
+  {% unless customer %}
+    <div class="row loginmessage"><div class="col-md-12"><div class="alert alert-info  sw-login-notification">Please <a href='/account/login'>login</a> to save this Wishlist to your Account</div></div></div>
+  {% endunless %}
+  <div class="shopify-section spaced-section">
+    <ul class="grid-uniform grid grid--2-col product-grid grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max slider slider--desktop negative-margin" role="list" id="wishlisthtml">
+    </ul>
+  </div>
+  <!-- <input type="hidden" name="sw_customer_id"  id="sw_customer_id2" value="0" /> -->
+  <input type="hidden" name="customer_accounts_enabled" value="1" />
+</section>
+
+<script>
+query_url="/a/wishlist?type=api&customerid="+{{customer.id}}+"&version=1";
+var customer_id = {{customer.id}};
+
+function setCookieSW(cname,cvalue) {
+        var d = new Date();
+        d.setTime(d.getTime() + (365*24*60*60*1000));
+        var expires = "expires=" + d.toGMTString();
+        if((typeof cvalue)!="string")   var cvalue_string=JSON.stringify(cvalue);
+        else var cvalue_string=cvalue;
+        document.cookie = cname + "=" + cvalue_string + ";" + expires + ";path=/";
+    }
+
+    function getCookieSW(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        //  return null;
+    }
+    var objectExists=function(items,product_variant){
+        for (var i=0;i<items.length;i++){
+            if((items[i][0]==product_variant[0])&&(items[i][1]==product_variant[1]))
+                return i;
+        }
+        return -1;
+    }
+
+    var savewishlist= function (product_id,variant_id,wishlist_id,action,variant) {
+        $.ajax({
+            url: appsave_url+"v6/savewishlist.php/",
+            data: {product_id: product_id,variant_id:variant_id,wishlist_id:wishlist_id,customer_id:customer_id,action:action,hostname:hostname,variant:variant,store_id:store_id},
+            dataType: 'jsonp',
+            jsonp: "callback",
+        })
+            .done(function(data) {
+                //console.log(data);
+
+            });
+    }
+
+    var enable_addthis=1;
+    var addthis_share_title="My Wishlist";
+    var shared_wishlist=0;
+    variantids= new Array();
+    var cart_class="cart-count";
+    var proxy_base="/pages/wishlist";
+    var msg_items_added="Items added to cart successfully";
+    var delete_addcart=0;
+    var reload_after_addcart=1;
+    var addcart_delay_seconds=1;
+    var enable_accounts=1;
+    hostname=$(location).attr('hostname');
+
+    if(customer_id=="undefined") customer_id=0;
+    var customer_accounts_enabled=document.getElementsByName("customer_accounts_enabled")[0].value;
+
+    var SWGetCustomerWishlistId=function(){
+	        if((typeof __st)!=="undefined"){
+	          if(customer_id==undefined) customer_id=__st.cid;
+	          if(customer_id==undefined) customer_id=0;
+	        }
+
+	        return customer_id;
+        }
+
+    //define this function for fetching express wishlist ID from cookie
+    function getWishlistId(){for(var i=decodeURIComponent(document.cookie).split(";"),t=0;t<i.length;t++){for(var n=i[t];" "==n.charAt(0);)n=n.substring(1);if(0==n.indexOf("wishlist_id="))return n.substring("wishlist_id=".length,n.length)}}
+
+    $(function() {
+
+
+        query_url="/a/wishlist?type=api&customerid="+{{customer.id}}+"&version=1";
+        var gridhtml="";
+        $.ajax({
+            url: query_url,
+            dataType: "json",
+            cache:true,
+            success: function(data) {
+                if(parseInt(data.count)>0){
+                    $.each(data.items,function(key,value){
+                        var product_url="/products/"+value.handle;
+                        var product_title=value.title;
+                        var product_image=value.image;
+                        var product_id=value.id;
+                        var variant_id=value.variant_id;
+                        var variant_title=value.variant_title;
+                        var variant_price=value.variant_price;
+                        var wishlistpage_noitems_text="There are no items in your Wishlist";
+
+                        gridhtml+='<li class="grid__item" data-productid="'+product_id+'" data-variantid="'+variant_id+'"><div class="card-wrapper"><div class="card-information"><div class="card-information__wrapper"><h3 class="card-information__text h5"><a href="'+product_url+'" class="full-unstyled-link">'+product_title+'</a></h3><span class="shopify-product-reviews-badge" data-id='+product_id+'></span><div class="price  price--on-sale " data-wg-notranslate="manual"><div class="price__sale"><span class="price-item price-item--sale price-item--last"><span class="money">'+variant_price+'</span></span></div></div></div><button type="button" data-productid="'+product_id+'" data-variantid="'+variant_id+'" data-img="'+product_image+'" data-product_title ="'+product_title+'"  class="btn-remove button removebutton singleremovebutton"  data-tooltip="Remove this product from wishlist" data-tooltip-position="top">Remove</button></div><div class="card card--product card--outline"><div class="card__inner"><div><div class="media media--transparent media--square media--hover-effect"><img src="'+product_image+'"></div></div><a role="button" tabindex="0" href="#" aria-label="Add to Shopping Cart" class="addtocartbutton btn" data-productid="'+product_id+'" data-variantid="'+variant_id+'">Add to cart</a></div></div></div> </li>';
+                    });
+
+                    $("#wishlisthtml").html(gridhtml);
+                }
+                else{
+                    gridhtml='<h3 style="text-align: center;width: 100%;margin: 100px 0;">There are no items in the Wishlist.</h3>';
+                    $(".allbuttons").hide();
+                }
+            },
+            complete: function(){
+                $("#wishlisthtml").html(gridhtml);
+                SPR.loadjQuery(function() {
+                    return SPR.$.ajaxSetup({
+                        cache: !0
+                    }),
+                        SPR.loadjQueryExtentions(SPR.$),
+                        SPR.$(document).ready(function() {
+                            return SPR.registerCallbacks(),
+                                SPR.initRatingHandler(),
+                                SPR.initDomEls(),
+                                SPR.loadProducts(),
+                                SPR.loadBadges()
+                        })
+                });
+            }
+        });
+
+
+
+    });
+
+    $(document.body).on('click','.addtocartbutton', function(e) {
+        e.preventDefault();
+        var variantid=$(this).data("variantid");
+        $.ajax({url:"/cart/add.js",
+            data: {quantity:1,id:variantid},
+            dataType: 'json',
+            error: function(data){alert(data.responseJSON.description)},
+            success:function(data){location.reload()}});
+    });
+
+    $(document.body).on('click','#addallbutton', function(e) {
+        e.preventDefault();
+        $('.wishlist-section .grid__item').each(function(){
+            var variantid=$(this).data("variantid");
+            console.log(variantid);
+            $.ajax({url:"/cart/add.js",
+                data: {quantity:1,id:variantid},
+                async: false,
+                dataType: 'json',
+                error: function(data){alert(data.responseJSON.description)},
+                success:function(data){location.reload()}});
+        });
+    });
+
+
+
+    $(document.body).on("click", ".singleremovebutton", function(event){
+
+        event.preventDefault();
+        $("#remove_modal").modal('show');
+        var modal_product_id = $(this).data('productid');
+        var modal_variant_id = $(this).data('variantid');
+        var modal_product_title = $(this).data('product_title');
+        var modal_product_image = $(this).data('img');
+
+        //feed this information to modal
+        $('#modal_remove_button').attr("data-product_id",modal_product_id);
+        $('#modal_remove_button').attr("data-variant_id",modal_variant_id);
+        $('#remove_modal_image').html('<img src="'+modal_product_image+'" >');
+        $('#remove_modal_title').html(modal_product_title);
+        $('#modal_remove_button').on( "click", function() {
+
+        RemoveFromSmartWishlist(modal_product_id,modal_variant_id);
+        $('.grid__item[data-productid=' + modal_product_id + ']').remove();
+        $("#remove_modal").modal('hide');
+
+        if ( $('#wishlisthtml li').length == 0 ){
+          $('.title-wrapper-with-link h1').text ='There are no items in the Wishlist.';
+          $(".allbuttons").hide();
+        }
+	    });
+    });
+
+    $("body").on("click", ".sharebutton", function(event){
+        hostname=$(location).attr('hostname');
+        var wishlist_url=window.location.protocol+"//"+hostname+proxy_base+"/"+getCookieSW('wishlist_id');
+
+        if((enable_addthis==1)&&((typeof addthis_share) !="undefined")) {	addthis_share.url=wishlist_url;	addthis_share.title=addthis_share_title;}
+        $("#wishlist_url").html(wishlist_url);
+    });
+
+</script>
+
+
+<div class="modal fade" id="wishlist_share_modal" tabindex="-1" role="dialog" aria-labelledby="share_modal_label">
+  <div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center" role="document" style="width: 100%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="share_modal_label">Copy this URL and share it</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="wishlist_url"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="social_sharing sharethis">
+                <div class="addthis_sharing_toolbox"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="message_modal" tabindex="-1" role="dialog" aria-labelledby="message_modal_label" style="display: none;">
+  <div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="message_modal_label"></h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="message_modal_text"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-default-modal" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="remove_modal" tabindex="-1" role="dialog" aria-labelledby="remove_modal_label" style="display: none;">
+  <div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="remove_modal_label">Remove from Wishlist?</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div id="remove_modal_image"></div>
+            </div>
+            <div class="col-md-8">
+              <div id="remove_modal_title"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="button" data-dismiss="modal">Close</button>
+          <button type="button" class="button" id="modal_remove_button">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -171,6 +171,7 @@
               <h4 class="des-font capital title-product mb-0">
                 <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
               </h4>
+              <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
               <!--     PRICE -->
               {% assign on_sale = false %}
               {% if product.compare_at_price > product.price %}
@@ -179,7 +180,7 @@
 
               <p class="price-product mb-0">
                 {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-                <span class="price">{{ product.price | money }}</span>
+                <span class="price">{{ product.price | money_with_currency }}</span>
               </p>
               <!-- END PRODUCT     -->
 

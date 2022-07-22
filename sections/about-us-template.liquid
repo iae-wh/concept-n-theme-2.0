@@ -1,0 +1,303 @@
+<div class="wrap-bread-crumb breadcrumb_collection2">
+  <div class="text-center bg-breadcrumb">
+    <div class="title-page">
+
+      <h2 class="">{{page.title}}</h2>
+
+    </div>
+    {% include 'breadcrumb' %}
+  </div>
+</div>
+<section>
+  <div class="about-us-pages">
+    <div class="container container-v2">
+      <div class="aboutus-container">
+        <div class="aboutus-text-container">
+      
+          <div style="max-width: 430px">
+            <h5>We’ve come a long way since 2005…</h5>
+            <p>In 2005 two (great) guys founded Feelunique as THE go-to place that would fulfil all your beauty and grooming desires. Now, after 17 years in business,
+              we’re proudly Europe’s largest online beauty retailer, giving you over 400 brands at your fingertips. Every day we’re growing and innovating, so watch this space!</p>
+          </div>
+          <div style="max-width: 430px">
+            <h5>What makes us Feelunique?</h5>
+            <p>Our beliefs fuel our commitment to offer this impressive range of brands and products; we believe everyone should have access to beauty, regardless of where you are, who you are, and how much you can spend.</p>
+          </div>
+          <div style="max-width: 430px">
+            <h5>We champion the positive power of beauty</h5>
+            <p>We’ve seen it lift moods, kick-start self-confidence, and connect people across cultures and countries.</p>
+          </div>
+          <div style="max-width: 430px">
+            <h5>We are the experts</h5>
+            <p>Our team’s knowledge is second to none. Whether you’ve got a question or are looking for the next big thing in beauty, you’re in safe hands at Feelunique.</p>
+          </div>
+          <div style="max-width: 430px">
+            <h5>We are proudly digital</h5>
+            <p>being the biggest online retailer in Europe, we constantly innovate, discover, and share the inspiring things we find all over the world.</p>
+          </div>
+          <div style="max-width: 430px">
+            <h5>We are innovative</h5>
+            <p>We offer a host of unique services that you won’t find anywhere else! From Pick ’n’ Mix sampling, to unlimited delivery and Subscribe & Save we’re constantly looking for ways to make shopping as easy and enjoyable as possible.</p>
+          </div>
+          <div style="max-width: 200px">
+            <h5>We aren’t everywhere but we’re pretty darn close</h5>
+            <p>Shipping to over 120 countries, and counting.</p>
+          </div>
+        </div>
+        <div class="aboutus-img-container">
+          <div></div>
+          <img src="{{ 'aboutus-img1.png' | asset_url }}">
+          <img src="{{ 'aboutus-img2.png' | asset_url }}">
+          <div></div>
+          <div></div>
+          <img src="{{ 'aboutus-img3.png' | asset_url }}">
+          <img src="{{ 'aboutus-img4.png' | asset_url }}">
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .aboutus-container {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: stretch;
+      align-content: center;
+  }
+  .aboutus-container .aboutus-text-container{
+      max-width: 550px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      align-content: flex-start;
+  }
+  .aboutus-container .aboutus-text-container div{
+    margin-bottom: 40px;
+  }
+  .aboutus-container .aboutus-img-container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: stretch;
+      align-content: center;
+      flex-direction: row;
+      width: 330px;
+  }
+  .aboutus-container .aboutus-img-container div, .aboutus-container .aboutus-img-container img{
+      width: 50%;
+      flex-basis: calc(50%);
+  }
+  .aboutus-container h5 {
+      margin-bottom: 1rem;
+  }
+
+  @media (max-width: 700px) {
+
+
+      .aboutus-container .aboutus-img-container{
+          display: none;
+      }
+      .aboutus-container .aboutus-text-container{
+          padding: 0px;
+      }
+  }
+</style>
+{% schema %}
+{
+  "name": "About Us",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_breadcrumb",
+      "label": "Background Image BreadCrumb",
+      "info": "1920x510px recommended"
+    },
+    {
+      "type": "header",
+      "content": "Introduce"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_intro",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Service Box"
+    },
+    {
+      "type": "paragraph",
+      "content": "Please scroll to bottom and click Add content to add content for Introduce"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_s_servicebox",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image ServiceBox",
+      "info": "1920x650px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title_servicebox",
+      "label": "Title",
+      "default": "Reasons to shop with us"
+    },
+    {
+      "type": "header",
+      "content": "Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_insta",
+      "label": "Enable?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title_icon",
+      "label": "Icon title",
+      "default": "icon-icon-intagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    },
+    {
+      "type": "text",
+      "id": "title_content",
+      "label": "Title",
+      "default": "Instagram Feed"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description",
+      "default": "Get Update & Emails From Us"
+    },
+    {
+      "type": "text",
+      "id": "ins_userid",
+      "label": "User ID Instagram",
+      "default": "3672948962"
+    },
+    {
+      "type": "text",
+      "id": "ins_access_token",
+      "label": "Access Token Instagram",
+      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
+    },
+    {
+      "type": "text",
+      "id": "ins_limit_number",
+      "label": "Limit Image",
+      "default": "6"
+    },
+    {
+      "type": "text",
+      "id": "item_icon",
+      "label": "Icon",
+      "default": "fa fa-instagram",
+      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service V1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": " FREE SHIPPING & RETURN"
+        },
+        {
+          "type": "text",
+          "id": "block_content",
+          "label": "Content",
+          "default": " If your glasses aren't perfect, return them within 30 days<br> for a full refund. We'll even pay shipping."
+        }
+      ]
+    },
+    {
+      "type": "introduce",
+      "name": "Introduce",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_intro",
+          "label": "Image Introduce",
+          "info": "670x600px recommended"
+        },
+        {
+          "type": "text",
+          "id": "title_intro",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "des_intro",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "content_intro",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "blocks": [
+      
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+    .page-table tr{
+        border: 1px solid #d4d7db;
+        border-right-width: 0;
+        border-left-width: 0;
+    }
+    .page-table td{
+        border: 1px solid #d4d7db;
+        border-top-width: 0;
+        border-bottom-width: 0;
+        padding: 10px;
+    }
+    .page-table tr:first-child{
+      border-top: none;
+    }
+    .page-table tr:last-child{
+        border-bottom: none;
+    }
+    .page-table td:first-child{
+        border-left: none;
+    }
+    .page-table td:last-child{
+        border-right: none;
+    }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

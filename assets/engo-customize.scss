@@ -44,15 +44,16 @@
 CUSTOM GOOGLE FONTS
 ======================================== */
 
-
-
-
-
 $font-primary: Arima Madurai;
 $font-primary2: Cormorant;
 $font-primary3: Amatic SC;
 
-
+.unbookmarked span:before {
+  content: "\f08a";
+}
+.bookmarked span:before {
+  content: "\f004";
+}
 
 /* ========================================
 CUSTOM COLORS
@@ -140,6 +141,7 @@ $color-main2: #48c8fd; */
 }
 .spr-badge .spr-icon, .spr-badge .spr-icon-star {
   margin-right: 1.6px;
+  color: #000000 !important;
 }
 
 /*Button Add to Wishlist*/
@@ -7351,7 +7353,7 @@ a:hover, a:focus {
   .bg-breadcrumb{
     background-size: cover;
     background-position: center;
-    padding: 150px 0 130px;
+    padding: 100px 0 20px;
     .title-page{
       h2{
         font-family: $font-primary;

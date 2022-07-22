@@ -173,7 +173,7 @@
       {% endif %}
       {% if settings.enable_catalog_mode == false%}
       <p class="price-product">
-        <span class="price">{{ product.price | money }}</span>
+        <span class="price">{{ product.price | money_with_currency }}</span>
         {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
 
       </p>
@@ -359,8 +359,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <ul class="product-icon-action list-unstyled mb-0 text-center">     
-
+      <ul class="product-icon-action list-unstyled mb-0 text-center">
         <li class="add-to-cart mr-0">
           {% if sold_out %}
           <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
@@ -417,9 +416,10 @@
       <a href="{{ product.url | within: collection }}">{{ product.title}}</a> 
       <p class="price-product mb-0">
         {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-        <span class="price">{{ product.price | money }}</span>
+        <span class="price">{{ product.price | money_with_currency }}</span>
       </p>
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
     <!--     PRICE -->
     {% assign on_sale = false %}
     {% if product.compare_at_price > product.price %}
@@ -600,7 +600,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <ul class="product-icon-action list-unstyled mb-0 text-center">          
+      <ul class="product-icon-action list-unstyled mb-0 text-center">
         <li class="add-to-cart mr-0">
           {% if sold_out %}
           <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
@@ -659,9 +659,10 @@
 
       <p class="price-product mb-0">
         {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-        <span class="price">{{ product.price | money }}</span>
+        <span class="price">{{ product.price | money_with_currency }}</span>
       </p>
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
 
     <!-- END PRODUCT     -->
 
@@ -836,8 +837,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <ul class="product-icon-action list-unstyled mb-0 text-center">     
-
+      <ul class="product-icon-action list-unstyled mb-0 text-center">
         <li class="add-to-cart mr-0">
           {% if sold_out %}
           <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
@@ -899,9 +899,10 @@
 
       <p class="price-product mb-0">
         {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-        <span class="price">{{ product.price | money }}</span>
+        <span class="price">{{ product.price | money_with_currency }}</span>
       </p>
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
     <!--     PRICE -->
 
     <!-- END PRODUCT     -->
@@ -1086,8 +1087,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <div class="product-icon-action d-flex mb-0 text-center">      
-
+      <div class="product-icon-action d-flex mb-0 text-center">
         <div class="add-wishlist mr-0 w-50">
           {% include 'add-wishlist' %} 
         </div>
@@ -1137,6 +1137,7 @@
     <h4 class="des-font capital title-product mb-0">
       <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
     <!--     PRICE -->
     {% assign on_sale = false %}
     {% if product.compare_at_price > product.price %}
@@ -1144,7 +1145,7 @@
     {% endif %}
 
     <p class="price-product mb-0">
-      <span class="price">{{ product.price | money }}</span>
+      <span class="price">{{ product.price | money_with_currency }}</span>
       {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
 
     </p>
@@ -1306,8 +1307,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <ul class="product-icon-action list-unstyled mb-0 text-center">     
-
+      <ul class="product-icon-action list-unstyled mb-0 text-center">
         <li class="add-to-cart mr-0">
           {% if sold_out %}
           <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
@@ -1362,6 +1362,7 @@
     <h4 class="des-font capital title-product mb-0">
       <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
     <!--     PRICE -->
     {% assign on_sale = false %}
     {% if product.compare_at_price > product.price %}
@@ -1370,7 +1371,7 @@
 
     <p class="price-product mb-0">
       {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-      <span class="price">{{ product.price | money }}</span>
+      <span class="price">{{ product.price | money_with_currency }}</span>
     </p>
     <!-- END PRODUCT     -->
 
@@ -1541,8 +1542,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <ul class="product-icon-action list-unstyled mb-0 text-center">     
-
+      <ul class="product-icon-action list-unstyled mb-0 text-center">
         <li class="add-to-cart mr-0">
           {% if sold_out %}
           <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
@@ -1598,6 +1598,7 @@
     <h4 class="des-font capital title-product mb-0">
       <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
     <!--     PRICE -->
     {% assign on_sale = false %}
     {% if product.compare_at_price > product.price %}
@@ -1606,7 +1607,7 @@
 
     <p class="price-product mb-0">
       {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-      <span class="price">{{ product.price | money }}</span>
+      <span class="price">{{ product.price | money_with_currency }}</span>
     </p>
     <!-- END PRODUCT     -->
 
@@ -1774,6 +1775,7 @@
     <h4 class="des-font capital title-product mb-0">
       <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
     <!--     PRICE -->
     {% assign on_sale = false %}
     {% if product.compare_at_price > product.price %}
@@ -1782,7 +1784,7 @@
 
     <p class="price-product mb-0">
       {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-      <span class="price">{{ product.price | money }}</span>
+      <span class="price">{{ product.price | money_with_currency }}</span>
     </p>
     <!-- END PRODUCT     -->
 
@@ -1865,8 +1867,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <ul class="product-icon-action list-unstyled mb-0 text-center">      
-
+      <ul class="product-icon-action list-unstyled mb-0 text-center">
 
         <li class="quick-view mr-0">
           <a href="javascript:void(0)" class="engoj_btn_quickview icon-quickview inline-block box-shadow" data-id="{{ product.handle }}" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_quickview_name}}">
@@ -2005,8 +2006,7 @@
       {% if product.available %}
       {% assign sold_out = false %}
       {% endif %}
-      <ul class="product-icon-action list-unstyled mb-0 text-center px-0">     
-
+      <ul class="product-icon-action list-unstyled mb-0 text-center px-0">
         <li class="add-to-cart mr-0">
           {% if sold_out %}
           <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
@@ -2060,6 +2060,7 @@
     <h4 class="des-font capital title-product mb-0">
       <a href="{{ product.url | within: collection }}">{{ product.title}}</a>      
     </h4>
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
     <!--     PRICE -->
     {% assign on_sale = false %}
     {% if product.compare_at_price > product.price %}
@@ -2068,7 +2069,7 @@
 
     <p class="price-product mb-0">
       {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
-      <span class="price">{{ product.price | money }}</span>
+      <span class="price">{{ product.price | money_with_currency }}</span>
     </p>
     <!-- END PRODUCT     -->
 

@@ -82,7 +82,7 @@
     </div>
     <h3 class="title14 product-title dosis-font text-uppercase"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h3>
     <div class="product-price title14 dosis-font">
-      {% capture price %}{{ product.price | money }}{% endcapture %}
+      {% capture price %}{{ product.price | money_with_currency }}{% endcapture %}
       {% if on_sale %} <del class="silver">{{ product.compare_at_price | money }}</del> {% endif %}
       <ins>{% if product.price_varies %}{{ 'products.general.from_text_html' | t: price: price }}{% else %}{{ price }}{% endif %}</ins>
     </div>

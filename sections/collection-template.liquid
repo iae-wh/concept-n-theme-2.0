@@ -130,23 +130,11 @@ Use .grid--rev so that the collection tags appear below the products on mobile
   {% endunless %}
   {% endif %}
 </style>
-
-
-{% if section.settings.collection_layout == "full_width" %}
-{% include 'collection-fullwidth' %}
-
-{% elsif section.settings.collection_layout == "sidebar" %}
-{% include 'collection-layout-sidebar' %}
-
-{% elsif section.settings.collection_layout == "infinity_scroll" %}
-{% include 'collection-infinity-scroll' %}
-
-{% elsif section.settings.collection_layout == "bg_mordern" %}
-{% include 'collection-background-mordern' %}
-
-{% elsif section.settings.collection_layout == "bg_banner_mordern" %}
-{% include 'collection-banner-mordern' %}
-{% endif %}
+  
+  
+  <div class="container container-v1">
+    {% render 'searchanise-navigation' %}
+  </div>
 
 
 {% endpaginate %}

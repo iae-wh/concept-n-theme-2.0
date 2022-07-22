@@ -48,7 +48,17 @@
                 <li class="list-inline-item">
                   <a href="{{settings.url_sc_fv2_4}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv2_4}}"></i></a>
                 </li>
-                {% endif %}         
+                {% endif %}
+                {% if settings.icon_sc_fv2_5 !=blank %}
+                  <li class="list-inline-item">
+                    <a href="{{settings.url_sc_fv2_5}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv2_5}}"></i></a>
+                  </li>
+                {% endif %}
+                {% if settings.icon_sc_fv2_6 !=blank %}
+                  <li class="list-inline-item">
+                    <a href="{{settings.url_sc_fv2_6}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv2_6}}"></i></a>
+                  </li>
+                {% endif %}
 
               </ul>
             </div>
@@ -109,7 +119,7 @@
         </div>
         <div class="col-lg-6 col-md-6 {% if settings.enable_rtl_mode %} text-lg-left text-md-left {% else %}text-lg-right text-md-right {% endif %} ">
           {% if settings.fv2_bottom_payment_img != blank %}
-          <img src="{{settings.fv2_bottom_payment_img | img_url:'master'}}"  alt="">
+          <img src="{{settings.fv2_bottom_payment_img | img_url:'master'}}" style="height: 50px;" alt="">
           {% else %}
           <img src="//via.placeholder.com/247x23"  alt="">
           {% endif %}
@@ -195,8 +205,17 @@
                 <li class="list-inline-item">
                   <a href="{{settings.url_sc_fv2_4}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv2_4}}"></i></a>
                 </li>
-                {% endif %}         
-
+                {% endif %}
+                {% if settings.icon_sc_fv2_5 !=blank %}
+                  <li class="list-inline-item">
+                    <a href="{{settings.url_sc_fv2_5}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv2_5}}"></i></a>
+                  </li>
+                {% endif %}
+                {% if settings.icon_sc_fv2_6 !=blank %}
+                  <li class="list-inline-item">
+                    <a href="{{settings.url_sc_fv2_6}}" title="" target="_blank" class="social-item"><i class="{{settings.icon_sc_fv2_6}}"></i></a>
+                  </li>
+                {% endif %}
               </ul>
             </div>
             
@@ -256,7 +275,7 @@
         </div>
         <div class="col-lg-6 col-md-6 {% if settings.enable_rtl_mode %} text-lg-left text-md-left {% else %}text-lg-right text-md-right {% endif %} ">
           {% if settings.fv2_bottom_payment_img != blank %}
-          <img src="{{settings.fv2_bottom_payment_img | img_url:'master'}}"  alt="">
+          <img src="{{settings.fv2_bottom_payment_img | img_url:'master'}}" style="height: 50px;"  alt="">
           {% else %}
           <img src="//via.placeholder.com/247x23"  alt="">
           {% endif %}
