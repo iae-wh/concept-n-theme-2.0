@@ -116,6 +116,19 @@
             {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
           </span>
         {%- endif -%}
+      <div class="field">
+        <input
+            type="password"
+            name="customer[password_confirm]"
+            id="RegisterForm-password_confirm"
+            aria-required="true"
+            placeholder="{{ 'customer.register.password_confirm' | t }}"
+        >
+        <label for="RegisterForm-password">
+          {{ 'customer.register.password' | t }}
+        </label>
+        <span class="password-match" style="display: none;">PASSWORDS DO NOT MATCH</span>
+      </div>
         {% if cart.item_count > 0 %}
         
         {% endif %}
@@ -139,3 +152,31 @@
     </div>
   </div>
 </section>
+<style>
+    span.password-match {
+        float: none;
+        font-size: 11px;
+        color: #b00000;
+    }
+</style>
+<script>
+    $('form#create_customer').submit(function(e) {
+        check_password_match(e);
+    });
+    $('#RegisterForm-password_confirm').keyup(function (e) {
+        check_password_match(e);
+    });
+    $('#RegisterForm-password').keyup(function (e) {
+        check_password_match(e);
+    });
+
+    function check_password_match (e) {
+        if ( $('#RegisterForm-password').val() === $('#RegisterForm-password_confirm').val()) {
+            $('.password-match').fadeOut("slow");
+
+        } else {
+            $('.password-match').fadeIn("slow");
+            e.preventDefault(); // stops our form from submitting
+        }
+    }
+</script>
