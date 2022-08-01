@@ -7131,7 +7131,7 @@ a:hover, a:focus {
   .bg-breadcrumb{
     background-size: cover;
     background-position: center;
-    padding: 140px 0 140px;
+    padding: 20px 0 0px;
     .title-page{
       h2{
         font-family: $font-primary;
@@ -7353,7 +7353,7 @@ a:hover, a:focus {
   .bg-breadcrumb{
     background-size: cover;
     background-position: center;
-    padding: 100px 0 20px;
+    padding: 20px 0 0px;
     .title-page{
       h2{
         font-family: $font-primary;
@@ -11807,7 +11807,7 @@ RESPONSIVE
   }
   .breadcrumb_collection, .breadcrumb_collection2{
     .bg-breadcrumb{
-      padding: 150px 0 80px 0 ;
+      padding: 20px 0 0px;
 
     }
   }
@@ -13480,7 +13480,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 600px;
+  height: 640px;
   padding: 50px;
   z-index: 11;
   opacity: 0;

@@ -313,6 +313,7 @@
       "title": "Login",
       "email": "Email adress",
       "password": "Password",
+      "password_confirm": "Confirm Password",
       "description": "If you have an account with us, log in using your email address.",
       "forgot_password": "Forgot your password?",
       "log_in": "Log In",
@@ -348,6 +349,7 @@
       "last_name": "Last Name",
       "email": "Email address",
       "password": "Password",
+      "password_confirm": "Confirm Password",
       "submit": "register",
       "cancel": "Return to Store"
     },
