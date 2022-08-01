@@ -1275,7 +1275,7 @@ html[lang="ar"] .account-details-menu li{
   }
 }
 .account-details-menu li.active svg, .account-details-menu li.active svg path{
-  fill: #ffffff;
+  fill: #ffffff!important;
 }
 .account-details-menu li:first-child{
   margin-top: 10px;
