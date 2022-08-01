@@ -90,12 +90,40 @@
           <div class="mailrrr mt-3">
             {% form 'create_customer' %}
             {{ form.errors | default_errors }}
+              <div class="form-group">
+              <input
+                  type="text"
+                  class="form-control"
+                  name="customer[first_name]"
+                  id="RegisterForm-FirstName"
+                  {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+                  autocomplete="given-name"
+                  placeholder="{{ 'customer.register.first_name' | t }}"
+                  required
+              >
+              </div>
+              <div class="form-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="customer[last_name]"
+                    id="RegisterForm-LastName"
+                    {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+                    autocomplete="family-name"
+                    placeholder="{{ 'customer.register.last_name' | t }}"
+                    required
+                >
+              </div>
             <div class="form-group">
               <input type="email" placeholder="{{ 'customer.register.email' | t }}" class="form-control" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" name="customer[password]" placeholder="{{ 'customer.register.password' | t }}" required>
+              <input type="password" class="form-control" id="password" name="customer[password]" placeholder="{{ 'customer.register.password' | t }}" required>
             </div>
+              <div class="form-group">
+                <span class="password-match" style="display: none;">PASSWORDS DO NOT MATCH</span>
+                <input type="password" class="form-control" id="password_confirm" name="customer[password-confirm]" placeholder="{{ 'customer.register.password_confirm' | t }}" required>
+              </div>
             <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.register.submit' | t }}">
               {{ 'customer.register.submit' | t }}
             </button>
@@ -123,3 +151,34 @@
 </div>
 <div class="bg-login-popup js-bg-login-popup">
 </div>
+<style>
+    span.password-match {
+        float: left;
+        font-size: 11px;
+        color: #b00000;
+    }
+    .form__message {
+       font-size: 1rem!important;
+    }
+</style>
+<script>
+    $('form#create_customer').submit(function(e) {
+        check_password_match(e);
+    });
+    $('#password').keyup(function (e) {
+        check_password_match(e);
+    });
+    $('#password_confirm').keyup(function (e) {
+        check_password_match(e);
+    });
+    
+    function check_password_match (e) {
+        if ( $('#password').val() === $('#password_confirm').val()) {
+            $('.password-match').fadeOut("slow");
+
+        } else {
+            $('.password-match').fadeIn("slow");
+            e.preventDefault(); // stops our form from submitting
+        }
+    }
+</script>
