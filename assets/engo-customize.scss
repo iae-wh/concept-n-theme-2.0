@@ -15819,7 +15819,7 @@ POPup newletter
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
     border-bottom: none;
   }
 }
@@ -17053,7 +17053,7 @@ POPup newletter
   }
   .copyright{
     border-top: 1px solid #eeeeee;
-    padding: 26px 0;
+    padding: 26px 0 50px;
     .text-copyright{
       color: #000;
       font-size: 14px;      
@@ -17157,7 +17157,7 @@ POPup newletter
 
   .copyright{
     border-top: 1px solid #dddddd;
-    padding: 26px 0;
+    padding: 26px 0 50px;
     background-color: #ffffff;
     .text-copyright{
       @media(max-width: 576px){
