@@ -3787,7 +3787,7 @@
           "select_style_bread": "style_2",
           "ena_bg_img": true,
           "bg_breadcrumb": "shopify:\/\/shop_images\/norbert-kowalczyk-ndhZldib3ck-unsplash_c2661589-c074-45f1-bfa6-5c0a113b4567.jpg",
-          "bg_color_breadcrumb": "#f2f2f2",
+          "bg_color_breadcrumb": "#733e3e",
           "color_breadcrumb": "#ffffff",
           "collection_layout": "sidebar",
           "prod_per_page": 9,
