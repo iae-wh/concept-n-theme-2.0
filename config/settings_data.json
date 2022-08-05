@@ -5358,6 +5358,19 @@
           "bg_image": "shopify:\/\/shop_images\/Group_14.png",
           "bg_color": "#d1d1d1"
         }
+      },
+      "165970189419c315f8": {
+        "type": "section-info-v1",
+        "settings": {
+          "title_info": "Surprising Health <br>Benefits Of Green Tea",
+          "color_title_info": "",
+          "content_info": "Green tеа iѕ rich in antioxidant substances called polyphenol: A series оf chemicals called catechins; EGCG (epigallocatechin gallate) iѕ the mоѕt powerful.Antioxidants hаvе thе ability tо mop uр free radicals capable оf causing blood clots (which соuld lead tо thrombosis) аnd plaque formations оn innеr walls оf arteries leading tо cardiovascular disease.",
+          "color_content_info": "",
+          "more_about": "More about us",
+          "url_banner": "shopify:\/\/collections\/all",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
       }
     },
     "content_for_index": [
@@ -5367,7 +5380,8 @@
       "161890887625e8bf29",
       "1619146574e0265060",
       "1618909175602d39ae",
-      "16597012966b0587f7"
+      "16597012966b0587f7",
+      "165970189419c315f8"
     ]
   },
   "presets": {
