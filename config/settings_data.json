@@ -5286,66 +5286,6 @@
           "margin_bottom": ""
         }
       },
-      "16597012966b0587f7": {
-        "type": "section-brand-v1",
-        "blocks": {
-          "16597012966b0587f7-0": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/Mom-0fUBdIJJ1zomC5m_3x_ff5c66ce-69bc-4539-a1a8-c4746d3b8d82.png",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "16597012966b0587f7-1": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/Mom-0fW7IhIWYDUalAI_3x_6c44b43d-3b9c-4133-b7b3-dfbad852329e.png",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "16597012966b0587f7-2": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/MomjmUUnslv9VU9Bpa0_3x_41bc07d9-8f65-4d68-beb7-995dfa8e1a79.png",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "16597012966b0587f7-3": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/section_benner_001_3x_06a2c672-6aa3-4d8d-b4a4-f4ac4c3c6cac.png",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "16597012966b0587f7-4": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/Image_2_3x_3e28b6d5-0105-420b-90a2-d11e9ef1d070.png",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "16597012966b0587f7-5": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/Group_13.png",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          }
-        },
-        "block_order": [
-          "16597012966b0587f7-0",
-          "16597012966b0587f7-1",
-          "16597012966b0587f7-2",
-          "16597012966b0587f7-3",
-          "16597012966b0587f7-4",
-          "16597012966b0587f7-5"
-        ],
-        "settings": {
-          "bg_color": "",
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
       "1659701561230cc2b4": {
         "type": "section-flash-sale",
         "settings": {
@@ -5380,7 +5320,6 @@
       "161890887625e8bf29",
       "1619146574e0265060",
       "1618909175602d39ae",
-      "16597012966b0587f7",
       "165970189419c315f8"
     ]
   },
