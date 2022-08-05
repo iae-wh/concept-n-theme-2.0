@@ -5400,37 +5400,41 @@
               "title_collection": "Collection",
               "brand_url": "shopify:\/\/collections\/all"
             }
-          },
-          "16597014395432943a-3": {
-            "type": "colection",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/woman-wearing-black-hoodie-2021-09-02-05-58-26-utc_3x_f3264da5-3e54-4569-9c7f-ce9b9feda075.png",
-              "title_collection": "Collection",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
           }
         },
         "block_order": [
           "16597014395432943a-0",
           "16597014395432943a-1",
-          "16597014395432943a-2",
-          "16597014395432943a-3"
+          "16597014395432943a-2"
         ],
         "settings": {
           "margin_top": "",
           "margin_bottom": ""
+        }
+      },
+      "1659701561230cc2b4": {
+        "type": "section-flash-sale",
+        "settings": {
+          "margin_top": "",
+          "margin_bottom": "",
+          "title_section_product": "New Arrivals",
+          "select_collection": "",
+          "products_limit": 16,
+          "ena_background_img": false,
+          "bg_color": "#d1d1d1"
         }
       }
     },
     "content_for_index": [
       "16189031977d260213",
       "16189031221258ecb6",
-      "16597014395432943a",
       "1659701191735cdf21",
+      "16597014395432943a",
       "161890887625e8bf29",
       "1619146574e0265060",
       "1618909175602d39ae",
-      "16597012966b0587f7"
+      "16597012966b0587f7",
+      "1659701561230cc2b4"
     ]
   },
   "presets": {
