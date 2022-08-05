@@ -5285,6 +5285,33 @@
           "margin_top": "",
           "margin_bottom": ""
         }
+      },
+      "165970106749ea218e": {
+        "type": "sub-collection2-template",
+        "blocks": {
+          "165970106749ea218e-0": {
+            "type": "collection",
+            "settings": {
+              "block_collection": "sneakers"
+            }
+          },
+          "165970106749ea218e-1": {
+            "type": "collection",
+            "settings": {
+              "block_collection": "most-popular"
+            }
+          }
+        },
+        "block_order": [
+          "165970106749ea218e-0",
+          "165970106749ea218e-1"
+        ],
+        "settings": {
+          "margin_top": "",
+          "margin_bottom": "",
+          "enable_info_collection": true,
+          "prod_per_row": "prod_col_12"
+        }
       }
     },
     "content_for_index": [
@@ -5292,7 +5319,8 @@
       "16189031221258ecb6",
       "161890887625e8bf29",
       "1619146574e0265060",
-      "1618909175602d39ae"
+      "1618909175602d39ae",
+      "165970106749ea218e"
     ]
   },
   "presets": {
