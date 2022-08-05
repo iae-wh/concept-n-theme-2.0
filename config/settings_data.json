@@ -5421,6 +5421,7 @@
           "select_collection": "",
           "products_limit": 16,
           "ena_background_img": false,
+          "bg_image": "shopify:\/\/shop_images\/shutterstock_740470303.png",
           "bg_color": "#d1d1d1"
         }
       }
