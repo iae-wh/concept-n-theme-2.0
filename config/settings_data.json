@@ -5375,6 +5375,76 @@
           "margin_bottom": "",
           "title-section": "Our Best Seller"
         }
+      },
+      "1659702177c3170683": {
+        "type": "section-product-v5",
+        "settings": {
+          "section_layout": "banner_left",
+          "title_section_product": "New Arrivals",
+          "color_title": "",
+          "url_banner_1": "shopify:\/\/collections\/all",
+          "title_1": "The Edit: Autumn Jackets",
+          "sub-title1": "Your transeasonal saviour",
+          "button_1": "Shop now",
+          "select_collection": "",
+          "products_limit": 3,
+          "margin_top": "",
+          "margin_bottom": ""
+        }
+      },
+      "16597022109356ff5a": {
+        "type": "section-product-v6",
+        "settings": {
+          "section_layout": "banner_left",
+          "button_1": "Shop now",
+          "url_button1": "shopify:\/\/collections\/all",
+          "color_btn": "",
+          "color_btn_hover": "",
+          "select_collection": "",
+          "products_limit": 4,
+          "margin_top": "",
+          "margin_bottom": ""
+        }
+      },
+      "165970223585b0d380": {
+        "type": "section-service-v1",
+        "blocks": {
+          "165970223585b0d380-0": {
+            "type": "service",
+            "settings": {
+              "block_title": "SHIPPING & RETURN",
+              "block_content": "If your glasses aren't perfect, return them within 30 days for a full refund. We'll even pay shipping."
+            }
+          },
+          "165970223585b0d380-1": {
+            "type": "service",
+            "settings": {
+              "block_title": "SAFE PAYMENT",
+              "block_content": "Pay with the world's most popular and secure payment methods"
+            }
+          },
+          "165970223585b0d380-2": {
+            "type": "service",
+            "settings": {
+              "block_title": "SHOP WITH CONFIDENCE",
+              "block_content": "Our Buyer Protection covers your purchase from click to delivery."
+            }
+          }
+        },
+        "block_order": [
+          "165970223585b0d380-0",
+          "165970223585b0d380-1",
+          "165970223585b0d380-2"
+        ],
+        "settings": {
+          "margin_top": "",
+          "margin_bottom": ""
+        }
+      },
+      "16597022645315c341": {
+        "type": "page-lookbook-v1",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -5387,7 +5457,11 @@
       "165970189419c315f8",
       "1659702072669535a5",
       "16597021331d0f1d57",
-      "1659702150654c0352"
+      "1659702150654c0352",
+      "1659702177c3170683",
+      "16597022109356ff5a",
+      "165970223585b0d380",
+      "16597022645315c341"
     ]
   },
   "presets": {
