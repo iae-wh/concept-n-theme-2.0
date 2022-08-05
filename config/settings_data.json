@@ -5286,34 +5286,6 @@
           "margin_bottom": ""
         }
       },
-      "1659701191735cdf21": {
-        "type": "sub-collection4-template",
-        "blocks": {
-          "1659701191735cdf21-0": {
-            "type": "collection",
-            "settings": {
-              "block_collection": "sneakers"
-            }
-          },
-          "1659701191735cdf21-1": {
-            "type": "collection",
-            "settings": {
-              "block_collection": "most-popular"
-            }
-          }
-        },
-        "block_order": [
-          "1659701191735cdf21-0",
-          "1659701191735cdf21-1"
-        ],
-        "settings": {
-          "bg_breadcrumb": "shopify:\/\/shop_images\/shutterstock_1348175027_3x_190fad49-305a-4a72-b25a-1f879df37dd0.png",
-          "margin_top": "",
-          "margin_bottom": "",
-          "enable_info_collection": true,
-          "prod_per_row": "prod_col_6"
-        }
-      },
       "16597012966b0587f7": {
         "type": "section-brand-v1",
         "blocks": {
@@ -5374,44 +5346,6 @@
           "margin_bottom": ""
         }
       },
-      "16597014395432943a": {
-        "type": "section-collection-v3",
-        "blocks": {
-          "16597014395432943a-0": {
-            "type": "colection",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/Rolex_Cosmograph_Daytona.png",
-              "title_collection": "Collection",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "16597014395432943a-1": {
-            "type": "colection",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/3.png",
-              "title_collection": "Collection",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "16597014395432943a-2": {
-            "type": "colection",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/shutterstock_1207534642_3x_cce089b6-2b7d-467c-83e1-f6ed7ab1c2f5.png",
-              "title_collection": "Collection",
-              "brand_url": "shopify:\/\/collections\/all"
-            }
-          }
-        },
-        "block_order": [
-          "16597014395432943a-0",
-          "16597014395432943a-1",
-          "16597014395432943a-2"
-        ],
-        "settings": {
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
       "1659701561230cc2b4": {
         "type": "section-flash-sale",
         "settings": {
@@ -5420,7 +5354,7 @@
           "title_section_product": "New Arrivals",
           "select_collection": "",
           "products_limit": 16,
-          "ena_background_img": false,
+          "ena_background_img": true,
           "bg_image": "shopify:\/\/shop_images\/shutterstock_740470303.png",
           "bg_color": "#d1d1d1"
         }
@@ -5430,8 +5364,6 @@
       "16189031977d260213",
       "16189031221258ecb6",
       "1659701561230cc2b4",
-      "1659701191735cdf21",
-      "16597014395432943a",
       "161890887625e8bf29",
       "1619146574e0265060",
       "1618909175602d39ae",
