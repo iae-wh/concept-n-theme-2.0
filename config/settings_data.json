@@ -5311,6 +5311,70 @@
           "margin_top": "",
           "margin_bottom": ""
         }
+      },
+      "1659702072669535a5": {
+        "type": "section-product-v4",
+        "settings": {
+          "title_section_product": "Trending",
+          "select_collection": "sneakers",
+          "products_limit": 8,
+          "buttom_name": "ALL PRODUCTS",
+          "button_name_url": "shopify:\/\/collections\/all",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
+      },
+      "16597021331d0f1d57": {
+        "type": "section-product-v3",
+        "settings": {
+          "title_section_product": "Best Seller",
+          "color_title": "#222",
+          "sub-title1": "Best Seller Product This Week!",
+          "color_sub_title1": "#666666",
+          "select_collection": "",
+          "products_limit": 8,
+          "margin_top": "",
+          "margin_bottom": ""
+        }
+      },
+      "1659702150654c0352": {
+        "type": "section-product-v2",
+        "blocks": {
+          "1659702150654c0352-0": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "NEW ARRIVALS",
+              "tab_collection": "",
+              "tab_limit": 8
+            }
+          },
+          "1659702150654c0352-1": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "BEST SELLERS",
+              "tab_collection": "",
+              "tab_limit": 8
+            }
+          },
+          "1659702150654c0352-2": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "TOP RATES",
+              "tab_collection": "",
+              "tab_limit": 8
+            }
+          }
+        },
+        "block_order": [
+          "1659702150654c0352-0",
+          "1659702150654c0352-1",
+          "1659702150654c0352-2"
+        ],
+        "settings": {
+          "margin_top": "",
+          "margin_bottom": "",
+          "title-section": "Our Best Seller"
+        }
       }
     },
     "content_for_index": [
@@ -5320,7 +5384,10 @@
       "161890887625e8bf29",
       "1619146574e0265060",
       "1618909175602d39ae",
-      "165970189419c315f8"
+      "165970189419c315f8",
+      "1659702072669535a5",
+      "16597021331d0f1d57",
+      "1659702150654c0352"
     ]
   },
   "presets": {
