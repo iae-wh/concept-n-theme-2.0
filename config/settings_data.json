@@ -5192,36 +5192,36 @@
             "type": "slideshow",
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/shutterstock_1310306863.png",
-              "title_slide": "Sport",
+              "title_slide": "Shoes",
               "color_title": "#5e3333",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/asics-tiger"
+              "url_link_collection": "shopify:\/\/collections\/shoes"
             }
           },
           "16189031977d260213-1": {
             "type": "slideshow",
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/shutterstock_1207538374.png",
-              "title_slide": "Outdoor",
+              "title_slide": "Bags",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/all"
+              "url_link_collection": "shopify:\/\/collections\/bags"
             }
           },
           "16189031977d260213-2": {
             "type": "slideshow",
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/watches.png",
-              "title_slide": "Casual",
+              "title_slide": "Watches",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/adidas"
+              "url_link_collection": "shopify:\/\/collections\/watches"
             }
           }
         },
