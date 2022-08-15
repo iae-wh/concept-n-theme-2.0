@@ -5192,12 +5192,12 @@
             "type": "slideshow",
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/shutterstock_1310306863.png",
-              "title_slide": "Shoes",
+              "title_slide": "Sneakers",
               "color_title": "#5e3333",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/shoes"
+              "url_link_collection": "shopify:\/\/collections\/sneakers"
             }
           },
           "16189031977d260213-1": {
