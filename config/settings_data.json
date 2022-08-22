@@ -3786,7 +3786,7 @@
         "settings": {
           "select_style_bread": "style_2",
           "ena_bg_img": true,
-          "bg_breadcrumb": "shopify:\/\/shop_images\/norbert-kowalczyk-ndhZldib3ck-unsplash_c2661589-c074-45f1-bfa6-5c0a113b4567.jpg",
+          "bg_breadcrumb": "shopify:\/\/shop_images\/banners-17.png",
           "bg_color_breadcrumb": "#733e3e",
           "color_breadcrumb": "#ffffff",
           "collection_layout": "sidebar",
@@ -3796,7 +3796,7 @@
           "sidebar_layout": "sidebar_left",
           "ena_sticky_sidebar": true,
           "ena_banner_mordern": false,
-          "bannerfull_img": "shopify:\/\/shop_images\/norbert-kowalczyk-ndhZldib3ck-unsplash_c2661589-c074-45f1-bfa6-5c0a113b4567.jpg",
+          "bannerfull_img": "shopify:\/\/shop_images\/banners-17.png",
           "big_title": "A NEW COLLECTION",
           "mini_title": "SALE UP TO 30%",
           "btn_title": "Shop Now",
