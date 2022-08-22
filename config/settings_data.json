@@ -538,6 +538,7 @@
     "best_product_limit": 4,
     "show_sizeguide": true,
     "img_size_women": "shopify:\/\/shop_images\/Screenshot_2022-08-22_174257.png",
+    "img_size_men": "shopify:\/\/shop_images\/banners-15.png",
     "enable_description_tab": true,
     "destab_title": "Description",
     "enable_addition_tab": false,
