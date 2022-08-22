@@ -3819,7 +3819,7 @@
           "show_sku": false,
           "show_cate": true,
           "ena_sticky_addcart": true,
-          "style_stickyaddcart": "bottom",
+          "style_stickyaddcart": "top",
           "ena_zoom": true
         }
       },
