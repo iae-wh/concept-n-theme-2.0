@@ -40,7 +40,7 @@
             <img style="width: 100%" src="{{ product.featured_image.src | img_url: 'master' }}" class="img-responsive" alt="{{ product.featured_image.alt | escape }}">
             {% for image in product.images %}
             {% if forloop.last %}
-            <img style="width: 100%" src="{{ image.src | product_img_url: 'master' }}" class="lazy-load img-responsive absolute img-product-hover" alt="{{ product.featured_image.alt | escape }}">
+            <img style="width: 100%" src="{{ image.src | product_img_url: 'master' }}" class="img-responsive absolute img-product-hover" alt="{{ product.featured_image.alt | escape }}">
             {% endif %}
             {% endfor %}
           </a>
