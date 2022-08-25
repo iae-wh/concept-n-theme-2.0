@@ -315,7 +315,7 @@
 
 
 
-                    {% if product.available and product.variants.size > 1 %}
+                    {% if product.tags contains "shoes" %}
                     {% if settings.show_sizeguide %}
                     {% include 'size-guide' %}
                     {% endif %}
