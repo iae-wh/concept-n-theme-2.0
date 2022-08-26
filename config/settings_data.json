@@ -5285,9 +5285,96 @@
           "margin_top": "",
           "margin_bottom": ""
         }
+      },
+      "166149405003ed1356": {
+        "type": "section-slideshow-v1",
+        "blocks": {
+          "166149405003ed1356-0": {
+            "type": "slideshow",
+            "settings": {
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "Style Destination",
+              "color_block_title_top1": "#E5E5E5",
+              "effect_title1": "bounce",
+              "block_title_top": "Basic Collection",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "Style Destination",
+              "color_block_title_top2": "#E5E5E5",
+              "effect_title2": "bounce",
+              "block_buton": "Shop now",
+              "color_block_button": "#fff",
+              "color_hover_button": "#fff",
+              "color_hover_text": "#000",
+              "block_url": "shopify:\/\/collections\/all",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": ""
+            }
+          },
+          "166149405003ed1356-1": {
+            "type": "slideshow",
+            "settings": {
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "Style Destination",
+              "color_block_title_top1": "#E5E5E5",
+              "effect_title1": "bounce",
+              "block_title_top": "Spring Collection",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "Hanpicked By Moocha",
+              "color_block_title_top2": "#E5E5E5",
+              "effect_title2": "bounce",
+              "block_buton": "Shop now",
+              "color_block_button": "#fff",
+              "color_hover_button": "#fff",
+              "color_hover_text": "#000",
+              "block_url": "shopify:\/\/collections\/all",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": ""
+            }
+          },
+          "166149405003ed1356-2": {
+            "type": "slideshow",
+            "settings": {
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "Style Destination",
+              "color_block_title_top1": "#E5E5E5",
+              "effect_title1": "bounce",
+              "block_title_top": "Kids Collection",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "Everything For Chirdren",
+              "color_block_title_top2": "#E5E5E5",
+              "effect_title2": "bounce",
+              "block_buton": "Shop now",
+              "color_block_button": "#fff",
+              "color_hover_button": "#fff",
+              "color_hover_text": "#000",
+              "block_url": "shopify:\/\/collections\/all",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": ""
+            }
+          }
+        },
+        "block_order": [
+          "166149405003ed1356-0",
+          "166149405003ed1356-1",
+          "166149405003ed1356-2"
+        ],
+        "settings": {
+          "margin_top": "",
+          "margin_bottom": ""
+        }
       }
     },
     "content_for_index": [
+      "166149405003ed1356",
       "16189031977d260213",
       "16189031221258ecb6",
       "161890887625e8bf29",
