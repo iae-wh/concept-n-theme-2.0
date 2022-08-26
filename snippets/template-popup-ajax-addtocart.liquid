@@ -49,11 +49,11 @@
         <div class="actions">
           <button class="continue-shopping shop-button" onclick="javascript:void(0)">{{ 'popup.continue' | t }}</button>
           <button class="shop-button go_cart " onclick="window.location='/cart'">{{ 'popup.goto_cart' | t }}</button>
-          <div class="product-cart__condition d-flex align-items-center mb-3">
-            <input type="checkbox" class="engoj-agree">
+          <div class="product-cart__condition hide align-items-center mb-3">
+            <input type="hidden" class="engoj-agree" checked>
             <label for="product-cart__agree-product-template" class="mb-0">{{'cart.label.term' | t}}</label>
           </div>
-          <button class="checkout-button js-button-checkout alt wc-forward bg-color btn-disabled" onclick="window.location='/checkout'">{{ 'cart.general.checkout' | t }}</button>
+          <button class="checkout-button js-button-checkout alt wc-forward bg-color" onclick="window.location='/checkout'">{{ 'cart.general.checkout' | t }}</button>
         </div>
       </div>
     </div>

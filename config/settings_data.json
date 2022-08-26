@@ -46,7 +46,7 @@
     "title_1": "There are",
     "title_2": "items<br>in your cart",
     "title_also_prod": "With this product also buy:",
-    "relate_product_collection": "frontpage",
+    "relate_product_collection": "accessories",
     "products__relate_limit": 16,
     "color_main": "#231f20",
     "color_main2": "#000000",
@@ -133,7 +133,7 @@
     "apbgimage_enable_1": false,
     "apmenuitem_eblocklinks_1": true,
     "apmenuitem_columns_blocklinks_1": "3",
-    "apmenuitem_columns_1": "3",
+    "apmenuitem_columns_1": "6",
     "apmenuitem_img_blocklinks_enable_1": false,
     "apmenuitem_url_blocklinks_1_1": "https:\/\/fivo-store-demo.myshopify.com\/?preview_theme_id=121680462029",
     "apmenuitem_url_blocklinks_1_2": "https:\/\/fivo-store-demo.myshopify.com\/?preview_theme_id=121863209165",
@@ -155,7 +155,7 @@
     "apmenuitem_columns_blockhtml_1": "12",
     "apmenuitem_thtml_1": "",
     "apmenuitem_lchtml_1": "",
-    "apmenuitem_eihtml_1": true,
+    "apmenuitem_eihtml_1": false,
     "apmenuitem_chtml_1": "",
     "position_menu_blocklink_1": "1",
     "position_menu_blockvideo_1": "2",
@@ -524,11 +524,11 @@
     "banner_sidebar": "shopify:\/\/shop_images\/drawimage.jpg",
     "show_servicebox": true,
     "title_box_1": "Why Choose Us ?",
-    "content_box_1": "Official Herschel stockist Australian warranty assistance & support Australian shipping & returns.Customer first experience environmentally focused",
+    "content_box_1": "Our team’s knowledge is second to none. Whether you’ve got a question or are looking for the next big thing in luxury fashion, you’re in safe hands at Concept-N.",
     "title_box_2": "Returns",
-    "content_box_2": "Return this product within 100 days if you change your mind. Get a refund\/replacement & free return shipping if it arrives damaged or not as described",
+    "content_box_2": "For orders fulfilled by us, items can only be returned for a refund if they are unopened, unused, and are in a re-sellable condition with all tamper-resistant seals, packaging and any cellophane intact. You must notify us in writing that you are returning your purchased items within 14 days, since the date of delivery of concerned order.",
     "title_box_3": "Shipping",
-    "content_box_3": "Free if stated near price. $9.95 Australia wide (up to 10 items). $18.95 for Express Post (generally 1 business day).",
+    "content_box_3": "Free Express Delivery services are offered to all customers with order value greater than AED 500, across GCC. Please refer to below table for applicable shipping rates and expected delivery time. Also, we will not deal or provide any services or products to any of OFAC (Office of Foreign Assets Control) sanctions countries in accordance with the law of UAE.",
     "enable_banner_sidebar": true,
     "banner_sidebar_prodpage": "shopify:\/\/shop_images\/banner_sidebar.jpg",
     "banner_sb_prod_url": "",
@@ -536,12 +536,12 @@
     "best_product_title": "Best Seller",
     "best_product_collection_prodpage": "sneakers",
     "best_product_limit": 4,
-    "show_sizeguide": false,
-    "img_size_women": "",
-    "img_size_men": "",
+    "show_sizeguide": true,
+    "img_size_women": "shopify:\/\/shop_images\/Screenshot_2022-08-22_174257.png",
+    "img_size_men": "shopify:\/\/shop_images\/banners-15.png",
     "enable_description_tab": true,
     "destab_title": "Description",
-    "enable_addition_tab": true,
+    "enable_addition_tab": false,
     "addtab_title": "Additional Information",
     "addtab_content": "",
     "enable_review_tab": true,
@@ -3786,9 +3786,9 @@
         "settings": {
           "select_style_bread": "style_2",
           "ena_bg_img": true,
-          "bg_breadcrumb": "shopify:\/\/shop_images\/norbert-kowalczyk-ndhZldib3ck-unsplash_c2661589-c074-45f1-bfa6-5c0a113b4567.jpg",
-          "bg_color_breadcrumb": "#f2f2f2",
-          "color_breadcrumb": "#ffffff",
+          "bg_breadcrumb": "shopify:\/\/shop_images\/banners-17.png",
+          "bg_color_breadcrumb": "#733e3e",
+          "color_breadcrumb": "#000000",
           "collection_layout": "sidebar",
           "prod_per_page": 9,
           "prod_layout": "prod_list",
@@ -3796,7 +3796,7 @@
           "sidebar_layout": "sidebar_left",
           "ena_sticky_sidebar": true,
           "ena_banner_mordern": false,
-          "bannerfull_img": "shopify:\/\/shop_images\/norbert-kowalczyk-ndhZldib3ck-unsplash_c2661589-c074-45f1-bfa6-5c0a113b4567.jpg",
+          "bannerfull_img": "shopify:\/\/shop_images\/banners-17.png",
           "big_title": "A NEW COLLECTION",
           "mini_title": "SALE UP TO 30%",
           "btn_title": "Shop Now",
@@ -5191,37 +5191,37 @@
           "16189031977d260213-0": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/hermes-rivera-w83s82yd3Fk-unsplash.png",
-              "title_slide": "Sport",
+              "img_slider": "shopify:\/\/shop_images\/shutterstock_1310306863.png",
+              "title_slide": "Sneakers",
               "color_title": "#5e3333",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/asics-tiger"
+              "url_link_collection": "shopify:\/\/collections\/sneakers"
             }
           },
           "16189031977d260213-1": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/ox-street-BWPqHZBhMVA-unsplash.png",
-              "title_slide": "Outdoor",
+              "img_slider": "shopify:\/\/shop_images\/shutterstock_1207538374.png",
+              "title_slide": "Bags",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/all"
+              "url_link_collection": "shopify:\/\/collections\/bags"
             }
           },
           "16189031977d260213-2": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/hemesh-patil-Kv1GtuqBVIY-unsplash.png",
-              "title_slide": "Casual",
+              "img_slider": "shopify:\/\/shop_images\/watches.png",
+              "title_slide": "Watches",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/adidas"
+              "url_link_collection": "shopify:\/\/collections\/watches"
             }
           }
         },
@@ -5286,108 +5286,89 @@
           "margin_bottom": ""
         }
       },
-      "1659701561230cc2b4": {
-        "type": "section-flash-sale",
-        "settings": {
-          "margin_top": "",
-          "margin_bottom": "",
-          "title_section_product": "New Arrivals",
-          "select_collection": "",
-          "products_limit": 16,
-          "ena_background_img": true,
-          "bg_image": "shopify:\/\/shop_images\/stylish-young-woman-carrying-a-purse-leaning-again-2021-08-26-23-05-21-utc.jpg",
-          "bg_color": "#d1d1d1"
-        }
-      },
-      "165970189419c315f8": {
-        "type": "section-info-v1",
-        "settings": {
-          "title_info": "Surprising Health <br>Benefits Of Green Tea",
-          "color_title_info": "",
-          "content_info": "Green tеа iѕ rich in antioxidant substances called polyphenol: A series оf chemicals called catechins; EGCG (epigallocatechin gallate) iѕ the mоѕt powerful.Antioxidants hаvе thе ability tо mop uр free radicals capable оf causing blood clots (which соuld lead tо thrombosis) аnd plaque formations оn innеr walls оf arteries leading tо cardiovascular disease.",
-          "color_content_info": "",
-          "more_about": "More about us",
-          "url_banner": "shopify:\/\/collections\/all",
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "1659702072669535a5": {
-        "type": "section-product-v4",
-        "settings": {
-          "title_section_product": "Trending",
-          "select_collection": "sneakers",
-          "products_limit": 8,
-          "buttom_name": "ALL PRODUCTS",
-          "button_name_url": "shopify:\/\/collections\/all",
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "16597021331d0f1d57": {
-        "type": "section-product-v3",
-        "settings": {
-          "title_section_product": "Best Seller",
-          "color_title": "#222",
-          "sub-title1": "Best Seller Product This Week!",
-          "color_sub_title1": "#666666",
-          "select_collection": "",
-          "products_limit": 8,
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "1659702150654c0352": {
-        "type": "section-product-v2",
+      "166149405003ed1356": {
+        "type": "section-slideshow-v1",
         "blocks": {
-          "1659702150654c0352-0": {
-            "type": "tab",
+          "166149405003ed1356-0": {
+            "type": "slideshow",
             "settings": {
-              "tab_title": "NEW ARRIVALS",
-              "tab_collection": "",
-              "tab_limit": 8
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "Style Destination",
+              "color_block_title_top1": "#e5e5e5",
+              "effect_title1": "bounce",
+              "block_title_top": "Basic Collection",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "Style Destination",
+              "color_block_title_top2": "#e5e5e5",
+              "effect_title2": "bounce",
+              "block_buton": "Shop now",
+              "color_block_button": "#ffffff",
+              "color_hover_button": "#ffffff",
+              "color_hover_text": "#000000",
+              "block_url": "shopify:\/\/collections\/all",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": "",
+              "block_banerimage": "shopify:\/\/shop_images\/Screen_Shot_2022-08-26_at_2.08.16_PM.png"
             }
           },
-          "1659702150654c0352-1": {
-            "type": "tab",
+          "166149405003ed1356-1": {
+            "type": "slideshow",
             "settings": {
-              "tab_title": "BEST SELLERS",
-              "tab_collection": "",
-              "tab_limit": 8
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "Style Destination",
+              "color_block_title_top1": "#e5e5e5",
+              "effect_title1": "bounce",
+              "block_title_top": "Spring Collection",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "Hanpicked By Moocha",
+              "color_block_title_top2": "#e5e5e5",
+              "effect_title2": "bounce",
+              "block_buton": "Shop now",
+              "color_block_button": "#ffffff",
+              "color_hover_button": "#ffffff",
+              "color_hover_text": "#000000",
+              "block_url": "shopify:\/\/collections\/all",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": ""
             }
           },
-          "1659702150654c0352-2": {
-            "type": "tab",
+          "166149405003ed1356-2": {
+            "type": "slideshow",
             "settings": {
-              "tab_title": "TOP RATES",
-              "tab_collection": "",
-              "tab_limit": 8
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "Style Destination",
+              "color_block_title_top1": "#e5e5e5",
+              "effect_title1": "bounce",
+              "block_title_top": "Kids Collection",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "Everything For Chirdren",
+              "color_block_title_top2": "#e5e5e5",
+              "effect_title2": "bounce",
+              "block_buton": "Shop now",
+              "color_block_button": "#ffffff",
+              "color_hover_button": "#ffffff",
+              "color_hover_text": "#000000",
+              "block_url": "shopify:\/\/collections\/all",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": ""
             }
           }
         },
         "block_order": [
-          "1659702150654c0352-0",
-          "1659702150654c0352-1",
-          "1659702150654c0352-2"
+          "166149405003ed1356-0",
+          "166149405003ed1356-1",
+          "166149405003ed1356-2"
         ],
         "settings": {
-          "margin_top": "",
-          "margin_bottom": "",
-          "title-section": "Our Best Seller"
-        }
-      },
-      "1659702177c3170683": {
-        "type": "section-product-v5",
-        "settings": {
-          "section_layout": "banner_left",
-          "title_section_product": "New Arrivals",
-          "color_title": "",
-          "url_banner_1": "shopify:\/\/collections\/all",
-          "title_1": "The Edit: Autumn Jackets",
-          "sub-title1": "Your transeasonal saviour",
-          "button_1": "Shop now",
-          "select_collection": "",
-          "products_limit": 3,
           "margin_top": "",
           "margin_bottom": ""
         }
@@ -5546,20 +5527,13 @@
       }
     },
     "content_for_index": [
-      "16189031977d260213",
+      "166149405003ed1356",
       "16189031221258ecb6",
       "1659701561230cc2b4",
       "161890887625e8bf29",
       "1619146574e0265060",
-      "1618909175602d39ae",
-      "165970189419c315f8",
-      "1659702072669535a5",
-      "16597021331d0f1d57",
-      "1659702150654c0352",
-      "1659702177c3170683",
-      "16597022109356ff5a",
-      "165970223585b0d380",
-      "16597022645315c341"
+      "16189031977d260213",
+      "1618909175602d39ae"
     ]
   },
   "presets": {
