@@ -155,7 +155,7 @@
     "apmenuitem_columns_blockhtml_1": "12",
     "apmenuitem_thtml_1": "",
     "apmenuitem_lchtml_1": "",
-    "apmenuitem_eihtml_1": true,
+    "apmenuitem_eihtml_1": false,
     "apmenuitem_chtml_1": "",
     "position_menu_blocklink_1": "1",
     "position_menu_blockvideo_1": "2",
