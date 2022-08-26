@@ -3818,7 +3818,7 @@
           "show_quantity": true,
           "show_sku": false,
           "show_cate": true,
-          "ena_sticky_addcart": true,
+          "ena_sticky_addcart": false,
           "style_stickyaddcart": "bottom",
           "ena_zoom": true
         }
