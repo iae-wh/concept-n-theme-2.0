@@ -5341,6 +5341,7 @@
           },
           "166149405003ed1356-2": {
             "type": "slideshow",
+            "disabled": true,
             "settings": {
               "select_position_content": "left",
               "select_textalign_content": "left",
