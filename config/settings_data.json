@@ -5375,6 +5375,66 @@
           "margin_top": "",
           "margin_bottom": ""
         }
+      },
+      "166185392953c25c7d": {
+        "type": "section-brand-v1",
+        "blocks": {
+          "166185392953c25c7d-0": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/20602d43cc993811e5a6bd1886af4f33.png",
+              "brand_url": "shopify:\/\/collections\/all"
+            }
+          },
+          "166185392953c25c7d-1": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/2560px-Gucci_Logo.svg_6d56576e-9006-49fc-ad33-ce61d45b0518.png",
+              "brand_url": "shopify:\/\/collections\/all"
+            }
+          },
+          "166185392953c25c7d-2": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/Supreme-logo-newyork.png",
+              "brand_url": "shopify:\/\/collections\/all"
+            }
+          },
+          "166185392953c25c7d-3": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/Logo_Goyard.png",
+              "brand_url": "shopify:\/\/collections\/all"
+            }
+          },
+          "166185392953c25c7d-4": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/rolex-png-logo-0.png",
+              "brand_url": "shopify:\/\/collections\/all"
+            }
+          },
+          "166185392953c25c7d-5": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/Adidas_logo.png",
+              "brand_url": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "166185392953c25c7d-0",
+          "166185392953c25c7d-1",
+          "166185392953c25c7d-2",
+          "166185392953c25c7d-3",
+          "166185392953c25c7d-4",
+          "166185392953c25c7d-5"
+        ],
+        "settings": {
+          "bg_color": "",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
       }
     },
     "content_for_index": [
@@ -5383,7 +5443,8 @@
       "161890887625e8bf29",
       "1619146574e0265060",
       "16189031977d260213",
-      "1618909175602d39ae"
+      "1618909175602d39ae",
+      "166185392953c25c7d"
     ]
   },
   "presets": {
