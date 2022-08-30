@@ -5263,6 +5263,7 @@
       },
       "1618909175602d39ae": {
         "type": "section-banner-v9",
+        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
