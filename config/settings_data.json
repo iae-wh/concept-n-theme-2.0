@@ -5187,7 +5187,6 @@
       },
       "16189031977d260213": {
         "type": "section-slideshow-v5",
-        "disabled": true,
         "blocks": {
           "16189031977d260213-0": {
             "type": "slideshow",
@@ -5238,6 +5237,7 @@
       },
       "161890887625e8bf29": {
         "type": "section-banner-v1",
+        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
@@ -5283,7 +5283,7 @@
           "title_1": "GOYARD",
           "sub-title1": "From the emblematic Saint-Louis tote to the timeless chic Saïgon bag, leather goods by Goyard",
           "select_collection": "goyard",
-          "products_limit": 6,
+          "products_limit": 7,
           "margin_top": "",
           "margin_bottom": ""
         }
@@ -5476,85 +5476,6 @@
           "margin_top": "",
           "margin_bottom": ""
         }
-      },
-      "1661865969a0dac641": {
-        "type": "section-slideshow-v3",
-        "blocks": {
-          "1661865969a0dac641-0": {
-            "type": "slideshow",
-            "settings": {
-              "backgroud_slide": "shopify:\/\/shop_images\/finpic.png",
-              "select_pos": "center",
-              "block_title": "",
-              "color_title": "#333333",
-              "block_subtitle": "",
-              "color_subtitle": "#acabab",
-              "block_buton": "Shop now",
-              "color_block_button": "#231f20",
-              "color_block_button_hover": "#ffffff",
-              "bg_color_block_button_hover": "#231f20",
-              "block_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "1661865969a0dac641-1": {
-            "type": "slideshow",
-            "settings": {
-              "backgroud_slide": "shopify:\/\/shop_images\/finpic_1.png",
-              "select_pos": "center",
-              "block_title": "",
-              "color_title": "#333333",
-              "block_subtitle": "",
-              "color_subtitle": "#acabab",
-              "block_buton": "Shop now",
-              "color_block_button": "#231f20",
-              "color_block_button_hover": "#fff",
-              "bg_color_block_button_hover": "#231f20",
-              "block_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "1661865969a0dac641-2": {
-            "type": "slideshow",
-            "settings": {
-              "backgroud_slide": "shopify:\/\/shop_images\/pexels-malcolm-garret-6744419_7a00d35c-63fa-4242-9a43-0b72f8985bb5.jpg",
-              "select_pos": "center",
-              "block_title": "",
-              "color_title": "#333333",
-              "block_subtitle": "",
-              "color_subtitle": "#acabab",
-              "block_buton": "Shop now",
-              "color_block_button": "#231f20",
-              "color_block_button_hover": "#fff",
-              "bg_color_block_button_hover": "#231f20",
-              "block_url": "shopify:\/\/collections\/all"
-            }
-          },
-          "e2c0cbb1-b5f0-4214-95d3-cbe65f3456e8": {
-            "type": "slideshow",
-            "settings": {
-              "backgroud_slide": "shopify:\/\/shop_images\/finpic_2.png",
-              "select_pos": "center",
-              "block_title": "",
-              "color_title": "#333333",
-              "block_subtitle": "",
-              "color_subtitle": "#acabab",
-              "block_buton": "Shop now",
-              "color_block_button": "#231f20",
-              "color_block_button_hover": "#ffffff",
-              "bg_color_block_button_hover": "#231f20",
-              "block_url": "shopify:\/\/collections\/all"
-            }
-          }
-        },
-        "block_order": [
-          "1661865969a0dac641-0",
-          "1661865969a0dac641-1",
-          "1661865969a0dac641-2",
-          "e2c0cbb1-b5f0-4214-95d3-cbe65f3456e8"
-        ],
-        "settings": {
-          "margin_top": "",
-          "margin_bottom": ""
-        }
       }
     },
     "content_for_index": [
@@ -5566,8 +5487,7 @@
       "1661856392ac2f082d",
       "16189031977d260213",
       "1618909175602d39ae",
-      "1661857121246a8e2f",
-      "1661865969a0dac641"
+      "1661857121246a8e2f"
     ]
   },
   "presets": {
