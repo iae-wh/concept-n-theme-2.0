@@ -5237,6 +5237,7 @@
       },
       "161890887625e8bf29": {
         "type": "section-banner-v1",
+        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
