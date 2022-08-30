@@ -5378,6 +5378,7 @@
       },
       "166185392953c25c7d": {
         "type": "section-brand-v1",
+        "disabled": true,
         "blocks": {
           "166185392953c25c7d-0": {
             "type": "brand",
