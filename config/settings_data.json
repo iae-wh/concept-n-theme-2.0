@@ -360,7 +360,7 @@
     "titlecolum_fv2_3": "Categories",
     "menu_fv2_3": "footer-categories",
     "titlecolum_fv2_4": "SUBSCRIBE",
-    "content_colum_fv2_4": "The luxury multi-brand boutique!",
+    "content_colum_fv2_4": "The luxury multi-brand boutique",
     "icon_sc_fv2_1": "fa fa-facebook",
     "url_sc_fv2_1": "",
     "icon_sc_fv2_2": "fa fa-instagram",
@@ -5144,7 +5144,7 @@
           "1618903122b4f6819b-0": {
             "type": "colection",
             "settings": {
-              "brand_img": "shopify:\/\/shop_images\/7dcff73952d62c4a55b6056c99e182a5.jpg",
+              "brand_img": "shopify:\/\/shop_images\/1_1.png",
               "title_collection": "Sneakers",
               "brand_url": "shopify:\/\/collections\/sneakers"
             }
@@ -5152,9 +5152,9 @@
           "1618903122b4f6819b-1": {
             "type": "colection",
             "settings": {
-              "brand_img": "shopify:\/\/shop_images\/Component_1_13.png",
-              "title_collection": "Kids Sneakers",
-              "brand_url": "shopify:\/\/collections\/herschel"
+              "brand_img": "shopify:\/\/shop_images\/2_1.png",
+              "title_collection": "Bags",
+              "brand_url": "https:\/\/concept-n.com\/collections\/bags"
             }
           },
           "1618903122b4f6819b-2": {
