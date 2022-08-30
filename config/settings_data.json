@@ -5443,6 +5443,38 @@
           "margin_top": "2",
           "margin_bottom": "2"
         }
+      },
+      "1661856392ac2f082d": {
+        "type": "section-instagram-v1",
+        "disabled": true,
+        "settings": {
+          "section_title_item": "hggfhfgh",
+          "ins_userid": "officialconceptn",
+          "ins_access_token": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce",
+          "ins_limit_number": "7",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
+      },
+      "1661857121246a8e2f": {
+        "type": "section-newsletter-v1",
+        "settings": {
+          "select_style": "style_1",
+          "select_width": "full",
+          "style_bg": "color",
+          "bg_color": "#f5f5f7",
+          "img_banner": "shopify:\/\/shop_images\/newsletter_1920_x_350_px.png",
+          "bg_color_newletter": "",
+          "bg_color_inputnewletter": "",
+          "border_color_newletter": "#fff",
+          "url_banner": "shopify:\/\/collections\/all",
+          "title_newletter": "Subscribe for updates",
+          "color_title": "",
+          "content_newletter": "By entering your email address below, you consent to receiving our newsletter with access to our latest collections, events and initiatives.",
+          "color_content": "",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
       }
     },
     "content_for_index": [
@@ -5451,8 +5483,10 @@
       "161890887625e8bf29",
       "1619146574e0265060",
       "166185392953c25c7d",
+      "1661856392ac2f082d",
       "16189031977d260213",
-      "1618909175602d39ae"
+      "1618909175602d39ae",
+      "1661857121246a8e2f"
     ]
   },
   "presets": {
