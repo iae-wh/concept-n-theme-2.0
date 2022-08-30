@@ -5145,7 +5145,7 @@
             "type": "colection",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/1_1.png",
-              "title_collection": "Sneakers",
+              "title_collection": "New Drop",
               "brand_url": "shopify:\/\/collections\/sneakers"
             }
           },
@@ -5153,7 +5153,7 @@
             "type": "colection",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/2_1.png",
-              "title_collection": "Bags",
+              "title_collection": "Top Picks",
               "brand_url": "https:\/\/concept-n.com\/collections\/bags"
             }
           },
@@ -5169,7 +5169,7 @@
             "type": "colection",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/4_1.png",
-              "title_collection": "Watches",
+              "title_collection": "VIP Offers",
               "brand_url": "https:\/\/concept-n.com\/collections\/watches"
             }
           }
