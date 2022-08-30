@@ -5432,8 +5432,8 @@
         ],
         "settings": {
           "bg_color": "",
-          "margin_top": "",
-          "margin_bottom": ""
+          "margin_top": "2",
+          "margin_bottom": "2"
         }
       }
     },
