@@ -5192,35 +5192,22 @@
             "type": "slideshow",
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/3_7999fe39-7de5-4ec1-ad43-dfcd92151d9a.png",
-              "title_slide": "Bags",
+              "title_slide": "",
               "color_title": "#010101",
-              "link_collection": "Shop",
-              "color_btn": "#7d7b7b",
-              "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/bags"
-            }
-          },
-          "16189031977d260213-2": {
-            "type": "slideshow",
-            "disabled": true,
-            "settings": {
-              "img_slider": "shopify:\/\/shop_images\/4.png",
-              "title_slide": "Watches",
-              "color_title": "#010101",
-              "link_collection": "Shop",
-              "color_btn": "#7d7b7b",
-              "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/watches"
+              "link_collection": "Get inspired",
+              "color_btn": "#ffffff",
+              "color_btn_hover": "#ffffff",
+              "url_link_collection": ""
             }
           },
           "f6c686bd-4652-463c-8444-d2a36d787b1f": {
             "type": "slideshow",
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/1_3_4723bbab-4505-4aee-92dd-1b6dd19d5a6d.png",
-              "title_slide": "Basic Collection",
+              "title_slide": "",
               "color_title": "#010101",
-              "link_collection": "Go to Collection",
-              "color_btn": "#7d7b7b",
+              "link_collection": "Get inspired",
+              "color_btn": "#7D7B7B",
               "color_btn_hover": "#010101",
               "url_link_collection": "shopify:\/\/collections\/all"
             }
@@ -5229,10 +5216,10 @@
             "type": "slideshow",
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/2_1_92005b19-b52a-4ab6-a35a-6ff891c217db.png",
-              "title_slide": "Basic Collection",
+              "title_slide": "",
               "color_title": "#010101",
-              "link_collection": "Go to Collection",
-              "color_btn": "#7d7b7b",
+              "link_collection": "Get inspired",
+              "color_btn": "#7D7B7B",
               "color_btn_hover": "#010101",
               "url_link_collection": "shopify:\/\/collections\/all"
             }
@@ -5240,7 +5227,6 @@
         },
         "block_order": [
           "16189031977d260213-1",
-          "16189031977d260213-2",
           "f6c686bd-4652-463c-8444-d2a36d787b1f",
           "56a1ee9a-0449-4b6f-818a-ecda5400e522"
         ],
@@ -5251,7 +5237,6 @@
       },
       "161890887625e8bf29": {
         "type": "section-banner-v1",
-        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
