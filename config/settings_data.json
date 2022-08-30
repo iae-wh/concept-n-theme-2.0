@@ -5202,6 +5202,7 @@
           },
           "16189031977d260213-2": {
             "type": "slideshow",
+            "disabled": true,
             "settings": {
               "img_slider": "shopify:\/\/shop_images\/4.png",
               "title_slide": "Watches",
