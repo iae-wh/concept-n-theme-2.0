@@ -5187,23 +5187,12 @@
       },
       "16189031977d260213": {
         "type": "section-slideshow-v5",
+        "disabled": true,
         "blocks": {
-          "16189031977d260213-0": {
-            "type": "slideshow",
-            "settings": {
-              "img_slider": "shopify:\/\/shop_images\/pexels-dave-tombi-11079684.jpg",
-              "title_slide": "Sneakers",
-              "color_title": "#5e3333",
-              "link_collection": "Shop",
-              "color_btn": "#7d7b7b",
-              "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/sneakers"
-            }
-          },
           "16189031977d260213-1": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/pexels-varun-dubey-9778521.jpg",
+              "img_slider": "shopify:\/\/shop_images\/3_7999fe39-7de5-4ec1-ad43-dfcd92151d9a.png",
               "title_slide": "Bags",
               "color_title": "#010101",
               "link_collection": "Shop",
@@ -5215,7 +5204,7 @@
           "16189031977d260213-2": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/pexels-malcolm-garret-6744419.jpg",
+              "img_slider": "shopify:\/\/shop_images\/4.png",
               "title_slide": "Watches",
               "color_title": "#010101",
               "link_collection": "Shop",
@@ -5223,12 +5212,37 @@
               "color_btn_hover": "#010101",
               "url_link_collection": "shopify:\/\/collections\/watches"
             }
+          },
+          "f6c686bd-4652-463c-8444-d2a36d787b1f": {
+            "type": "slideshow",
+            "settings": {
+              "img_slider": "shopify:\/\/shop_images\/1_3_4723bbab-4505-4aee-92dd-1b6dd19d5a6d.png",
+              "title_slide": "Basic Collection",
+              "color_title": "#010101",
+              "link_collection": "Go to Collection",
+              "color_btn": "#7D7B7B",
+              "color_btn_hover": "#010101",
+              "url_link_collection": "shopify:\/\/collections\/all"
+            }
+          },
+          "56a1ee9a-0449-4b6f-818a-ecda5400e522": {
+            "type": "slideshow",
+            "settings": {
+              "img_slider": "shopify:\/\/shop_images\/2_1_92005b19-b52a-4ab6-a35a-6ff891c217db.png",
+              "title_slide": "Basic Collection",
+              "color_title": "#010101",
+              "link_collection": "Go to Collection",
+              "color_btn": "#7D7B7B",
+              "color_btn_hover": "#010101",
+              "url_link_collection": "shopify:\/\/collections\/all"
+            }
           }
         },
         "block_order": [
-          "16189031977d260213-0",
           "16189031977d260213-1",
-          "16189031977d260213-2"
+          "16189031977d260213-2",
+          "f6c686bd-4652-463c-8444-d2a36d787b1f",
+          "56a1ee9a-0449-4b6f-818a-ecda5400e522"
         ],
         "settings": {
           "margin_top": "",
@@ -5237,7 +5251,6 @@
       },
       "161890887625e8bf29": {
         "type": "section-banner-v1",
-        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
@@ -5283,7 +5296,7 @@
           "title_1": "GOYARD",
           "sub-title1": "From the emblematic Saint-Louis tote to the timeless chic Saïgon bag, leather goods by Goyard",
           "select_collection": "goyard",
-          "products_limit": 7,
+          "products_limit": 6,
           "margin_top": "",
           "margin_bottom": ""
         }
