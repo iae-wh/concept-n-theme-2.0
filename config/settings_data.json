@@ -5220,7 +5220,7 @@
               "title_slide": "Basic Collection",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
-              "color_btn": "#7D7B7B",
+              "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
               "url_link_collection": "shopify:\/\/collections\/all"
             }
@@ -5232,7 +5232,7 @@
               "title_slide": "Basic Collection",
               "color_title": "#010101",
               "link_collection": "Go to Collection",
-              "color_btn": "#7D7B7B",
+              "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
               "url_link_collection": "shopify:\/\/collections\/all"
             }
@@ -5251,6 +5251,7 @@
       },
       "161890887625e8bf29": {
         "type": "section-banner-v1",
+        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
