@@ -5237,6 +5237,7 @@
       },
       "161890887625e8bf29": {
         "type": "section-banner-v1",
+        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
@@ -5282,7 +5283,7 @@
           "title_1": "GOYARD",
           "sub-title1": "From the emblematic Saint-Louis tote to the timeless chic Saïgon bag, leather goods by Goyard",
           "select_collection": "goyard",
-          "products_limit": 6,
+          "products_limit": 8,
           "margin_top": "",
           "margin_bottom": ""
         }
