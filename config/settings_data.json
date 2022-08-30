@@ -5240,17 +5240,17 @@
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
-          "img_banner1": "shopify:\/\/shop_images\/STLOUIPMLTY01CL01P_3_dos_9349.jpg",
+          "img_banner1": "shopify:\/\/shop_images\/5956b67c-f584-4ef7-82c5-e15b095b533e.png",
           "url_banner1": "shopify:\/\/collections\/all",
           "button_1": "View Collection",
-          "img_banner2": "shopify:\/\/shop_images\/Crep-Protect-Pill.webp",
+          "img_banner2": "shopify:\/\/shop_images\/Group_12.png",
           "url_banner2": "shopify:\/\/collections\/all",
           "button_2": "View Collection",
           "img_banner3": "shopify:\/\/shop_images\/Group_42321.png",
           "url_banner3": "shopify:\/\/collections\/all",
           "button_3": "View Collection",
           "url_button3": "shopify:\/\/collections\/all",
-          "img_banner4": "shopify:\/\/shop_images\/SO33M101_li2_ec001.jpg",
+          "img_banner4": "shopify:\/\/shop_images\/Group_13.png",
           "url_banner4": "shopify:\/\/collections\/all",
           "button_4": "View Collection",
           "img_banner5": "shopify:\/\/shop_images\/Group_42320.png",
@@ -5279,10 +5279,10 @@
       "1619146574e0265060": {
         "type": "section-product-v1",
         "settings": {
-          "title_1": "Woman's",
-          "sub-title1": "Don't Miss Today's Featured Deals",
-          "select_collection": "sneakers",
-          "products_limit": 6,
+          "title_1": "GOYARD",
+          "sub-title1": "From the emblematic Saint-Louis tote to the timeless chic Saïgon bag, leather goods by Goyard",
+          "select_collection": "goyard",
+          "products_limit": 3,
           "margin_top": "",
           "margin_bottom": ""
         }
