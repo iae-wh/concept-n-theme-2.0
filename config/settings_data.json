@@ -5499,7 +5499,7 @@
             "type": "tab",
             "settings": {
               "tab_title": "watches",
-              "tab_collection": "unimatic",
+              "tab_collection": "watches",
               "tab_limit": 4
             }
           }
