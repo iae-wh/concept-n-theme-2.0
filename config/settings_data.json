@@ -5404,7 +5404,7 @@
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_rolex.png",
-              "brand_url": "https:\/\/concept-n.com\/collections\/watches?page=1&rb_vendor=ROLEX"
+              "brand_url": "shopify:\/\/collections\/rolex"
             }
           },
           "166185392953c25c7d-4": {
@@ -5475,16 +5475,56 @@
           "margin_top": "",
           "margin_bottom": ""
         }
+      },
+      "1661930902c0cd53a0": {
+        "type": "section-product-v2",
+        "blocks": {
+          "1661930902c0cd53a0-0": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "Sneakers",
+              "tab_collection": "",
+              "tab_limit": 8
+            }
+          },
+          "1661930902c0cd53a0-1": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "Bags",
+              "tab_collection": "",
+              "tab_limit": 8
+            }
+          },
+          "1661930902c0cd53a0-2": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "watches",
+              "tab_collection": "",
+              "tab_limit": 8
+            }
+          }
+        },
+        "block_order": [
+          "1661930902c0cd53a0-0",
+          "1661930902c0cd53a0-1",
+          "1661930902c0cd53a0-2"
+        ],
+        "settings": {
+          "margin_top": "",
+          "margin_bottom": "",
+          "title-section": "WHAT'S HOT"
+        }
       }
     },
     "content_for_index": [
       "166149405003ed1356",
       "16189031221258ecb6",
       "161890887625e8bf29",
-      "1619146574e0265060",
-      "166185392953c25c7d",
+      "1661930902c0cd53a0",
       "1661856392ac2f082d",
+      "1619146574e0265060",
       "16189031977d260213",
+      "166185392953c25c7d",
       "1618909175602d39ae",
       "1661857121246a8e2f"
     ]
