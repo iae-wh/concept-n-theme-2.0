@@ -5207,7 +5207,7 @@
               "title_slide": "",
               "color_title": "#010101",
               "link_collection": "Get inspired",
-              "color_btn": "#7D7B7B",
+              "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
               "url_link_collection": "shopify:\/\/collections\/all"
             }
@@ -5219,7 +5219,7 @@
               "title_slide": "",
               "color_title": "#010101",
               "link_collection": "Get inspired",
-              "color_btn": "#7D7B7B",
+              "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
               "url_link_collection": "shopify:\/\/collections\/all"
             }
@@ -5383,49 +5383,49 @@
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_nike.png",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_url": "shopify:\/\/collections\/nike"
             }
           },
           "166185392953c25c7d-1": {
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_supreme.png",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_url": "shopify:\/\/collections\/supreme"
             }
           },
           "166185392953c25c7d-2": {
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_adidas.png",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_url": "shopify:\/\/collections\/adidas"
             }
           },
           "166185392953c25c7d-3": {
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_rolex.png",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_url": "https:\/\/concept-n.com\/collections\/watches?page=1&rb_vendor=ROLEX"
             }
           },
           "166185392953c25c7d-4": {
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_gucci.png",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_url": "shopify:\/\/collections"
             }
           },
           "166185392953c25c7d-5": {
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_goyard.png",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_url": "shopify:\/\/collections\/goyard"
             }
           },
           "83051431-b45c-44b1-b233-692b61f15516": {
             "type": "brand",
             "settings": {
-              "brand_img": "shopify:\/\/shop_images\/brand-n_tomwood.png",
-              "brand_url": "shopify:\/\/collections\/all"
+              "brand_img": "shopify:\/\/shop_images\/brand-n_unimatic.png",
+              "brand_url": "shopify:\/\/collections\/unimatic"
             }
           }
         },
