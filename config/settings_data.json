@@ -5483,24 +5483,24 @@
             "type": "tab",
             "settings": {
               "tab_title": "Sneakers",
-              "tab_collection": "",
-              "tab_limit": 8
+              "tab_collection": "adidas-sneakers",
+              "tab_limit": 4
             }
           },
           "1661930902c0cd53a0-1": {
             "type": "tab",
             "settings": {
               "tab_title": "Bags",
-              "tab_collection": "",
-              "tab_limit": 8
+              "tab_collection": "nike-bags",
+              "tab_limit": 4
             }
           },
           "1661930902c0cd53a0-2": {
             "type": "tab",
             "settings": {
               "tab_title": "watches",
-              "tab_collection": "",
-              "tab_limit": 8
+              "tab_collection": "unimatic",
+              "tab_limit": 4
             }
           }
         },
