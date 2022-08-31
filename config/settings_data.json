@@ -5479,6 +5479,14 @@
       "1661930902c0cd53a0": {
         "type": "section-product-v2",
         "blocks": {
+          "1661930902c0cd53a0-2": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "watches",
+              "tab_collection": "watches",
+              "tab_limit": 4
+            }
+          },
           "1661930902c0cd53a0-0": {
             "type": "tab",
             "settings": {
@@ -5494,20 +5502,12 @@
               "tab_collection": "bags",
               "tab_limit": 4
             }
-          },
-          "1661930902c0cd53a0-2": {
-            "type": "tab",
-            "settings": {
-              "tab_title": "watches",
-              "tab_collection": "watches",
-              "tab_limit": 4
-            }
           }
         },
         "block_order": [
+          "1661930902c0cd53a0-2",
           "1661930902c0cd53a0-0",
-          "1661930902c0cd53a0-1",
-          "1661930902c0cd53a0-2"
+          "1661930902c0cd53a0-1"
         ],
         "settings": {
           "margin_top": "",
