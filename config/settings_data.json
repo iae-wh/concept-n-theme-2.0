@@ -5344,7 +5344,6 @@
           },
           "166149405003ed1356-2": {
             "type": "slideshow",
-            "disabled": true,
             "settings": {
               "select_position_content": "left",
               "select_textalign_content": "left",
@@ -5364,7 +5363,9 @@
               "block_url": "shopify:\/\/collections\/all",
               "effect_title3": "bounce",
               "ena_slide_video": false,
-              "url_ytb_video": ""
+              "url_ytb_video": "",
+              "block_banerimage": "shopify:\/\/shop_images\/Cn_Free-Shipping_web.png",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Free-Shhipping_mob-02.png"
             }
           }
         },
