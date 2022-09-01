@@ -5394,20 +5394,6 @@
               "brand_url": "shopify:\/\/collections\/supreme"
             }
           },
-          "166185392953c25c7d-2": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/brand-n_adidas.png",
-              "brand_url": "shopify:\/\/collections\/adidas"
-            }
-          },
-          "166185392953c25c7d-3": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/brand-n_rolex.png",
-              "brand_url": "shopify:\/\/collections\/rolex"
-            }
-          },
           "166185392953c25c7d-4": {
             "type": "brand",
             "settings": {
@@ -5415,11 +5401,25 @@
               "brand_url": "shopify:\/\/collections"
             }
           },
+          "166185392953c25c7d-2": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/brand-n_adidas.png",
+              "brand_url": "shopify:\/\/collections\/adidas"
+            }
+          },
           "166185392953c25c7d-5": {
             "type": "brand",
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/brand-n_goyard.png",
               "brand_url": "shopify:\/\/collections\/goyard"
+            }
+          },
+          "166185392953c25c7d-3": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/brand-n_rolex.png",
+              "brand_url": "shopify:\/\/collections\/rolex"
             }
           },
           "83051431-b45c-44b1-b233-692b61f15516": {
@@ -5433,10 +5433,10 @@
         "block_order": [
           "166185392953c25c7d-0",
           "166185392953c25c7d-1",
-          "166185392953c25c7d-2",
-          "166185392953c25c7d-3",
           "166185392953c25c7d-4",
+          "166185392953c25c7d-2",
           "166185392953c25c7d-5",
+          "166185392953c25c7d-3",
           "83051431-b45c-44b1-b233-692b61f15516"
         ],
         "settings": {
