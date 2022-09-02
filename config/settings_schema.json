@@ -544,6 +544,17 @@
         "type": "link_list",
         "id": "main_menu_store_mb",
         "label": "Main Menu Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_mobile",
+        "label": "Mobile Banner image",
+        "info": "40 x 40px .png recommended"
+      },
+      {
+        "type": "url",
+        "id": "banner_mobile_url",
+        "label": "Mobile Banner Url"
       }
     ]
   },
