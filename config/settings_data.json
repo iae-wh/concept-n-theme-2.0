@@ -5427,13 +5427,6 @@
               "brand_img": "shopify:\/\/shop_images\/brand-n_rolex.png",
               "brand_url": "shopify:\/\/collections\/rolex"
             }
-          },
-          "83051431-b45c-44b1-b233-692b61f15516": {
-            "type": "brand",
-            "settings": {
-              "brand_img": "shopify:\/\/shop_images\/brand-n_unimatic.png",
-              "brand_url": "shopify:\/\/collections\/unimatic"
-            }
           }
         },
         "block_order": [
@@ -5442,8 +5435,7 @@
           "166185392953c25c7d-4",
           "166185392953c25c7d-2",
           "166185392953c25c7d-5",
-          "166185392953c25c7d-3",
-          "83051431-b45c-44b1-b233-692b61f15516"
+          "166185392953c25c7d-3"
         ],
         "settings": {
           "bg_color": "",
