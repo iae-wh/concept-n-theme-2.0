@@ -5294,6 +5294,32 @@
       "166149405003ed1356": {
         "type": "section-slideshow-v1",
         "blocks": {
+          "fc726fe8-25b1-44d6-a419-a64497d85349": {
+            "type": "slideshow",
+            "settings": {
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "",
+              "color_block_title_top1": "#E5E5E5",
+              "effect_title1": "bounce",
+              "block_title_top": "",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "",
+              "color_block_title_top2": "#E5E5E5",
+              "effect_title2": "bounce",
+              "block_buton": "",
+              "color_block_button": "#fff",
+              "color_hover_button": "#fff",
+              "color_hover_text": "#000",
+              "block_url": "https:\/\/concept-n.com\/products\/yeezy-boost-350-beige-black-slate-adults?variant=43409695473904",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": "",
+              "block_banerimage": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif"
+            }
+          },
           "166149405003ed1356-1": {
             "type": "slideshow",
             "settings": {
@@ -5346,32 +5372,6 @@
               "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Free-Shhipping_mob-02.png"
             }
           },
-          "fc726fe8-25b1-44d6-a419-a64497d85349": {
-            "type": "slideshow",
-            "settings": {
-              "select_position_content": "left",
-              "select_textalign_content": "left",
-              "block_title_top1": "",
-              "color_block_title_top1": "#E5E5E5",
-              "effect_title1": "bounce",
-              "block_title_top": "",
-              "color_block_title_top": "#010101",
-              "effect_title": "bounce",
-              "block_title_top2": "",
-              "color_block_title_top2": "#E5E5E5",
-              "effect_title2": "bounce",
-              "block_buton": "",
-              "color_block_button": "#fff",
-              "color_hover_button": "#fff",
-              "color_hover_text": "#000",
-              "block_url": "https:\/\/concept-n.com\/products\/yeezy-boost-350-beige-black-slate-adults?variant=43409695473904",
-              "effect_title3": "bounce",
-              "ena_slide_video": false,
-              "url_ytb_video": "",
-              "block_banerimage": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif"
-            }
-          },
           "166149405003ed1356-0": {
             "type": "slideshow",
             "settings": {
@@ -5400,9 +5400,9 @@
           }
         },
         "block_order": [
+          "fc726fe8-25b1-44d6-a419-a64497d85349",
           "166149405003ed1356-1",
           "166149405003ed1356-2",
-          "fc726fe8-25b1-44d6-a419-a64497d85349",
           "166149405003ed1356-0"
         ],
         "settings": {
