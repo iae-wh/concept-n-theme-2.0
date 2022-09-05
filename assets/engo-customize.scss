@@ -16380,9 +16380,7 @@ POPup newletter
 
     .info-sideh1{
       .picture-slideshow{
-        height : 450px;
         img{
-          height: 450px;
           object-fit: cover;
         }
       }
@@ -16425,13 +16423,10 @@ POPup newletter
   @media(min-width : 576px) and (max-width : 767.98px){
     .info-sideh1{
       .picture-slideshow{
-        height: 450px;
         img{
-          height: 450px;
           object-fit: cover;
         }
         video{
-          height: 450px;
         }
       }
       .box-content,.box-content-right,.box-content-center{
@@ -16464,13 +16459,10 @@ POPup newletter
   @media(min-width : 768px) and (max-width : 991.98px){
     .info-sideh1{
       .picture-slideshow{
-        height: 500px;
         img{
-          height: 500px;
           object-fit : cover;
         }
         video{
-          height: 500px;
         }
       }
       .box-content,.box-content-right,.box-content-center{
@@ -16504,9 +16496,7 @@ POPup newletter
   @media(min-width : 992px) and (max-width : 1199.98px){
     .info-sideh1{
       .picture-slideshow{
-        height: 580px;
         img{
-          height: 580px;
           object-fit : cover;
         }
       }
