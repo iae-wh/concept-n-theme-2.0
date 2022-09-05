@@ -756,9 +756,9 @@
         validateSelectField('input[name="address[city]"]', validateCity);
 
         //City List Dropdown Functionality
-        var cityField = $('input[name="address[city]"]');
-        var cityFiledWrap = cityField.parent('.field');
-
+         var cityField = $('input[name="address[city]"]');
+//         var cityFiledWrap = cityField.parent('.field');
+//
         cityField.each((index, ele) => {
             var formId = $(ele).closest('form').attr('id');
             if ($("#"+formId+' select[name="address[country]"]').val() == 'United Arab Emirates'
@@ -781,168 +781,168 @@
                 }
             });
         });
-
-
-
-        var citydropdown = '<div class="cityDropdownCustom">' +
-            '<div class="cityDropdownFieldWrap">' + '<input type="text" id="cityDropdownField" placeholder="Search...">' + '</div>' +
-            '<ul>' + '</ul>' + '</div>';
-
-        cityFiledWrap.each((index, ele) =>{
-            $(ele).append(citydropdown);
-        });
-
-//       Cities List Array
-        var cities_Bahrain = ["Aali", "Abu Beham", "Abu Saiba", "Adliya", "Amwaj", "Arad", "Bahrain", "Bani Jamra", "Barbar", "Budaiya", "Buquwa", "Buri", "Busaiteen", "Dair", "Dar Kulaib", "Diraz", "Dumistan", "East Riffa", "Ghurayfah", "Hajar", "Hamad Town", "Hamala", "Hidd", "Hillat Abdulsaleh", "Isa Town", "Janabiya", "Jannusan", "Jasra", "Jiblat Habshi", "Jid Alhaj", "Jidhafs", "Jordab", "Juffair", "Karbabad", "Karrana", "Karzakan", "Khamis", "Malikiya", "Manama", "Markh", "Meqsha", "Mina Salman", "Muharraq", "Muqaba", "Musalla", "Nasfah", "North Sehla", "Qadam", "Qalali", "Qella", "Qofool", "Qudaibiya", "Qurayya", "Ras Ruman", "Saar", "Sadad", "Sakheir", "Salmabad", "Salmaniya", "Samaheej", "Sanad", "Seef", "Shahrakan", "Shakhura", "Sitra", "South Sehla", "Tala Island", "Tashan", "Tubli", "Um Alhassam", "Umm Alsabban (Mohammadiya)", "West Riffa", "Zallaq", "Zayed Town"];
-        var cities_Oman = ["Adam", "Al Aqir", "Al Ashkarah", "Al Awabi - Barka", "Al Awabi - Muscat", "Al Bidayah", "Al Duqm", "Al Ghazir", "Al Hamra", "Al Jadida", "Al Kabil", "Al Kamil Wal Wafi", "Al Khodh", "Al Khuwair", "Al Mazyunah", "Al Mudhaibi", "Al Saada", "Amerat", "As Sulaif", "Azaiba", "Bahla", "Barka", "Bidbid", "Bidiya", "Bisiyah", "Bowsher", "Bukha", "BURAIMI", "Dhalkut", "Dhank", "Diba", "Dima Wattayeen", "Fahud", "Falaj Al Qabail", "Fanja", "Firq", "Ghala", "Ghubra", "Haima", "Hamriya", "Ibra", "Ibri", "Izki", "Jaalan Bani Bu Ali ", "Jaalan ni Bu Hassan", "Jabal Akhdar", "Jibroo", "Khabourah", "Khasab", "Liwa", "Madha", "Madinat Sultan Qaboos", "Mahdha", "Mahout", "Manah", "Marmul", "Masirah", "Mawaleh", "Musannah", "Muscat", "Muttrah", "Nakhl", "Nizwa", "Qatana", "Qurayat", "Qurum", "Rusayl", "rustaq", "Ruwi", "Sadah", "Saham", "Salalah", "Samad Al Shan", "Samayil", "Seeb", "Shinas", "Sidab", "Sinaw", "Sohar", "Sunaina", "Sur", "Suwaiq", "Thamrait", "Tiwi", "Wadi Adai", "Wadi al Maawil", "Wadi Bani Khalid", "Wadi Kabir", "Wattaya", "Wudam Al Sahil", "Yankul"];
-        var cities_Qatar = ["Doha", "Dukhan", "Al Rayyan", "Umm Salal Muhammad"];
-        var cities_Saudia_Arabia = ["Aba Alworood", "Abha", "Abha Manhal", "Abqaiq", "Abu Ajram", "Abu Areish", "Ad Dahinah", "Ad Dubaiyah", "Addayer", "Adham", "Afif", "Aflaj", "Ahad Masarha", "Ahad Rufaidah", "Ain Dar", "Al Adari", "Al Ais", "Al Ajfar", "Al Ammarah", "Al Ardah", "Al Arja", "Al Asyah", "Al Bada", "Al Bashayer", "Al Batra", "Al Bijadyah", "Al Dalemya", "Al Fuwaileq", "Al hait", "Al Haith", "Al Hassa", "Al Hayathem", "Al Hufayyirah", "Al Hulayfah As Sufla", "Al Idabi", "Al Khishaybi", "Al Khitah", "Al Laqayit", "Al Mada", "Al Mahd", "Al Midrij", "Al Moya", "Al Qarin", "Al Uwayqilah", "Al Wasayta", "Al-Jsh", "Alghat", "Alhada", "Alnabhanya", "Alrass", "Amaq", "An Nabk Abu Qasr", "An Nafiah", "An Nuqrah", "Anak", "Aqiq", "Ar Radifah", "Ar Rafi'ah", "Ar Rishawiyah", "Arar", "Artawiah", "As Sulaimaniyah", "As Sulubiayh", "Asfan", "Ash Shaara", "Ash Shamli", "Ash Shananah", "Ash Shimasiyah", "Ash Shuqaiq", "At Tuwayr", "Atawleh", "Ath Thybiyah", "Awamiah", "Ayn Fuhayd", "Badaya", "Bader", "Badr Al Janoub", "Baha", "Bahara", "Bahrat Al Moujoud", "Balahmar", "Balasmar", "Balqarn", "Baqa Ash Sharqiyah", "Baqaa", "Baqiq", "Bareq", "Batha", "Biljurashi", "Birk", "Bish", "Bisha", "Bukeiriah", "Buraidah", "Daelim", "Damad", "Dammam", "Darb", "Dariyah", "Dawadmi", "Deraab", "Dere'Iyeh", "Dhahban", "Dhahran", "Dhahran Al Janoob", "Dhurma", "Domat Al Jandal", "Duba", "Duhknah", "Dulay Rashid", "Farasan", "Ghazalah", "Ghtai", "Gilwa", "Gizan", "Hadeethah", "Hafer Al Batin", "Hail", "Hajrah", "Halat Ammar", "Hali", "Haqil", "Harad", "Harajah", "Hareeq", "Hawea/Taif", "Haweyah", "Hawtat Bani Tamim", "Hazm Al Jalamid", "Hedeb", "Hinakeya", "Hofuf", "Horaimal", "Hotat Sudair", "Hubuna", "Huraymala", "Ja'Araneh", "Jafar", "Jalajel", "Jeddah", "Jouf", "Jubail", "Jumum", "Kahlah", "Kara", "Kara'A", "Karboos", "Khafji", "Khaibar", "Khairan", "Khamaseen", "Khamis Mushait", "Kharj", "Khasawyah", "Khobar", "Khodaria", "Khulais", "Khurma", "King Khalid Military City", "Kubadah", "Laith", "Layla", "Madinah", "Mahad Al Dahab", "Majarda", "Majma", "Makkah", "Mandak", "Mastura", "Mawqaq", "Midinhab", "Mikhwa", "Mohayel Aseer", "Moqaq", "Mrat", "Mubaraz", "Mubayid", "Mulaija", "Mulayh", "Munifat Al Qaid", "Muthaleif", "Muzahmiah", "Muzneb", "Nabiya", "Najran", "Namas", "Nimra", "Nisab", "Noweirieh", "Nwariah", "Ojam", "Onaiza", "Othmanyah", "Oula", "Oyaynah", "Oyoon Al Jawa", "Qahmah", "Qarah", "Qariya Al Olaya", "Qasab", "Qassim", "Qatif", "Qaysoomah", "Qbah", "Qouz", "Qufar", "Qunfudah", "Qurayat", "Qusayba", "Quwei'Ieh", "Rabigh", "Rafha", "Rahima", "Rania", "Ras Al Kheir", "Ras Tanura", "Rawdat Habbas", "Rejal Alma'A", "Remah", "Riyadh", "Riyadh Al Khabra", "Rowdat Sodair", "Rvaya Aljamsh", "Rwaydah", "Sabt El Alaya", "Sabya", "Sadyan", "Safanyah", "Safwa", "Sahna", "Sajir", "Sakaka", "Salbookh", "Salwa", "Samtah", "Saqf", "Sarar", "Sarat Obeida", "Satorp", "Seihat", "Shaqra", "Shari", "Sharourah", "Shefa'A", "Shinanh", "Shoaiba", "Shraie'E", "Shumeisi", "Siir", "Simira", "Subheka", "Sulaiyl", "Suwayr", "Tabrjal", "Tabuk", "Taiba", "Taif", "Tanda", "Tanjeeb", "Tanuma", "Tanumah", "Tarut", "Tatleeth", "Tayma", "Tebrak", "Thabya", "Thadek", "Tharmada", "Thebea", "Thumair", "Thuqba", "Towal", "Turaib", "Turaif", "Turba", "Udhaliyah", "Um Aljamajim", "Umluj", "Uqlat Al Suqur", "Ushayqir", "Uyun", "Wadeien", "Wadi Bin Hasbal", "Wadi El Dwaser", "Wadi Fatmah", "Wajeh (Al Wajh)", "Yanbu", "Yanbu Al Baher", "Yanbu Nakhil", "Zahban", "Zallum", "Zulfi"];
-//	  var cities_Dubai = ["Abadilah","Abu Al Abyad Island","Abu Dhabi","Abu Dhabi University","Abu Hayl ","Airport Road AXD","Akamiyah ","Al Ardiyah ","Al Aryam Island","Al Bander","Al Barakkah","Al Bateen AXD","Al Buteen AXD","Al Dhafra Area","Al Dhafrah AXD","Al Dharbaniyah ","Al Dhayd ","Al Duss ","Al Falah Area","Al Falah Street","Al Ghuwaifat","Al Hadbah Street","Al Haliya","Al Hamra Island","Al Hayr ","Al Khalej Al Arabi","Al Ladeem Street","Al Mafraq ","Al Manaser","Al Manasir Alain","Al Maqta ","Al Marfa ","Al Maryah Island","Al Muneera","Al Muroor","Al Muzoon","Al Nahda Al Askarya","Al Nahyan Area","Al Najda Street","Al Qurm","Al Qusirah","Al Raha Beach","Al Raha Gardens","Al Rawdah","Al Rayhan","Al Reef Villas","Al Reem Island","Al Ruways ","Al Saada Street","Al Sab Area","Al Seef Compound","Al Tawila","Al Zaab","Al Zahraa","Al Zahraa ","Al Zina","Bahya","Banyas","Bida Zayed","Bidda Al Motawah","Bin Al Jesrin","Corniche","Dalma SR","Defence Road","Delma Island","Delma Street","Dhabiya","Electra Street","Gayathi","Golf Gardens","Grand Moshq Area","Hamdan Street","Haneem Street","Hazaa Bin Zayed Street","Hazza Bin Zayed Street","Hills Abu Dhabi","Hydra Village AXD","Istaqlal St","Jawasat","Karama Street AXD","Khalidiyah AXD","Khalifa City","Khalifa City A","Khalifa City B","Khalifa Garden","Khalifa Street AXD","Liwa","Liwa Sr","Liwa Street","Liwa Village","Madinat Zayed","Madinat Zayed AXD","Mafrq Area","Maharba","Mangrove One Compound","Mangrove Village","Marfa","Marina Mall","Masdar City","Mina Road AXD","Mohammed Bin Zayed City","Musafah","Mushref","Nadisiya","Nahda New","Nahel Town","Nasser Street","Navy Gate","New cornich AXD","New Shahama","Officers City","Old Mazda Road","Old Shahama","Rahba","Rima ","Ruwais","Sadiyat Island","Salam Street","SAS Al Nakheel","Shahama","Shakhbouth City","Shalila","Shamha","Shamkah","Shanin","Shawamak","Shuwayhat Island","Sila","Sila ","Sir Bani Yas Island","Suwayhan ","Tarif","Tourist Club","Umm Al Nar","Wathba","Yas Island","Yasat Ali Island","Zafarana Area","Zayed Sport City","Zayed Street","Zayed The First Street","Ajman Freezone","Al Alia","Al Azara","Al Bahya Ajman","Al Bustan","Al Butain","Al Hamerah","Al Hamidiya","Al Hamriyaa","Al Heliow","Al Jerf","Al Jurf","Al Montaz","Al Muwainat","Al Owan","Al Raqqib","Al Sawan","Al Talla","Al Zahra ","Al Zahya","Al Zubair","Corniche Ajman","Emirates City","Hamediya","Hamriya Freezone","Khalifa Street Ajman","Masfut ","Mina Villa Ajman","Musharh","Musherif","Naimiya","Rashidya Ajman","Safia","Siti Sintir","Sweihan ","Abu Samra","Ain Al Fayda","Airport East District","Al Agabiyaa","Al Ain City","Al Ain City Centre","Al Aliya","Al Ameriya","Al Asharaj","Al Barsa Garden","Al Batin","Al bhuraimi Oman","Al Dhahera","Al Faqah","Al Foah","Al Ganeema","Al Hayer","Al Hili","Al Jahili","Al Jimi","Al Khabisi","Al Khalidia Alain","Al khalif","Al Khatim","Al Khazna","Al Kubisi","Al Kuwaitat","Al Manasif","Al Manasir Alain","Al Maqam","Al Markhaniya","Al Masoudi","Al Muntazi","Al Muroor Alain","Al Mutaredh","Al Mutawaa","Al Muwaiji","Al Naifa","Al Niama","Al Niyadat","Al Qattara","Al Qua","Al Saad","Al Salamat","Al Sanaiyyah","Al Sarooj","Al Shuaibah","Al Shwaib","Al Shwaib Fujairah Rd","Al Touba","Al Towayya","Al Wagan","Al Yahar","Alain City Centre","Andalus Complex","Asharej","Central District","Falaj Hazza","Green Land Comp","Hilton","Industrial area Alain","Jabet Hafeet","Khalifa Street Alain","Kharis","Khatim Shukla Buraimi","Libab","Lisiely","Lisily","Markam","Masakin","Meyzad","Mubarak R/A","Murabba","Murejib","Nahel Town","Nahil","Remah","Rumaila Alain","Sanaiya","Shiab Al Ashkhar","Surouj","Sweihan","Swihen Alain","Tawam","Tower Clock Area","Town Centre","Um Ghaffa","Wadi Alain","Zakhir","Abu Hail","Acadamic City","Airport Area Dubai","Al Badaa","Al Badia","Al Baraha","Al Barari","Al Barsha","Al Barsha 1","Al Barsha 2","Al Barsha 3","Al Barsha South 1","Al Barsha South 2","Al Barsha South 3","Al Furjan","Al Ghadeer DXB","Al Ghadeer Village","Al Hamriya DXB","Al Hudaiba","Al Jaddaf","Al Karama DXB","Al Kawaneej","Al Khabaisi","Al khail gate","Al Lisaili","Al Mamzar","Al Manara","Al Mina Road - Dubai","Al Mizhar","Al Muraqqabat","Al Muteena","Al Nahda DXB","Al Quoz","Al Quoz Ind 2","Al Qusais 1","Al Qusais 2","Al Qusais 3","Al Raffa Burdubai","Al Ras Deira","Al Rigga","Al Ruwaiya ","Al Safa","Al Safa 1","Al Safa 2","Al Satwa","Al Shandaghah","Al shindagha","Al Souk Al Kabeer","Al Sufu","Al Twar","Al Waha","Al Warkha","Arabian Ranches","Arabian Ranches 2","Awir","Bur Dubai","Burj Dubai Sk Zyed Rd","Burjuman","Business Bay","Cargo Village","Corniche Deira","Crown Residence","Deira","Desert Palm","DIP","Discovery Gardens","Diyafah","Downtown Burj Dubai","Downtown Dubai","Dubai","Dubai Festival City","Dubai Health Care City","Dubai International Financial Center","Dubai Internet city","Dubai Land","Dubai Marina","Dubai Media City","Dubai Outlet Mall","Dubai Silicon Oasis","DWC","Emirates Hills","Emirates Living","Falcon City","Festival City","Ganthoot ","Gardens","Garhoud","Global Village","Green Community","Greens","Hatta","Hatta Area","Hatta Road","Hoot","Hor Al Anz","IMPZ","International Academic City","International City","Jaflia","Jebel Ali","Jebel Ali Free Zone","Jebel Ali Village","JLT","Jumeirah","Jumeirah 1","Jumeirah 2","Jumeirah 3","Jumeirah 4","Jumeirah 5","Jumeirah Beach Residence","Jumeirah Golf Estates","Jumeirah Heights","Jumeirah Islands","Jumeirah Park","Jumeirah Park ( JLT )","Jumeirah Village","Knowledge Village","Lahabab","Layan Community","Madam","Mankhool","Margham Alain Road","Marsa","Meadows","Meydan Heights","Mina Sufooh ","Mirdiff","Motor City","Mudon","Muhaisinah","Musalla Rd","Mushrif ","Nad Al Ham","Nad Al Shama","Nad Al Shiba","Naif","Naser Squre","Old Town","Oud Al Muteena","Oud Metha","Palm Deira","Palm Jumeirah","Port Rashid","Port Saeed","Ras Al Kohar","Rashidya","Reem Ram","Saih Sheib","Sk Zyed Rd","Skycourts","Sports City","Springs","Tecom","The Lakes","The Sustainable City","The Villa","Trade Centre1","Trade Centre2","Umm Hurair 1","Umm Hurair 2","Umm Ramool","Umm Squim","Umm Suqeim 2","Umm Suqeim3","Ummel Sheif","Wassel","Zaabil","Adan","Al Basera","Al Bithnah","Al Bulaidha","Al Farfar","Al Faseel","Al Ghail","Al Hail","Al Hala","Al Khulabiya","Al Madhar","Al Riyafa","Al Tuween","Aliqya","Asma","Bidiya","Bitna","Dadna","Daftah","Dana Plaza","Dhaid","Dibba","Dibba Al Hassan","Difta","Falaj Al Mulla","Falakh","FUJ City Centre","Ghurfa","Gidfa","Hassan Dibba ","Hatein","Huwailat","Kadra","Kalba","Khor Fakkan","Kidfa ","Luliya","Madhab","Maliha","Mamduh","Manama","Marbah","Masafi","Merashid","Munai","Old Etisalat Area","Qadisiya","Qirat","Quraya","Rughaylat ","Shakamkam","Sharm","Shawka","Siji","Tarif Kalba ","Tayyabah","Wadi Al Abadila","Wadi Mai","Wadi Safni","Wadi Saham","Wadi Sena","Wadighob","Wadighod","Wadihala","Wadiisfini","Wadil Khor","Adan RAK","Adhan","Air Port Road","Al Burrairat","Al Dhait North","Al Dhait South","Al Fulayyah ","Al Gail RAK","Al Ghail","Al Ghoub","Al Goub","Al Hamra Village","Al Hamraniya","Al Hamriya","Al Jazeera","Al Jazeera- Al Hamra","Al Jeer Oman Border","Al Julan","Al Kharan","Al Khat","Al Khuzam","Al Maireed","Al Mamourah","Al Manamah ","Al Nakheel","Al Oraibi","Al Rafa","Al Rams","Al Reefa","Al Seih","Al Shammal","Al Shams","Al Tuween RAK","Al Zara","Babal Bahar","Corniche RAK","Dahan","Dayah","Digdhaga","Dreamland","Fahalin","Gallilah","Idhn","Jebel Jais","Julphar","Julphar Tower","Kabdah","Khor Khawir","Khor Khoir","Kuwaiti Road","Marjan Island","Masafi ","Mina Al Arab RAK","Muntasir Road","Old Town Rak","Qusaidat","RAK1 SR","Ras Al Khaimah city ","Sabith Arabia","Sabith Rashid","Sadia Area","Selayia","Shamel","Shammal Julphar","Suhaila","Wadi Ghob","Yasmin Village","Abu Shagara","Al Abrar","Al Arouba","Al Azra","Al Badiyah","Al Barashi","Al Bataya","Al Budaniq","Al Darari","Al Fahiya ","Al Falah","Al Falaj","Al Fisht","Al Gafiya","Al Ghaphiya","Al Gharb","Al Goaz","Al Hamriyah ","Al Jazzat","Al Jubail","Al Juraina","Al Juraina 1","Al Kaliya","Al Khaleej","Al Khalidia","Al Khan","Al Khashfah ","Al Khezamia","Al Layyeh","Al Mahatah","Al Majaz","Al Manak ","Al Mansoora","Al Mirgab","Al Mujarrah","Al Mulla Plaza","Al Muraija","Al Muroor SHJ","Al Nabba","Al Nahda DXB","Al Nahda SHJ","Al Nakhil","Al Nekhailat","Al Nesserya","Al Noaf","Al Nud","Al Qadsiya","Al Qarayan","Al Qasaba","Al Quran Rnd About","Al Rahmania","Al Rahmaniyah","Al Ramla","Al Ramtha","Al Rawda","Al Rifah","Al Riffa","Al Rigqa","Al Rumailah","Al Sabkha","Al Sajaa","Al Shahba","Al Sharq","Al Shuwaihean","Al Soor","Al Suyoh","Al Sweihat","Al Talaa","Al Talha","Al Tawar 1","Al TAwar 2","Al Tawuun","Al Turfa","Al Wada","Al Wasit ","Al Yarmook","Al Yas","Al Yash","Al Zahiya","Aqouz","Asimah","Book Roundabout","Buhairah","Butina","CORNICH SHJ","Dashman Park","Dasman ","Dhaid ","Elyash","Falag","Gold Souk","Gubaiba","Gulaiya","Halwan","Hamariya ","Hazzana","Heera","Hunaywah","Immigration Road","Industrail Area SHJ","Industrial Area1","Jamal Abdul Naser Rd","Juraina","Juwaizaa","Khalid Port","Khalwan","Khannur ","Kharayan ","Khezamia","King Faisa","Kuwaiti Hospital","Kuwaiti Round About","Maliha Area","Maysaloon","Mega Mall","Mina Road SHJ","Mughaidir","Musallah","Muwafjah","Muwaila","Nasriya","National Paint","Nekhalat","Qassimiya","Quasis","Ramakiya","Ramlah ","Rigga SHJ","Rolla","Saabah ","Saif ","Samnan","Shahba","Shaqan","Sharjah","Sharjah Airport Area","Sharjah University","Sherqan ","SHJ Nouf","SHJ Womans Club","Sweihat","Tarfaana","Um Khanoor","Wadi Shi ","Wasit ","Yarmook ","Al Aahad","Al Abrab","Al Dar Al Baida","Al Haditha","Al Hawiyah","Al Humrah","Al Khor","Al Limghadar","Al Maidan","Al Raas","Al Ramlah","Al Riqqah","Al Salamah","Defence Camp Area","Falaj Al Mulla ","Industrail Area Ajman","Industrail Area UAQ","Old Town uaq","UAQ","UAQ Marina","Umm Al Quwain"];
-        var cities_Dubai = ["Abu Dhabi", "Ajman", "Al Ain", "Dubai", "Fujairah", "Ras Al Khaimah", "Sharjah", "Umm Al Quwain"];
-        var cities_Kuwait = ["Safat", "Jabriya", "Nuzha", "Salmiya", "Surra", "Ahmadi", "Fahaheel", "Abraq Khaitan", "Bayan", "Fintas", "Hadiya", "Mahboula", "Mishref", "Salwa", "Abdali", "Abu Halifa", "Farwaniyah", "Kuwait City", "Sharq", "Shuwaikh", "Mubarak Al kabeer", "Adailiya", "Daiya", "Doha", "Khaldiya", "Rai", "Rawda", "Sulaibikhat", "Yarmouk", "Airport", "Ardiya", "Dajeej", "Dhaher", "Funaitees", "Jaber Al Ali", "Manqaf", "Qurain", "Rehab", "Riqqa", "Rumaithiya", "Sabah Al Salem", "Sabahiya", "Sabhan", "Zahra", "Abdulla Al Mubarak Al Sabah", "Abdulla Al Salem", "Abdulla Port", "Abu Hasaniya", "Al Adan", "Al Jahra", "Al Khiran Pearl City", "Al Mubarakyia", "Al Rabiah", "Al Salam", "Al Shuhada", "Al Zour", "Ali Sabah Al Salem", "Amghara", "Amghara Industrial Area", "Andalous", "Ardiya Industrial", "A'youn", "Beneid Al Gar", "Bnaider", "Dasma", "Dasman", "Dhajeej", "Fahad Al Ahmed Area", "Fahaheel Industrial", "Faiha", "Firdous", "Granada", "Hateen", "Hawally", "Hijil", "Ishbilya", "Jabir Al Ahmad", "Jahra Industrial Area", "Jeleeb Shoyoukh", "Kabd", "Kaifan", "Khiran City", "Mansouriya", "Messila", "Minaa Abdulla", "Mirqab", "Mubarak Al Abdulla Al Jaber Area", "Naeem", "Nahda", "Nassem", "North West Sulaibikhat", "Nuwaiseeb", "Omariyah", "Qadsiya", "Qasr", "Qeirawan", "Qublah", "Qublah Area", "Qurtuba", "Saad Abdullah City", "Sabah Al Naser", "Sabriya", "Salhiya", "Sawaber", "Sha'ab", "Shuaiba Industrial Area", "Shuwaikh Education Area", "Shuwaikh Health Area", "Shuwaikh Industrial Area", "Shuwaikh Port", "Sideeq", "South Sabahiyah", "Subiya", "Sulaibiyah", "Sulaibiyah Industrial Area", "Taima", "Um Seddah", "Wafra", "Waha", "Al Bidaa", "Aqeela", "Khaitan", "Qusor", "Regiee", "Sabah Al Ahmad", "Shamiyah", "Abbasiyah", "Abu Fateera", "Al Hasawi", "Al Metlaa", "Al Qaysariya", "Al Salmi", "Al Shadadiya", "Al Soor", "Al Wetiyah", "Ayoun", "Jaber Al Ahmad", "Jaleeb Al-Shyoukh", "Julaiya", "Kazma", "Khairan", "Maidan Hawalliy", "Masayel", "Qairawan", "Qiblah", "Rawdatain", "Umm Al Aish"];
-
-        $(cityField).prop('readonly', true);
-        citiesInit("address_form_new");
-        $('select[name="address[country]"]').each((index, element) => {
-            $(element).change(country_change);
-        });
-
-        function country_change(e) {
-            var form_id = $(this).closest('form').attr('id');
-            $('#'+form_id+' input[name="address[city]"]').val('');
-            $("#"+form_id+" "+'.cityDropdownCustom').find('ul').html('');
-
-            if ($(this).val() == 'Bahrain') {
-                var getCities = cityList(cities_Bahrain);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else if ($(this).val() == 'Oman') {
-                var getCities = cityList(cities_Oman);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else if ($(this).val() == 'Qatar') {
-                var getCities = cityList(cities_Qatar);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
-
-            } else if ($(this).val() == 'Saudi Arabia') {
-                var getCities = cityList(cities_Saudia_Arabia);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else if ($(this).val() == 'United Arab Emirates') {
-                var getCities = cityList(cities_Dubai);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
-            } else if ($(this).val() == 'Kuwait') {
-                var getCities = cityList(cities_Kuwait);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else {
-            
-            }
-        }
-
-        function citiesInit(form_id) {
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Bahrain') {
-                var getCities = cityList(cities_Bahrain);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Oman') {
-                var getCities = cityList(cities_Oman);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Qatar') {
-                var getCities = cityList(cities_Qatar);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Saudi Arabia') {
-                var getCities = cityList(cities_Saudia_Arabia);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'United Arab Emirates') {
-                var getCities = cityList(cities_Dubai);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Kuwait') {
-                var getCities = cityList(cities_Kuwait);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-        }
-
-
-        function cityList(cityArra) {
-            var i;
-            var cityOptions = "";
-
-            for (i = 0; i < cityArra.length; i++) {
-                cityOptions += `<li data-city-item data-list-item="${cityArra[i]}">${cityArra[i]}</li>`
-            }
-            return cityOptions;
-        }
-
-        $(cityField).each((index, ele) => {
-            var formId = $(ele).closest('form').attr('id');
-            $(ele).click(function () {
-                $('#'+formId+' .cityDropdownCustom').show();
-                $('#'+formId+' #cityDropdownField').focus();
-            });
-            //       Select City Function
-            $('#'+formId+' .cityDropdownCustom ul').on('click', '[data-city-item]', function () {
-                $('.cityDropdownCustom').hide();
-//              Reset value of search field after select City
-                $('#cityDropdownField').val('');
-
-//              Show All cities after search and select
-                $('#'+formId+' .cityDropdownCustom ul li').show();
-
-                $(ele).val($(this).attr('data-list-item'));
-                $('#'+formId+' input[name="address[province]"]').val($(this).attr('data-list-item'));
-
-                validateCity($('#'+formId+' input[name="address[city]"]'));
-            });
-        });
-
-
-
-
-
-        //Close city dropdown click outside the dropdown
-
-        $(document).mouseup(e => {
-            if (!cityFiledWrap.is(e.target) // if the target of the click isn't the container...
-                && cityFiledWrap.has(e.target).length === 0) // ... nor a descendant of the container
-            {
-                $('.cityDropdownCustom').hide();
-                //validateCity ($("input#AddressCityNew"));
-            }
-        });
-
-
-        //Search Functionality in City Dropdown
-
-        $('.cityDropdownCustom .cityDropdownFieldWrap').on('keyup', '#cityDropdownField', function () {
-            var value = $(this).val().toUpperCase();
-            console.log(value);
-
-            var listItems = $('.cityDropdownCustom ul li');
-
-            $(listItems).each(function () {
-                if ($(this).text().toUpperCase().search(value) > -1) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-            });
-        });
-
-//       Allow Cities form list
-        var allCities = [];
-        allCities.push(...cities_Kuwait, ...cities_Dubai, ...cities_Saudia_Arabia, ...cities_Qatar, ...cities_Oman, ...cities_Bahrain);
+//
+//
+//
+//         var citydropdown = '<div class="cityDropdownCustom">' +
+//             '<div class="cityDropdownFieldWrap">' + '<input type="text" id="cityDropdownField" placeholder="Search...">' + '</div>' +
+//             '<ul>' + '</ul>' + '</div>';
+//
+//         cityFiledWrap.each((index, ele) =>{
+//             $(ele).append(citydropdown);
+//         });
+//
+// //       Cities List Array
+//         var cities_Bahrain = ["Aali", "Abu Beham", "Abu Saiba", "Adliya", "Amwaj", "Arad", "Bahrain", "Bani Jamra", "Barbar", "Budaiya", "Buquwa", "Buri", "Busaiteen", "Dair", "Dar Kulaib", "Diraz", "Dumistan", "East Riffa", "Ghurayfah", "Hajar", "Hamad Town", "Hamala", "Hidd", "Hillat Abdulsaleh", "Isa Town", "Janabiya", "Jannusan", "Jasra", "Jiblat Habshi", "Jid Alhaj", "Jidhafs", "Jordab", "Juffair", "Karbabad", "Karrana", "Karzakan", "Khamis", "Malikiya", "Manama", "Markh", "Meqsha", "Mina Salman", "Muharraq", "Muqaba", "Musalla", "Nasfah", "North Sehla", "Qadam", "Qalali", "Qella", "Qofool", "Qudaibiya", "Qurayya", "Ras Ruman", "Saar", "Sadad", "Sakheir", "Salmabad", "Salmaniya", "Samaheej", "Sanad", "Seef", "Shahrakan", "Shakhura", "Sitra", "South Sehla", "Tala Island", "Tashan", "Tubli", "Um Alhassam", "Umm Alsabban (Mohammadiya)", "West Riffa", "Zallaq", "Zayed Town"];
+//         var cities_Oman = ["Adam", "Al Aqir", "Al Ashkarah", "Al Awabi - Barka", "Al Awabi - Muscat", "Al Bidayah", "Al Duqm", "Al Ghazir", "Al Hamra", "Al Jadida", "Al Kabil", "Al Kamil Wal Wafi", "Al Khodh", "Al Khuwair", "Al Mazyunah", "Al Mudhaibi", "Al Saada", "Amerat", "As Sulaif", "Azaiba", "Bahla", "Barka", "Bidbid", "Bidiya", "Bisiyah", "Bowsher", "Bukha", "BURAIMI", "Dhalkut", "Dhank", "Diba", "Dima Wattayeen", "Fahud", "Falaj Al Qabail", "Fanja", "Firq", "Ghala", "Ghubra", "Haima", "Hamriya", "Ibra", "Ibri", "Izki", "Jaalan Bani Bu Ali ", "Jaalan ni Bu Hassan", "Jabal Akhdar", "Jibroo", "Khabourah", "Khasab", "Liwa", "Madha", "Madinat Sultan Qaboos", "Mahdha", "Mahout", "Manah", "Marmul", "Masirah", "Mawaleh", "Musannah", "Muscat", "Muttrah", "Nakhl", "Nizwa", "Qatana", "Qurayat", "Qurum", "Rusayl", "rustaq", "Ruwi", "Sadah", "Saham", "Salalah", "Samad Al Shan", "Samayil", "Seeb", "Shinas", "Sidab", "Sinaw", "Sohar", "Sunaina", "Sur", "Suwaiq", "Thamrait", "Tiwi", "Wadi Adai", "Wadi al Maawil", "Wadi Bani Khalid", "Wadi Kabir", "Wattaya", "Wudam Al Sahil", "Yankul"];
+//         var cities_Qatar = ["Doha", "Dukhan", "Al Rayyan", "Umm Salal Muhammad"];
+//         var cities_Saudia_Arabia = ["Aba Alworood", "Abha", "Abha Manhal", "Abqaiq", "Abu Ajram", "Abu Areish", "Ad Dahinah", "Ad Dubaiyah", "Addayer", "Adham", "Afif", "Aflaj", "Ahad Masarha", "Ahad Rufaidah", "Ain Dar", "Al Adari", "Al Ais", "Al Ajfar", "Al Ammarah", "Al Ardah", "Al Arja", "Al Asyah", "Al Bada", "Al Bashayer", "Al Batra", "Al Bijadyah", "Al Dalemya", "Al Fuwaileq", "Al hait", "Al Haith", "Al Hassa", "Al Hayathem", "Al Hufayyirah", "Al Hulayfah As Sufla", "Al Idabi", "Al Khishaybi", "Al Khitah", "Al Laqayit", "Al Mada", "Al Mahd", "Al Midrij", "Al Moya", "Al Qarin", "Al Uwayqilah", "Al Wasayta", "Al-Jsh", "Alghat", "Alhada", "Alnabhanya", "Alrass", "Amaq", "An Nabk Abu Qasr", "An Nafiah", "An Nuqrah", "Anak", "Aqiq", "Ar Radifah", "Ar Rafi'ah", "Ar Rishawiyah", "Arar", "Artawiah", "As Sulaimaniyah", "As Sulubiayh", "Asfan", "Ash Shaara", "Ash Shamli", "Ash Shananah", "Ash Shimasiyah", "Ash Shuqaiq", "At Tuwayr", "Atawleh", "Ath Thybiyah", "Awamiah", "Ayn Fuhayd", "Badaya", "Bader", "Badr Al Janoub", "Baha", "Bahara", "Bahrat Al Moujoud", "Balahmar", "Balasmar", "Balqarn", "Baqa Ash Sharqiyah", "Baqaa", "Baqiq", "Bareq", "Batha", "Biljurashi", "Birk", "Bish", "Bisha", "Bukeiriah", "Buraidah", "Daelim", "Damad", "Dammam", "Darb", "Dariyah", "Dawadmi", "Deraab", "Dere'Iyeh", "Dhahban", "Dhahran", "Dhahran Al Janoob", "Dhurma", "Domat Al Jandal", "Duba", "Duhknah", "Dulay Rashid", "Farasan", "Ghazalah", "Ghtai", "Gilwa", "Gizan", "Hadeethah", "Hafer Al Batin", "Hail", "Hajrah", "Halat Ammar", "Hali", "Haqil", "Harad", "Harajah", "Hareeq", "Hawea/Taif", "Haweyah", "Hawtat Bani Tamim", "Hazm Al Jalamid", "Hedeb", "Hinakeya", "Hofuf", "Horaimal", "Hotat Sudair", "Hubuna", "Huraymala", "Ja'Araneh", "Jafar", "Jalajel", "Jeddah", "Jouf", "Jubail", "Jumum", "Kahlah", "Kara", "Kara'A", "Karboos", "Khafji", "Khaibar", "Khairan", "Khamaseen", "Khamis Mushait", "Kharj", "Khasawyah", "Khobar", "Khodaria", "Khulais", "Khurma", "King Khalid Military City", "Kubadah", "Laith", "Layla", "Madinah", "Mahad Al Dahab", "Majarda", "Majma", "Makkah", "Mandak", "Mastura", "Mawqaq", "Midinhab", "Mikhwa", "Mohayel Aseer", "Moqaq", "Mrat", "Mubaraz", "Mubayid", "Mulaija", "Mulayh", "Munifat Al Qaid", "Muthaleif", "Muzahmiah", "Muzneb", "Nabiya", "Najran", "Namas", "Nimra", "Nisab", "Noweirieh", "Nwariah", "Ojam", "Onaiza", "Othmanyah", "Oula", "Oyaynah", "Oyoon Al Jawa", "Qahmah", "Qarah", "Qariya Al Olaya", "Qasab", "Qassim", "Qatif", "Qaysoomah", "Qbah", "Qouz", "Qufar", "Qunfudah", "Qurayat", "Qusayba", "Quwei'Ieh", "Rabigh", "Rafha", "Rahima", "Rania", "Ras Al Kheir", "Ras Tanura", "Rawdat Habbas", "Rejal Alma'A", "Remah", "Riyadh", "Riyadh Al Khabra", "Rowdat Sodair", "Rvaya Aljamsh", "Rwaydah", "Sabt El Alaya", "Sabya", "Sadyan", "Safanyah", "Safwa", "Sahna", "Sajir", "Sakaka", "Salbookh", "Salwa", "Samtah", "Saqf", "Sarar", "Sarat Obeida", "Satorp", "Seihat", "Shaqra", "Shari", "Sharourah", "Shefa'A", "Shinanh", "Shoaiba", "Shraie'E", "Shumeisi", "Siir", "Simira", "Subheka", "Sulaiyl", "Suwayr", "Tabrjal", "Tabuk", "Taiba", "Taif", "Tanda", "Tanjeeb", "Tanuma", "Tanumah", "Tarut", "Tatleeth", "Tayma", "Tebrak", "Thabya", "Thadek", "Tharmada", "Thebea", "Thumair", "Thuqba", "Towal", "Turaib", "Turaif", "Turba", "Udhaliyah", "Um Aljamajim", "Umluj", "Uqlat Al Suqur", "Ushayqir", "Uyun", "Wadeien", "Wadi Bin Hasbal", "Wadi El Dwaser", "Wadi Fatmah", "Wajeh (Al Wajh)", "Yanbu", "Yanbu Al Baher", "Yanbu Nakhil", "Zahban", "Zallum", "Zulfi"];
+// //	  var cities_Dubai = ["Abadilah","Abu Al Abyad Island","Abu Dhabi","Abu Dhabi University","Abu Hayl ","Airport Road AXD","Akamiyah ","Al Ardiyah ","Al Aryam Island","Al Bander","Al Barakkah","Al Bateen AXD","Al Buteen AXD","Al Dhafra Area","Al Dhafrah AXD","Al Dharbaniyah ","Al Dhayd ","Al Duss ","Al Falah Area","Al Falah Street","Al Ghuwaifat","Al Hadbah Street","Al Haliya","Al Hamra Island","Al Hayr ","Al Khalej Al Arabi","Al Ladeem Street","Al Mafraq ","Al Manaser","Al Manasir Alain","Al Maqta ","Al Marfa ","Al Maryah Island","Al Muneera","Al Muroor","Al Muzoon","Al Nahda Al Askarya","Al Nahyan Area","Al Najda Street","Al Qurm","Al Qusirah","Al Raha Beach","Al Raha Gardens","Al Rawdah","Al Rayhan","Al Reef Villas","Al Reem Island","Al Ruways ","Al Saada Street","Al Sab Area","Al Seef Compound","Al Tawila","Al Zaab","Al Zahraa","Al Zahraa ","Al Zina","Bahya","Banyas","Bida Zayed","Bidda Al Motawah","Bin Al Jesrin","Corniche","Dalma SR","Defence Road","Delma Island","Delma Street","Dhabiya","Electra Street","Gayathi","Golf Gardens","Grand Moshq Area","Hamdan Street","Haneem Street","Hazaa Bin Zayed Street","Hazza Bin Zayed Street","Hills Abu Dhabi","Hydra Village AXD","Istaqlal St","Jawasat","Karama Street AXD","Khalidiyah AXD","Khalifa City","Khalifa City A","Khalifa City B","Khalifa Garden","Khalifa Street AXD","Liwa","Liwa Sr","Liwa Street","Liwa Village","Madinat Zayed","Madinat Zayed AXD","Mafrq Area","Maharba","Mangrove One Compound","Mangrove Village","Marfa","Marina Mall","Masdar City","Mina Road AXD","Mohammed Bin Zayed City","Musafah","Mushref","Nadisiya","Nahda New","Nahel Town","Nasser Street","Navy Gate","New cornich AXD","New Shahama","Officers City","Old Mazda Road","Old Shahama","Rahba","Rima ","Ruwais","Sadiyat Island","Salam Street","SAS Al Nakheel","Shahama","Shakhbouth City","Shalila","Shamha","Shamkah","Shanin","Shawamak","Shuwayhat Island","Sila","Sila ","Sir Bani Yas Island","Suwayhan ","Tarif","Tourist Club","Umm Al Nar","Wathba","Yas Island","Yasat Ali Island","Zafarana Area","Zayed Sport City","Zayed Street","Zayed The First Street","Ajman Freezone","Al Alia","Al Azara","Al Bahya Ajman","Al Bustan","Al Butain","Al Hamerah","Al Hamidiya","Al Hamriyaa","Al Heliow","Al Jerf","Al Jurf","Al Montaz","Al Muwainat","Al Owan","Al Raqqib","Al Sawan","Al Talla","Al Zahra ","Al Zahya","Al Zubair","Corniche Ajman","Emirates City","Hamediya","Hamriya Freezone","Khalifa Street Ajman","Masfut ","Mina Villa Ajman","Musharh","Musherif","Naimiya","Rashidya Ajman","Safia","Siti Sintir","Sweihan ","Abu Samra","Ain Al Fayda","Airport East District","Al Agabiyaa","Al Ain City","Al Ain City Centre","Al Aliya","Al Ameriya","Al Asharaj","Al Barsa Garden","Al Batin","Al bhuraimi Oman","Al Dhahera","Al Faqah","Al Foah","Al Ganeema","Al Hayer","Al Hili","Al Jahili","Al Jimi","Al Khabisi","Al Khalidia Alain","Al khalif","Al Khatim","Al Khazna","Al Kubisi","Al Kuwaitat","Al Manasif","Al Manasir Alain","Al Maqam","Al Markhaniya","Al Masoudi","Al Muntazi","Al Muroor Alain","Al Mutaredh","Al Mutawaa","Al Muwaiji","Al Naifa","Al Niama","Al Niyadat","Al Qattara","Al Qua","Al Saad","Al Salamat","Al Sanaiyyah","Al Sarooj","Al Shuaibah","Al Shwaib","Al Shwaib Fujairah Rd","Al Touba","Al Towayya","Al Wagan","Al Yahar","Alain City Centre","Andalus Complex","Asharej","Central District","Falaj Hazza","Green Land Comp","Hilton","Industrial area Alain","Jabet Hafeet","Khalifa Street Alain","Kharis","Khatim Shukla Buraimi","Libab","Lisiely","Lisily","Markam","Masakin","Meyzad","Mubarak R/A","Murabba","Murejib","Nahel Town","Nahil","Remah","Rumaila Alain","Sanaiya","Shiab Al Ashkhar","Surouj","Sweihan","Swihen Alain","Tawam","Tower Clock Area","Town Centre","Um Ghaffa","Wadi Alain","Zakhir","Abu Hail","Acadamic City","Airport Area Dubai","Al Badaa","Al Badia","Al Baraha","Al Barari","Al Barsha","Al Barsha 1","Al Barsha 2","Al Barsha 3","Al Barsha South 1","Al Barsha South 2","Al Barsha South 3","Al Furjan","Al Ghadeer DXB","Al Ghadeer Village","Al Hamriya DXB","Al Hudaiba","Al Jaddaf","Al Karama DXB","Al Kawaneej","Al Khabaisi","Al khail gate","Al Lisaili","Al Mamzar","Al Manara","Al Mina Road - Dubai","Al Mizhar","Al Muraqqabat","Al Muteena","Al Nahda DXB","Al Quoz","Al Quoz Ind 2","Al Qusais 1","Al Qusais 2","Al Qusais 3","Al Raffa Burdubai","Al Ras Deira","Al Rigga","Al Ruwaiya ","Al Safa","Al Safa 1","Al Safa 2","Al Satwa","Al Shandaghah","Al shindagha","Al Souk Al Kabeer","Al Sufu","Al Twar","Al Waha","Al Warkha","Arabian Ranches","Arabian Ranches 2","Awir","Bur Dubai","Burj Dubai Sk Zyed Rd","Burjuman","Business Bay","Cargo Village","Corniche Deira","Crown Residence","Deira","Desert Palm","DIP","Discovery Gardens","Diyafah","Downtown Burj Dubai","Downtown Dubai","Dubai","Dubai Festival City","Dubai Health Care City","Dubai International Financial Center","Dubai Internet city","Dubai Land","Dubai Marina","Dubai Media City","Dubai Outlet Mall","Dubai Silicon Oasis","DWC","Emirates Hills","Emirates Living","Falcon City","Festival City","Ganthoot ","Gardens","Garhoud","Global Village","Green Community","Greens","Hatta","Hatta Area","Hatta Road","Hoot","Hor Al Anz","IMPZ","International Academic City","International City","Jaflia","Jebel Ali","Jebel Ali Free Zone","Jebel Ali Village","JLT","Jumeirah","Jumeirah 1","Jumeirah 2","Jumeirah 3","Jumeirah 4","Jumeirah 5","Jumeirah Beach Residence","Jumeirah Golf Estates","Jumeirah Heights","Jumeirah Islands","Jumeirah Park","Jumeirah Park ( JLT )","Jumeirah Village","Knowledge Village","Lahabab","Layan Community","Madam","Mankhool","Margham Alain Road","Marsa","Meadows","Meydan Heights","Mina Sufooh ","Mirdiff","Motor City","Mudon","Muhaisinah","Musalla Rd","Mushrif ","Nad Al Ham","Nad Al Shama","Nad Al Shiba","Naif","Naser Squre","Old Town","Oud Al Muteena","Oud Metha","Palm Deira","Palm Jumeirah","Port Rashid","Port Saeed","Ras Al Kohar","Rashidya","Reem Ram","Saih Sheib","Sk Zyed Rd","Skycourts","Sports City","Springs","Tecom","The Lakes","The Sustainable City","The Villa","Trade Centre1","Trade Centre2","Umm Hurair 1","Umm Hurair 2","Umm Ramool","Umm Squim","Umm Suqeim 2","Umm Suqeim3","Ummel Sheif","Wassel","Zaabil","Adan","Al Basera","Al Bithnah","Al Bulaidha","Al Farfar","Al Faseel","Al Ghail","Al Hail","Al Hala","Al Khulabiya","Al Madhar","Al Riyafa","Al Tuween","Aliqya","Asma","Bidiya","Bitna","Dadna","Daftah","Dana Plaza","Dhaid","Dibba","Dibba Al Hassan","Difta","Falaj Al Mulla","Falakh","FUJ City Centre","Ghurfa","Gidfa","Hassan Dibba ","Hatein","Huwailat","Kadra","Kalba","Khor Fakkan","Kidfa ","Luliya","Madhab","Maliha","Mamduh","Manama","Marbah","Masafi","Merashid","Munai","Old Etisalat Area","Qadisiya","Qirat","Quraya","Rughaylat ","Shakamkam","Sharm","Shawka","Siji","Tarif Kalba ","Tayyabah","Wadi Al Abadila","Wadi Mai","Wadi Safni","Wadi Saham","Wadi Sena","Wadighob","Wadighod","Wadihala","Wadiisfini","Wadil Khor","Adan RAK","Adhan","Air Port Road","Al Burrairat","Al Dhait North","Al Dhait South","Al Fulayyah ","Al Gail RAK","Al Ghail","Al Ghoub","Al Goub","Al Hamra Village","Al Hamraniya","Al Hamriya","Al Jazeera","Al Jazeera- Al Hamra","Al Jeer Oman Border","Al Julan","Al Kharan","Al Khat","Al Khuzam","Al Maireed","Al Mamourah","Al Manamah ","Al Nakheel","Al Oraibi","Al Rafa","Al Rams","Al Reefa","Al Seih","Al Shammal","Al Shams","Al Tuween RAK","Al Zara","Babal Bahar","Corniche RAK","Dahan","Dayah","Digdhaga","Dreamland","Fahalin","Gallilah","Idhn","Jebel Jais","Julphar","Julphar Tower","Kabdah","Khor Khawir","Khor Khoir","Kuwaiti Road","Marjan Island","Masafi ","Mina Al Arab RAK","Muntasir Road","Old Town Rak","Qusaidat","RAK1 SR","Ras Al Khaimah city ","Sabith Arabia","Sabith Rashid","Sadia Area","Selayia","Shamel","Shammal Julphar","Suhaila","Wadi Ghob","Yasmin Village","Abu Shagara","Al Abrar","Al Arouba","Al Azra","Al Badiyah","Al Barashi","Al Bataya","Al Budaniq","Al Darari","Al Fahiya ","Al Falah","Al Falaj","Al Fisht","Al Gafiya","Al Ghaphiya","Al Gharb","Al Goaz","Al Hamriyah ","Al Jazzat","Al Jubail","Al Juraina","Al Juraina 1","Al Kaliya","Al Khaleej","Al Khalidia","Al Khan","Al Khashfah ","Al Khezamia","Al Layyeh","Al Mahatah","Al Majaz","Al Manak ","Al Mansoora","Al Mirgab","Al Mujarrah","Al Mulla Plaza","Al Muraija","Al Muroor SHJ","Al Nabba","Al Nahda DXB","Al Nahda SHJ","Al Nakhil","Al Nekhailat","Al Nesserya","Al Noaf","Al Nud","Al Qadsiya","Al Qarayan","Al Qasaba","Al Quran Rnd About","Al Rahmania","Al Rahmaniyah","Al Ramla","Al Ramtha","Al Rawda","Al Rifah","Al Riffa","Al Rigqa","Al Rumailah","Al Sabkha","Al Sajaa","Al Shahba","Al Sharq","Al Shuwaihean","Al Soor","Al Suyoh","Al Sweihat","Al Talaa","Al Talha","Al Tawar 1","Al TAwar 2","Al Tawuun","Al Turfa","Al Wada","Al Wasit ","Al Yarmook","Al Yas","Al Yash","Al Zahiya","Aqouz","Asimah","Book Roundabout","Buhairah","Butina","CORNICH SHJ","Dashman Park","Dasman ","Dhaid ","Elyash","Falag","Gold Souk","Gubaiba","Gulaiya","Halwan","Hamariya ","Hazzana","Heera","Hunaywah","Immigration Road","Industrail Area SHJ","Industrial Area1","Jamal Abdul Naser Rd","Juraina","Juwaizaa","Khalid Port","Khalwan","Khannur ","Kharayan ","Khezamia","King Faisa","Kuwaiti Hospital","Kuwaiti Round About","Maliha Area","Maysaloon","Mega Mall","Mina Road SHJ","Mughaidir","Musallah","Muwafjah","Muwaila","Nasriya","National Paint","Nekhalat","Qassimiya","Quasis","Ramakiya","Ramlah ","Rigga SHJ","Rolla","Saabah ","Saif ","Samnan","Shahba","Shaqan","Sharjah","Sharjah Airport Area","Sharjah University","Sherqan ","SHJ Nouf","SHJ Womans Club","Sweihat","Tarfaana","Um Khanoor","Wadi Shi ","Wasit ","Yarmook ","Al Aahad","Al Abrab","Al Dar Al Baida","Al Haditha","Al Hawiyah","Al Humrah","Al Khor","Al Limghadar","Al Maidan","Al Raas","Al Ramlah","Al Riqqah","Al Salamah","Defence Camp Area","Falaj Al Mulla ","Industrail Area Ajman","Industrail Area UAQ","Old Town uaq","UAQ","UAQ Marina","Umm Al Quwain"];
+//         var cities_Dubai = ["Abu Dhabi", "Ajman", "Al Ain", "Dubai", "Fujairah", "Ras Al Khaimah", "Sharjah", "Umm Al Quwain"];
+//         var cities_Kuwait = ["Safat", "Jabriya", "Nuzha", "Salmiya", "Surra", "Ahmadi", "Fahaheel", "Abraq Khaitan", "Bayan", "Fintas", "Hadiya", "Mahboula", "Mishref", "Salwa", "Abdali", "Abu Halifa", "Farwaniyah", "Kuwait City", "Sharq", "Shuwaikh", "Mubarak Al kabeer", "Adailiya", "Daiya", "Doha", "Khaldiya", "Rai", "Rawda", "Sulaibikhat", "Yarmouk", "Airport", "Ardiya", "Dajeej", "Dhaher", "Funaitees", "Jaber Al Ali", "Manqaf", "Qurain", "Rehab", "Riqqa", "Rumaithiya", "Sabah Al Salem", "Sabahiya", "Sabhan", "Zahra", "Abdulla Al Mubarak Al Sabah", "Abdulla Al Salem", "Abdulla Port", "Abu Hasaniya", "Al Adan", "Al Jahra", "Al Khiran Pearl City", "Al Mubarakyia", "Al Rabiah", "Al Salam", "Al Shuhada", "Al Zour", "Ali Sabah Al Salem", "Amghara", "Amghara Industrial Area", "Andalous", "Ardiya Industrial", "A'youn", "Beneid Al Gar", "Bnaider", "Dasma", "Dasman", "Dhajeej", "Fahad Al Ahmed Area", "Fahaheel Industrial", "Faiha", "Firdous", "Granada", "Hateen", "Hawally", "Hijil", "Ishbilya", "Jabir Al Ahmad", "Jahra Industrial Area", "Jeleeb Shoyoukh", "Kabd", "Kaifan", "Khiran City", "Mansouriya", "Messila", "Minaa Abdulla", "Mirqab", "Mubarak Al Abdulla Al Jaber Area", "Naeem", "Nahda", "Nassem", "North West Sulaibikhat", "Nuwaiseeb", "Omariyah", "Qadsiya", "Qasr", "Qeirawan", "Qublah", "Qublah Area", "Qurtuba", "Saad Abdullah City", "Sabah Al Naser", "Sabriya", "Salhiya", "Sawaber", "Sha'ab", "Shuaiba Industrial Area", "Shuwaikh Education Area", "Shuwaikh Health Area", "Shuwaikh Industrial Area", "Shuwaikh Port", "Sideeq", "South Sabahiyah", "Subiya", "Sulaibiyah", "Sulaibiyah Industrial Area", "Taima", "Um Seddah", "Wafra", "Waha", "Al Bidaa", "Aqeela", "Khaitan", "Qusor", "Regiee", "Sabah Al Ahmad", "Shamiyah", "Abbasiyah", "Abu Fateera", "Al Hasawi", "Al Metlaa", "Al Qaysariya", "Al Salmi", "Al Shadadiya", "Al Soor", "Al Wetiyah", "Ayoun", "Jaber Al Ahmad", "Jaleeb Al-Shyoukh", "Julaiya", "Kazma", "Khairan", "Maidan Hawalliy", "Masayel", "Qairawan", "Qiblah", "Rawdatain", "Umm Al Aish"];
+//
+//         $(cityField).prop('readonly', true);
+//         citiesInit("address_form_new");
+//         $('select[name="address[country]"]').each((index, element) => {
+//             $(element).change(country_change);
+//         });
+//
+//         function country_change(e) {
+//             var form_id = $(this).closest('form').attr('id');
+//             $('#'+form_id+' input[name="address[city]"]').val('');
+//             $("#"+form_id+" "+'.cityDropdownCustom').find('ul').html('');
+//
+//             if ($(this).val() == 'Bahrain') {
+//                 var getCities = cityList(cities_Bahrain);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else if ($(this).val() == 'Oman') {
+//                 var getCities = cityList(cities_Oman);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else if ($(this).val() == 'Qatar') {
+//                 var getCities = cityList(cities_Qatar);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
+//
+//             } else if ($(this).val() == 'Saudi Arabia') {
+//                 var getCities = cityList(cities_Saudia_Arabia);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else if ($(this).val() == 'United Arab Emirates') {
+//                 var getCities = cityList(cities_Dubai);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
+//             } else if ($(this).val() == 'Kuwait') {
+//                 var getCities = cityList(cities_Kuwait);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else {
+//
+//             }
+//         }
+//
+//         function citiesInit(form_id) {
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Bahrain') {
+//                 var getCities = cityList(cities_Bahrain);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Oman') {
+//                 var getCities = cityList(cities_Oman);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Qatar') {
+//                 var getCities = cityList(cities_Qatar);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Saudi Arabia') {
+//                 var getCities = cityList(cities_Saudia_Arabia);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'United Arab Emirates') {
+//                 var getCities = cityList(cities_Dubai);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Kuwait') {
+//                 var getCities = cityList(cities_Kuwait);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//         }
+//
+//
+//         function cityList(cityArra) {
+//             var i;
+//             var cityOptions = "";
+//
+//             for (i = 0; i < cityArra.length; i++) {
+//                 cityOptions += `<li data-city-item data-list-item="${cityArra[i]}">${cityArra[i]}</li>`
+//             }
+//             return cityOptions;
+//         }
+//
+//         $(cityField).each((index, ele) => {
+//             var formId = $(ele).closest('form').attr('id');
+//             $(ele).click(function () {
+//                 $('#'+formId+' .cityDropdownCustom').show();
+//                 $('#'+formId+' #cityDropdownField').focus();
+//             });
+//             //       Select City Function
+//             $('#'+formId+' .cityDropdownCustom ul').on('click', '[data-city-item]', function () {
+//                 $('.cityDropdownCustom').hide();
+// //              Reset value of search field after select City
+//                 $('#cityDropdownField').val('');
+//
+// //              Show All cities after search and select
+//                 $('#'+formId+' .cityDropdownCustom ul li').show();
+//
+//                 $(ele).val($(this).attr('data-list-item'));
+//                 $('#'+formId+' input[name="address[province]"]').val($(this).attr('data-list-item'));
+//
+//                 validateCity($('#'+formId+' input[name="address[city]"]'));
+//             });
+//         });
+//
+//
+//
+//
+//
+//         //Close city dropdown click outside the dropdown
+//
+//         $(document).mouseup(e => {
+//             if (!cityFiledWrap.is(e.target) // if the target of the click isn't the container...
+//                 && cityFiledWrap.has(e.target).length === 0) // ... nor a descendant of the container
+//             {
+//                 $('.cityDropdownCustom').hide();
+//                 //validateCity ($("input#AddressCityNew"));
+//             }
+//         });
+//
+//
+//         //Search Functionality in City Dropdown
+//
+//         $('.cityDropdownCustom .cityDropdownFieldWrap').on('keyup', '#cityDropdownField', function () {
+//             var value = $(this).val().toUpperCase();
+//             console.log(value);
+//
+//             var listItems = $('.cityDropdownCustom ul li');
+//
+//             $(listItems).each(function () {
+//                 if ($(this).text().toUpperCase().search(value) > -1) {
+//                     $(this).show();
+//                 } else {
+//                     $(this).hide();
+//                 }
+//             });
+//         });
+//
+// //       Allow Cities form list
+//         var allCities = [];
+//         allCities.push(...cities_Kuwait, ...cities_Dubai, ...cities_Saudia_Arabia, ...cities_Qatar, ...cities_Oman, ...cities_Bahrain);
     });
 
 </script>
