@@ -5300,18 +5300,18 @@
               "select_position_content": "left",
               "select_textalign_content": "left",
               "block_title_top1": "",
-              "color_block_title_top1": "#E5E5E5",
+              "color_block_title_top1": "#e5e5e5",
               "effect_title1": "bounce",
               "block_title_top": "",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
               "block_title_top2": "",
-              "color_block_title_top2": "#E5E5E5",
+              "color_block_title_top2": "#e5e5e5",
               "effect_title2": "bounce",
               "block_buton": "",
-              "color_block_button": "#fff",
-              "color_hover_button": "#fff",
-              "color_hover_text": "#000",
+              "color_block_button": "#ffffff",
+              "color_hover_button": "#ffffff",
+              "color_hover_text": "#000000",
               "block_url": "https:\/\/concept-n.com\/collections\/adidas-sneakers",
               "effect_title3": "bounce",
               "ena_slide_video": false,
@@ -5540,6 +5540,20 @@
           "margin_bottom": "",
           "title-section": "WHAT'S HOT"
         }
+      },
+      "1662352619ce2383ae": {
+        "type": "section-request-product",
+        "settings": {
+          "select_width": "full",
+          "style_bg": "color",
+          "bg_color": "#f2f2f2",
+          "title_newletter": "Cannot find what you are looking for",
+          "color_title": "",
+          "content_newletter": "Cannot find what you are looking for, request the product you want.",
+          "color_content": "",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
       }
     },
     "content_for_index": [
@@ -5552,7 +5566,8 @@
       "1619146574e0265060",
       "16189031977d260213",
       "1618909175602d39ae",
-      "1661857121246a8e2f"
+      "1661857121246a8e2f",
+      "1662352619ce2383ae"
     ]
   },
   "presets": {
