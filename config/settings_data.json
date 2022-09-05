@@ -5540,6 +5540,20 @@
           "margin_bottom": "",
           "title-section": "WHAT'S HOT"
         }
+      },
+      "section-request-product": {
+        "type": "section-request-product",
+        "settings": {
+          "select_width": "full",
+          "style_bg": "color",
+          "bg_color": "#f2f2f2",
+          "title_newletter": "Cannot find what you are looking for",
+          "color_title": "",
+          "content_newletter": "Cannot find what you are looking for, request the product you want.",
+          "color_content": "",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
       }
     },
     "content_for_index": [
