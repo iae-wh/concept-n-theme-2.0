@@ -16,16 +16,16 @@
     "title_popup": "Join Our Mailing List",
     "description_popup": "Receive updates on new arrivals",
     "placeholder_popup": "Email",
-    "button_name_popup": "Sign in",
+    "button_name_popup": "Register",
     "content_popup": "SIGN UP FOR EXCLUSIVE UPDATES, NEW ARRIVALS AND INSIDER-ONLY DISCOUNTS",
-    "icon_sc_popup1": "fa fa-twitter",
-    "url_sc_popup1": "",
-    "icon_sc_popup2": "fa fa-dribbble",
-    "url_sc_popup2": "",
-    "icon_sc_popup3": "fa fa-behance",
-    "url_sc_popup13": "",
-    "icon_sc_popup4": "fa fa-instagram",
-    "url_sc_popup4": "",
+    "icon_sc_popup1": "fa fa-facebook",
+    "url_sc_popup1": "https:\/\/www.facebook.com\/officialconceptn",
+    "icon_sc_popup2": "fa fa-instagram",
+    "url_sc_popup2": "https:\/\/www.instagram.com\/officialconceptn\/",
+    "icon_sc_popup3": "fa-brands fa-tiktok",
+    "url_sc_popup13": "https:\/\/www.tiktok.com\/@officialconceptn",
+    "icon_sc_popup4": "fa fa-pinterest-p",
+    "url_sc_popup4": "https:\/\/www.pinterest.com\/officialconceptn\/",
     "enable_image_poup": true,
     "image_poup": "shopify:\/\/shop_images\/3.png",
     "pouplogin_logo": "shopify:\/\/shop_images\/Group_42319.png",
@@ -65,6 +65,8 @@
     "logo_svgmobile": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"195\" height=\"18.536\" viewbox=\"0 0 195 18.536\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\">\n  <defs>\n    <clippath id=\"clip-path\">\n      <rect id=\"Rectangle_1575\" data-name=\"Rectangle 1575\" width=\"195\" height=\"18.536\" fill=\"#231f20\"><\/rect>\n    <\/clippath>\n  <\/defs>\n  <g id=\"Group_42319\" data-name=\"Group 42319\" transform=\"translate(0 0)\">\n    <g id=\"Group_42305\" data-name=\"Group 42305\" transform=\"translate(0 0)\" clip-path=\"url(#clip-path)\">\n      <path id=\"Path_59658\" data-name=\"Path 59658\" d=\"M20.264,13.947l-.5.779a7.235,7.235,0,0,1-3.6,2.758,16.237,16.237,0,0,1-5.67.877l.008-.008c-3.2,0-5.67-.576-7.358-1.7C1.063,15.261,0,12.974,0,9.867s1.055-5.4,3.139-6.79c1.7-1.136,4.1-1.7,7.358-1.7a16.137,16.137,0,0,1,5.654.868,7.221,7.221,0,0,1,3.594,2.758l.5.779L17.5,7.093l-.4-.552a4.725,4.725,0,0,0-2.879-1.8,16.443,16.443,0,0,0-3.732-.349,11.023,11.023,0,0,0-5.354.99c-1.42.827-2.11,2.287-2.11,4.478s.69,3.65,2.11,4.486a11.168,11.168,0,0,0,5.362.99,15.943,15.943,0,0,0,3.724-.341,4.782,4.782,0,0,0,2.888-1.8l.4-.559Z\" transform=\"translate(0 -0.603)\" fill=\"#231f20\"><\/path>\n      <path id=\"Path_59659\" data-name=\"Path 59659\" d=\"M59.344,3.113C57.657,1.969,55.191,1.393,52,1.393c-3.245,0-5.646.56-7.35,1.7-2.076,1.387-3.131,3.683-3.131,6.79s1.055,5.386,3.131,6.781c1.679,1.127,4.153,1.7,7.35,1.7,3.18,0,5.654-.576,7.341-1.7,2.069-1.4,3.123-3.683,3.123-6.781S61.421,4.5,59.344,3.113m-2,11.251A11.066,11.066,0,0,1,52,15.346a11.25,11.25,0,0,1-5.354-.982c-1.411-.836-2.1-2.3-2.1-4.494s.689-3.65,2.109-4.478A11.1,11.1,0,0,1,52,4.411a11.088,11.088,0,0,1,5.337.982c1.42.836,2.109,2.3,2.109,4.478s-.689,3.659-2.109,4.494\" transform=\"translate(-18.176 -0.61)\" fill=\"#231f20\"><\/path>\n      <path id=\"Path_59660\" data-name=\"Path 59660\" d=\"M105.48,1.4V18.363H102.77L89.548,5.887V18.363H86.522V1.393h2.709l.235.227,12.987,12.265V1.4Z\" transform=\"translate(-37.875 -0.61)\" fill=\"#231f20\"><\/path>\n      <path id=\"Path_59661\" data-name=\"Path 59661\" d=\"M148.251,13.947l-.511.779a7.215,7.215,0,0,1-3.593,2.758,16.268,16.268,0,0,1-5.67.877v-.008c-3.188,0-5.662-.576-7.35-1.7-2.084-1.387-3.139-3.674-3.139-6.781s1.055-5.4,3.139-6.79c1.7-1.136,4.1-1.7,7.35-1.7a16.183,16.183,0,0,1,5.662.868,7.221,7.221,0,0,1,3.594,2.758l.5.779-2.75,1.306-.4-.552a4.7,4.7,0,0,0-2.88-1.793,16.005,16.005,0,0,0-3.731-.357,11,11,0,0,0-5.354.99c-1.42.827-2.11,2.287-2.11,4.478s.69,3.658,2.11,4.486a11.168,11.168,0,0,0,5.362.99A16.287,16.287,0,0,0,142.2,15h.008a4.857,4.857,0,0,0,2.888-1.809l.389-.559Z\" transform=\"translate(-56.026 -0.603)\" fill=\"#231f20\"><\/path>\n      <path id=\"Path_59662\" data-name=\"Path 59662\" d=\"M174.3,4.411V8.377H188.24v3.01H174.3v3.958H188.24v3.018H171.27V1.393h16.97V4.411Z\" transform=\"translate(-74.973 -0.61)\" fill=\"#231f20\"><\/path>\n      <path id=\"Path_59663\" data-name=\"Path 59663\" d=\"M225.843,1.905h-.007a25.785,25.785,0,0,0-5.963-.5h-8.9V18.364H214V11.388h5.858a25.841,25.841,0,0,0,5.962-.5h.008c3.4-.892,4.1-2.936,4.1-4.486s-.706-3.594-4.089-4.494M224.66,7.957a17.208,17.208,0,0,1-3.976.422H214V4.412h6.262a21.9,21.9,0,0,1,4.121.3,5.008,5.008,0,0,1,2.044.771,1.084,1.084,0,0,1,.487.916c0,.665-.762,1.193-2.255,1.557\" transform=\"translate(-92.354 -0.608)\" fill=\"#231f20\"><\/path>\n      <path id=\"Path_59664\" data-name=\"Path 59664\" d=\"M268.75,4.411h-7.974l.008,13.952h-3.026V4.411h-7.974V1.393H268.75Z\" transform=\"translate(-109.343 -0.61)\" fill=\"#231f20\"><\/path>\n      <rect id=\"Rectangle_1574\" data-name=\"Rectangle 1574\" width=\"9.024\" height=\"2.626\" transform=\"translate(163.26 8.139)\" fill=\"#231f20\"><\/rect>\n      <path id=\"Path_59665\" data-name=\"Path 59665\" d=\"M332.386,9.26v9.276h-4.609V9.26a4.419,4.419,0,0,0-1.358-3.293,4.682,4.682,0,0,0-6.577,0,4.448,4.448,0,0,0-1.357,3.293v9.276H313.85V9.26a8.958,8.958,0,0,1,2.724-6.552V2.7a9.3,9.3,0,0,1,13.1,0l.008.008a9.011,9.011,0,0,1,2.7,6.552\" transform=\"translate(-137.387 0)\" fill=\"#231f20\"><\/path>\n    <\/g>\n  <\/g>\n<\/svg>",
     "mobile_logo_maxwidth": 150,
     "main_menu_store_mb": "main-menu",
+    "banner_mobile": "shopify:\/\/shop_images\/Menu_Banner.png",
+    "banner_mobile_url": "shopify:\/\/collections\/adidas",
     "hd_icon_search_v1": "",
     "hd_icon_search_svg_v1": "<!--?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?-->\n<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 400 400\" height=\"400\" width=\"400\" id=\"svg2\" version=\"1.1\" xmlns:dc=\"http:\/\/purl.org\/dc\/elements\/1.1\/\" xmlns:cc=\"http:\/\/creativecommons.org\/ns#\" xmlns:rdf=\"http:\/\/www.w3.org\/1999\/02\/22-rdf-syntax-ns#\" xmlns:svg=\"http:\/\/www.w3.org\/2000\/svg\" xml:space=\"preserve\"><metadata id=\"metadata8\"><rdf><work rdf:about=\"\"><format>image\/svg+xml<\/format><type rdf:resource=\"http:\/\/purl.org\/dc\/dcmitype\/StillImage\"><\/type><\/work><\/rdf><\/metadata><defs id=\"defs6\"><\/defs><g transform=\"matrix(1.3333333,0,0,-1.3333333,0,400)\" id=\"g10\"><g transform=\"scale(0.1)\" id=\"g12\"><path id=\"path14\" style=\"fill-opacity:1;fill-rule:nonzero;stroke:none\" d=\"m 1312.7,795.5 c -472.7,0 -857.204,384.3 -857.204,856.7 0,472.7 384.504,857.2 857.204,857.2 472.7,0 857.3,-384.5 857.3,-857.2 0,-472.4 -384.6,-856.7 -857.3,-856.7 z M 2783.9,352.699 2172.7,963.898 c 155.8,194.702 241.5,438.602 241.5,688.302 0,607.3 -494.1,1101.4 -1101.5,1101.4 -607.302,0 -1101.399,-494.1 -1101.399,-1101.4 0,-607.4 494.097,-1101.501 1101.399,-1101.501 249.8,0 493.5,85.5 687.7,241 L 2611.7,181 c 23,-23 53.6,-35.699 86.1,-35.699 32.4,0 63,12.699 86,35.699 23.1,22.801 35.8,53.301 35.8,85.898 0,32.602 -12.7,63 -35.7,85.801\"><\/path><\/g><\/g><\/svg>",
     "hd_icon_wishlist_v1": "",
@@ -360,17 +362,18 @@
     "titlecolum_fv2_3": "Categories",
     "menu_fv2_3": "footer-categories",
     "titlecolum_fv2_4": "SUBSCRIBE",
-    "content_colum_fv2_4": "Subscribe our newsletter and get<br>discount 30% off",
+    "content_colum_fv2_4": "The luxury multi-brand boutique",
     "icon_sc_fv2_1": "fa fa-facebook",
-    "url_sc_fv2_1": "",
+    "url_sc_fv2_1": "https:\/\/www.facebook.com\/officialconceptn",
     "icon_sc_fv2_2": "fa fa-instagram",
-    "url_sc_fv2_2": "",
+    "url_sc_fv2_2": "https:\/\/www.instagram.com\/officialconceptn\/",
     "icon_sc_fv2_3": "fa-brands fa-tiktok",
-    "url_sc_fv2_3": "",
-    "icon_sc_fv2_4": "fa fa-snapchat-ghost",
+    "url_sc_fv2_3": "https:\/\/www.tiktok.com\/@officialconceptn",
+    "icon_sc_fv2_4": "",
     "url_sc_fv2_4": "",
     "icon_sc_fv2_5": "fa fa-pinterest-p",
-    "icon_sc_fv2_6": "fa fa-youtube-play",
+    "url_sc_fv2_5": "https:\/\/www.pinterest.com\/officialconceptn\/",
+    "icon_sc_fv2_6": "",
     "enable_fv2_bottom": true,
     "fv2_bottom_copyright": "© Copyright 2022 | Webhouse Digital.",
     "fv2_bottom_payment_img": "shopify:\/\/shop_images\/Screenshot_2022-06-30_032531_c7877f28-078f-4cca-b63e-8692edbff000.png",
@@ -5144,33 +5147,33 @@
           "1618903122b4f6819b-0": {
             "type": "colection",
             "settings": {
-              "brand_img": "shopify:\/\/shop_images\/7dcff73952d62c4a55b6056c99e182a5.jpg",
-              "title_collection": "Sneakers",
+              "brand_img": "shopify:\/\/shop_images\/1_1.png",
+              "title_collection": "New Drop",
               "brand_url": "shopify:\/\/collections\/sneakers"
             }
           },
           "1618903122b4f6819b-1": {
             "type": "colection",
             "settings": {
-              "brand_img": "shopify:\/\/shop_images\/Component_1_13.png",
-              "title_collection": "Kids Sneakers",
-              "brand_url": "shopify:\/\/collections\/herschel"
+              "brand_img": "shopify:\/\/shop_images\/2_1.png",
+              "title_collection": "Top Picks",
+              "brand_url": "https:\/\/concept-n.com\/collections\/bags"
             }
           },
           "1618903122b4f6819b-2": {
             "type": "colection",
             "settings": {
-              "brand_img": "shopify:\/\/shop_images\/749ef7434a709e910f9b00bb07f1f488.png",
-              "title_collection": "New Arrivals",
-              "brand_url": "shopify:\/\/collections\/herschel"
+              "brand_img": "shopify:\/\/shop_images\/3_1.png",
+              "title_collection": "Exclusives",
+              "brand_url": "https:\/\/concept-n.com\/collections\/hermes"
             }
           },
           "1618903122b4f6819b-3": {
             "type": "colection",
             "settings": {
-              "brand_img": "shopify:\/\/shop_images\/75c464f44ceb7aac6a53ecfcb1f8cb37.png",
-              "title_collection": "Most Wanted",
-              "brand_url": "shopify:\/\/collections\/asics-tiger"
+              "brand_img": "shopify:\/\/shop_images\/4_1.png",
+              "title_collection": "VIP",
+              "brand_url": "https:\/\/concept-n.com\/collections\/watches"
             }
           }
         },
@@ -5188,47 +5191,47 @@
       "16189031977d260213": {
         "type": "section-slideshow-v5",
         "blocks": {
-          "16189031977d260213-0": {
-            "type": "slideshow",
-            "settings": {
-              "img_slider": "shopify:\/\/shop_images\/shutterstock_1310306863.png",
-              "title_slide": "Sneakers",
-              "color_title": "#5e3333",
-              "link_collection": "Go to Collection",
-              "color_btn": "#7d7b7b",
-              "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/sneakers"
-            }
-          },
           "16189031977d260213-1": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/shutterstock_1207538374.png",
-              "title_slide": "Bags",
+              "img_slider": "shopify:\/\/shop_images\/3_7999fe39-7de5-4ec1-ad43-dfcd92151d9a.png",
+              "title_slide": "",
               "color_title": "#010101",
-              "link_collection": "Go to Collection",
-              "color_btn": "#7d7b7b",
-              "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/bags"
+              "link_collection": "Get inspired",
+              "color_btn": "#ffffff",
+              "color_btn_hover": "#ffffff",
+              "url_link_collection": ""
             }
           },
-          "16189031977d260213-2": {
+          "f6c686bd-4652-463c-8444-d2a36d787b1f": {
             "type": "slideshow",
             "settings": {
-              "img_slider": "shopify:\/\/shop_images\/watches.png",
-              "title_slide": "Watches",
+              "img_slider": "shopify:\/\/shop_images\/1_3_4723bbab-4505-4aee-92dd-1b6dd19d5a6d.png",
+              "title_slide": "",
               "color_title": "#010101",
-              "link_collection": "Go to Collection",
+              "link_collection": "Get inspired",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/watches"
+              "url_link_collection": "shopify:\/\/collections\/collectibles"
+            }
+          },
+          "56a1ee9a-0449-4b6f-818a-ecda5400e522": {
+            "type": "slideshow",
+            "settings": {
+              "img_slider": "shopify:\/\/shop_images\/2_1_92005b19-b52a-4ab6-a35a-6ff891c217db.png",
+              "title_slide": "",
+              "color_title": "#010101",
+              "link_collection": "Get inspired",
+              "color_btn": "#7d7b7b",
+              "color_btn_hover": "#010101",
+              "url_link_collection": "shopify:\/\/collections\/all"
             }
           }
         },
         "block_order": [
-          "16189031977d260213-0",
           "16189031977d260213-1",
-          "16189031977d260213-2"
+          "f6c686bd-4652-463c-8444-d2a36d787b1f",
+          "56a1ee9a-0449-4b6f-818a-ecda5400e522"
         ],
         "settings": {
           "margin_top": "",
@@ -5237,32 +5240,34 @@
       },
       "161890887625e8bf29": {
         "type": "section-banner-v1",
+        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
           "img_banner1": "shopify:\/\/shop_images\/5956b67c-f584-4ef7-82c5-e15b095b533e.png",
           "url_banner1": "shopify:\/\/collections\/all",
-          "button_1": "View Collection",
+          "button_1": "Shop now",
           "img_banner2": "shopify:\/\/shop_images\/Group_12.png",
           "url_banner2": "shopify:\/\/collections\/all",
-          "button_2": "View Collection",
+          "button_2": "Shop now",
           "img_banner3": "shopify:\/\/shop_images\/Group_42321.png",
           "url_banner3": "shopify:\/\/collections\/all",
-          "button_3": "View Collection",
+          "button_3": "Shop now",
           "url_button3": "shopify:\/\/collections\/all",
           "img_banner4": "shopify:\/\/shop_images\/Group_13.png",
           "url_banner4": "shopify:\/\/collections\/all",
-          "button_4": "View Collection",
+          "button_4": "Shop now",
           "img_banner5": "shopify:\/\/shop_images\/Group_42320.png",
           "url_banner5": "shopify:\/\/collections\/all",
-          "button_5": "View Collection",
+          "button_5": "Shop now",
           "img_banner6": "shopify:\/\/shop_images\/Group_11.jpg",
           "url_banner6": "shopify:\/\/collections\/all",
-          "button_6": "View Collection"
+          "button_6": "Shop now"
         }
       },
       "1618909175602d39ae": {
         "type": "section-banner-v9",
+        "disabled": true,
         "settings": {
           "margin_top": "",
           "margin_bottom": "",
@@ -5278,9 +5283,9 @@
       "1619146574e0265060": {
         "type": "section-product-v1",
         "settings": {
-          "title_1": "Woman's",
-          "sub-title1": "Don't Miss Today's Featured Deals",
-          "select_collection": "sneakers",
+          "title_1": "GOYARD",
+          "sub-title1": "From the emblematic Saint-Louis tote to the timeless chic Saïgon bag, leather goods by Goyard",
+          "select_collection": "goyard",
           "products_limit": 6,
           "margin_top": "",
           "margin_bottom": ""
@@ -5289,29 +5294,30 @@
       "166149405003ed1356": {
         "type": "section-slideshow-v1",
         "blocks": {
-          "166149405003ed1356-0": {
+          "fc726fe8-25b1-44d6-a419-a64497d85349": {
             "type": "slideshow",
             "settings": {
               "select_position_content": "left",
               "select_textalign_content": "left",
-              "block_title_top1": "Style Destination",
-              "color_block_title_top1": "#e5e5e5",
+              "block_title_top1": "",
+              "color_block_title_top1": "#E5E5E5",
               "effect_title1": "bounce",
-              "block_title_top": "Basic Collection",
+              "block_title_top": "",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
-              "block_title_top2": "Style Destination",
-              "color_block_title_top2": "#e5e5e5",
+              "block_title_top2": "",
+              "color_block_title_top2": "#E5E5E5",
               "effect_title2": "bounce",
-              "block_buton": "Shop now",
-              "color_block_button": "#ffffff",
-              "color_hover_button": "#ffffff",
-              "color_hover_text": "#000000",
-              "block_url": "shopify:\/\/collections\/all",
+              "block_buton": "",
+              "color_block_button": "#fff",
+              "color_hover_button": "#fff",
+              "color_hover_text": "#000",
+              "block_url": "https:\/\/concept-n.com\/collections\/adidas-sneakers",
               "effect_title3": "bounce",
               "ena_slide_video": false,
               "url_ytb_video": "",
-              "block_banerimage": "shopify:\/\/shop_images\/Screen_Shot_2022-08-26_at_2.08.16_PM.png"
+              "block_banerimage": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif"
             }
           },
           "166149405003ed1356-1": {
@@ -5319,23 +5325,25 @@
             "settings": {
               "select_position_content": "left",
               "select_textalign_content": "left",
-              "block_title_top1": "Style Destination",
+              "block_title_top1": "",
               "color_block_title_top1": "#e5e5e5",
               "effect_title1": "bounce",
-              "block_title_top": "Spring Collection",
+              "block_title_top": "",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
-              "block_title_top2": "Hanpicked By Moocha",
+              "block_title_top2": "",
               "color_block_title_top2": "#e5e5e5",
               "effect_title2": "bounce",
-              "block_buton": "Shop now",
+              "block_buton": "",
               "color_block_button": "#ffffff",
               "color_hover_button": "#ffffff",
               "color_hover_text": "#000000",
               "block_url": "shopify:\/\/collections\/all",
               "effect_title3": "bounce",
               "ena_slide_video": false,
-              "url_ytb_video": ""
+              "url_ytb_video": "",
+              "block_banerimage": "shopify:\/\/shop_images\/Cn_VIP-Offer_web.jpg",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_VIP-Offer_mob-02.png"
             }
           },
           "166149405003ed1356-2": {
@@ -5349,191 +5357,202 @@
               "block_title_top": "Kids Collection",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
-              "block_title_top2": "Everything For Chirdren",
+              "block_title_top2": "",
               "color_block_title_top2": "#e5e5e5",
               "effect_title2": "bounce",
-              "block_buton": "Shop now",
+              "block_buton": "",
               "color_block_button": "#ffffff",
               "color_hover_button": "#ffffff",
               "color_hover_text": "#000000",
               "block_url": "shopify:\/\/collections\/all",
               "effect_title3": "bounce",
               "ena_slide_video": false,
-              "url_ytb_video": ""
+              "url_ytb_video": "",
+              "block_banerimage": "shopify:\/\/shop_images\/Cn_Free-Shipping_web.png",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Free-Shhipping_mob-02.png"
+            }
+          },
+          "166149405003ed1356-0": {
+            "type": "slideshow",
+            "settings": {
+              "select_position_content": "left",
+              "select_textalign_content": "left",
+              "block_title_top1": "",
+              "color_block_title_top1": "#e5e5e5",
+              "effect_title1": "bounce",
+              "block_title_top": "",
+              "color_block_title_top": "#010101",
+              "effect_title": "bounce",
+              "block_title_top2": "",
+              "color_block_title_top2": "#e5e5e5",
+              "effect_title2": "bounce",
+              "block_buton": "",
+              "color_block_button": "#ffffff",
+              "color_hover_button": "#ffffff",
+              "color_hover_text": "#000000",
+              "block_url": "shopify:\/\/collections\/all",
+              "effect_title3": "bounce",
+              "ena_slide_video": false,
+              "url_ytb_video": "",
+              "block_banerimage": "shopify:\/\/shop_images\/Cn_NikeBanner_web-03.jpg",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_NikeBanner_mob-02.png"
             }
           }
         },
         "block_order": [
-          "166149405003ed1356-0",
+          "fc726fe8-25b1-44d6-a419-a64497d85349",
           "166149405003ed1356-1",
-          "166149405003ed1356-2"
+          "166149405003ed1356-2",
+          "166149405003ed1356-0"
         ],
         "settings": {
           "margin_top": "",
           "margin_bottom": ""
         }
       },
-      "16597022109356ff5a": {
-        "type": "section-product-v6",
-        "settings": {
-          "section_layout": "banner_left",
-          "button_1": "Shop now",
-          "url_button1": "shopify:\/\/collections\/all",
-          "color_btn": "",
-          "color_btn_hover": "",
-          "select_collection": "",
-          "products_limit": 4,
-          "margin_top": "",
-          "margin_bottom": ""
-        }
-      },
-      "165970223585b0d380": {
-        "type": "section-service-v1",
+      "166185392953c25c7d": {
+        "type": "section-brand-v1",
         "blocks": {
-          "165970223585b0d380-0": {
-            "type": "service",
+          "166185392953c25c7d-0": {
+            "type": "brand",
             "settings": {
-              "block_title": "SHIPPING & RETURN",
-              "block_content": "If your glasses aren't perfect, return them within 30 days for a full refund. We'll even pay shipping."
+              "brand_img": "shopify:\/\/shop_images\/brand-n_nike.png",
+              "brand_url": "shopify:\/\/collections\/nike"
             }
           },
-          "165970223585b0d380-1": {
-            "type": "service",
+          "166185392953c25c7d-1": {
+            "type": "brand",
             "settings": {
-              "block_title": "SAFE PAYMENT",
-              "block_content": "Pay with the world's most popular and secure payment methods"
+              "brand_img": "shopify:\/\/shop_images\/brand-n_supreme.png",
+              "brand_url": "shopify:\/\/collections\/supreme"
             }
           },
-          "165970223585b0d380-2": {
-            "type": "service",
+          "166185392953c25c7d-4": {
+            "type": "brand",
             "settings": {
-              "block_title": "SHOP WITH CONFIDENCE",
-              "block_content": "Our Buyer Protection covers your purchase from click to delivery."
+              "brand_img": "shopify:\/\/shop_images\/brand-n_hermes.png",
+              "brand_url": "https:\/\/concept-n.com\/collections\/hermes"
+            }
+          },
+          "166185392953c25c7d-2": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/brand-n_adidas.png",
+              "brand_url": "shopify:\/\/collections\/adidas"
+            }
+          },
+          "166185392953c25c7d-5": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/brand-n_goyard.png",
+              "brand_url": "shopify:\/\/collections\/goyard"
+            }
+          },
+          "166185392953c25c7d-3": {
+            "type": "brand",
+            "settings": {
+              "brand_img": "shopify:\/\/shop_images\/brand-n_rolex.png",
+              "brand_url": "shopify:\/\/collections\/rolex"
             }
           }
         },
         "block_order": [
-          "165970223585b0d380-0",
-          "165970223585b0d380-1",
-          "165970223585b0d380-2"
+          "166185392953c25c7d-0",
+          "166185392953c25c7d-1",
+          "166185392953c25c7d-4",
+          "166185392953c25c7d-2",
+          "166185392953c25c7d-5",
+          "166185392953c25c7d-3"
         ],
         "settings": {
+          "bg_color": "",
+          "margin_top": "2",
+          "margin_bottom": "2"
+        }
+      },
+      "1661856392ac2f082d": {
+        "type": "section-instagram-v1",
+        "disabled": true,
+        "settings": {
+          "section_title_item": "hggfhfgh",
+          "ins_userid": "officialconceptn",
+          "ins_access_token": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce",
+          "ins_limit_number": "7",
           "margin_top": "",
           "margin_bottom": ""
         }
       },
-      "16597022645315c341": {
-        "type": "page-lookbook-v1",
+      "1661857121246a8e2f": {
+        "type": "section-newsletter-v1",
+        "disabled": true,
+        "settings": {
+          "select_style": "style_1",
+          "select_width": "full",
+          "style_bg": "color",
+          "bg_color": "#f5f5f7",
+          "bg_color_newletter": "",
+          "bg_color_inputnewletter": "",
+          "border_color_newletter": "#ffffff",
+          "url_banner": "shopify:\/\/collections\/all",
+          "title_newletter": "SUBSCRIBE FOR UPDATES",
+          "color_title": "",
+          "content_newletter": "By entering your email address, you consent to receiving our newsletter with access to our latest collections, events and initiatives.",
+          "color_content": "",
+          "margin_top": "",
+          "margin_bottom": ""
+        }
+      },
+      "1661930902c0cd53a0": {
+        "type": "section-product-v2",
         "blocks": {
-          "87d1f9fd-0ce9-4803-bf06-c6bccc0aa80d": {
-            "type": "slide_lookbook",
+          "1661930902c0cd53a0-2": {
+            "type": "tab",
             "settings": {
-              "bg_breadcrumb": "shopify:\/\/shop_images\/shutterstock_1207538374.png",
-              "bg_pin1": "",
-              "top_position1": "",
-              "left_position1": "",
-              "select_product1": "",
-              "top_popup1": "",
-              "left_popup1": "",
-              "right_popup1": "",
-              "bottom_popup1": "",
-              "bg_pin2": "",
-              "top_position2": "",
-              "left_position2": "",
-              "select_product2": "",
-              "top_popup2": "",
-              "left_popup2": "",
-              "right_popup2": "",
-              "bottom_popup2": "",
-              "bg_pin3": "",
-              "top_position3": "",
-              "left_position3": "",
-              "select_product3": "",
-              "top_popup3": "",
-              "left_popup3": "",
-              "right_popup3": "",
-              "bottom_popup3": "",
-              "bg_pin4": "",
-              "top_position4": "",
-              "left_position4": "",
-              "select_product4": "",
-              "top_popup4": "",
-              "left_popup4": "",
-              "right_popup4": "",
-              "bottom_popup4": "",
-              "bg_pin5": "",
-              "top_position5": "",
-              "left_position5": "",
-              "select_product5": "",
-              "top_popup5": "",
-              "left_popup5": "",
-              "right_popup5": "",
-              "bottom_popup5": ""
+              "tab_title": "watches",
+              "tab_collection": "watches",
+              "tab_limit": 4
             }
           },
-          "fd92ce0f-5082-4321-b7c3-c47d19750731": {
-            "type": "slide_lookbook",
+          "1661930902c0cd53a0-0": {
+            "type": "tab",
             "settings": {
-              "bg_breadcrumb": "shopify:\/\/shop_images\/shutterstock_1310306863.png",
-              "bg_pin1": "",
-              "top_position1": "",
-              "left_position1": "",
-              "select_product1": "",
-              "top_popup1": "",
-              "left_popup1": "",
-              "right_popup1": "",
-              "bottom_popup1": "",
-              "bg_pin2": "",
-              "top_position2": "",
-              "left_position2": "",
-              "select_product2": "",
-              "top_popup2": "",
-              "left_popup2": "",
-              "right_popup2": "",
-              "bottom_popup2": "",
-              "bg_pin3": "",
-              "top_position3": "",
-              "left_position3": "",
-              "select_product3": "",
-              "top_popup3": "",
-              "left_popup3": "",
-              "right_popup3": "",
-              "bottom_popup3": "",
-              "bg_pin4": "",
-              "top_position4": "",
-              "left_position4": "",
-              "select_product4": "",
-              "top_popup4": "",
-              "left_popup4": "",
-              "right_popup4": "",
-              "bottom_popup4": "",
-              "bg_pin5": "",
-              "top_position5": "",
-              "left_position5": "",
-              "select_product5": "",
-              "top_popup5": "",
-              "left_popup5": "",
-              "right_popup5": "",
-              "bottom_popup5": ""
+              "tab_title": "Sneakers",
+              "tab_collection": "adidas-sneakers",
+              "tab_limit": 4
+            }
+          },
+          "1661930902c0cd53a0-1": {
+            "type": "tab",
+            "settings": {
+              "tab_title": "Bags",
+              "tab_collection": "bags",
+              "tab_limit": 4
             }
           }
         },
         "block_order": [
-          "87d1f9fd-0ce9-4803-bf06-c6bccc0aa80d",
-          "fd92ce0f-5082-4321-b7c3-c47d19750731"
+          "1661930902c0cd53a0-2",
+          "1661930902c0cd53a0-0",
+          "1661930902c0cd53a0-1"
         ],
         "settings": {
+          "margin_top": "",
+          "margin_bottom": "",
+          "title-section": "WHAT'S HOT"
         }
       }
     },
     "content_for_index": [
       "166149405003ed1356",
       "16189031221258ecb6",
-      "1659701561230cc2b4",
       "161890887625e8bf29",
+      "1661930902c0cd53a0",
+      "166185392953c25c7d",
+      "1661856392ac2f082d",
       "1619146574e0265060",
       "16189031977d260213",
-      "1618909175602d39ae"
+      "1618909175602d39ae",
+      "1661857121246a8e2f"
     ]
   },
   "presets": {
