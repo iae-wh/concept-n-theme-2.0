@@ -114,7 +114,7 @@
   }
 </style>
 
-<div class="popup jsreqprod_popup">
+<div class="popup jsreqprod_popup d-none">
   <div class="modal-overlay"></div>
   <div class="modal-window">
     <div class="window-window">
@@ -205,6 +205,8 @@
     });
     $('.btn-product-request-done').on('click', function() {
       $('.jsreqprod_popup').addClass('d-none');
+      $("#customer_product_request-done").addClass('d-none');
+      $("#customer_product_request").removeClass('d-none');
 
     });
     // phone number
