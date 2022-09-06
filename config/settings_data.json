@@ -5544,7 +5544,7 @@
       "section-request-product": {
         "type": "section-request-product",
         "settings": {
-          "brand_url": "https:\/\/webhouse-digital.com\/custom\/concept-n\/email\/request_product",
+          "brand_url": "https:\/\/webhouse-digital.com\/custom\/concept-n\/api\/2021-10\/email\/request_product",
           "select_width": "full",
           "style_bg": "color",
           "bg_color": "#f2f2f2",
