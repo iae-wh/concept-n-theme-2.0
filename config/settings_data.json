@@ -5201,7 +5201,7 @@
               "link_collection": "Get inspired",
               "color_btn": "#ffffff",
               "color_btn_hover": "#ffffff",
-              "url_link_collection": ""
+              "url_link_collection": "shopify:\/\/collections\/ready-to-wear"
             }
           },
           "f6c686bd-4652-463c-8444-d2a36d787b1f": {
@@ -5225,7 +5225,7 @@
               "link_collection": "Get inspired",
               "color_btn": "#7d7b7b",
               "color_btn_hover": "#010101",
-              "url_link_collection": "shopify:\/\/collections\/all"
+              "url_link_collection": "shopify:\/\/collections\/nike-sneakers"
             }
           }
         },
