@@ -28,7 +28,11 @@
             <div class="product-item">
               <h2 class="product-name"><a>&nbsp;</a></h2>
               <div class="details clearfix">
-                <form action="/cart/add" method="post" class="variants CartContainer">
+
+                {% if product.tags contains "VIP" or product.price == 0 %}
+                {% else %}
+                  <form action="/cart/add" method="post" class="variants CartContainer">
+                {% endif %}
                   <div class="d-flex justify-content-between">
                     <div class="prices product-price dosis-font variation-price mb-15"> 
                       <label class="price product-price">                 
@@ -39,21 +43,35 @@
                   <p class="des description desc product-desc"></p>
                   <select name='id' style="display:none;" class="engoj-except-select2">
                   </select>
+
+
                   <div class="product-actions">
+                    {% if product.tags contains "VIP" or product.price == 0 %}
+                      <div class="actions btn-addtocart" >
+                        <button type="submit" class="shop-button btn-request-product" style="width: 100%">
+                          Inquiry
+                        </button>
+                        {% include 'product_request' with product %}
+                      </div>
+                    {% else %}
+                      <div class="product-quantity">
 
-                    <div class="product-quantity">
-
-                      <div class="quantity-all js-qty">
-                        <span  class='qtyminus qty_minus js-qty__adjust js-qty__adjust--minus' data-field='quantity'><i class="fa fa-minus"></i></span>
-                        <input type="text" name="quantity" value="1" class="qty quantity js-qty__num">
-                        <span class='qtyplus qty_plus js-qty__adjust js-qty__adjust--plus' data-field='quantity'><i class="fa fa-plus"></i></span>
+                        <div class="quantity-all js-qty">
+                          <span  class='qtyminus qty_minus js-qty__adjust js-qty__adjust--minus' data-field='quantity'><i class="fa fa-minus"></i></span>
+                          <input type="text" name="quantity" value="1" class="qty quantity js-qty__num">
+                          <span class='qtyplus qty_plus js-qty__adjust js-qty__adjust--plus' data-field='quantity'><i class="fa fa-plus"></i></span>
+                        </div>
+                      </div>
+                      <div class="actions btn-addtocart" >
+                        <button  type="button" class="btn-addToCart shop-button addcart-link font-bold">{{ 'products.product.add_to_cart' | t }}</button>
                       </div>
                     </div>
-                    <div class="actions btn-addtocart" >
-                      <button  type="button" class="btn-addToCart shop-button addcart-link font-bold">{{ 'products.product.add_to_cart' | t }}</button>
-                    </div>
-                  </div>
-                </form>
+                  {% endif %}
+
+                {% if product.tags contains "VIP" or product.price == 0 %}
+                {% else %}
+                  </form>
+                {% endif %}
               </div>
             </div>
           </div>
