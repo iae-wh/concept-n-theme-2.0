@@ -5,7 +5,7 @@
 {% assign product_desc = product_request.description| strip_html | truncatewords: 50 %}
 <div class="popup jsreqprod_popup d-none">
   <div class="modal-overlay"></div>
-  <div class="modal-window">
+  <div class="modal-window modal-w-pr">
     <div class="window-window">
       <div class="window-content clearfix">
         <a class="close_edit jsclosepoup" title="Close" href="javascript:void(0)">
@@ -79,7 +79,7 @@
   </div>
 </div>
 <style>
-  .popup .modal-window {
+  .popup .modal-window.modal-w-pr {
     min-height: 620px;
     margin: 0 auto;
     position: relative;
