@@ -2544,3 +2544,8 @@ input[type="checkbox"] {
 .modal-footer {
    display: flex!important;
  }
+@media (max-width: 768px){
+  .breadcrumb_collection .bg-breadcrumb, .breadcrumb_collection2 .bg-breadcrumb {
+    padding: 10px 0 10px;
+  }
+}
