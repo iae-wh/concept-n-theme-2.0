@@ -4841,6 +4841,12 @@
         "content": "Product Item Style"
       },
       {
+        "type": "url",
+        "id": "request_product_url",
+        "label": "Request Product URL",
+        "default": "/"
+      },
+      {
         "type": "select",
         "id": "product_style",
         "label": "Product Item Style?",

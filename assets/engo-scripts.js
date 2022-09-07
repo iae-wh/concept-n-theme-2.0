@@ -729,7 +729,6 @@ jQuery(document).ready(function($) {
       infinite: false,
       prevArrow: '<button type="button" class="slick-brand-prev fa fa-angle-left"></button>',
       nextArrow: '<button type="button" class="slick-brand-next fa fa-angle-right"></button>',
-      infinite: false,
       vertical: true,
       verticalSwiping: true,
       focusOnSelect: true,

@@ -137,7 +137,7 @@
         <div class="request-product-content">
           <h2 class="title">REQUEST PRODUCT</h2>
           <div class="request-product-form-container mt-3">
-            <form method="post" action="{{ section.settings.brand_url }}" id="customer_product_request" accept-charset="UTF-8">
+            <form method="post" action="{{ settings.request_product_url }}" id="customer_product_request" accept-charset="UTF-8">
               <input type="hidden" name="form_type" value="customer_product_request">
               <input type="hidden" name="utf8" value="✓">
               <div class="row">
@@ -261,12 +261,6 @@
 {
   "name": "REQUEST PRODUCT-V1",
   "settings": [
-    {
-      "type": "url",
-      "id": "brand_url",
-      "label": "Action URL",
-      "default": "/"
-    },
   {
       "type": "select",
       "id": "select_width",

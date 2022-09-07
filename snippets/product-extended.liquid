@@ -74,7 +74,10 @@
                   </a>
                   <div class="info-prod">
                     <a href="{{collection.products[prev].url}}">{{collection.products[prev].title}}</a>
-                    <p >{{collection.products[prev].price|money}}</p>
+                    {% if collection.products[prev].tags contains "VIP" or collection.products[prev].price == 0 %}
+                    {% else %}
+                      <p >{{collection.products[prev].price|money}}</p>
+                    {% endif %}
                   </div>
                 </div>
               </div>
@@ -88,7 +91,10 @@
                   </a>
                   <div class="info-prod">
                     <a href="{{collection.products[next].url}}" >{{collection.products[next].title}}</a>
-                    <p >{{collection.products[next].price|money}}</p>
+                    {% if collection.products[next].tags contains "VIP" or collection.products[next].price == 0 %}
+                    {% else %}
+                      <p >{{collection.products[next].price|money}}</p>
+                    {% endif %}
                   </div>
                 </div>
               </div>
@@ -104,7 +110,7 @@
     </div>
     <!-- End Bread Crumb -->
     <div class="">
-      <div class="content-page container container-v1">      
+      <div class="content-page container container-v1">
         <div class="content-page-detail">
           <div class="row">
             <div class="col-lg-5 col-md-7 col-sm-12 col-12">
@@ -144,11 +150,11 @@
                       {% for image in product.images %}
                       <div class=" {% if section.settings.ena_zoom %}js-zoom-img zoom-image {% endif %}">
                         <img class="{% if forloop.first %} engoj_img_main {% endif %} w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
-                      </div> 
+                      </div>
                       {% endfor %}
                     </div>
                   </div>
-                </div>  
+                </div>
                 {% elsif section.settings.style_page  == "right"  %}
                 <div class="row">
                   <div class="col-sm-10 gutter">
@@ -336,7 +342,7 @@
                       {% for image in product.images %}
                       <div class=" {% if section.settings.ena_zoom %}js-zoom-img zoom-image {% endif %}">
                         <img class="{% if forloop.first %} engoj_img_main {% endif %} w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
-                      </div> 
+                      </div>
                       {% endfor %}
                     </div>
                   </div>
@@ -349,7 +355,7 @@
                       {% endfor %}
                     </div>
                   </div>
-                </div>  
+                </div>
 
                 {% elsif section.settings.style_page  == "bottom"  %}
 
@@ -379,7 +385,7 @@
                     {% for image in product.images %}
                     <div class=" {% if section.settings.ena_zoom %}js-zoom-img zoom-image {% endif %}">
                       <img class="{% if forloop.first %} engoj_img_main {% endif %} w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
-                    </div> 
+                    </div>
                     {% endfor %}
                   </div>
                 </div>
@@ -428,10 +434,10 @@
                     {% for image in product.images %}
                     <div class=" {% if section.settings.ena_zoom %}js-zoom-img zoom-image {% endif %}">
                       <img class="engoj_img_main w-100 img-fluid" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" alt="{{product.title}}"/>
-                    </div> 
+                    </div>
                     {% endfor %}
                   </div>
-                </div>                      
+                </div>
                 {% endif %}
               </div>
 
@@ -442,12 +448,15 @@
               <div class="detail-info" style="{% if settings.show_servicebox == true %} padding-left: 0px; {% endif %}">
                 <div class="relative">
                   <h2 class="product-title ">{{product.title}}</h2>
-                  <div class="product-price ">                      
-                    {% capture price %}{{ product.price | money_with_currency }}{% endcapture %}
-                    {% if on_sale %}<del class="enj-product-price-compare">{{ product.compare_at_price | money }}</del> {% endif %}
-                    <ins class="enj-product-price engoj_price_main">{{ price }}</ins>
+                  {% if collection.products[prev].tags contains "VIP" or collection.products[prev].price == 0 %}
+                  {% else %}
+                    <div class="product-price ">
+                      {% capture price %}{{ product.price | money_with_currency }}{% endcapture %}
+                      {% if on_sale %}<del class="enj-product-price-compare">{{ product.compare_at_price | money }}</del> {% endif %}
+                      <ins class="enj-product-price engoj_price_main">{{ price }}</ins>
 
-                  </div>
+                    </div>
+                  {% endif %}
                   {% if section.settings.show_rating %}
                   <div class="wrap-rating">
                     <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
@@ -469,14 +478,14 @@
                   {% endif %}
 
                   {% if settings.ena_info_sale %}
-                  <div class="list_ul_engo_full">                
+                  <div class="list_ul_engo_full">
                     {{settings.content_infosale}}
                   </div>
                   {% endif %}
 
 
                   {% if settings.ena_random_sold_item %}
-                  <p class="random_product" ><span id="random_prod"></span>  {{settings.random_text1}}  <span id="random_hour"></span> {{settings.random_text2}}</p>   
+                  <p class="random_product" ><span id="random_prod"></span>  {{settings.random_text1}}  <span id="random_hour"></span> {{settings.random_text2}}</p>
                   {% endif %}
 
                   {% if settings.ena_countdown %}
@@ -489,9 +498,9 @@
                     <div class="countdown-timer text-center">
                       <ul data-countdown="countdown-v1" data-date="{{product.metafields.engo_countdown_prod.countdown_datetime}}">
                       </ul>
-                    </div> 
+                    </div>
                     {% endif %}
-                  </div> 
+                  </div>
                   {% endif %}
 
                   {% comment %}
@@ -571,32 +580,40 @@
 
                     <div class=" btn-action">
                       <a href="{{product.metafields.engo_external.external_url}}" class="shop-button-amazon" >{{product.metafields.engo_external.external_name}}</a>
-                    </div>  
-
-                    {% else %}
-                    {% if sold_out %}
-                    <div class="btn-action">
-                      <div class="shop-button-soldout">
-                        {{ 'products.product.out_of_stock' | t }}
-                      </div>
-                    </div>  
-                    {% else %}
-                    <div class="btn-action detail-attr qty-cart">
-                      {% if section.settings.show_quantity %}
-                      <div class="">
-                        <input type="number" size="4" title="Qty" value="1" min="1" id="Quantity" name="quantity" />
-                      </div>
-                      {% endif %}
-                      <button type="submit" class="shop-button enj-add-to-cart-btn engoj-btn-addtocart">
-                        {{settings.pia_addcart_name}}
-                      </button>
                     </div>
-                    <!-- End add to cart & quantity -->
-                    {% form 'product', product %}
-                    {{ form | payment_button }}
-                    {% endform %}
 
-                    {% endif %}
+                    {% else %}
+                      {% if collection.products[prev].tags contains "VIP" or collection.products[prev].price == 0 %}
+                        <div class="btn-action detail-attr qty-cart">
+                            <button type="submit" class="shop-button btn-request-product" style="width: 100%">
+                              Inquiry
+                            </button>
+                          {% include 'product_request' with product %}
+                        </div>
+                      {% else %}
+                        {% if sold_out %}
+                          <div class="btn-action">
+                            <div class="shop-button-soldout">
+                              {{ 'products.product.out_of_stock' | t }}
+                            </div>
+                          </div>
+                        {% else %}
+                          <div class="btn-action detail-attr qty-cart">
+                            {% if section.settings.show_quantity %}
+                              <div class="">
+                                <input type="number" size="4" title="Qty" value="1" min="1" id="Quantity" name="quantity" />
+                              </div>
+                            {% endif %}
+                            <button type="submit" class="shop-button enj-add-to-cart-btn engoj-btn-addtocart">
+                              {{settings.pia_addcart_name}}
+                            </button>
+                          </div>
+                        <!-- End add to cart & quantity -->
+                          {% form 'product', product %}
+                            {{ form | payment_button }}
+                          {% endform %}
+                        {% endif %}
+                      {% endif %}
                     {% endif %}
                     {% endif %}
 
@@ -618,7 +635,7 @@
                   </div>
                   {% endif %}
 
-                  <ul class="product-meta-info"> 
+                  <ul class="product-meta-info">
                     {% if section.settings.show_sku %}
                     {% if product.variants.first.sku != blank %}
                     <li>
@@ -628,14 +645,14 @@
                       </div>
                     </li>
                     {% endif %}
-                    {% endif %} 
+                    {% endif %}
 
                     {% if section.settings.show_cate %}
                     <li>
                       <div class="item-product-meta-info product-category-info">
                         <label>{{'blogs.sidebar.categories' | t}} :</label>
                         {% for collection in product.collections %}
-                        <a href="{{collection.url}}">{{ collection.title }}{% unless forloop.last%},{% endunless %} </a>  
+                        <a href="{{collection.url}}">{{ collection.title }}{% unless forloop.last%},{% endunless %} </a>
                         {% endfor %}
                       </div>
                     </li>
@@ -675,7 +692,7 @@
                   </div>
                 </div>
               </div>
-            </div>  
+            </div>
             {% endif %}
 
           </div>
@@ -710,7 +727,7 @@
 
                 <div class=" btn-action">
                   <a href="{{product.metafields.engo_external.external_url}}" class="shop-button-amazon" >{{product.metafields.engo_external.external_name}}</a>
-                </div>  
+                </div>
 
                 {% else %}
                 {% if sold_out %}
@@ -718,7 +735,7 @@
                   <div class="shop-button-soldout">
                     {{ 'products.product.out_of_stock' | t }}
                   </div>
-                </div>  
+                </div>
                 {% else %}
                 <div class="btn-action detail-attr qty-cart">
                   <button type="submit" class="shop-button btn-add-stickycart">
@@ -738,7 +755,7 @@
 
               <div class=" btn-action">
                 <a href="{{product.metafields.engo_external.external_url}}" class="shop-button-amazon" >{{product.metafields.engo_external.external_name}}</a>
-              </div>  
+              </div>
 
               {% else %}
               {% if sold_out %}
@@ -746,7 +763,7 @@
                 <div class="shop-button-soldout">
                   {{ 'products.product.out_of_stock' | t }}
                 </div>
-              </div>  
+              </div>
               {% else %}
               <div class="btn-action detail-attr qty-cart">
                 <button type="submit" class="shop-button btn-add-stickycart">
@@ -760,7 +777,7 @@
 
             </div>
 
-          </div> 
+          </div>
         </div>
       </div>
 
@@ -787,7 +804,7 @@
 
       {% endif %}
 
-    </div>  
+    </div>
   </section>
   {% include 'tab-product-details' %}
 
@@ -819,7 +836,7 @@
   var count = initial;
   document.getElementById('random_prod').innerHTML = count;
   setInterval(function() {
-    if (count <= 5) { 
+    if (count <= 5) {
       count +=5;}
 
     var variation = random(-5,5);
@@ -833,14 +850,14 @@
     document.getElementById('random_prod').innerHTML = count;
 
   },{% if settings.settime_random_sold != blank %} {{settings.settime_random_sold}}000  {% else %} 5000{% endif %})
-  {% endif %}  
+  {% endif %}
 
-  {% if settings.ena_random_sold_item %}  
+  {% if settings.ena_random_sold_item %}
   var initial2 = random({{settings.min_prod2}}, {{settings.max_prod2}});
   var count2 = initial2;
   document.getElementById('random_hour').innerHTML = count2;
   setInterval(function() {
-    if (count2 <= 5) { 
+    if (count2 <= 5) {
       count2 +=5;}
 
     var variation2 = random(-5,5);
@@ -853,15 +870,15 @@
     }
     document.getElementById('random_hour').innerHTML = count2;
 
-  }, {% if settings.settime_random_sold != blank %} {{settings.settime_random_sold}}000  {% else %} 5000{% endif %})  
-  {% endif %}  
+  }, {% if settings.settime_random_sold != blank %} {{settings.settime_random_sold}}000  {% else %} 5000{% endif %})
+  {% endif %}
 
   {% if settings.ena_random_visit %}
   var initial3 = random({{settings.min_visit}}, {{settings.max_visit}});
   var count3 = initial3;
   document.getElementById('realtime_visit').innerHTML = count3;
   setInterval(function() {
-    if (count3 <= 5) { 
+    if (count3 <= 5) {
       count3 +=5;}
 
     var variation3 = random(-5,5);
@@ -874,7 +891,7 @@
     }
     document.getElementById('realtime_visit').innerHTML = count3;
 
-  },{% if settings.settime_random_visitor != blank %} {{settings.settime_random_visitor}}000 {% else %} 3000 {% endif %})    
+  },{% if settings.settime_random_visitor != blank %} {{settings.settime_random_visitor}}000 {% else %} 3000 {% endif %})
 
   {% endif %}
 
@@ -895,7 +912,7 @@
       $('.progress-bar').css('width', function(){
         return count4/{{settings.max_product}}*100 + '%';
       });
-    }, {% if settings.settime_hurry_stock != blank %} {{settings.settime_hurry_stock}}000 {% else %}10000 {% endif %})  
+    }, {% if settings.settime_hurry_stock != blank %} {{settings.settime_hurry_stock}}000 {% else %}10000 {% endif %})
 
   }); 
   {% endif %}
