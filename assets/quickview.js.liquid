@@ -203,7 +203,7 @@
         } else {
           quickview.find('.des').remove();
         }
-        if (!product.tags.contains("VIP") && product.price != 0) {
+        if (!product.tags.includes("VIP") && product.price != 0) {
           quickview.find('.price').html(Shopify.formatMoney(product.price, window.money_format));
         }
         quickview.find('.product-inner').attr('id', 'product-' + product.id);
@@ -211,7 +211,7 @@
         quickview.find('.variants select').attr('id', 'product-select-' + product.id);
 
 
-        if (!product.tags.contains("VIP") && product.price != 0) {
+        if (!product.tags.includes("VIP") && product.price != 0) {
           if (product.compare_at_price > product.price) {
             quickview.find('.compare-price').html(Shopify.formatMoney(currencyConverter(product.compare_at_price_max), window.money_format)).show();
             quickview.find('.price').addClass('on-sale');
@@ -222,7 +222,7 @@
         }
 
         //out of stock
-        if (!product.tags.contains("VIP") && product.price != 0) {
+        if (!product.tags.includes("VIP") && product.price != 0) {
           if (!product.available) {
             quickview.find("select, input, .total-price, .dec, .inc, .variants label").remove();
             quickview.find(".btn-addToCart").text('unavailable').addClass('disabled').attr("disabled", "disabled");
