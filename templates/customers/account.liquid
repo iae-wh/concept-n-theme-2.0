@@ -25,12 +25,12 @@
       </div>
       <ul class="account-details-menu">
         <li data-selector="profile-detail-container" class="active">{% render 'icon-profile' %}
-          Profile
+            <span data-selector="profile-detail-container">Profile</span>
         </li>
-        <li data-selector="addresses-container">{% render 'icon-address' %} Addresses
+        <li data-selector="addresses-container">{% render 'icon-address' %} <span data-selector="addresses-container">Addresses</span>
         </li>
-        <li data-selector="orders-container">{% render 'icon-orders' %}  Orders</li>
-        <li data-selector="wishlist-container">{% render 'icon-wishlist' %} Wish List</li>
+        <li data-selector="orders-container">{% render 'icon-orders' %}  <span data-selector="orders-container">Orders</span></li>
+        <li data-selector="wishlist-container">{% render 'icon-wishlist' %} <span data-selector="wishlist-container">Wish List</span></li>
       </ul>
     </div>
     <div class="detail-container profile-detail-container" style="display:none">

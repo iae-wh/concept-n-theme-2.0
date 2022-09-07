@@ -1183,7 +1183,7 @@ html[lang="ar"] .profile-user-details{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5rem 0 1rem 0;
+    margin: 1.5rem 0 0 0;
   }
 }
 .detail-container{
@@ -1215,7 +1215,6 @@ html[lang="ar"] .account-details-menu{
     display: flex;
     margin: 0 0 20px 0;
     border-bottom: 1px solid #D8D9DA;
-    padding-bottom: 10px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1241,9 +1240,25 @@ html[lang="ar"] .account-details-menu li{
 }
 @media only screen and (max-width: 768px) {
   .account-details-menu li{
-    padding: 10px 15px;
-    text-indent: -9999px;
-    white-space: nowrap;
+    padding: 15px 15px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .account-details-menu li span{
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .account-details-menu li svg{
+    width: 25.453px;
+    height: 25.846px;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -1263,7 +1278,6 @@ html[lang="ar"] .account-details-menu li{
   background: #1f1f1f;
   cursor: default;
   color: #fff;
-  border-radius: 3px;
 }
 .account-details-menu li svg{
   margin-right: 5px;
