@@ -236,7 +236,7 @@
             {% endif %}
           }
         } else {
-          quickview.find("select, input, .total-price, .dec, .inc, .product-quantity, .variants label, .btn-addToCart").remove();
+          quickview.find(".popup-quickview").find("select, input, .total-price, .dec, .inc, .product-quantity, .variants label, .btn-addToCart").remove();
           quickview.find(".btn-addtocart").append('<a href="javascript:void(0)" class="shop-button qw-btn-request-product" style="width: 100%;display: block;padding: 20px 39px;">Inquiry</a>');
           $(".qw-btn-request-product").on('click', function() {
             //$('.quickview-product').removeClass('active');
