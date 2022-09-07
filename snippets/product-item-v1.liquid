@@ -1192,8 +1192,8 @@
     <!-- END THUMBNAIL     -->
     {% if product.tags contains "VIP" or product.price == 0 %}
       <div class="add-to-cart mr-0">
-        <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_selectoption_name}}">
-          {{settings.pia_selectoption_name}}
+        <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
+          {{settings.pia_sold_name}}
         </a>
       </div>
     {% else %}
