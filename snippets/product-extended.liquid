@@ -448,7 +448,7 @@
               <div class="detail-info" style="{% if settings.show_servicebox == true %} padding-left: 0px; {% endif %}">
                 <div class="relative">
                   <h2 class="product-title ">{{product.title}}</h2>
-                  {% if collection.products[prev].tags contains "VIP" or collection.products[prev].price == 0 %}
+                  {% if product.tags contains "VIP" or product.price == 0 %}
                   {% else %}
                     <div class="product-price ">
                       {% capture price %}{{ product.price | money_with_currency }}{% endcapture %}
@@ -524,7 +524,10 @@
 
 
 
-                  <form  action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="cart clearfix mt-3">
+                  {% if product.tags contains "VIP" or product.price == 0 %}
+                  {% else %}
+                    <form  action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="cart clearfix mt-3">
+                  {% endif %}
                     {% comment %}
                     Add product variants as a dropdown.
                     - By default, each variant (or combination of variants) will display as its own <option>
@@ -583,7 +586,7 @@
                     </div>
 
                     {% else %}
-                      {% if collection.products[prev].tags contains "VIP" or collection.products[prev].price == 0 %}
+                      {% if product.tags contains "VIP" or product.price == 0 %}
                         <div class="btn-action detail-attr qty-cart">
                             <button type="submit" class="shop-button btn-request-product" style="width: 100%">
                               Inquiry
@@ -617,7 +620,10 @@
                     {% endif %}
                     {% endif %}
 
-                  </form>
+                  {% if product.tags contains "VIP" or product.price == 0 %}
+                  {% else %}
+                    </form>
+                  {% endif %}
 
                   {% if settings.ena_random_visit %}
                   <p class="visitor">Real time <span id="realtime_visit"></span> Visitor right now</p>

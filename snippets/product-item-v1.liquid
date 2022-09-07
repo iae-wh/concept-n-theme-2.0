@@ -1144,11 +1144,15 @@
     {% assign on_sale = true %}
     {% endif %}
 
-    <p class="price-product mb-0">
-      <span class="price">{{ product.price | money_with_currency }}</span>
-      {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
 
-    </p>
+    {% if product.tags contains "VIP" or product.price == 0 %}
+    {% else %}
+      <p class="price-product mb-0">
+        <span class="price">{{ product.price | money_with_currency }}</span>
+        {% if on_sale %}<s class="price-old">{{ product.compare_at_price | money }}</s>{% endif %}
+
+      </p>
+    {% endif %}
     <!-- END PRODUCT     -->
 
     <!--     THUMBNAIL PRODUCT -->
@@ -1186,27 +1190,34 @@
     {% endif %}
 
     <!-- END THUMBNAIL     -->
-
-    <div class="add-to-cart mr-0">
-      {% if sold_out %}
-      <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
-        {{settings.pia_sold_name}}
-      </a>
-      {% else %}
-      {% if product.variants.size > 1 %}
-      <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_selectoption_name}}">
-        {{settings.pia_selectoption_name}}
-      </a>
-      {% else %}
-      <form method="post" action="/cart/add" enctype="multipart/form-data" class="inline-block icon-addcart  box-shadow"  data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_addcart_name}}">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-        <button type="submit" name="add" class="enj-add-to-cart-btn ">
-          {{settings.pia_addcart_name}}
-        </button>
-      </form>
-      {% endif %}
-      {% endif %}
-    </div>
+    {% if product.tags contains "VIP" or product.price == 0 %}
+      <div class="add-to-cart mr-0">
+        <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_selectoption_name}}">
+          {{settings.pia_selectoption_name}}
+        </a>
+      </div>
+    {% else %}
+      <div class="add-to-cart mr-0">
+        {% if sold_out %}
+          <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_sold_name}}">
+            {{settings.pia_sold_name}}
+          </a>
+        {% else %}
+          {% if product.variants.size > 1 %}
+            <a href="{{ product.url | within: collection }}" class="inline-block icon-addcart  box-shadow" data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_selectoption_name}}">
+              {{settings.pia_selectoption_name}}
+            </a>
+          {% else %}
+            <form method="post" action="/cart/add" enctype="multipart/form-data" class="inline-block icon-addcart  box-shadow"  data-toggle="tooltip" data-placement="top" data-original-title="{{settings.pia_addcart_name}}">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <button type="submit" name="add" class="enj-add-to-cart-btn ">
+                {{settings.pia_addcart_name}}
+              </button>
+            </form>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endif %}
 
   </div>
 
