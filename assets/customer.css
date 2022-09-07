@@ -666,7 +666,7 @@
 
 :is(.account, .order) p {
   margin: 0 0 2rem;
-  font-size: 1.4rem;
+  font-size: 0.8rem;
 }
 
 :is(.account, .order) h1 {
@@ -872,6 +872,12 @@
   margin-top: 0.2rem;
   text-transform: uppercase;
   color: rgba(var(--color-foreground), 0.7);
+}
+.order .unit-price {
+  font-size: 1.2rem;
+}
+.order .quantity {
+  font-size: 1rem;
 }
 
 .order .regular-price {
@@ -1746,6 +1752,7 @@ html[lang="ar"] .account-card-bottom button:nth-child(2){
 }
 .shipment-details-header h4{
   width: calc(100%/3);
+  font-size: 1rem;
 }
 .shipment-details-header .progress-point {
   display: flex;

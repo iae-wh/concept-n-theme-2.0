@@ -158,7 +158,7 @@
               <h3 class="unit-price">{{ line_item.final_price | money_with_currency }}</h3>
             {%- endif -%}
   
-            <h4 data-label="{{ 'customer.order.quantity' | t }}" style="color:#b1b1b1">
+            <h4 class="quantity" data-label="{{ 'customer.order.quantity' | t }}" style="color:#b1b1b1">
               x {{ line_item.quantity }} Unit
             </h4>
           </div>
