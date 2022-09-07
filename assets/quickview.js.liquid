@@ -224,7 +224,7 @@
         //out of stock
         if (!product.tags.includes("VIP") && product.price != 0) {
           if (!product.available) {
-            quickview.find("select, input, .total-price, .dec, .inc, .variants label").remove();
+            quickview.find("select, input, .total-price, .dec, .inc, .product-quantity, .variants label").remove();
             quickview.find(".btn-addToCart").text('unavailable').addClass('disabled').attr("disabled", "disabled");
           } else {
             quickview.find('.total-price span').html(Shopify.formatMoney(currencyConverter(product.price), window.money_format));
@@ -236,8 +236,8 @@
             {% endif %}
           }
         } else {
-          quickview.find("select, input, .total-price, .dec, .inc, .variants label").remove();
-          quickview.find(".btn-addToCart").text('Inquiry').addClass('btn-request-product');
+          quickview.find("select, input, .total-price, .dec, .inc, .product-quantity, .variants label, .btn-addToCart").remove();
+          quickview.find(".btn-addtocart").append('<button type="submit" class="shop-button btn-request-product" style="width: 100%">Inquiry</button>');
         }
 
 
