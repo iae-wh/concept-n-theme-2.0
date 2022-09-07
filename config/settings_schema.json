@@ -4844,7 +4844,7 @@
         "type": "url",
         "id": "request_product_url",
         "label": "Request Product URL",
-        "default": "/"
+        "default": "\/"
       },
       {
         "type": "select",

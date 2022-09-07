@@ -441,6 +441,7 @@
     "copyright_fv6": "birace Online Store",
     "po_style": "po_swatchs",
     "swatch_style": "sw_radio2",
+    "request_product_url": "https:\/\/webhouse-digital.com\/custom\/concept-n\/api\/2021-10\/email\/request_product",
     "product_style": "style_5",
     "show_new_label": false,
     "product_new_time": "69",
@@ -5544,7 +5545,6 @@
       "section-request-product": {
         "type": "section-request-product",
         "settings": {
-          "brand_url": "https:\/\/webhouse-digital.com\/custom\/concept-n\/api\/2021-10\/email\/request_product",
           "select_width": "full",
           "style_bg": "color",
           "bg_color": "#f2f2f2",
