@@ -194,7 +194,7 @@
         $('.quickview-product').html(template);
         var quickview = $('.quickview-product');
         quickview.find('.product-name a').html(product.title).attr('href', product.url);
-        quickview.find('input[name="product_name"]').html(product.title);
+        quickview.find('input[name="product_name"]').val(product.title);
         quickview.find('.spr-badge .spr-active').css({"width": rating});
         quickview.find('.star-rating .shopify-product-reviews-badge').attr('data-id',product.id)
         if (quickview.find('.des').length > 0) {
