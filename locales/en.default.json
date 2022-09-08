@@ -210,7 +210,7 @@
   },
   "customer": {
     "account": {
-      "title": "Account",
+      "title": "My Account",
       "general_information": "General information",
       "details": "Account details",
       "view_addresses": "View addresses",

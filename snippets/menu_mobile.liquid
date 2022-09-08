@@ -1,3 +1,43 @@
+<style>
+  .box_contentmenu .tab_content_menu_mobile .tab-content #tab_account_mobile.logged-in {
+    width: 100%;
+    padding: 30px 15px;
+  }
+  .side-menu-profile-user-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+  }
+  .side-menu-profile-user-details h3 {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    margin-bottom: 0px;
+  }
+  .side-menu-profile-user-details a {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .account-details-side-menu {
+    list-style: none;
+    padding-left: 0!important;
+    margin: 0 30px 0 0;
+  }
+  .account-details-side-menu li a {
+    padding: 12px 0px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .account-details-side-menu li a svg {
+    margin-right: 20px;
+    height: 20px;
+    width: 20px;
+  }
+</style>
 <div class="menu_moblie d-flex d-xl-none jsmenumobile align-items-center {% unless settings.enable_sticky_mobile %}engoc-disable-sticky{% endunless %}">
   <a href="javascript:void(0)" title="" class="menuleft">
     <span class="iconmenu">
@@ -48,12 +88,12 @@
       <li class="toptab_li">
         <a class="tab_navar_right" href="#tab_account_mobile" role="tab" data-toggle="tab">
           <span class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" height="400" width="400" id="svg2" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xml:space="preserve"><metadata id="metadata8"><rdf><work rdf:about=""><format>image/svg+xml</format><type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></type></work></rdf></metadata><defs id="defs6"></defs><g transform="matrix(1.3333333,0,0,-1.3333333,0,400)" id="g10"><g transform="scale(0.1)" id="g12"><path id="path14" style="fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 1506.87,2587.11 c -225.04,0 -408.14,-183.08 -408.14,-408.11 0,-225.06 183.1,-408.13 408.14,-408.13 225.02,0 408.13,183.07 408.13,408.13 0,225.03 -183.11,408.11 -408.13,408.11 z m 0,-1038.56 c -347.64,0 -630.432,282.79 -630.432,630.45 0,347.63 282.792,630.43 630.432,630.43 347.63,0 630.42,-282.8 630.42,-630.43 0,-347.66 -282.79,-630.45 -630.42,-630.45 v 0"></path><path id="path16" style="fill-opacity:1;fill-rule:nonzero;stroke:none" d="M 399.648,361.789 H 2614.07 c -25.06,261.531 -139.49,503.461 -327.47,689.831 -124.25,123.14 -300.78,193.96 -483.86,193.96 h -591.76 c -183.61,0 -359.601,-70.82 -483.863,-193.96 C 539.148,865.25 424.719,623.32 399.648,361.789 Z M 2730.69,139.461 H 283.035 c -61.558,0 -111.16,49.59 -111.16,111.16 0,363.438 141.68,704 398.32,959.019 165.657,164.55 399.414,258.82 640.785,258.82 h 591.76 c 241.94,0 475.14,-94.27 640.8,-258.82 256.63,-255.019 398.31,-595.581 398.31,-959.019 0,-61.57 -49.59,-111.16 -111.16,-111.16 v 0"></path></g></g></svg></span>
-          <span class="{% if settings.enable_rtl_mode %} mr-2 {% else %}ml-2{% endif %}"> {{ 'customer.login.title' | t }}</span>
+          <span class="{% if settings.enable_rtl_mode %} mr-2 {% else %}ml-2{% endif %}">{% if customer %}{{ 'customer.account.title' | t }}{% else %}{{ 'customer.login.title' | t }} {% endif %}</span>
         </a>
       </li>
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane show in active tab_children_menu" id="tab_menu_mobile" style="height: -webkit-fill-available">
+      <div role="tabpanel" class="tab-pane tab_children_menu  show in active" id="tab_menu_mobile" style="height: -webkit-fill-available">
 
         <div style="
     display: flex;
@@ -178,110 +218,125 @@
         </div>
       </div>
       <!-- tab account login-regester-->
-      <div role="tabpanel" class="tab-pane fade" id="tab_account_mobile">
-        <div class="overlay_login-content">
-          <div class="row justify-content-center box_content_accountdestop text-center">
+      <div role="tabpanel" class="tab-pane fade {% if customer %}logged-in{% endif %}" id="tab_account_mobile">
+        {% if customer %}
+          <div class="side-menu-profile-user-details">
+            <h3>{{ 'customer.account_fallback' | t }}{{ customer.first_name }}</h3>
+            <a href="{{ routes.account_logout_url }}">
+              {{ 'customer.log_out' | t }}
+            </a>
+          </div>
+          <ul class="account-details-side-menu">
+            <li><a href="/account?path=profile">{% render 'icon-profile' %}<span data-selector="profile-detail-container">Profile</span></a></li>
+            <li><a href="/account?path=addresses">{% render 'icon-address' %} <span data-selector="addresses-container">Addresses</span></a></li>
+            <li><a href="/account?path=orders">{% render 'icon-orders' %}  <span data-selector="orders-container">Orders</span></a></li>
+            <li><a href="/account?path=wishlist">{% render 'icon-wishlist' %} <span data-selector="wishlist-container">Wish List</span></a></li>
+          </ul>
+        {% else %}
+          <div class="overlay_login-content">
+            <div class="row justify-content-center box_content_accountdestop text-center">
 
-            <div class="formlogin">
-              <div class="login_primary CustomerLoginForm">
-                <div class="login-icon">
-                  <span class="icon-icon-user"></span>
-                </div>
-                <div class="mailrrr mt-3">
-                  {% form 'customer_login' %}
-                  {{ form.errors | default_errors }}
-                  <div class="form-group">
-                    <input type="email"  class="form-control" name="customer[email]"  placeholder="{{ 'customer.login.email' | t }}" required>
+              <div class="formlogin">
+                <div class="login_primary CustomerLoginForm">
+                  <div class="login-icon">
+                    <span class="icon-icon-user"></span>
                   </div>
-                  {% if form.password_needed %}
-                  <div class="form-group">
-                    <input type="password" class="form-control"  placeholder="{{ 'customer.login.password' | t }}" name="customer[password]" required>
-                  </div>
-                  {% endif %}
-                  <div class="form-check">
+                  <div class="mailrrr mt-3">
+                    {% form 'customer_login' %}
+                    {{ form.errors | default_errors }}
+                    <div class="form-group">
+                      <input type="email"  class="form-control" name="customer[email]"  placeholder="{{ 'customer.login.email' | t }}" required>
+                    </div>
                     {% if form.password_needed %}
-                    <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+                    <div class="form-group">
+                      <input type="password" class="form-control"  placeholder="{{ 'customer.login.password' | t }}" name="customer[password]" required>
+                    </div>
+                    {% endif %}
+                    <div class="form-check">
+                      {% if form.password_needed %}
+                      <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+                      {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.login.log_in' | t }}">
+                      {{ 'customer.login.log_in' | t }}
+                    </button>
+                    {% endform %}
+                  </div>
+                  <div class="or_creat my-3">
+                    <span>{{ 'customer.login.or' | t }}</span>
+                    {% if settings.enable_rtl_mode %}
+                    <div><a href="javascript:void(0)" class="jsCreate_account"><i class="mr-3 ti-arrow-left"></i> {{ 'customer.account.register_now' | t }} </a></div>
+                    {% else %}
+                    <div><a href="javascript:void(0)" class="jsCreate_account">{{ 'customer.account.register_now' | t }} <i class="ml-3 ti-arrow-right"></i></a></div>
                     {% endif %}
                   </div>
-                  <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.login.log_in' | t }}">
-                    {{ 'customer.login.log_in' | t }}
-                  </button>
-                  {% endform %}
                 </div>
-                <div class="or_creat my-3">
-                  <span>{{ 'customer.login.or' | t }}</span>
-                  {% if settings.enable_rtl_mode %}
-                  <div><a href="javascript:void(0)" class="jsCreate_account"><i class="mr-3 ti-arrow-left"></i> {{ 'customer.account.register_now' | t }} </a></div>
-                  {% else %}
-                  <div><a href="javascript:void(0)" class="jsCreate_account">{{ 'customer.account.register_now' | t }} <i class="ml-3 ti-arrow-right"></i></a></div>
-                  {% endif %}
-                </div>
-              </div>
-              {% form 'recover_customer_password' %}
-              {{ form.errors | default_errors }}
-              {% comment %}
-              Assign variable to be used after timber.init() is run in theme.liquid
-              {% endcomment %}
-              {% if form.posted_successfully? %}
-              {% assign resetPassword = true %}
-              {% endif %}
-              <div class="RecoverPasswordForm" style="display: none;">
-                <div class="block-login">
-                  <span>
-                    <i class="ti-reload"></i>
-                  </span>
-                  <h2 class="title24 text-center title-form-account">{{ 'customer.recover_password.title' | t }}</h2>
-                  <div class="form-group row">
-                    <div class="col-sm-12">
-                      <input type="email" class="form-control" placeholder="{{ 'customer.login.email' | t }}" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required>
+                {% form 'recover_customer_password' %}
+                {{ form.errors | default_errors }}
+                {% comment %}
+                Assign variable to be used after timber.init() is run in theme.liquid
+                {% endcomment %}
+                {% if form.posted_successfully? %}
+                {% assign resetPassword = true %}
+                {% endif %}
+                <div class="RecoverPasswordForm" style="display: none;">
+                  <div class="block-login">
+                    <span>
+                      <i class="ti-reload"></i>
+                    </span>
+                    <h2 class="title24 text-center title-form-account">{{ 'customer.recover_password.title' | t }}</h2>
+                    <div class="form-group row">
+                      <div class="col-sm-12">
+                        <input type="email" class="form-control" placeholder="{{ 'customer.login.email' | t }}" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required>
+                      </div>
                     </div>
-                  </div>
-                  <div class="text-center mt-3">
-                    <input type="submit" class="register-button" value="{{ 'customer.recover_password.submit' | t }}">
-                  </div>
-                  <div class="table-custom create-account">
-                    <div class="text-center mt-4">
-                      <a class="HideRecoverPasswordLink" style="cursor: pointer;" class="color">{{ 'customer.recover_password.cancel' | t }}</a>
+                    <div class="text-center mt-3">
+                      <input type="submit" class="register-button" value="{{ 'customer.recover_password.submit' | t }}">
+                    </div>
+                    <div class="table-custom create-account">
+                      <div class="text-center mt-4">
+                        <a class="HideRecoverPasswordLink" style="cursor: pointer;" class="color">{{ 'customer.recover_password.cancel' | t }}</a>
+                      </div>
                     </div>
                   </div>
                 </div>
+                {% endform %}
               </div>
-              {% endform %}
-            </div>
 
-            <div class="form_register">
-              <div class="login_primary">
-                <div class="login-icon register-icon">
-                  <span class="ti-pencil-alt">
-                  </span>
-                </div>
-                <span class="title_resgister">{{ 'customer.register.title' | t }}</span>
-                <div class="mailrrr mt-3">
-                  {% form 'create_customer' %}
-                  {{ form.errors | default_errors }}
-                  <div class="form-group">
-                    <input type="email" placeholder="{{ 'customer.register.email' | t }}" class="form-control" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required>
+              <div class="form_register">
+                <div class="login_primary">
+                  <div class="login-icon register-icon">
+                    <span class="ti-pencil-alt">
+                    </span>
                   </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control" name="customer[password]" placeholder="{{ 'customer.register.password' | t }}" required>
+                  <span class="title_resgister">{{ 'customer.register.title' | t }}</span>
+                  <div class="mailrrr mt-3">
+                    {% form 'create_customer' %}
+                    {{ form.errors | default_errors }}
+                    <div class="form-group">
+                      <input type="email" placeholder="{{ 'customer.register.email' | t }}" class="form-control" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" name="customer[password]" placeholder="{{ 'customer.register.password' | t }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.register.submit' | t }}">
+                      {{ 'customer.register.submit' | t }}
+                    </button>
+                    {% endform %}
                   </div>
-                  <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.register.submit' | t }}">
-                    {{ 'customer.register.submit' | t }}
-                  </button>
-                  {% endform %}
-                </div>
-                <div class="or_creat my-3">
-                  <span>{{ 'customer.login.or' | t }}</span>
-                  {% if settings.enable_rtl_mode %}
-                  <div><a href="javascript:void(0)" class="jsBack_login"><i class="mr-3 ti-arrow-left"></i> {{ 'customer.login.back_to_login' | t }} </a></div>
-                  {% else %}
-                  <div><a href="javascript:void(0)" class="jsBack_login">{{ 'customer.login.back_to_login' | t }} <i class="ml-3 ti-arrow-right"></i></a></div>
-                  {% endif %}
+                  <div class="or_creat my-3">
+                    <span>{{ 'customer.login.or' | t }}</span>
+                    {% if settings.enable_rtl_mode %}
+                    <div><a href="javascript:void(0)" class="jsBack_login"><i class="mr-3 ti-arrow-left"></i> {{ 'customer.login.back_to_login' | t }} </a></div>
+                    {% else %}
+                    <div><a href="javascript:void(0)" class="jsBack_login">{{ 'customer.login.back_to_login' | t }} <i class="ml-3 ti-arrow-right"></i></a></div>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        {% endif %}
       </div>
     </div>
     <div class="close-menu-mobile text-center js-eveland-close">
