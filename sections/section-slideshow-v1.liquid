@@ -75,6 +75,14 @@
 </div>
 
 <style>
+    .slick-dots {
+        bottom: 5px!important;
+    }
+    .slick-dots li {
+        width: 15px;
+        height: 15px;
+        margin: 0 3px;
+    }
   {% if section.blocks.size > 0 %}
   {% for block in section.blocks %}
   {% if block.type == "slideshow" %}
