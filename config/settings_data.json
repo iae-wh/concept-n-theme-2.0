@@ -5568,7 +5568,15 @@
       "16189031977d260213",
       "1618909175602d39ae",
       "1661857121246a8e2f"
-    ]
+    ],
+    "blocks": {
+      "18281310450600262962": {
+        "type": "shopify:\/\/apps\/clevertap\/blocks\/app-embed\/2566991a-cd89-49d8-997d-74717582b9ed",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Home 1": {
