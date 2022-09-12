@@ -5303,7 +5303,6 @@
               "block_title_top1": "",
               "color_block_title_top1": "#e5e5e5",
               "effect_title1": "bounce",
-              "image_block_url": "https:\/\/conceptn-gcc.myshopify.com\/admin\/themes\/132363583728\/editor?section=166149405003ed1356&block=166149405003ed1356%2Ffc726fe8-25b1-44d6-a419-a64497d85349",
               "block_title_top": "",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
@@ -5319,7 +5318,8 @@
               "ena_slide_video": false,
               "url_ytb_video": "",
               "block_banerimage": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif"
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif",
+              "image_block_url": "shopify:\/\/products\/yeezy-boost-350-v2-black"
             }
           },
           "166149405003ed1356-1": {
@@ -5330,7 +5330,6 @@
               "block_title_top1": "",
               "color_block_title_top1": "#e5e5e5",
               "effect_title1": "bounce",
-              "image_block_url": "shopify:\/\/collections\/all",
               "block_title_top": "",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
@@ -5346,7 +5345,8 @@
               "ena_slide_video": false,
               "url_ytb_video": "",
               "block_banerimage": "shopify:\/\/shop_images\/Cn_VIP-Offer_web.jpg",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_VIP-Offer_mob-02.png"
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_VIP-Offer_mob-02.png",
+              "image_block_url": "shopify:\/\/collections\/all"
             }
           },
           "166149405003ed1356-2": {
@@ -5357,7 +5357,6 @@
               "block_title_top1": "Style Destination",
               "color_block_title_top1": "#e5e5e5",
               "effect_title1": "bounce",
-              "image_block_url": "shopify:\/\/collections\/all",
               "block_title_top": "Kids Collection",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
@@ -5373,7 +5372,8 @@
               "ena_slide_video": false,
               "url_ytb_video": "",
               "block_banerimage": "shopify:\/\/shop_images\/Cn_Free-Shipping_web.png",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Free-Shhipping_mob-02.png"
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Free-Shhipping_mob-02.png",
+              "image_block_url": "shopify:\/\/collections\/all"
             }
           },
           "166149405003ed1356-0": {
@@ -5384,7 +5384,6 @@
               "block_title_top1": "",
               "color_block_title_top1": "#e5e5e5",
               "effect_title1": "bounce",
-              "image_block_url": "shopify:\/\/collections\/all",
               "block_title_top": "",
               "color_block_title_top": "#010101",
               "effect_title": "bounce",
@@ -5400,7 +5399,8 @@
               "ena_slide_video": false,
               "url_ytb_video": "",
               "block_banerimage": "shopify:\/\/shop_images\/Cn_NikeBanner_web-03.jpg",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_NikeBanner_mob-02.png"
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_NikeBanner_mob-02.png",
+              "image_block_url": "shopify:\/\/collections\/all"
             }
           }
         },
