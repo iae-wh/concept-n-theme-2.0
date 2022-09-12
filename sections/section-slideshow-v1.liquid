@@ -16,7 +16,7 @@
                 {% endif %}
                 {% else %}
                 {% if block.settings.block_banerimage != blank %}
-                <a href="{{block.settings.block_banerimage | img_url: 'master'}}">
+                <a href="{{block.setting.block_url}}">
                   <img data-src="{{block.settings.block_banerimage | img_url: 'master'}}" class="lazyload img-fluid w-100" alt="">
                 </a>
                 {% else %}
