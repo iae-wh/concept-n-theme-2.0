@@ -5552,9 +5552,9 @@
           "select_width": "full",
           "style_bg": "color",
           "bg_color": "#f2f2f2",
-          "title_newletter": "Cannot find what you are looking for",
+          "title_newletter": "Can't find what you're looking for?",
           "color_title": "",
-          "content_newletter": "Cannot find what you are looking for, request the product you want.",
+          "content_newletter": "We got you! Request the product you want.",
           "color_content": "",
           "margin_top": "",
           "margin_bottom": ""
