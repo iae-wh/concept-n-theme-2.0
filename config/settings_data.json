@@ -3821,7 +3821,7 @@
           "show_social_share": true,
           "show_quantity": true,
           "show_sku": false,
-          "show_cate": true,
+          "show_cate": false,
           "ena_sticky_addcart": false,
           "style_stickyaddcart": "bottom",
           "ena_zoom": false
