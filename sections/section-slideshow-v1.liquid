@@ -16,7 +16,7 @@
                 {% endif %}
                 {% else %}
                 {% if block.settings.block_banerimage != blank %}
-                <a href="{{block.settings.block_banerimage}}">
+                <a href="{{block.settings.image_block_url}}">
                   <img data-src="{{block.settings.block_banerimage | img_url: 'master'}}" class="lazyload img-fluid w-100" alt="">
                 </a>
                 {% else %}
@@ -28,11 +28,11 @@
               </div>
               <div class="d-block d-md-none">
                 {% if block.settings.block_banerimage_mb != blank %}
-                <a href="{{block.setting.block_url}}">
+                <a href="{{block.setting.image_block_url}}">
                   <img data-src="{{block.settings.block_banerimage_mb | img_url: 'master'}}" class="lazyload img-fluid w-100" alt="">
                 </a>
                 {% else %}
-                <a href="{{block.setting.block_url}}">
+                <a href="{{block.setting.image_block_url}}">
                   <img data-src="{{block.settings.block_banerimage | img_url: 'master'}}" class="lazyload img-fluid w-100" alt="">
                 </a>
                 {% endif %}
