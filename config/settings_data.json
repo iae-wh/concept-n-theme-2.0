@@ -12,7 +12,7 @@
     "content_promo_topbar": "<em>Check our new Christmas Demos!<\/em> Perfect for Christmas Sale!",
     "text_btn_promo": "Shop Now",
     "url_btn_promo": "",
-    "ena_popup_news": false,
+    "ena_popup_news": true,
     "title_popup": "Join Our Mailing List",
     "description_popup": "Receive updates on new arrivals",
     "placeholder_popup": "Email",
