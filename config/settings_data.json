@@ -5489,6 +5489,7 @@
       },
       "1661857121246a8e2f": {
         "type": "section-newsletter-v1",
+        "disabled": true,
         "settings": {
           "select_style": "style_1",
           "select_width": "full",
