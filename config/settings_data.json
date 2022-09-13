@@ -5489,7 +5489,6 @@
       },
       "1661857121246a8e2f": {
         "type": "section-newsletter-v1",
-        "disabled": true,
         "settings": {
           "select_style": "style_1",
           "select_width": "full",
@@ -5499,7 +5498,7 @@
           "bg_color_inputnewletter": "",
           "border_color_newletter": "#ffffff",
           "url_banner": "shopify:\/\/collections\/all",
-          "title_newletter": "SUBSCRIBE FOR UPDATES",
+          "title_newletter": "",
           "color_title": "",
           "content_newletter": "By entering your email address, you consent to receiving our newsletter with access to our latest collections, events and initiatives.",
           "color_content": "",
