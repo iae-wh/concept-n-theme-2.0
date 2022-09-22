@@ -5174,7 +5174,7 @@
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/4_1.png",
               "title_collection": "VIP",
-              "brand_url": "https:\/\/concept-n.com\/collections\/watches"
+              "brand_url": "shopify:\/\/collections\/vip"
             }
           }
         },
