@@ -54,7 +54,7 @@
     {% assign values = values | split: ',' %}
 
     <div data-value="{{ value | escape }}"  data-style="square" class="maxus-color none {% if is_color %}color {% endif %}{{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}" {% if variant.available %}{% else %}{% if product.tags contains "VIP" or variant.price == 0 %}{% else %}data-toggle="tooltip" data-placement="bottom"  data-original-title="Sold Out"{% endif %}{% endif %}>
-      <input id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} {% unless variant.available %}disabled{% endunless %} />
+      <input id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
 
       {% if is_color %}
       {% if settings.swatch_style == "sw_radio1" or settings.swatch_style == "sw_radio3"  %}
