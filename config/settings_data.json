@@ -3814,7 +3814,7 @@
         "type": "product-template",
         "settings": {
           "spd_style": "pd_extended",
-          "style_page": "left",
+          "style_page": "bottom",
           "style_sidebar": "no_sidebar",
           "show_rating": true,
           "show_sdes": true,
