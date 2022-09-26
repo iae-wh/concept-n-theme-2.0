@@ -586,7 +586,7 @@
                     </div>
 
                     {% else %}
-                      {% if product.tags contains "VIP" or product.price == 0 %}
+                      {% if product.tags contains "VIP" or product.variants.size > 1 and product.selected_or_first_available_variant.price == 0 or product.price == 0 %}
                         <div class="btn-action detail-attr qty-cart">
                             <button type="submit" class="shop-button btn-request-product" style="width: 100%">
                               Inquiry
