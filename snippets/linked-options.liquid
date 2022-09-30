@@ -24,7 +24,7 @@
     }
 
     var initialValue = selector.val();
-    selector.empty();    
+    selector.empty();
     var availableOptions = Shopify.optionsMap[key];
     for (var i=0; i<availableOptions.length; i++) {
       var option = availableOptions[i];
@@ -50,7 +50,7 @@
     // Building our mapping object.
     for (var i=0; i<product.variants.length; i++) {
       var variant = product.variants[i];
-      if (variant.available) {
+      if (true) { //variant.available) {
         // Gathering values for the 1st drop-down.
         Shopify.optionsMap['root'] = Shopify.optionsMap['root'] || [];
         Shopify.optionsMap['root'].push(variant.option1);
