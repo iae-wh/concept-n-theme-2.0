@@ -448,7 +448,7 @@
               <div class="detail-info" style="{% if settings.show_servicebox == true %} padding-left: 0px; {% endif %}">
                 <div class="relative">
                   <h2 class="product-title ">{{product.title}}</h2>
-                  {% if product.tags contains "VIP" or product.price == 0 %}
+                  {% if product.tags contains "VIP" or product.selected_or_first_available_variant.price == 0 %}
                   {% else %}
                     <div class="product-price ">
                       {% capture price %}{{ product.price | money_with_currency }}{% endcapture %}
@@ -524,10 +524,7 @@
 
 
 
-                  {% if product.tags contains "VIP" or product.price == 0 %}
-                  {% else %}
                     <form  action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="cart clearfix mt-3">
-                  {% endif %}
                     {% comment %}
                     Add product variants as a dropdown.
                     - By default, each variant (or combination of variants) will display as its own <option>
@@ -544,7 +541,7 @@
 
                     <select name="id" id="productSelect" class="product-single__variants">
                       {% for variant in product.variants %}
-                      {% if variant.available %}
+                      {% if true %}
                       {% assign sku = variant.sku %}
                       {% comment %}
                       Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
@@ -557,7 +554,6 @@
                       </option>
                       {% endif %}
                       {% endfor %}
-                      </select>
                     </select>
 
 
@@ -586,13 +582,7 @@
                     </div>
 
                     {% else %}
-                      {% if product.tags contains "VIP" or product.variants.size > 1 and product.selected_or_first_available_variant.price == 0 or product.price == 0 %}
-                        <div class="btn-action detail-attr qty-cart">
-                            <button type="submit" class="shop-button btn-request-product" style="width: 100%">
-                              Inquiry
-                            </button>
-                          {% include 'product_request' with product %}
-                        </div>
+                      {% if product.tags contains "VIP" or product.selected_or_first_available_variant.price == 0 %}
                       {% else %}
                         {% if sold_out %}
                           <div class="btn-action">
@@ -619,10 +609,16 @@
                       {% endif %}
                     {% endif %}
                     {% endif %}
-
-                  {% if product.tags contains "VIP" or product.price == 0 %}
-                  {% else %}
                     </form>
+
+
+                  {% if product.tags contains "VIP" or product.selected_or_first_available_variant.price == 0 %}
+                  <div class="btn-action detail-attr qty-cart">
+                    <button type="submit" class="shop-button btn-request-product" style="width: 100%">
+                      Inquiry
+                    </button>
+                    {% include 'product_request' with product %}
+                  </div>
                   {% endif %}
 
                   {% if settings.ena_random_visit %}
