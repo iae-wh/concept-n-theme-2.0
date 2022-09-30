@@ -132,7 +132,7 @@
     "apmenuitem_width_1": "",
     "apmenuitem_position_1": "0px",
     "apmenuitem_position_orther_1": "",
-    "apbgimage_enable_1": false,
+    "apbgimage_enable_1": true,
     "apmenuitem_eblocklinks_1": true,
     "apmenuitem_columns_blocklinks_1": "3",
     "apmenuitem_columns_1": "12",
