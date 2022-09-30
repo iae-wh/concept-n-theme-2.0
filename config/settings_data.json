@@ -126,7 +126,7 @@
     "hdv_color_linkchildren": "#000000",
     "hdv_color_linklv2": "#7d7b7b",
     "bg_color_menu_hd": "#fff",
-    "apmenuitem_enable_1": false,
+    "apmenuitem_enable_1": true,
     "apmenuitem_title_1": "Sneakers",
     "apmenuitem_fullwidth_1": false,
     "apmenuitem_width_1": "",
