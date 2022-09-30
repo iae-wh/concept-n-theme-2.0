@@ -37,7 +37,7 @@
       {%- capture apmenuposition_orther -%}apmenuitem_position_orther_{{ i }}{%- endcapture -%}
       {%- capture apbgimage -%}apmenuitem_bg_image_{{ i }}{%- endcapture -%}
       {%- capture apbgimage_enable-%}apbgimage_enable_{{ i }}{%- endcapture -%}
-      {%- capture apstyle -%}style='-webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; padding: 0px; {% if settings[apmenuitem_width_1] != blank %} width:{{settings[apmenuitem_width_1]}};{% endif %} {% if template contains 'index' %} left : {{settings[apmenuposition]}}{% else %} left : {{settings[apmenuposition_orther]}}{% endif %}; {%- if settings[apbgimage_enable] -%} {% if settings[apbgimage] != blank %} background:#fff url({{ settings[apbgimage] | img_url : 'master' }}) center ; background-size: cover; {% endif %} {%- endif -%}'{%- endcapture -%}
+      {%- capture apstyle -%}style='-webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; padding: 0px; {% if settings[apmenuitem_width_1] %} width:{{settings[apmenuitem_width_1]}};{% endif %} {% if template contains 'index' %} left : {{settings[apmenuposition]}}{% else %} left : {{settings[apmenuposition_orther]}}{% endif %}; {%- if settings[apbgimage_enable] -%} {% if settings[apbgimage] != blank %} background:#fff url({{ settings[apbgimage] | img_url : 'master' }}) center ; background-size: cover; {% endif %} {%- endif -%}'{%- endcapture -%}
 
       <li class="nav-item dropdown">
         {% if link.title contains '[' %}
