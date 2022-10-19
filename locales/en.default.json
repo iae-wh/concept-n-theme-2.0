@@ -500,12 +500,5 @@
   },
   "quickview": {
     "total": "Total"
-  },
-  "shopify": {
-    "email_marketing": {
-      "subscribed": {
-        "confirmation": "Thank you for subscribing to our mailing list"
-      }
-    }
   }
 }
