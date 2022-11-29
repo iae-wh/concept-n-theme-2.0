@@ -560,9 +560,9 @@
 
 
                     {% if product.tags contains "Shoes" %}
-                        {% if settings.show_sizeguide %}
+                        {% comment %}{% if settings.show_sizeguide %}{% endcomment %}
                             {% include 'size-guide' %}
-                        {% endif %}
+                        {% comment %}{% endif %}{% endcomment %}
                     {% endif %}
                     {% if product.variants.size > 1 %}
 
