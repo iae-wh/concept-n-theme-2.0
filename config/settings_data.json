@@ -3799,7 +3799,7 @@
           "prod_per_row": "prod_col_4",
           "sidebar_layout": "sidebar_left",
           "ena_sticky_sidebar": true,
-          "ena_banner_mordern": false,
+          "ena_banner_mordern": true,
           "bannerfull_img": "shopify:\/\/shop_images\/banners-17.png",
           "big_title": "A NEW COLLECTION",
           "mini_title": "SALE UP TO 30%",
