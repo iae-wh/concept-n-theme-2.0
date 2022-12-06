@@ -3805,11 +3805,31 @@
               "collection_mobile_img": "shopify:\/\/shop_images\/Cn_NikeBanner_mob-02.png",
               "collection_id": "air-jordan-1"
             }
+          },
+          "09ebd06f-6384-4b61-adb8-aa38d11e675f": {
+            "type": "collection",
+            "settings": {
+              "title_collection": "text",
+              "collection_web_img": "shopify:\/\/shop_images\/Cn_NikeBanner_web-03.jpg",
+              "collection_mobile_img": "shopify:\/\/shop_images\/Cn_NikeBanner_mob-02.png",
+              "collection_id": "air-jordan-1-highs"
+            }
+          },
+          "af97d149-bac4-43be-86b5-fac3e5e4d886": {
+            "type": "collection",
+            "settings": {
+              "title_collection": "text",
+              "collection_web_img": "shopify:\/\/shop_images\/shutterstock_1348175027_3x_190fad49-305a-4a72-b25a-1f879df37dd0.png",
+              "collection_mobile_img": "shopify:\/\/shop_images\/Menu_Banner.png",
+              "collection_id": "bags"
+            }
           }
         },
         "block_order": [
           "04283f88-2aea-4e59-a46c-582996b0e249",
-          "9d9c6e8a-7b25-43c2-8b31-16c17035337a"
+          "9d9c6e8a-7b25-43c2-8b31-16c17035337a",
+          "09ebd06f-6384-4b61-adb8-aa38d11e675f",
+          "af97d149-bac4-43be-86b5-fac3e5e4d886"
         ],
         "settings": {
           "select_style_bread": "style_2",
