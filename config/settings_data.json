@@ -3796,10 +3796,20 @@
               "collection_mobile_img": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif",
               "collection_id": "adidas"
             }
+          },
+          "9d9c6e8a-7b25-43c2-8b31-16c17035337a": {
+            "type": "collection",
+            "settings": {
+              "title_collection": "text",
+              "collection_web_img": "shopify:\/\/shop_images\/Cn_NikeBanner_web-03.jpg",
+              "collection_mobile_img": "shopify:\/\/shop_images\/Cn_NikeBanner_mob-02.png",
+              "collection_id": "air-jordan-1"
+            }
           }
         },
         "block_order": [
-          "04283f88-2aea-4e59-a46c-582996b0e249"
+          "04283f88-2aea-4e59-a46c-582996b0e249",
+          "9d9c6e8a-7b25-43c2-8b31-16c17035337a"
         ],
         "settings": {
           "select_style_bread": "style_2",
