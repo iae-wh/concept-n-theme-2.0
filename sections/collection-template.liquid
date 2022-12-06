@@ -30,26 +30,28 @@ Use .grid--rev so that the collection tags appear below the products on mobile
 {% elsif section.settings.select_style_bread == 'style_2' %}
 <div class="container container-v1">
   <div class="wrap-bread-crumb breadcrumb_collection style2">
+    {%- assign collection_block = '' -%}
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
         {% if block.collection_id.handle == collection.handle %}
-          <div class="text-center bg-breadcrumb"
-          {% if section.settings.ena_bg_img %}  style="background-image : url({% if collection.image != blank %}{{ collection.image.src | collection_img_url: 'original' }}{% else %}{% if block.collection_web_img != blank  %}{{block.collection_web_img | img_url : 'master'}} {% else %}//via.placeholder.com/1920x300 {% endif %}{% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>
-            <div class="title-page">
-              <h2 class="">{{collection.title}}</h2>
-            </div>
-            {% include 'breadcrumb' %}
-          </div>
-          <div class="text-center bg-breadcrumb bg-breadcrumb-mobi"
-          {% if section.settings.ena_bg_img %}  style="background-image : url({% if block.collection_mobile_img != blank  %}{{block.collection_mobile_img | img_url : 'master'}} {% else %}//via.placeholder.com/1920x300 {% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>
-            <div class="title-page">
-              <h2 class="">{{collection.title}}</h2>
-            </div>
-            {% include 'breadcrumb' %}
-          </div>
+          {%- assign collection_block = block -%}
         {% endif %}
       {% endfor %}
     {% endif %}
+    <div class="text-center bg-breadcrumb"
+    {% if section.settings.ena_bg_img %}  style="background-image : url({% if collection_block != blank and collection_block.collection_web_img != blank  %}{{block.collection_web_img | img_url : 'master'}} {% else %}{% if collection.image != blank %}{{ collection.image.src | collection_img_url: 'original' }}{% else %}//via.placeholder.com/1920x300 {% endif %}{% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>
+      <div class="title-page">
+        <h2 class="">{{collection.title}}</h2>
+      </div>
+      {% include 'breadcrumb' %}
+    </div>
+    <div class="text-center bg-breadcrumb bg-breadcrumb-mobi"
+    {% if section.settings.ena_bg_img %}  style="background-image : url({% if collection_block != blank and collection_block.collection_mobile_img != blank  %}{{block.collection_mobile_img | img_url : 'master'}} {% else %}{% if collection.image != blank %}{{ collection.image.src | collection_img_url: 'original' }}{% else %}//via.placeholder.com/1920x300 {% endif %}{% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>
+      <div class="title-page">
+        <h2 class="">{{collection.title}}</h2>
+      </div>
+      {% include 'breadcrumb' %}
+    </div>
 
   </div>
 </div>
