@@ -122,9 +122,9 @@
 </style>
 
 <section class="page-width  wishlist-section">
-  <div class="title-wrapper-with-link">
-    <h1>{{ page.title }}</h1>
-  </div>
+  {% comment %}<div class="title-wrapper-with-link">{% endcomment %}
+    {% comment %}<h1>{{ page.title }}</h1>{% endcomment %}
+  {% comment %}</div>{% endcomment %}
   {% unless customer %}
     <div class="row loginmessage"><div class="col-md-12"><div class="alert alert-info  sw-login-notification">Please <a href='/account/login'>login</a> to save this Wishlist to your Account</div></div></div>
   {% endunless %}
