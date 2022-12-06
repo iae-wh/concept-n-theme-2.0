@@ -3791,6 +3791,7 @@
           "select_style_bread": "style_2",
           "ena_bg_img": true,
           "bg_breadcrumb": "shopify:\/\/shop_images\/banners-17.png",
+          "bg_breadcrumb_mobi": "shopify:\/\/shop_images\/morning-running-african-american-girl-tying-shoel-2021-08-28-11-04-28-utc.jpg",
           "bg_color_breadcrumb": "#733e3e",
           "color_breadcrumb": "#000000",
           "collection_layout": "sidebar",
