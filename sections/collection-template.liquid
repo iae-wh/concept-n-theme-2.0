@@ -391,8 +391,13 @@ Use .grid--rev so that the collection tags appear below the products on mobile
   "blocks": [
     {
       "type": "colection",
-      "name": "Collection Page Images",
       "settings": [
+        {
+          "type": "text",
+          "id": "title_collection",
+          "label": "Label Collection",
+          "default": "text"
+        },
         {
           "type": "image_picker",
           "id": "collection_web_img",
@@ -404,12 +409,6 @@ Use .grid--rev so that the collection tags appear below the products on mobile
           "id": "collection_mobile_img",
           "info": "456x456px recommended",
           "label": "Collection Mobile Image"
-        },
-        {
-          "type": "text",
-          "id": "title_collection",
-          "label": "Label Collection",
-          "default": "text"
         },
         {
           "type": "url",
