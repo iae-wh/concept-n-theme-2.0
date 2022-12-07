@@ -3787,6 +3787,20 @@
       },
       "collection-template": {
         "type": "collection-template",
+        "blocks": {
+          "b163d3ec-9022-4fd7-83db-d0f291253e04": {
+            "type": "collection",
+            "settings": {
+              "block_collection": "adidas",
+              "title": "Adidas",
+              "web_img": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
+              "mobile_img": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif"
+            }
+          }
+        },
+        "block_order": [
+          "b163d3ec-9022-4fd7-83db-d0f291253e04"
+        ],
         "settings": {
           "select_style_bread": "style_2",
           "ena_bg_img": true,
