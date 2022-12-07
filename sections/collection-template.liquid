@@ -34,6 +34,8 @@ Use .grid--rev so that the collection tags appear below the products on mobile
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
 
+        <a href="{{ collections[block.settings.block_collection].url }}">{{ collections[block.settings.block_collection].title }}</a>
+        <div>Title : {{ block.settings.title }}</div>
         {% if collections[block.settings.block_collection].handle == collection.handle %}
           {%- assign collection_block = block -%}
         {% endif %}
@@ -404,24 +406,6 @@ Use .grid--rev so that the collection tags appear below the products on mobile
       "type": "collection",
       "name": "Collection",
       "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Label Collection",
-          "default": "text"
-        },
-        {
-          "type": "image_picker",
-          "id": "web_img",
-          "info": "1920x510px recommended",
-          "label": "Collection Web Image"
-        },
-        {
-          "type": "image_picker",
-          "id": "mobile_img",
-          "info": "456x456px recommended",
-          "label": "Collection Mobile Image"
-        },
         {
           "type": "collection",
           "id": "block_collection",
