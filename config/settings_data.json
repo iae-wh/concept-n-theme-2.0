@@ -3787,6 +3787,17 @@
       },
       "collection-template": {
         "type": "collection-template",
+        "blocks": {
+          "6a4ddf4d-017a-41df-8219-67b5a1fc9d12": {
+            "type": "collection",
+            "settings": {
+              "block_collection": "adidas"
+            }
+          }
+        },
+        "block_order": [
+          "6a4ddf4d-017a-41df-8219-67b5a1fc9d12"
+        ],
         "settings": {
           "select_style_bread": "style_2",
           "ena_bg_img": true,
