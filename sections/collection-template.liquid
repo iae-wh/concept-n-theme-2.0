@@ -33,7 +33,7 @@ Use .grid--rev so that the collection tags appear below the products on mobile
     {%- assign collection_block = '' -%}
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
-        {{ block.handle }} : {{ collection.handle }}
+        {{ block.collection_id }} : {{ collection.handle }}
         {% if block.collection_id.handle == collection.handle %}
           {%- assign collection_block = block -%}
         {% endif %}
