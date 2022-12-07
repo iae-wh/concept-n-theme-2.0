@@ -3796,10 +3796,20 @@
               "web_img": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
               "mobile_img": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif"
             }
+          },
+          "9654d613-1da0-4ec7-8414-e2ba3e465c3e": {
+            "type": "collection",
+            "settings": {
+              "block_collection": "yeezy-slides-foam-runners",
+              "title": "Yeezy",
+              "web_img": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
+              "mobile_img": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif"
+            }
           }
         },
         "block_order": [
-          "b163d3ec-9022-4fd7-83db-d0f291253e04"
+          "b163d3ec-9022-4fd7-83db-d0f291253e04",
+          "9654d613-1da0-4ec7-8414-e2ba3e465c3e"
         ],
         "settings": {
           "select_style_bread": "style_2",
