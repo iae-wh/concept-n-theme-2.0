@@ -30,30 +30,11 @@ Use .grid--rev so that the collection tags appear below the products on mobile
 {% elsif section.settings.select_style_bread == 'style_2' %}
 <div class="container container-v1">
   <div class="wrap-bread-crumb breadcrumb_collection style2">
-    {% comment %}{%- assign collection_block = '' -%}{% endcomment %}
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
         <div>Title : {{ collections[block.settings.block_collection].title }}</div>
-        {% comment %}{% if collections[block.settings.block_collection].handle == collection.handle %}{% endcomment %}
-          {% comment %}{%- assign collection_block = block -%}{% endcomment %}
-        {% comment %}{% endif %}{% endcomment %}
       {% endfor %}
     {% endif %}
-    {% comment %}<div class="text-center bg-breadcrumb"{% endcomment %}
-    {% comment %}{% if section.settings.ena_bg_img %}  style="background-image : url({% if collection_block != blank and collection_block.collection_web_img != blank  %}{{block.collection_web_img | img_url : 'master'}} {% else %}{% if collection.image != blank %}{{ collection.image.src | collection_img_url: 'original' }}{% else %}//via.placeholder.com/1920x300 {% endif %}{% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>{% endcomment %}
-      {% comment %}<div class="title-page">{% endcomment %}
-        {% comment %}<h2 class="">{{collection.title}}</h2>{% endcomment %}
-      {% comment %}</div>{% endcomment %}
-      {% comment %}{% include 'breadcrumb' %}{% endcomment %}
-    {% comment %}</div>{% endcomment %}
-    {% comment %}<div class="text-center bg-breadcrumb bg-breadcrumb-mobi"{% endcomment %}
-    {% comment %}{% if section.settings.ena_bg_img %}  style="background-image : url({% if collection_block != blank and collection_block.collection_mobile_img != blank  %}{{block.collection_mobile_img | img_url : 'master'}} {% else %}{% if collection.image != blank %}{{ collection.image.src | collection_img_url: 'original' }}{% else %}//via.placeholder.com/1920x300 {% endif %}{% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>{% endcomment %}
-      {% comment %}<div class="title-page">{% endcomment %}
-        {% comment %}<h2 class="">{{collection.title}}</h2>{% endcomment %}
-      {% comment %}</div>{% endcomment %}
-      {% comment %}{% include 'breadcrumb' %}{% endcomment %}
-    {% comment %}</div>{% endcomment %}
-
   </div>
 </div>
 {% elsif section.settings.select_style_bread == 'style_3'  %}
