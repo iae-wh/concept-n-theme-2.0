@@ -33,8 +33,8 @@ Use .grid--rev so that the collection tags appear below the products on mobile
     {%- assign collection_block = '' -%}
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
-        {{ block.setting.collection_id }} : {{ collection.handle }}
-        {% if block.collection_id.handle == collection.handle %}
+        {{ collections[block.settings.block_collection].title }} : {{ collections[block.settings.block_collection].handle }} : {{ collection.handle }}
+        {% if collections[block.settings.block_collection].handle == collection.handle %}
           {%- assign collection_block = block -%}
         {% endif %}
       {% endfor %}
@@ -424,7 +424,7 @@ Use .grid--rev so that the collection tags appear below the products on mobile
         },
         {
           "type": "collection",
-          "id": "collection_id",
+          "id": "block_collection",
           "label": "Collection"
         }
       ]
