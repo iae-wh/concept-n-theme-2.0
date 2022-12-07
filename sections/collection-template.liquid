@@ -34,11 +34,8 @@ Use .grid--rev so that the collection tags appear below the products on mobile
 
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
-
-        {{ block.settings.collection_web_img | img_url : 'master' }}
         {% if collections[block.settings.block_collection].handle == collection.handle %}
           {%- assign selected_block = block -%}
-          <a href="{{ collections[block.settings.block_collection].url }}">{{ collections[block.settings.block_collection].title }}</a>
         {% endif %}
       {% endfor %}
     {% endif %}
