@@ -33,10 +33,10 @@ Use .grid--rev so that the collection tags appear below the products on mobile
     {%- assign collection_block = '' -%}
     {% if section.blocks.size > 0 %}
       {% for block in section.blocks %}
-        {{ collections[block.settings.block_collection].title }} : {{ collections[block.settings.block_collection].handle }} : {{ collection.handle }}
-        {% if collections[block.settings.block_collection].handle == collection.handle %}
-          {%- assign collection_block = block -%}
-        {% endif %}
+        <div>Title : {{ collections[block.settings.block_collection].title }}</div>
+        {% comment %}{% if collections[block.settings.block_collection].handle == collection.handle %}{% endcomment %}
+          {% comment %}{%- assign collection_block = block -%}{% endcomment %}
+        {% comment %}{% endif %}{% endcomment %}
       {% endfor %}
     {% endif %}
     <div class="text-center bg-breadcrumb"
