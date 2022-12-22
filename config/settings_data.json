@@ -5342,8 +5342,8 @@
               "effect_title3": "bounce",
               "ena_slide_video": false,
               "url_ytb_video": "",
-              "block_banerimage": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__web.gif",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Yeezy-Boost-350-V2-Beige-Black-_Slate__mob03.gif",
+              "block_banerimage": "shopify:\/\/shop_images\/AIR-JORDAN.png",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/AIR-JORDAN-M-WEB.png",
               "image_block_url": "https:\/\/concept-n.com\/collections\/sneakers\/products\/yeezy-boost-350-beige-black-slate-adults"
             }
           },
@@ -5365,12 +5365,12 @@
               "color_block_button": "#ffffff",
               "color_hover_button": "#ffffff",
               "color_hover_text": "#000000",
-              "block_url": "shopify:\/\/collections\/all",
+              "block_url": "https:\/\/concept-n.com\/products\/air-jordan-1-retro-high-off-white-chicago",
               "effect_title3": "bounce",
               "ena_slide_video": false,
               "url_ytb_video": "",
-              "block_banerimage": "shopify:\/\/shop_images\/Cn_VIP-Offer_web.jpg",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_VIP-Offer_mob-02.png",
+              "block_banerimage": "shopify:\/\/shop_images\/VIP.png",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/VIP-M-WEB.png",
               "image_block_url": "shopify:\/\/collections\/vip"
             }
           },
@@ -5396,13 +5396,14 @@
               "effect_title3": "bounce",
               "ena_slide_video": false,
               "url_ytb_video": "",
-              "block_banerimage": "shopify:\/\/shop_images\/Cn_Free-Shipping_web.png",
-              "block_banerimage_mb": "shopify:\/\/shop_images\/Cn_Free-Shhipping_mob-02.png",
+              "block_banerimage": "shopify:\/\/shop_images\/Free-Shipping.png",
+              "block_banerimage_mb": "shopify:\/\/shop_images\/Free-Shipping-M-WEB.png",
               "image_block_url": "shopify:\/\/collections\/all"
             }
           },
           "166149405003ed1356-0": {
             "type": "slideshow",
+            "disabled": true,
             "settings": {
               "select_position_content": "left",
               "select_textalign_content": "left",
