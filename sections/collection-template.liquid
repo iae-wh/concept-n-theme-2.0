@@ -41,17 +41,17 @@ Use .grid--rev so that the collection tags appear below the products on mobile
     {% endif %}
     <div class="text-center bg-breadcrumb"
     {% if section.settings.ena_bg_img %}  style="background-image : url({% if selected_block != blank and selected_block.settings.web_img != blank  %}{{selected_block.settings.web_img | img_url : 'master'}} {% else %}{% if collection.image != blank %}{{ collection.image.src | collection_img_url: 'original' }}{% else %}//via.placeholder.com/1920x300 {% endif %}{% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>
-      <div class="title-page">
+<!--       <div class="title-page">
         <h2 class="">{{collection.title}}</h2>
       </div>
-      {% include 'breadcrumb' %}
+      {% include 'breadcrumb' %} -->
     </div>
     <div class="text-center bg-breadcrumb bg-breadcrumb-mobi"
     {% if section.settings.ena_bg_img %}  style="background-image : url({% if selected_block != blank and selected_block.settings.mobile_img != blank  %}{{selected_block.settings.mobile_img | img_url : 'master'}} {% else %}{% if collection.image != blank %}{{ collection.image.src | collection_img_url: 'original' }}{% else %}//via.placeholder.com/1920x300 {% endif %}{% endif %}); background-position : center; background-size: cover" {% else %}style="background-color : {{section.settings.bg_color_breadcrumb}}"{% endif %}>
-      <div class="title-page">
+<!--       <div class="title-page">
         <h2 class="">{{collection.title}}</h2>
       </div>
-      {% include 'breadcrumb' %}
+      {% include 'breadcrumb' %} -->
     </div>
 
   </div>
