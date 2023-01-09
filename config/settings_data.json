@@ -5216,6 +5216,7 @@
       },
       "16189031977d260213": {
         "type": "section-slideshow-v5",
+        "disabled": true,
         "blocks": {
           "16189031977d260213-1": {
             "type": "slideshow",
