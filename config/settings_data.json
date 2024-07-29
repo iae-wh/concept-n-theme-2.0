@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "show_multiple_currencies": true,
@@ -534,7 +543,7 @@
     "banner_sb_prod_url": "",
     "enable_best_product": true,
     "best_product_title": "Best Seller",
-    "best_product_collection_prodpage": "sneakers",
+    "best_product_collection_prodpage": "kid-girl-shoes-sneakers",
     "best_product_limit": 4,
     "show_sizeguide": false,
     "img_size_women": "",
@@ -5148,7 +5157,7 @@
             "settings": {
               "brand_img": "shopify:\/\/shop_images\/7dcff73952d62c4a55b6056c99e182a5.jpg",
               "title_collection": "Sneakers",
-              "brand_url": "shopify:\/\/collections\/sneakers"
+              "brand_url": "shopify:\/\/collections\/kid-girl-shoes-sneakers"
             }
           },
           "1618903122b4f6819b-1": {
@@ -5282,7 +5291,7 @@
         "settings": {
           "title_1": "Woman's",
           "sub-title1": "Don't Miss Today's Featured Deals",
-          "select_collection": "sneakers",
+          "select_collection": "kid-girl-shoes-sneakers",
           "products_limit": 3,
           "margin_top": "",
           "margin_bottom": ""
