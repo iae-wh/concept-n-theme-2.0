@@ -3,11 +3,11 @@ $(document).ready(async function () {
 });
 
 class CollectionRenderer {
-    collectionWrapper;
-    collectionSelector = '#collection-wrapper';
+    searchWrapper;
+    searchSelector = '#search-container-wrapper';
 
     constructor() {
-        this.collectionWrapper = document.querySelector(this.collectionSelector) || document.createElement('div');
+        this.searchWrapper = document.querySelector(this.searchSelector) || document.createElement('div');
     }
 
     async fetchToDom(url) {
@@ -19,18 +19,18 @@ class CollectionRenderer {
 
     async showMoreProducts(url) {
         const newDocument = await this.fetchToDom(url);
-        this.collectionWrapper.insertAdjacentHTML('beforeend',
-            newDocument.querySelector(this.collectionSelector).innerHTML);
+        this.searchWrapper.insertAdjacentHTML('beforeend',
+            newDocument.querySelector(this.searchSelector).innerHTML);
     }
 
     loading() {
-        this.collectionWrapper.style.opacity = 0.5;
-        this.collectionWrapper.style.pointerEvents = 'none';
+        this.searchWrapper.style.opacity = 0.5;
+        this.searchWrapper.style.pointerEvents = 'none';
     }
 
     finishLoading() {
-        this.collectionWrapper.style.opacity = 1;
-        this.collectionWrapper.style.pointerEvents = 'auto';
+        this.searchWrapper.style.opacity = 1;
+        this.searchWrapper.style.pointerEvents = 'auto';
     }
 }
 
@@ -125,11 +125,7 @@ class ToggleButton {
 class ShowMoreButton extends HTMLButtonElement {
     constructor() {
         super();
-        this.addEventListener('click', () => {
-            this.innerHTML = 'show more test 1';
-            this.onclick();
-        });
-        this.innerHTML = 'show more test'
+        this.addEventListener('click', this.onclick);
     }
 
     connectedCallback() {

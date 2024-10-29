@@ -1,526 +1,86 @@
-<div class="wrap-bread-crumb breadcrumb_collection2">
-  <div class="text-center bg-breadcrumb">
-    <div class="title-page">
-
-      <h2 class="">{{page.title}}</h2>
-
+<div class="page-cms wrap-bread-crumb breadcrumb_collection2">
+    <div class="title-page {% if section.settings.bg_breadcrumb != blank %} page-has-background{% endif %}"
+            {% if section.settings.bg_breadcrumb != blank %}
+                style="--bg_breadcrumb : url({{ section.settings.bg_breadcrumb | img_url: 'master' }});
+         {% if section.settings.bg_breadcrumb_mobile != blank %}--bg_breadcrumb_mobile : url({{ section.settings.bg_breadcrumb_mobile | img_url: 'master' }}){% else %}--bg_breadcrumb_mobile : url({{ section.settings.bg_breadcrumb | img_url: 'master' }}){% endif %}"
+            {% endif %}
+    >
+        <h2 class="container-page-cms">{{ page.title }}</h2>
     </div>
-    {% include 'breadcrumb' %}
-  </div>
+    <div class="terms-and-conditions-pages container-page-cms">
+        <div>
+            {%- if section.blocks.size > 0 -%}
+                {% for block in section.blocks %}
+                    {%- case block.type -%}
+                        {%- when '@app' -%}
+                            {% render block %}
+                        {% when 'text-content' %}
+                            {% if block.settings.block_content == blank %}{% continue %}{% endif %}
+                            <div class="text-content {% if block.settings.remove_margin %}remove-margin{% endif %}">
+                                {% if block.settings.block_title != blank %}
+                                    <div class="text-content_title">{{ block.settings.block_title }}</div>
+                                {% endif %}
+                                {% if block.settings.block_content %}
+                                    <div class="text-content_content">{{ block.settings.block_content }}</div>
+                                {% endif %}
+                            </div>
+                    {%- endcase -%}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
 </div>
-<section>
-  <div class="terms-of-service-pages">
-    <div class="container container-v2">
-      <div class="terms-of-service-container" style="padding: 10px 0; background-color: #dac181">
-        <img src="{{ 'concept-n-logo.png' | asset_url }}" style="
-    padding: 35px;
-    width: 240px;
-">
-        <div style="max-width: 900px;color: #FFFFFF;padding: 10px;">
-          <h5>Introduction</h5>
-  
-          <p>Welcome to the mena.feelunique.com website (the “Site”). These T&C (“Terms and Conditions”) apply to the Site mena.feeulunique.com and all of its divisions, subsidiaries, and affiliate operated Internet sites which reference these T&C.</p>
-  
-          <p>By accessing the Site, you confirm your understanding of the T&C, and you agree to be bound by these T&C. If you do not agree to these T&C of use, you shall not use this website. The Site reserves the right, to change, modify, add,
-            or remove portions of these T&C of use at any time. Changes will be effective when posted on the Site with no other notice provided. Please check these T&C of use regularly for updates. Your continued use of the Site
-            following the posting of changes to these T&C of use constitutes your acceptance of those changes.</p>
-        </div>
-      </div>
-      <div class="terms-of-service-text-container">
-        <div class="text-container" style="background-image: linear-gradient(90deg, #e7e7e7 33.33%, #0000ff00 30%);">
-          
-          <h5>Use of the Site</h5>
-          <p>You are either at least 18 years of age or are accessing the Site under the supervision of a parent or legal guardian.</p>
-  
-          <p>We grant you a non-transferable and revocable license to use the Site, under the T&C described, for the purpose of shopping for personal
-            items sold on the Site. Commercial use or use on behalf of any third party is prohibited, except as explicitly permitted by us in advance.
-            Any breach of these T&C shall result in the immediate revocation of the license granted in this paragraph without notice to you.</p>
-  
-          <p>Content provided on this site is solely for informational purposes. Product representations expressed on this Site are those of the
-            vendor and are not made by us. Submissions or opinions expressed on this Site are those of the individual posting such content and may not reflect our opinions.</p>
-  
-          <p>Certain services and related features that may be made available on the Site may require registration or subscription. Should you
-            choose to register or subscribe for any such services or related features, you agree to provide accurate and current information about
-            yourself, and to promptly update such information if there are any changes. Every user of the Site is solely responsible for keeping
-            passwords and other account identifiers safe and secure. The account owner is entirely responsible for all activities that occur under such password or account.</p>
-  
-          <p>Furthermore, you must notify us of any unauthorized use of your password or account. The Site shall not be responsible or liable,
-            directly or indirectly, in any way for any loss or damage of any kind incurred as a result of, or in connection with, your failure to
-            comply with this section. During the registration process you agree to receive promotional emails from the Site. You can subsequently
-            opt out of receiving such promotional e-mails by clicking on the link at the bottom of any promotional email.</p>
-          
-        </div>
-      </div>
-      <div class="terms-of-service-text-container reverse">
-        <div class="text-container" style="background-image: linear-gradient(270deg, #e7e7e7 33.33%, #0000ff00 30%);">
-  
-          <h5>User Submissions</h5>
-          <p>Anything that you submit to the Site and/or provide to us, including but not limited to, questions, reviews, comments, and suggestions (collectively, “Submissions”) will become our sole and exclusive property and shall not be returned to you.
-          In addition to the rights applicable to any Submission, when you post comments or reviews to the Site, you also grant us the right to use the name that you submit, in connection with such review, comment, or other content. You shall not use a
-          false e-mail address, pretend to be someone other than yourself or otherwise mislead us or third parties as to the origin of any Submissions. We may, but shall not be obligated to, remove or edit any Submissions.</p>
-          
-        </div>
-      </div>
-      <div class="terms-of-service-text-container" style="background-image: linear-gradient(90deg, #edece5 50%, #0000ff00 50%);">
-        <div class="text-container">
-      
-          <h5>Prices, delivery charges and payment</h5>
-          <p>The price of a product shall be as stated on this Website at the time you place your order except in the case of obvious error. We try and ensure that all prices on our
-            Website are accurate but errors may occur. If we discover an error in the price of a product you have ordered, we will not be liable to supply that item to you at the stated price,
-            provided that we notify you before we dispatch the item to you. In those circumstances, we will inform you of the correct price as soon as possible and give you the option of
-            reconfirming your order at the correct price or cancelling it. If you cancel no payment will be taken; or if payment has already been taken, it will be refunded.</p>
-  
-          <p>We offer ‘free delivery’ on orders fulfilled by Feelunique exceeds the current offer over a set threshold. To view thresholds for other countries please click here</p>
-  
-          <p>We have a chosen delivery partner who are specialists in international cross-border ecommerce and help manage and localize international shopping experiences. This has enabled us to
-            improve our delivery options, add the ability to pre-pay duties and pay in local currencies for selected countries. For these orders, they will still be fulfilled by Feelunique delivery
-            partner to your destination country. Please click here for more information on delivery charges and duties.</p>
-  
-          <p>The available methods of payments are displayed on the Website at checkout. Payment will be debited from your account at the point you confirm your order.</p>
-  
-          <p>You confirm that the payment credentials being used are yours. Your payment credentials will be subject to validation checks and authorization by our payment processing provider.</p>
-  
-          <p>Fraudulent payment credentials will be reported to the relevant authorities. If the issuer of your payment credentials refuses to authorize payment we will not accept your order and we are not obliged to inform you of the reason for the refusal.</p>
-  
-          <p>We are not responsible for your payment credentials issuer charging you as a result of our processing of your payment in accordance with your order.</p>
-    
-        </div>
-      </div>
-      <div class="terms-of-service-text-container reverse" style="background-image: linear-gradient(270deg, #edece5 50%, #0000ff00 50%);">
-        <div class="text-container">
-      
-          <h5>The ordering process and order confirmation</h5>
-  
-  
-          <p>Your order via our online purchase order form constitutes an offer to us to buy the products you select from the Website. All orders are subject to availability and to acceptance by us.
-          We reserve the right to refuse to accept an order. All communications will be addressed to the email address you supply when you register.</p>
-  
-          <p>By placing an order for the delivery of goods via this Website:</p>
-  
-          <p>You are making an offer to mena.feelunique.com to deliver the goods described in your order under the Terms of the order to the preferred address you have given to us while placing the order.
-          You may select items from our range of products, details of which will be added to the "Shopping Bag" by clicking on the "Add to Bag" button.
-          Before placing an order you can view and amend your order details at any time by clicking on the "Shopping Bag".</p>
-  
-          <p>By clicking on "Pay by Card" (or equivalent button for other payment methods) at Checkout, you submit an offer to buy the goods in the Shopping Bag.</p>
-  
-          <p>Once you have placed an order for goods and delivery you will receive a confirmation that your order has been received.</p>
-  
-          <p>You will automatically be sent an email confirming receipt of your order (the "Confirmation Email") with a summary of the details of your order, which we recommend you print out and keep for your own records.
-          The Confirmation Email does not constitute our acceptance of your order; it merely records the fact that Feelunique has received your order. Please check that all details in the Confirmation Email are correct.
-          If not, or if you do not receive a Confirmation Email please contact our Customer Care Team. To find all the ways to contact us please click here.</p>
-  
-          <p>Feelunique will send a second email when we dispatch your goods which shall constitute our acceptance of your order (the "Acceptance Email") at which point a binding contract of sale for products will be concluded between you and us.</p>
-  
-          <p>We will retain a record of all orders accepted by us. You can find details about your recent orders by logging into your Account via the “Order” link at the top Right hand side of the Website.</p>
 
-        </div>
-      </div>
-      <div class="terms-of-service-text-container reverse" style="background-image: linear-gradient(270deg, #edece5 50%, #0000ff00 50%);">
-        <div class="text-container" style="max-width: 900px; padding: 30px 0px 30px 0px;">
-          
-          <h5 class="highlight">Delivery and ownership</h5>
-  
-          <p>We accept orders for delivery from UK to UAE, KSA, Bahrain, Oman, Qatar, Kuwait. To view our delivery and shipping rates please click here. Unless otherwise stated, delivery will be made from our supplier to the address provided by you.
-          For orders fulfilled by Feelunique we will endeavor to dispatch the product to you within one working day of you placing your order and in any event within 4 working days beginning on the day after you place your order.</p>
-  
-          <p>If we are unable to dispatch the product within that time we will email to let you know and to give you an estimated delivery date. In these circumstances we will offer you the opportunity to cancel the order and receive a full refund.</p>
-  
-          <p>However, if any product got dispatched, shipping fees will be deducted in case we received a cancellation request from your side.</p>
-  
-          <p>You are only responsible for the product when it is delivered to you.</p>
-  
-          <p>If for any reason you do not receive your delivery, please note that we will only consider claims for lost items sent within 5 days after the latest due date</p>
-  
-          <p>Additionally, we will not accept liability for lost orders if you select for your parcel to be left in a safe place or with a neighbor or any particular person appointed from your side.</p>
-  
-          <p>We want you to be happy with your purchase from us. If you are unhappy with the product in any way (for example if there is obvious damage to the item from transport or packaging damaged during transport) please contact our Customer Care Team as soon as possible.
-          To find all the ways to contact us please click here.</p>
-
-        </div>
-      </div>
-      <div class="terms-of-service-text-container reverse">
-        <div class="text-container" style="max-width: 900px; padding: 0px 0px 30px 0px;">
-          
-          <h5 class="highlight">Cancellation, returns and refunds</h5>
-  
-          <p>You have certain rights under the law. These include:</p>
-  
-          <p>that any products supplied by us will be of satisfactory quality, fit for their intended purpose, and will conform to any description given on this Website;<br/>
-          Certain remedies if a product is defective.<br/>
-          We can only cancel an order within 2 hours unless your order is damaged or faulty.<br/>
-          To view our full returns policy please click here.</p>
-  
-          <p>Please return the Product in suitable packaging to ensure it reaches us in good condition.</p>
-  
-          <p>Please ensure that you also return any free gifts that are associated with your return items or the related order. If the free gift isn’t returned, then we reserve the right to deduct the value of the free gift from your refund.</p>
-  
-          <p>Please note that if you fail to take reasonable care of returned products, or fail to return the product to us, we will be entitled to refuse the returns in addition to make a claim against you for any losses which we suffer.</p>
-  
-          <p>Please note that we reserve the right not to accept orders from customers with unusual or suspicious returns behavior.</p>
-    
-        </div>
-      </div>
-      <div class="terms-of-service-text-container duel">
-        <div class="text-container" style="background-color: #dac181;">
-      
-          <h5>Trademarks and Copyrights</h5>
-  
-          <p>All intellectual property rights, whether registered or unregistered, in the Site,
-          information content on the Site and all the website design, including, but not limited to, text,
-          graphics, software, photos, video, music, sound, and their selection and arrangement, and all software
-          compilations, underlying source code and software shall remain our property. The entire contents of the Site also
-          are protected by copyright as a collective work under UAE copyright laws and international conventions. All rights are reserved.</p>
-    
-        </div>
-        <div class="text-container" style="background-color: #edece5;">
-    
-          <h5>Applicable Law and Jurisdiction</h5>
-  
-  
-          <p>These T&C shall be interpreted and governed by the laws in force in Dubai, United Arab Emirates. Subject to the Arbitration section below,
-            each party hereby agrees to submit to the jurisdiction of the Dubai International Arbitration Centre and to waive any objections based upon venue.</p>
-  
-        </div>
-      </div>
-      <div style="max-width: 1170px; margin-right: auto; background-color: #dac1812e; margin-bottom: 40px;">
-        <div class="terms-of-service-text-container reverse overflow">
-          <div class="text-container" style="max-width: 900px;">
-        
-            <h5>Arbitration</h5>
-    
-            <p>Any controversy, claim or dispute arising out of or relating to these T&C will be referred to and finally settled by private and confidential binding arbitration before a
-            single arbitrator held in Dubai, UAE in English and governed by Dubai law pursuant to the Rules of Commercial Conciliation and Arbitration of 1994 (Dubai), as amended, replaced
-            or re-enacted from time to time. The arbitrator shall be a person who is legally trained and who has experience in the information technology field in Dubai and is independent of either party.
-            Notwithstanding the foregoing, the Site reserves the right to pursue the protection of intellectual property rights and confidential information through injunctive or other equitable relief through the courts.</p>
-          </div>
-        </div>
-      </div>
-      <div style="max-width: 1170px; margin-left: auto; background-color: #edece5; margin-bottom: 40px;">
-        <div class="terms-of-service-text-container overflow">
-          <div class="text-container" style="max-width: 900px;">
-        
-            <h5>Termination</h5>
-            
-  
-            <p>In addition to any other legal or equitable remedies, we may, without prior notice to you, immediately terminate the T&C or revoke any or all of your rights granted under the T&C. Upon any
-            termination of this Agreement, you shall immediately cease all access to and use of the Site and we shall, in addition to any other legal or equitable remedies, immediately revoke all password(s)
-            and account identification issued to you and deny your access to and use of this Site in whole or in part. Any termination of this agreement shall not affect the respective rights and obligations
-            (including without limitation, payment obligations) of the parties arising before the date of termination. You furthermore agree that the Site shall not be liable to you or to any other person as a
-            result of any such suspension or termination. If you are dissatisfied with the Site or with any terms, conditions, rules, policies, guidelines, or practices of mena.feeulunique.com in operating the Site,
-            your sole and exclusive remedy is to discontinue using the Site.</p>
-          </div>
-        </div>
-      </div>
-      <div class="terms-of-service-text-container big">
-        <div class="text-container" style="padding: 20px;">
-      
-          <h5>Notable updates:</h5>
-          
-  
-          <p>Minors under the age of 18 shall are prohibited to register as a User of this website and are not allowed to transact or use the website.<br/>
-          Any dispute or claim arising out of or in connection with this website shall be governed and construed in accordance with the laws of UAE.<br/>
-          United Arab Emirates is our country of domicile.<br/>
-          If you make a payment for our products or services on our website, the details you are asked to submit will be provided directly to our payment provider via a secured connection.<br/>
-          The cardholder must retain a copy of transaction records and Merchant policies and rules.<br/>
-          We accept payments online using Visa and Master credit/debit card in AED (or any other agreed currencies).<br/>
-          Some of the products that we sell may be considered more appropriate to adults and could be subject to age or other restrictions in some countries. You must comply with all applicable laws and regulations of the country
-          for which the products are destined. We will not be liable or responsible if you break any such law. By placing an order with us, you are confirming that you are of the appropriate legal age to purchase the items.
-          If we discover that you are not legally entitled to order certain products, we will not be obliged to complete the order.
-          We also recommend you view our Privacy Policy. Please click here.</p>
-    
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-  .terms-of-service-pages h5 {
-      margin-bottom: 1rem;
-  }
-  .terms-of-service-pages h5.highlight{
-      background-color: #dac1812e;
-      padding: 10px 10px;
-  }
-  .terms-of-service-container {
-      overflow-x: auto;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      margin-bottom: 20px;
-      padding: 10px;
-      align-items: center;
-      justify-content: space-evenly;
-  }
-  .terms-of-service-text-container {
-      overflow-x: auto;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-      justify-content: flex-end;
-      max-width: 900px;
-      margin: auto;
-  }
-  .terms-of-service-text-container.overflow {
-      margin-right: 270px;
-      margin-left: 0px;
-  }
-  .terms-of-service-text-container.reverse.overflow {
-      margin-left: 270px;
-      margin-right: 0px;
-  }
-  .terms-of-service-text-container.reverse.overflow .text-container {
-      padding: 30px 120px 30px 0px;
-  }
-  .terms-of-service-text-container.overflow .text-container {
-      padding: 30px 0px 30px 120px;
-  }
-  .terms-of-service-text-container.reverse {
-      justify-content: flex-start;
-  }
-  .terms-of-service-text-container.duel {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: stretch;
-  }
-  .terms-of-service-text-container.big .text-container {
-      max-width: 900px;
-      padding: 120px;
-  }
-  .terms-of-service-text-container.duel .text-container{
-      margin: 40px 10px;
-      padding: 100px;
-      max-width: 50%;
-  }
-  .terms-of-service-text-container .text-container{
-      max-width: 675px;
-      padding: 30px 0px 30px 70px;
-
-  }
-
-  .terms-of-service-text-container.reverse .text-container{
-      max-width: 675px;
-      padding: 30px 70px 30px 0px;
-
-  }
-  
-  @media (max-width: 990px) {
-
-      .terms-of-service-text-container.duel {
-          display: block;
-      }
-      .terms-of-service-text-container.duel .text-container{
-          margin: 40px 0px;
-          padding: 20px;
-          max-width: unset;
-      }
-      .terms-of-service-text-container.big {
-          max-width: 900px;
-          padding: 0px;
-      }
-      .terms-of-service-text-container.big .text-container{
-          margin: 0px;
-          padding: 20px;
-      }
-      .terms-of-service-text-container.overflow {
-          margin-left: 0px;
-      }
-      .terms-of-service-text-container.overflow .text-container {
-          padding: 0px;
-      }
-      .terms-of-service-text-container.reverse.overflow .text-container {
-          padding: 30px 20px 30px 20px;
-      }
-      .terms-of-service-text-container.overflow .text-container {
-          padding: 30px 20px 30px 20px;
-      }
-      .terms-of-service-text-container.overflow {
-          margin-right: 0px;
-          margin-left: 0px;
-      }
-      .terms-of-service-text-container.reverse.overflow {
-          margin-left: 0px;
-          margin-right: 0px;
-      }
-      .terms-of-service-container {
-          flex-direction: column;
-      }
-      .terms-of-service-text-container .text-container{
-          padding: 30px 0px 30px 0px;
-
-      }
-
-      .terms-of-service-text-container.reverse .text-container{
-          padding: 30px 0px 30px 0px;
-
-      }
-</style>
 {% schema %}
 {
-  "name": "Terms and Conditions",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "bg_breadcrumb",
-      "label": "Background Image BreadCrumb",
-      "info": "1920x510px recommended"
-    },
-    {
-      "type": "header",
-      "content": "Introduce"
-    },
-    {
-      "type": "paragraph",
-      "content": "Please scroll to bottom and click Add content to add content for Introduce"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_intro",
-      "label": "Enable?",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Service Box"
-    },
-    {
-      "type": "paragraph",
-      "content": "Please scroll to bottom and click Add content to add content for Introduce"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_s_servicebox",
-      "label": "Enable?",
-      "default": true
-    },
-    {
-      "type": "image_picker",
-      "id": "bg_image",
-      "label": "Background Image ServiceBox",
-      "info": "1920x650px recommended"
-    },
-    {
-      "type": "text",
-      "id": "title_servicebox",
-      "label": "Title",
-      "default": "Reasons to shop with us"
-    },
-    {
-      "type": "header",
-      "content": "Instagram"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_insta",
-      "label": "Enable?",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "title_icon",
-      "label": "Icon title",
-      "default": "icon-icon-intagram",
-      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
-    },
-    {
-      "type": "text",
-      "id": "title_content",
-      "label": "Title",
-      "default": "Instagram Feed"
-    },
-    {
-      "type": "textarea",
-      "id": "des",
-      "label": "Description",
-      "default": "Get Update & Emails From Us"
-    },
-    {
-      "type": "text",
-      "id": "ins_userid",
-      "label": "User ID Instagram",
-      "default": "3672948962"
-    },
-    {
-      "type": "text",
-      "id": "ins_access_token",
-      "label": "Access Token Instagram",
-      "default": "3672948962.0f64772.430edb7f711e4665b59777c54d1ed9ce"
-    },
-    {
-      "type": "text",
-      "id": "ins_limit_number",
-      "label": "Limit Image",
-      "default": "6"
-    },
-    {
-      "type": "text",
-      "id": "item_icon",
-      "label": "Icon",
-      "default": "fa fa-instagram",
-      "info": "[Get icon here](https:\/\/fontawesome.com\/v4.7.0\/icons\/)"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "service",
-      "name": "Service V1",
-      "settings": [
+    "name": "Terms & Conditions",
+    "settings": [
         {
-          "type": "text",
-          "id": "block_title",
-          "label": "Title",
-          "default": " FREE SHIPPING & RETURN"
+            "type": "image_picker",
+            "id": "bg_breadcrumb",
+            "label": "Background Image Title",
+            "info": "1920x277px recommended"
         },
         {
-          "type": "text",
-          "id": "block_content",
-          "label": "Content",
-          "default": " If your glasses aren't perfect, return them within 30 days<br> for a full refund. We'll even pay shipping."
+            "type": "image_picker",
+            "id": "bg_breadcrumb_mobile",
+            "label": "Background Image Title Mobile",
+            "info": "430x277px recommended"
         }
-      ]
-    },
-    {
-      "type": "introduce",
-      "name": "Introduce",
-      "settings": [
+    ],
+    "blocks": [
         {
-          "type": "image_picker",
-          "id": "image_intro",
-          "label": "Image Introduce",
-          "info": "670x600px recommended"
+            "type": "@app"
         },
         {
-          "type": "text",
-          "id": "title_intro",
-          "label": "Title"
-        },
-        {
-          "type": "text",
-          "id": "des_intro",
-          "label": "Description"
-        },
-        {
-          "type": "text",
-          "id": "content_intro",
-          "label": "Content"
+            "type": "text-content",
+            "name": "Text content",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "block_title",
+                    "label": "Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "block_content",
+                    "label": "Content"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "remove_margin",
+                    "label": "Remove margin of p tag",
+                    "default": true
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "About Us",
-      "blocks": [
-      
-      ]
-    }
-  ]
+    ],
+    "presets": [
+        {
+            "name": "Terms & Conditions",
+            "blocks": [
+            ]
+        }
+    ]
 }
 {% endschema %}
-{% stylesheet %}
-
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
