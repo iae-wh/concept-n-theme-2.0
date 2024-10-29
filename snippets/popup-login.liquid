@@ -1,125 +1,440 @@
 <div class="poup-login-destop js-poup-login-destop d-none d-xl-block">
-  <div class="overlay_login-content">
-    <div class="row justify-content-center box_content_accountdestop text-center">            
-      <div class="formlogin-destop">
-        <div class="login_primary CustomerLoginForm">
-          <div class="login-icon-popup-login">
-            {% if settings.pouplogin_logo_svg != blank %}
-            <div class="logosvg m-auto" style="max-width:{{settings.pouplogin_logo_maxwidth}}px;">
-              <a class="logourl" href="{{shop.url}}">{{settings.pouplogin_logo_svg}}</a>
+    <div class="overlay_login-content">
+        <div class="row justify-content-center box_content_accountdestop text-center">
+            {% if customer %}
+            <div class="form-customer-login">
+                <h3 class="title-login">{{ 'customer.login.account_fallback' | t }}
+                    {% if customer.first_name != blank %}
+                        {{ customer.first_name }}
+                    {% else %}
+                        {{ customer.email }}
+                    {% endif %}
+                </h3>
+                <ul class="account-popup-menu">
+                    <li>
+                        <a href="{{ routes.account_url }}">My Account</a>
+                    </li>
+                    <li>
+                        <a href="{{ routes.account_url }}?path=wishlist">Wishlist</a>
+                    </li>
+                    <li>
+                        <a href="{{ routes.account_url }}?path=orders">Order History</a>
+                    </li>
+                    <li>
+                        <a href="{{ routes.account_url }}?path=addresses">Addresses</a>
+                    </li>
+                    <li class="logout">
+                        <a href="{{ routes.account_logout_url }}">
+                            {{ 'customer.log_out' | t }}
+                        </a>
+                    </li>
+                </ul>
             </div>
-            {% else %}            
-            <a href="{{shop.url}}">
-              {% if settings.pouplogin_logo != blank %}
-              <img src="{{settings.pouplogin_logo|img_url:'master'}}" width="{{settings.pouplogin_logo_maxwidth}}" alt="{{shop.name}}">
-              {% else %}
-              <img src="//via.placeholder.com/160x46" width="{{settings.pouplogin_logo_maxwidth}}" alt="{{shop.name}}">
-              {% endif %}
-            </a>
-            {% endif %}
-          </div>
-          <h2 class="title-tab-login">Great to have you back!</h2>
-          <div class="mailrrr mt-3">
-            {% form 'customer_login' %}
-            {{ form.errors | default_errors }}
-            <div class="form-group">
-              <input type="email"  class="form-control" name="customer[email]"  placeholder="{{ 'customer.login.email' | t }}" required>
-            </div>
-            {% if form.password_needed %}
-            <div class="form-group">
-              <input type="password" class="form-control"  placeholder="{{ 'customer.login.password' | t }}" name="customer[password]" required>
-            </div>
-            {% endif %}
-            <div class="form-check">
-              {% if form.password_needed %}
-              <a href="#recover" class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
-              {% endif %}
-            </div>
-            <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.login.log_in' | t }}">
-              {{ 'customer.login.log_in' | t }}
-            </button>
-            {% endform %}
-          </div>
-
-          <div class="or_creat my-3">
-            {% if settings.enable_rtl_mode %}
-            <div class="box-register"><a href="javascript:void(0)" class="jsCreate_account"><i class="mr-2 ti-arrow-left"></i>{{ 'customer.account.register_now' | t }} </a><span class="or-register ml-2">{{ 'customer.login.title-2' | t }}</span></div>
             {% else %}
-            <div class="box-register"><span class="or-register mr-2">{{ 'customer.login.title-2' | t }}</span><a href="javascript:void(0)" class="jsCreate_account">{{ 'customer.account.register_now' | t }} <i class="ml-2 ti-arrow-right"></i></a></div>
-            {% endif %}
-          </div>
-        </div>
-        {% form 'recover_customer_password' %}
-        {{ form.errors | default_errors }}
-        {% comment %}
-        Assign variable to be used after timber.init() is run in theme.liquid
-        {% endcomment %}
-        {% if form.posted_successfully? %}
-        {% assign resetPassword = true %}
-        {% endif %}
-        <div class="RecoverPasswordForm" style="display: none;">
-          <div class="block-login">
+            <div class="formlogin-destop">
+                <div class="login_primary CustomerLoginForm">
+                    <div class="login-icon-popup-login">
+                        {% if settings.pouplogin_logo_svg != blank %}
+                            <div class="logosvg m-auto" style="max-width:{{ settings.pouplogin_logo_maxwidth }}px;">
+                                <a class="logourl" href="{{ shop.url }}">{{ settings.pouplogin_logo_svg }}</a>
+                            </div>
+                        {% else %}
+                            <a href="{{ shop.url }}">
+                                {% if settings.pouplogin_logo != blank %}
+                                    <img src="{{ settings.pouplogin_logo | img_url: 'master' }}"
+                                         width="{{ settings.pouplogin_logo_maxwidth }}" alt="{{ shop.name }}">
+                                {% else %}
+                                    <img src="//via.placeholder.com/160x46"
+                                         width="{{ settings.pouplogin_logo_maxwidth }}" alt="{{ shop.name }}">
+                                {% endif %}
+                            </a>
+                        {% endif %}
+                    </div>
+                    <h2 class="title-tab-login">Sign in</h2>
+                    <div class="mailrrr mt-3">
+                        {% form 'customer_login' %}
+                            {%- if form.errors -%}
+                                <div class="errors">
+                                    <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+                                        <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"></circle>
+                                        <circle cx="6.5" cy="6.5" r="5.5" fill="#ffffff" stroke="#D60000" stroke-width="0.7"></circle>
+                                        <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="#D60000"></path>
+                                        <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="#D60000" stroke="white" stroke-width="0.7">
+                                        </path></svg>
+                                    <ul>
+                                        {%- for field in form.errors -%}
+                                            <li>
+                                                {%- if field == 'form' -%}
+                                                    {{ form.errors.messages[field] }}
+                                                {%- else -%}
+                                                    {{ form.errors.translated_fields[field] | capitalize }}
+                                                    {{ form.errors.messages[field] }}
+                                                {%- endif -%}
+                                            </li>
+                                        {%- endfor -%}
+                                    </ul>
+                                </div>
+                            {%- endif -%}
+                            <div class="form-group padding">
+                                <label for="CustomerEmail">
+                                    {{ 'customer.login_page.email' | t }}
+                                </label>
+                                <input type="email" class="form-control" name="customer[email]"
+                                       placeholder="{{ 'customer.login.email' | t }}" required>
+                            </div>
+                            {% if form.password_needed %}
+                                <div class="form-group">
+                                    <label for="CustomerPasswordPopup">
+                                        {{ 'customer.login_page.password' | t }}
+                                    </label>
+                                    <div class="password-content">
+                                        <input
+                                                class="form-control"
+                                                type="password"
+                                                value=""
+                                                name="customer[password]"
+                                                id="CustomerPasswordPopup"
+                                                autocomplete="current-password"
+                                                {% if form.errors contains 'form' %}
+                                                    aria-invalid="true"
+                                                {% endif %}
+                                                placeholder="{{ 'customer.login.password' | t }}"
+                                                required
+                                        >
+                                        <button type="button" class="show-password-popup">
+                                            <span class="icon-hide" style="display: none">
+                                                <svg id="Component_19_2" data-name="Component 19 – 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.92" height="13.704" viewBox="0 0 19.92 13.704">
+                                                  <defs>
+                                                    <clipPath id="clip-path">
+                                                      <rect id="Rectangle_2749" data-name="Rectangle 2749" width="19.92" height="13.704" fill="#656565"/>
+                                                    </clipPath>
+                                                  </defs>
+                                                  <g id="Group_45424" data-name="Group 45424" transform="translate(0 0)">
+                                                    <g id="Group_45420" data-name="Group 45420" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                                      <path id="Path_61229" data-name="Path 61229" d="M9.96,0C4.459,0,0,6.852,0,6.852S4.459,13.7,9.96,13.7s9.96-6.852,9.96-6.852S15.461,0,9.96,0m0,11.6a4.753,4.753,0,1,1,4.753-4.753A4.753,4.753,0,0,1,9.96,11.6" transform="translate(0)" fill="#656565"/>
+                                                      <path id="Path_61230" data-name="Path 61230" d="M88.292,49.331a2.852,2.852,0,1,1-2.852-2.852,2.852,2.852,0,0,1,2.852,2.852" transform="translate(-75.48 -42.479)" fill="#656565"/>
+                                                    </g>
+                                                  </g>
+                                                </svg>
+                                            </span>
+                                            <span class="icon-show">
+                                                <svg id="Component_19_2" data-name="Component 19 – 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.92" height="16.794" viewBox="0 0 19.92 16.794">
+                                                  <defs>
+                                                    <clipPath id="clip-path">
+                                                      <rect id="Rectangle_2750" data-name="Rectangle 2750" width="19.92" height="16.794" fill="#656565"/>
+                                                    </clipPath>
+                                                  </defs>
+                                                  <g id="Group_45423" data-name="Group 45423" transform="translate(0 0)">
+                                                    <g id="Group_45422" data-name="Group 45422" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                                      <path id="Path_61231" data-name="Path 61231" d="M74.842,11.385a4.754,4.754,0,0,1,4.19,7L81,20.351a21.38,21.38,0,0,0,3.8-4.213s-4.459-6.852-9.96-6.852a8.181,8.181,0,0,0-3.85,1.056L72.6,11.948a4.728,4.728,0,0,1,2.244-.563" transform="translate(-64.882 -8.487)" fill="#656565"/>
+                                                      <path id="Path_61232" data-name="Path 61232" d="M106.5,55.874l3.533,3.533a2.853,2.853,0,0,0-3.533-3.533" transform="translate(-97.336 -50.963)" fill="#656565"/>
+                                                      <path id="Path_61233" data-name="Path 61233" d="M.592,1.206,3.277,3.892A21.516,21.516,0,0,0,0,7.651S4.459,14.5,9.96,14.5a7.786,7.786,0,0,0,3.195-.734l3.025,3.025,1.206-1.206L1.8,0Zm4.88,4.88L7.11,7.725A2.851,2.851,0,0,0,9.887,10.5l1.638,1.638A4.754,4.754,0,0,1,5.471,6.086" transform="translate(0)" fill="#656565"/>
+                                                    </g>
+                                                  </g>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            <div class="form-check">
+                                {% if form.password_needed %}
+                                    <a href="#recover"
+                                       class="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+                                {% endif %}
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.login.log_in' | t }}">
+                                {{ 'customer.login.log_in' | t }}
+                            </button>
+                        {% endform %}
+                    </div>
+
+                    <div class="or_creat">
+                        {% if settings.enable_rtl_mode %}
+                            <div class="box-register"><a href="javascript:void(0)" class="jsCreate_account"><i
+                                            class="mr-2 ti-arrow-left"></i>{{ 'customer.account.register_now' | t }}
+                                </a><span class="or-register ml-2">{{ 'customer.login.title-2' | t }}</span></div>
+                        {% else %}
+                            <div class="box-register"><span
+                                        class="or-register mr-2">{{ 'customer.login.title-2' | t }}</span><a
+                                        href="javascript:void(0)"
+                                        class="jsCreate_account">{{ 'customer.account.register_now' | t }} <i
+                                            class="ml-2 ti-arrow-right"></i></a></div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% form 'recover_customer_password' %}
+                    {%- if form.errors -%}
+                        <div class="errors">
+                            <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+                                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"></circle>
+                                <circle cx="6.5" cy="6.5" r="5.5" fill="#ffffff" stroke="#D60000" stroke-width="0.7"></circle>
+                                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="#D60000"></path>
+                                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="#D60000" stroke="white" stroke-width="0.7">
+                                </path></svg>
+                            <ul>
+                                {%- for field in form.errors -%}
+                                    <li>
+                                        {%- if field == 'form' -%}
+                                            {{ form.errors.messages[field] }}
+                                        {%- else -%}
+                                            {{ form.errors.translated_fields[field] | capitalize }}
+                                            {{ form.errors.messages[field] }}
+                                        {%- endif -%}
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                        </div>
+                    {%- endif -%}
+                    {% comment %}
+                    Assign variable to be used after timber.init() is run in theme.liquid
+                    {% endcomment %}
+                    {% if form.posted_successfully? %}
+                        {% assign resetPassword = true %}
+                    {% endif %}
+                    <div class="RecoverPasswordForm" style="display: none;">
+                        <div class="block-login">
             <span class="login-icon">
               <i class="ti-reload"></i>
             </span>
-            <h2 class="title_resgister title24 text-center title-form-account">{{ 'customer.recover_password.title' | t }}</h2>
-            <div class="form-group mb-0 row">
-              <div class="col-sm-12">
-                <input type="email" class="form-control" placeholder="{{ 'customer.login.email' | t }}" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required>
-              </div>
+                            <h2 class="title_resgister title24 text-center title-form-account">{{ 'customer.recover_password.title' | t }}</h2>
+                            <div class="form-group mb-0 row pb-4">
+                                <div class="col-sm-12">
+                                    <label for="CustomerEmail">
+                                        {{ 'customer.login_page.email' | t }}
+                                    </label>
+                                    <input type="email" class="form-control"
+                                           placeholder="{{ 'customer.login.email' | t }}"
+                                           name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %}
+                                           required>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="btn register-button"
+                                       value="{{ 'customer.recover_password.submit' | t }}">
+                            </div>
+                            <div class="table-custom create-account">
+                                <div class="box-register text-center mt-4">
+                                    <a class="HideRecoverPasswordLink" style="cursor: pointer;"
+                                       class="color">{{ 'customer.recover_password.cancel' | t }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endform %}
             </div>
-            <div class="text-center">
-              <input type="submit" class="btn register-button" value="{{ 'customer.recover_password.submit' | t }}">
-            </div>
-            <div class="table-custom create-account">
-              <div class="box-register text-center mt-4">
-                <a class="HideRecoverPasswordLink" style="cursor: pointer;" class="color">{{ 'customer.recover_password.cancel' | t }}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endform %}
-      </div>
-      <div class="form_register-destop">
-        <div class="login_primary">
-          <div class="login-icon register-icon">
+            <div class="form_register-destop">
+                <div class="login_primary">
+                    <div class="login-icon register-icon">
             <span class="ti-pencil-alt">
             </span>
-          </div>
-          <span class="title_resgister">{{ 'customer.register.title' | t }}</span>
-          <div class="mailrrr mt-3">
-            {% form 'create_customer' %}
-            {{ form.errors | default_errors }}
-            <div class="form-group">
-              <input type="email" placeholder="{{ 'customer.register.email' | t }}" class="form-control" name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %} required>
+                    </div>
+                    <span class="title_resgister title-tab-login">{{ 'customer.register.title' | t }}</span>
+                    <div class="mailrrr mt-3">
+                        {% form 'create_customer' %}
+                            {%- if form.errors -%}
+                                <div class="errors">
+                                    <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+                                        <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"></circle>
+                                        <circle cx="6.5" cy="6.5" r="5.5" fill="#ffffff" stroke="#D60000" stroke-width="0.7"></circle>
+                                        <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="#D60000"></path>
+                                        <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="#D60000" stroke="white" stroke-width="0.7">
+                                        </path></svg>
+                                    <ul>
+                                        {%- for field in form.errors -%}
+                                            <li>
+                                                {%- if field == 'form' -%}
+                                                    {{ form.errors.messages[field] }}
+                                                {%- else -%}
+                                                    {{ form.errors.translated_fields[field] | capitalize }}
+                                                    {{ form.errors.messages[field] }}
+                                                {%- endif -%}
+                                            </li>
+                                        {%- endfor -%}
+                                    </ul>
+                                </div>
+                            {%- endif -%}
+                            <div class="form-group padding">
+                                <label for="RegisterForm-FirstName">
+                                    {{ 'customer.register.first_name' | t }}
+                                </label>
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        name="customer[first_name]"
+                                        id="RegisterForm-FirstName"
+                                        {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+                                        autocomplete="given-name"
+                                        placeholder="{{ 'customer.register.first_name' | t }}"
+                                        required
+                                >
+                            </div>
+                            <div class="form-group padding">
+                                <label for="RegisterForm-LastName">
+                                    {{ 'customer.register.last_name' | t }}
+                                </label>
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        name="customer[last_name]"
+                                        id="RegisterForm-LastName"
+                                        {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+                                        autocomplete="family-name"
+                                        placeholder="{{ 'customer.register.last_name' | t }}"
+                                        required
+                                >
+                            </div>
+                            <div class="form-group padding">
+                                <label for="RegisterForm-email">
+                                    {{ 'customer.register.email' | t }}
+                                </label>
+                                <input type="email" placeholder="{{ 'customer.register.email' | t }}"
+                                       class="form-control"
+                                       name="customer[email]" {% if form.email %} value="{{ form.email }}"{% endif %}
+                                       required>
+                            </div>
+                            <div class="form-group padding">
+                                <label for="password">
+                                    {{ 'customer.register.password' | t }}
+                                </label>
+                                <div class="password-content">
+                                    <input
+                                            class="form-control"
+                                            type="password"
+                                            value=""
+                                            name="customer[password]"
+                                            id="password"
+                                            autocomplete="current-password"
+                                            {% if form.errors contains 'form' %}
+                                                aria-invalid="true"
+                                            {% endif %}
+                                            placeholder="{{ 'customer.register.password' | t }}"
+                                            required
+                                    >
+                                    <button type="button" class="show-password-popup-rs">
+                                        <span class="icon-hide" style="display: none">
+                                            <svg id="Component_19_2" data-name="Component 19 – 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.92" height="13.704" viewBox="0 0 19.92 13.704">
+                                              <defs>
+                                                <clipPath id="clip-path">
+                                                  <rect id="Rectangle_2749" data-name="Rectangle 2749" width="19.92" height="13.704" fill="#656565"/>
+                                                </clipPath>
+                                              </defs>
+                                              <g id="Group_45424" data-name="Group 45424" transform="translate(0 0)">
+                                                <g id="Group_45420" data-name="Group 45420" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                                  <path id="Path_61229" data-name="Path 61229" d="M9.96,0C4.459,0,0,6.852,0,6.852S4.459,13.7,9.96,13.7s9.96-6.852,9.96-6.852S15.461,0,9.96,0m0,11.6a4.753,4.753,0,1,1,4.753-4.753A4.753,4.753,0,0,1,9.96,11.6" transform="translate(0)" fill="#656565"/>
+                                                  <path id="Path_61230" data-name="Path 61230" d="M88.292,49.331a2.852,2.852,0,1,1-2.852-2.852,2.852,2.852,0,0,1,2.852,2.852" transform="translate(-75.48 -42.479)" fill="#656565"/>
+                                                </g>
+                                              </g>
+                                            </svg>
+                                        </span>
+                                        <span class="icon-show">
+                                            <svg id="Component_19_2" data-name="Component 19 – 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.92" height="16.794" viewBox="0 0 19.92 16.794">
+                                              <defs>
+                                                <clipPath id="clip-path">
+                                                  <rect id="Rectangle_2750" data-name="Rectangle 2750" width="19.92" height="16.794" fill="#656565"/>
+                                                </clipPath>
+                                              </defs>
+                                              <g id="Group_45423" data-name="Group 45423" transform="translate(0 0)">
+                                                <g id="Group_45422" data-name="Group 45422" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                                  <path id="Path_61231" data-name="Path 61231" d="M74.842,11.385a4.754,4.754,0,0,1,4.19,7L81,20.351a21.38,21.38,0,0,0,3.8-4.213s-4.459-6.852-9.96-6.852a8.181,8.181,0,0,0-3.85,1.056L72.6,11.948a4.728,4.728,0,0,1,2.244-.563" transform="translate(-64.882 -8.487)" fill="#656565"/>
+                                                  <path id="Path_61232" data-name="Path 61232" d="M106.5,55.874l3.533,3.533a2.853,2.853,0,0,0-3.533-3.533" transform="translate(-97.336 -50.963)" fill="#656565"/>
+                                                  <path id="Path_61233" data-name="Path 61233" d="M.592,1.206,3.277,3.892A21.516,21.516,0,0,0,0,7.651S4.459,14.5,9.96,14.5a7.786,7.786,0,0,0,3.195-.734l3.025,3.025,1.206-1.206L1.8,0Zm4.88,4.88L7.11,7.725A2.851,2.851,0,0,0,9.887,10.5l1.638,1.638A4.754,4.754,0,0,1,5.471,6.086" transform="translate(0)" fill="#656565"/>
+                                                </g>
+                                              </g>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group padding">
+                                <label for="RegisterForm-password">
+                                    {{ 'customer.register.password_confirm' | t }}
+                                </label>
+                                <input type="password" class="form-control" id="password_confirm"
+                                       name="customer[password-confirm]"
+                                       placeholder="{{ 'customer.register.password_confirm' | t }}" required>
+                                <span class="password-match" style="display: none;">PASSWORDS DO NOT MATCH</span>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100"
+                                    value="{{ 'customer.register.submit' | t }}">
+                                {{ 'customer.register.submit' | t }}
+                            </button>
+                        {% endform %}
+                    </div>
+                    <div class="or_creat">
+                        {% if settings.enable_rtl_mode %}
+                            <div class="box-register"><a href="javascript:void(0)" class="jsBack_login"> <i
+                                            class="mr-3 ti-arrow-left"></i> {{ 'customer.login.back_to_login' | t }}
+                                </a></div>
+                        {% else %}
+                            <div class="box-register"><a href="javascript:void(0)"
+                                                         class="jsBack_login">{{ 'customer.login.back_to_login' | t }}
+                                    <i class="ml-3 ti-arrow-right"></i></a></div>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" name="customer[password]" placeholder="{{ 'customer.register.password' | t }}" required>
-            </div>
-            <button type="submit" class="btn btn-dark w-100" value="{{ 'customer.register.submit' | t }}">
-              {{ 'customer.register.submit' | t }}
-            </button>
-            {% endform %}
-          </div>
-          <div class="or_creat my-3">
-            {% if settings.enable_rtl_mode %}
-            <div class="box-register"><a href="javascript:void(0)" class="jsBack_login"> <i class="mr-3 ti-arrow-left"></i> {{ 'customer.login.back_to_login' | t }} </a></div>
-            {% else %}
-            <div class="box-register"><a href="javascript:void(0)" class="jsBack_login">{{ 'customer.login.back_to_login' | t }} <i class="ml-3 ti-arrow-right"></i></a></div>
             {% endif %}
-          </div>
         </div>
-      </div>
     </div>
-    <a href="javascript:void(0)" class="eveland-close-login js-eveland-close-login set-16-svg fill-white"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 298.667 298.667" style="enable-background:new 0 0 298.667 298.667;" xml:space="preserve">
-      <g>
-        <g>
-          <polygon points="298.667,30.187 268.48,0 149.333,119.147 30.187,0 0,30.187 119.147,149.333 0,268.48 30.187,298.667     149.333,179.52 268.48,298.667 298.667,268.48 179.52,149.333   "></polygon>
-        </g>
-      </g>
+    <div class="bg-login-popup js-bg-login-popup">
+    </div>
+</div>
 
-      </svg></a>
-  </div>  
-</div>
-<div class="bg-login-popup js-bg-login-popup">
-</div>
+<style>
+    span.password-match {
+        font-size: 11px;
+        color: #b00000;
+    }
+</style>
+<script>
+    $('form#create_customer').submit(function (e) {
+        check_password_match(e);
+    });
+    $('#password').keyup(function (e) {
+        check_password_match(e);
+    });
+    $('#password_confirm').keyup(function (e) {
+        check_password_match(e);
+    });
+
+    function check_password_match(e) {
+        if ($('#password').val() === $('#password_confirm').val()) {
+            $('.password-match').fadeOut('slow');
+
+        } else {
+            $('.password-match').fadeIn('slow');
+            e.preventDefault(); // stops our form from submitting
+        }
+    }
+
+    var passwordButton = document.querySelector('.show-password-popup');
+    var passwordInput = document.getElementById('CustomerPasswordPopup');
+
+    passwordButton?.addEventListener('click', function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordButton.querySelector('.icon-show').style.display = 'none';
+            passwordButton.querySelector('.icon-hide').style.display = 'block';
+        } else {
+            passwordInput.type = "password";
+            passwordButton.querySelector('.icon-hide').style.display = 'none';
+            passwordButton.querySelector('.icon-show').style.display = 'block';
+        }
+    });
+
+    var passwordButtonRs = document.querySelector('.show-password-popup-rs');
+    var passwordInputRs = document.getElementById('password');
+
+    passwordButtonRs?.addEventListener('click', function () {
+        if (passwordInputRs.type === "password") {
+            passwordInputRs.type = "text";
+            passwordButtonRs.querySelector('.icon-show').style.display = 'none';
+            passwordButtonRs.querySelector('.icon-hide').style.display = 'block';
+        } else {
+            passwordInputRs.type = "password";
+            passwordButtonRs.querySelector('.icon-hide').style.display = 'none';
+            passwordButtonRs.querySelector('.icon-show').style.display = 'block';
+        }
+    });
+</script>

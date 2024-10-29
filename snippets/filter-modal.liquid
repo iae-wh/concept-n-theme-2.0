@@ -1,0 +1,20 @@
+<filter-modal class="filter-modal" data-open="false" data-open-id="filter-opener">
+    <div class="filter-content bg-white d-flex flex-column">
+        <div class="filter-header pt-0 pt-md-3 pb-3 d-flex align-items-center justify-content-between">
+            <span class="text-black text-uppercase fw-bold">Filters</span>
+            <button class="filter-closer btn btn-close-white ps-0 pe-0">
+                <i class="fa-solid fa-xmark fa-lg" style="color: #000000;"></i>
+            </button>
+        </div>
+        <div class="filter-body overflow-y-auto flex-grow-1 mt-1 mb-1">
+            {% include 'filter-side-bar',filters: filters %}
+        </div>
+        <div class="filter-footer d-flex flex-column align-items-center row-gap-2">
+            <button class="filter-reset btn btn-link text-secondary fw-semibold text-center p-0">
+                Reset
+            </button>
+            <button class="filter-apply btn btn-primary w-100 text-center fw-semibold pt-2 pb-2 text-capitalize">Apply filters</button>
+        </div>
+    </div>
+    <div class="filter-outer"></div>
+</filter-modal>

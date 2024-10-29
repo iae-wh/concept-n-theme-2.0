@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "meta": {
@@ -6,7 +15,7 @@
     },
     "404": {
       "title": "404 Seite nicht gefunden",
-      "subtext_html": "Die von Ihnen angeforderte Seite existiert nicht. Klicken Sie <a href=\"\/collections\/all\">hier<\/a>, um den Einkauf fortzusetzen."
+      "subtext_html": "Die von Ihnen angeforderte Seite existiert nicht. Klicken Sie <a href=\"/collections/all\">hier</a>, um den Einkauf fortzusetzen."
     },
     "breadcrumbs": {
       "home": "Startseite",
@@ -62,7 +71,7 @@
       "update": "Einkaufswagen aktualisieren",
       "checkout": "Zur Kasse",
       "empty": "Ihr Einkaufswagen ist im Moment leer.",
-      "continue_browsing_html": "Mit der Suche <a href=\"\/collections\/all\">hier<\/a> fortfahren.",
+      "continue_browsing_html": "Mit der Suche <a href=\"/collections/all\">hier</a> fortfahren.",
       "close_cart": "Einkaufswagen schließen"
     },
     "label": {
@@ -223,10 +232,10 @@
     },
     "onboarding": {
       "modal_title": "Fast fertig...",
-      "no_products_html": "Sie haben keine Artikel in Ihrer Startseiten-Zusammenstellung. Dieser Platzhalter verschwindet, wenn Sie <a href=\"\/admin\/collections?tutorial=Frontpage\">dieser Zusammenstellung einen Artikel hinzufügen<\/a>.",
+      "no_products_html": "Sie haben keine Artikel in Ihrer Startseiten-Zusammenstellung. Dieser Platzhalter verschwindet, wenn Sie <a href=\"/admin/collections?tutorial=Frontpage\">dieser Zusammenstellung einen Artikel hinzufügen</a>.",
       "add_product": "Fügen Sie ein Produkt",
       "product_title": "Beispielhafter Produkttitel",
-      "no_collections_html": "Sie haben hier keine Zusammenstellungen zum Anzeigen. <a href=\"\/admin\/custom_collections\">Fügen Sie ein paar Zusammenstellungen<\/a> zur Standard-Startseite hinzu.",
+      "no_collections_html": "Sie haben hier keine Zusammenstellungen zum Anzeigen. <a href=\"/admin/custom_collections\">Fügen Sie ein paar Zusammenstellungen</a> zur Standard-Startseite hinzu.",
       "add_collection": "Fügen Sie eine Sammlung",
       "collection_title": "Beispielhafter Zusammenstellungstitel"
     }
@@ -270,7 +279,7 @@
     "product": {
       "sold_out": "Ausverkauft",
       "on_sale": "Im Angebot",
-      "on_sale_from_html": "<strong>Im Angebot<\/strong> ab {{ price }}",
+      "on_sale_from_html": "<strong>Im Angebot</strong> ab {{ price }}",
       "unavailable": "Nicht verfügbar",
       "compare_at": "Vergleichen bei",
       "quantity": "Menge",

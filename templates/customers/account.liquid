@@ -4,543 +4,507 @@
 <script src="{{ 'jquery.validate.min.js' | asset_url }}"></script>
 <link rel="stylesheet" href="{{ 'intlTelInput.min.css' | asset_url }}">
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{% assign init_tracking_data_availble_date = '2022-01-01 00:00:00' | datetime %}
 <div class="customer account">
-  <div class="wrap-bread-crumb breadcrumb_collection2" >
-    <div class="text-center bg-breadcrumb">
-      <div class="title-page">
-      
-        <h2 class="">My Account</h2>
-    
-      </div>
-      {% include 'breadcrumb' %}
+    <div class="wrap-bread-crumb breadcrumb_collection2 container">
+        <div class="text-center bg-breadcrumb">
+            <div class="title-page">
+                <h2 class="">{{ 'customer.account_fallback' | t }}{{ customer.first_name }}</h2>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="profile-main-container container container-v1">
-    <div class="profile-side-bar">
-      <div class="profile-user-details">
-        <h3>{{ 'customer.account_fallback' | t }}{{ customer.first_name }}</h3>
-        <a href="{{ routes.account_logout_url }}">
-          {{ 'customer.log_out' | t }}
-        </a>
-      </div>
-      <ul class="account-details-menu">
-        <li data-selector="profile-detail-container" class="active">{% render 'icon-profile' %}
-          Profile
-        </li>
-        <li data-selector="addresses-container">{% render 'icon-address' %} Addresses
-        </li>
-        <li data-selector="orders-container">{% render 'icon-orders' %}  Orders</li>
-        <li data-selector="wishlist-container">{% render 'icon-wishlist' %} Wish List</li>
-      </ul>
-    </div>
-    <div class="detail-container profile-detail-container" style="display:none">
-      <div class="account-header-container" >
-        <div class="account-header-text">
-          <h1>Profile</h1>
-          <p>Manage your profile details</p>
+    <div class="profile-main-container container">
+        <div class="profile-side-bar">
+            <div class="profile-user-details">
+                <h3>{{ 'customer.account.details' | t }}</h3>
+            </div>
+            <ul class="account-details-menu">
+                <li data-selector="profile-detail-container" class="active">
+                    <span data-selector="profile-detail-container">My Account</span>
+                </li>
+                <li data-selector="wishlist-container">
+                    <span data-selector="wishlist-container">Wishlist</span>
+                </li>
+                <li data-selector="orders-container">
+                    <span data-selector="orders-container">Order History</span>
+                </li>
+                <li data-selector="addresses-container">
+                    <span data-selector="addresses-container">Addresses</span>
+                </li>
+                <li class="d-none d-md-block">
+                    <a href="{{ routes.account_logout_url }}">
+                        {{ 'customer.log_out' | t }}
+                    </a>
+                </li>
+            </ul>
         </div>
-        {% comment %}<a href="/account/logout" class="user__menu-item list-menu__item link link--text focus-inset caption-large">{% endcomment %}
-          {% comment %}<div class="header-icons header-icon-login">{% endcomment %}
-            {% comment %}<svg xmlns="http://www.w3.org/2000/svg" width="11.094" height="11.084" viewBox="0 0 11.094 11.084">{% endcomment %}
-              {% comment %}<g id="sign_out" data-name="sign out" transform="translate(-1554.445 -294.397)">{% endcomment %}
-                {% comment %}<path id="Path_171" data-name="Path 171" d="M3061.785-481.755a1,1,0,0,1-.327.5q-1.293,1.284-2.579,2.577a.563.563,0,0,1-.574.18.552.552,0,0,1-.271-.909c.077-.088.163-.167.246-.249l1.468-1.468a.376.376,0,0,0,.062-.066c.006-.011-.008-.05-.018-.052a.735.735,0,0,0-.116,0q-2.51,0-5.021,0a.6.6,0,0,1-.549-.253.551.551,0,0,1,.394-.854,1.428,1.428,0,0,1,.181-.009h5.008c.046,0,.093-.008.139-.013a1.162,1.162,0,0,0-.09-.116q-.834-.836-1.669-1.671a.554.554,0,0,1-.029-.791.556.556,0,0,1,.772-.037c.039.034.074.072.111.108q1.331,1.329,2.663,2.658a.876.876,0,0,1,.2.369Z" transform="translate(-1496.246 781.748)"></path>{% endcomment %}
-                {% comment %}<path id="Path_172" data-name="Path 172" d="M3045.773-485.091q0-1.888,0-3.776a1.735,1.735,0,0,1,.227-.931,1.635,1.635,0,0,1,1.461-.83c.722-.007,1.445,0,2.167,0a.539.539,0,0,1,.53.327.534.534,0,0,1-.068.574.584.584,0,0,1-.5.215q-1.026,0-2.05,0a1.077,1.077,0,0,0-.245.02.535.535,0,0,0-.394.463,1.912,1.912,0,0,0-.007.194q0,3.75,0,7.5a1.222,1.222,0,0,0,.02.271.533.533,0,0,0,.462.4,1.815,1.815,0,0,0,.181.008q1.018,0,2.037,0a.575.575,0,0,1,.539.271.551.551,0,0,1-.4.835,1.12,1.12,0,0,1-.142.009h-2.076a1.659,1.659,0,0,1-1.511-.835,1.719,1.719,0,0,1-.225-.919Q3045.774-483.2,3045.773-485.091Z" transform="translate(-1491.328 785.029)"></path>{% endcomment %}
-              {% comment %}</g>{% endcomment %}
-            {% comment %}</svg>{% endcomment %}
-      {% comment %}{% endcomment %}
-            {% comment %}<span>Sign Out</span>{% endcomment %}
-          {% comment %}</div>{% endcomment %}
-        {% comment %}</a>{% endcomment %}
-    </div>
-      <div class="account-details-card account-info-card">
-        <h4 class="account-card-title">{{ 'customer.account.general_information' | t }}</h4>
-        <div class="account-card-content">
-          <div class="field">
-            <input type="text" autocapitalize="off" placeholder="{{ 'customer.addresses.first_name' | t }}" disabled
-                   value="{{ customer.first_name }}">
-            <label for="test-23">
-              {{ 'customer.addresses.first_name' | t }}
-            </label>
-          </div>
-          <div class="field">
-            <input type="text" autocapitalize="off" placeholder="{{ 'customer.addresses.last_name' | t }}" disabled
-                   value="{{ customer.last_name }}">
-            <label for="test-24">
-              {{ 'customer.addresses.last_name' | t }}
-            </label>
-          </div>
-          <div class="field">
-            <input type="text" autocomplete="email" autocorrect="off" autocapitalize="off"
-                   placeholder="{{ 'customer.addresses.email' | t }}" disabled value="{{ customer.email }}">
-            <label for="test-24">
-              {{ 'customer.addresses.email' | t }}
-            </label>
-          </div>
-        </div>
-      </div>
-      
-      <div class="account-details-card account-address-card">
-        <h4 class="account-card-title">{{ 'customer.addresses.default' | t }} {{ 'customer.addresses.sub_title' | t }}</h4>
-        <div class="account-card-content">
-          <div class="field">
-            <h5>{{ 'customer.addresses.name' | t }}</h5>
-            <p>{{ customer.default_address.first_name }} {{ customer.default_address.last_name }}</p>
-          </div>
-          <div class="field">
-            <h5>{{ 'customer.addresses.sub_title' | t }}</h5>
-            <p>{{ customer.default_address | format_address }}</p>
-          </div>
-          <div class="field">
-            <h5>{{ 'customer.addresses.phone' | t }}</h5>
-            <p>{{ customer.default_address.phone }}</p>
-          </div>
-        </div>
-        <div class="account-card-bottom">
-          <button data-selector="addresses-container"
-                  class="update-default-address-button">{{ 'customer.addresses.update' | t }}</button>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="detail-container addresses-container addresses" data-customer-addresses data-address
-         style="display:none">
-      <div class="account-header-container">
-        <div class="account-header-text">
-          <h1>{{ 'customer.addresses.title' | t }}</h1>
-          <p>Manage your addresses</p>
-        </div>
-        {% if customer.addresses.size < 5 %}
-          <button type="button"
-                  data-address-id="AddAddress"
-                  aria-expanded="false"
-                  aria-controls="AddAddress">
-            {{ 'customer.addresses.add_new' | t }}</button>
-        {% endif %}
-      </div>
-      
-      <div class="account-new-address">
-        <div id="EditAddress_AddAddress" class="account-details-card account-new-address-card" style="display: none">
-          <h2 id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h2>
-          <div class="account-new-address-card-content">
-            {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
-              <div class="field">
-                <input type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}"
-                       autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
-                <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
-                <span class="input_validation_status" for="AddressFirstNameNew">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div class="field">
-                <input type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ form.last_name }}"
-                       autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
-                <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
-                <span class="input_validation_status" for="AddressLastNameNew">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div class="field">
-                <input type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}"
-                       autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
-                <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
-              </div>
-              <div class="field">
-                <input type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}"
-                       autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
-                <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
-                <span class="input_validation_status" for="AddressAddress1New">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div class="field">
-                <input type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}"
-                       autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
-                <label for="AddressAddress2New">{{ 'customer.addresses.address2' | t }}</label>
-                <span class="input_validation_status" for="AddressAddress2New">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div>
-                <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
-                <div class="select">
-                  <select
-                      id="AddressCountryNew"
-                      name="address[country]"
-                      data-default="{{ form.country }}"
-                      autocomplete="country"
-                  >
-                    {{ country_option_tags }}
-                  </select>
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                    <use href="#icon-caret"/>
-                  </svg>
+        <div class="detail-container profile-detail-container" style="display:none">
+            <div class="account-header-container">
+                <div class="account-header-text">
+                    <h1>Profile</h1>
+                    <p>Manage your profile details</p>
                 </div>
-                <span class="input_validation_status" for="AddressCountryNew">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div class="field">
-                <input type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}"
-                       autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
-                <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
-                <span class="input_validation_status" for="AddressCityNew">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div id="AddressProvinceContainerNew" style="display: none">
-                <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
-                <div class="select">
-                  <select
-                      id="AddressProvinceNew"
-                      name="address[province]"
-                      data-default="{{ form.province }}"
-                      autocomplete="address-level1"
-                  >
-                  </select>
-                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                    <use href="#icon-caret"/>
-                  </svg>
-                </div>
-                <span class="input_validation_status" for="AddressProvinceContainerNew">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div class="field">
-                <input type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}"
-                       autocapitalize="characters" autocomplete="postal-code"
-                       placeholder="{{ 'customer.addresses.zip' | t }}">
-                <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
-                <span class="input_validation_status" for="AddressZipNew">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div class="field">
-                <input type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}"
-                       autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
-                <span class="input_validation_status" for="AddressPhoneNew">
-                  <i class="fa-regular fa-circle-check success"></i>
-                  <i class="fa fa-xmark fail"></i>
-                </span>
-              </div>
-              <div class="address-default-box">
-                {{ form.set_as_default_checkbox }}
-                <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
-              </div>
-              <div class="address-update-box">
-                <button>{{ 'customer.addresses.add' | t }}</button>
-                <button class="button-black" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
-              </div>
-            {%- endform -%}
-          </div>
-        </div>
-      </div>
-      
-      {%- paginate customer.addresses by 5 -%}
-      <div class="customer">
-        <ul role="list">
-          {% assign addresseslist = customer.addresses | sort: 'date'| reverse %}
-          {%- for address in addresseslist -%}
-            {% if address == customer.default_address %}
-              {% include 'customer-address' %}
-            {%- endif -%}
-          {%- endfor -%}
-          {%- for address in addresseslist -%}
-            {% if address != customer.default_address %}
-              {% include 'customer-address' %}
-            {%- endif -%}
-          {%- endfor -%}
-        </ul>
-        {%- if paginate.pages > 1 -%}
-        {%- if paginate.parts.size > 0 -%}
-        <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-          <ul role="list">
-            {%- if paginate.previous -%}
-            <li>
-              <a href="{{ paginate.previous.url }}&path=addresses"
-                 aria-label="{{ 'general.pagination.previous' | t }}">
-                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                        fill="currentColor"/>
-                </svg>
-              </a>
-            </li>
-            {%- endif -%}
-            
-            {%- for part in paginate.parts -%}
-            <li>
-              {%- if part.is_link -%}
-                <a href="{{ part.url }}&path=addresses"
-                   aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
-              {%- else -%}
-              {%- if part.title == paginate.current_page -%}
-              <span aria-current="page"
-                    aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
-                        {%- else -%}
-                        <span>{{ part.title }}</span>
-                        {%- endif -%}
-                        {%- endif -%}
-                      </li>
-                    {%- endfor -%}
-                    
-                    {%- if paginate.next -%}
-                      <li>
-                        <a href="{{ paginate.next.url }}&path=addresses" aria-label="{{ 'general.pagination.next' | t }}">
-                          <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                                  fill="currentColor"/>
-                          </svg>
-                        </a>
-                      </li>
-                    {%- endif -%}
-                  </ul>
-                </nav>
-        {%- endif -%}
-        {%- endif -%}
-      </div>
-      {%- endpaginate -%}
-      
-      <script>
-          window.onload = () => {
-              typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
-          }
-      </script>
-    </div>
-    
-    
-    <div class="detail-container orders-container" style="display:none">
-      <div class="account-header-text">
-        <h1>Orders</h1>
-        <p>Manage your orders</p>
-      </div>
-      {% paginate customer.orders by 10 %}
-        {%- if customer.orders.size > 0 -%}
-          <div>
-            {%- for order in customer.orders -%}
-              <div class="account-details-card account-order-card">
-                <div class="account-card-top">
-                  <div>
-                    <h4 class="account-card-title">{{ 'customer.order.title' | t: name: order.name }}</h4>
-                    {% assign date_formated = order.created_at | time_tag: format: 'date' %}
-                    <span>{{ 'customer.order.date_html' | t: date: date_formated }}</span>
-                  </div>
-                  <button onclick="window.location = '{{ order.customer_url }}'">View Order</button>
+            </div>
+            <div class="account-details-card account-info-card">
+                <div class="account-card-content">
+                    <div class="field">
+                        <div class="label">
+                            {{ 'customer.addresses.name' | t }}
+                        </div>
+                        <div class="value">{{ customer.first_name }} {{ customer.last_name }}</div>
+                    </div>
+                    <div class="field">
+                        <div class="label">
+                            {{ 'customer.addresses.phone' | t }}
+                        </div>
+                        <div class="value">{{ customer.default_address.phone }}</div>
+                    </div>
                 </div>
                 <div class="account-card-content">
-                  {%- for line_item in order.line_items -%}
                     <div class="field">
-                      <div class="account-product-image">
-                        {{ line_item.image | image_url: width: 75, height: 75 | image_tag: srcset: nil }}
-                      </div>
-                      <div class="account-product-details">
-                        <p class="account-product-brand">{{ line_item.product.vendor }}</p>
-                        <h5 class="account-product-title">{{ line_item.product.title | truncate: 30 }}</h5>
-                        {% if order.cancelled %}
-                          <p class="account-product-status red">Cancelled</p>
-                        {% elsif line_item.successfully_fulfilled_quantity > 0 %}
-                          {% assign tracking_number = line_item.fulfillment.tracking_number %}
-                          <p class="">{{ tracking_number }}</p>
-                          {% if tracking_number %}
-                            {% if order.metafields.shipping.tracking_status.value %}
-                              {% assign tracking_statuses = order.metafields.shipping.tracking_status.value %}
-                            {% else %}
-                              {% assign tracking_statuses = order.metafields.shipping.tracking_status %}
-                            {% endif %}
-                            {% assign stages = false %}
-                            {% for tracking_status in tracking_statuses %}
-                              {% if tracking_number == tracking_status.awb %}
-                                {% assign stages = tracking_status.stages %}
-                              {% endif %}
-                            {% endfor %}
-                            {% assign init_tracking_data_availble_date = '2022-01-01 00:00:00' | datetime %}
-                            {% if stages %}
-                              {% assign stage = stages | last %}
-                              {% if stage.status_type == "1" %}
-                                <p class="account-product-status blue">In-Transit</p>
-                              {% elsif stage.status_type == "2" %}
-                                <p class="account-product-status green">Delivered</p>
-                              {% elsif stage.status_type == "3" %}
-                                <p class="account-product-status yellow">On-Hold</p>
-                              {% elsif stage.status_type == "4" %}
-                                <p class="account-product-status red">Returned</p>
-                              {% elsif stage.status_type == "5" %}
-                                <p class="account-product-status red">Returned</p>
-                              {% endif %}
-                            {% elsif order.created_at < init_tracking_data_availble_date %}
-                              <p class="account-product-status"></p>
-                            {% else %}
-                              <p class="account-product-status">Dispatched</p>
-                            {% endif %}
-                          {% else %}
-                            <p class="account-product-status green">Sent via Email</p>
-                          {% endif %}
-                        {% else %}
-                          <p class="account-product-status">Processing</p>
-                        {% endif %}
-                      </div>
+                        <div class="label">
+                            {{ 'customer.addresses.email' | t }}
+                        </div>
+                        <div class="value">{{ customer.email }}</div>
                     </div>
-                  {%- endfor -%}
+                    <div class="field">
+                        <div class="label">
+                            {{ 'customer.account.password' | t }}
+                        </div>
+                        <div class="value">***********</div>
+                    </div>
                 </div>
-                <!--<div class="account-card-bottom"></div> -->
-              </div>
-            {%- endfor -%}
-          </div>
-          {%- if paginate.pages > 1 -%}
-            {%- if paginate.parts.size > 0 -%}
-              <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-                <ul role="list">
-                  {%- if paginate.previous -%}
-                    <li>
-                      <a href="{{ paginate.previous.url }}&path=orders"
-                         aria-label="{{ 'general.pagination.previous' | t }}">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                                fill="currentColor">
-                        </svg>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                  
-                  {%- for part in paginate.parts -%}
-                    <li>
-                      {%- if part.is_link -%}
-                        <a href="{{ part.url }}&path=orders"
-                           aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
-                      {%- else -%}
-                        {%- if part.title == paginate.current_page -%}
-                          <span aria-current="page"
-                                aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
-                        {%- else -%}
-                          <span>{{ part.title }}</span>
-                        {%- endif -%}
-                      {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                  
-                  {%- if paginate.next -%}
-                    <li>
-                      <a href="{{ paginate.next.url }}&path=orders" aria-label="{{ 'general.pagination.next' | t }}">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
-                                fill="currentColor">
-                        </svg>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                </ul>
-              </nav>
-            {%- endif -%}
-          {%- endif -%}
-        {% else %}
-        <div class="btn-wrp" style="    height: 300px;
-    display: flex;    align-items: center;
-    justify-content: space-around;">
-         <button type="button" onclick="window.location.href='/'">Let's place your first order</button>
+            </div>
+            <div class="account-details-card account-address-card">
+                <h4 class="account-card-title">{{ 'customer.addresses.default' | t }} {{ 'customer.addresses.sub_title' | t }}</h4>
+                <div class="account-card-content">
+                    <div class="field">
+                        <h5>{{ 'customer.addresses.name' | t }}</h5>
+                        <p>{{ customer.default_address.first_name }} {{ customer.default_address.last_name }}</p>
+                    </div>
+                    <div class="field">
+                        <h5>{{ 'customer.addresses.sub_title' | t }}</h5>
+                        <p>{{ customer.default_address | format_address }}</p>
+                    </div>
+                    <div class="field">
+                        <h5>{{ 'customer.addresses.phone' | t }}</h5>
+                        <p>{{ customer.default_address.phone }}</p>
+                    </div>
+                </div>
+                <div class="account-card-bottom">
+                    <button data-selector="addresses-container"
+                            class="update-default-address-button">{{ 'customer.addresses.update' | t }}</button>
+                </div>
+            </div>
+            <a href="{{ routes.account_logout_url }}" class="logout-mobile d-block d-md-none">
+                {{ 'customer.log_out' | t }}
+            </a>
         </div>
-        {%- endif -%}
 
-      {% endpaginate %}
-    </div>
-    
-    <div class="detail-container wishlist-container" style="display:none">
-      <div class="account-header-container">
-        <div class="account-header-text">
-          <h1>Wish List</h1>
-          <p>Manage your wish list</p>
+        {% include 'addresses-page' %}
+
+        <div class="detail-container orders-container" style="display:none">
+            <div class="account-header-container">
+                <div class="account-header-text">
+                    <h1>Orders</h1>
+                    <p>Manage your orders</p>
+                </div>
+            </div>
+            {% paginate customer.orders by 10 %}
+                {%- if customer.orders.size > 0 -%}
+                    <div>
+                        {%- for order in customer.orders -%}
+                            <div class="account-details-card account-order-card">
+                                <div class="account-card-top">
+                                    <div>
+                                        <h4 class="account-card-title">{{ order.name }}</h4>
+                                    </div>
+                                    <button class="view-track-shipment">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                                        </svg>
+                                        Track Shipment
+                                    </button>
+                                </div>
+                                <div class="account-card-order-info">
+                                    <div class="field">
+                                        <h5>{{ 'customer.order.delivery_info.mobile_no' | t }}</h5>
+                                        <p>{{ order.shipping_address.phone }}</p>
+                                    </div>
+                                    <div class="field">
+                                        <h5>{{ 'customer.order.delivery_info.address_shipping' | t }}</h5>
+                                        <p>{{ order.shipping_address | format_address }}</p>
+                                    </div>
+                                    <div class="field">
+                                        <h5>{{ 'customer.order.payment_info.total' | t }}</h5>
+                                        <p class="total">{{ order.total_price | money_with_currency }}</p>
+                                    </div>
+                                </div>
+                                {% if order.created_at > init_tracking_data_availble_date %}
+                                    {% liquid
+                                        assign progressWidth = 0
+                                        assign delivery_status = 0
+                                        assign delivery_by_mail = false
+                                        assign fulfilled_date = order.created_at
+                                        assign shipped_date = order.created_at
+                                        if order.cancelled
+                                            assign delivery_status = -1
+                                            assign progressWidth = 100
+                                        elsif order.fulfillment_status
+                                            assign fulfillment_status = order.fulfillment_status
+                                            assign financial_status = order.financial_status
+                                            if fulfillment_status == 'fulfilled' and financial_status != 'paid'
+                                                assign delivery_status = 2
+                                                assign progressWidth = 50
+                                                for line_item in order.line_items
+                                                    if line_item.fulfillment.created_at > fulfilled_date
+                                                        assign fulfilled_date = line_item.fulfillment.created_at
+                                                    endif
+                                                endfor
+                                            elsif fulfillment_status == 'fulfilled' and financial_status == 'paid'
+                                                assign delivery_status = 3
+                                                assign progressWidth = 100
+                                                for line_item in order.line_items
+                                                    if line_item.fulfillment.created_at > fulfilled_date
+                                                        assign shipped_date = line_item.fulfillment.created_at
+                                                    endif
+                                                endfor
+                                            endif
+                                        else
+                                            assign delivery_status = 0
+                                        endif
+                                    %}
+
+                                    <div class="account-card-bottom account-order-status">
+                                        <div class="inlined">
+                                            <!-- Start component -->
+                                            <div class="progress-meter">
+                                                <div class="track" style="width: 100%">
+                                                    <span class="progress" style="width: {{ progressWidth }}%"></span>
+                                                </div>
+                                                <ul class="progress-points" data-current="5">
+                                                    <li class="progress-point green {{ fulfillment_status }} {{ financial_status }}">
+                                                        <div class="account-product-box">
+                                                            <p class="account-product-status">Order placed</p>
+                                                            <p class="account-product-date">{{ order.created_at | time_tag: format: "date" }}</p>
+                                                        </div>
+                                                    </li>
+                                                    {% if delivery_status == -1 %}
+                                                        <li class="progress-point red">
+                                                            <div class="account-product-box">
+                                                                <p class="account-product-status">Canceled</p>
+                                                                <p class="account-product-date">{{ order.cancelled_at | time_tag: format: "date" }}</p>
+                                                            </div>
+                                                        </li>
+                                                    {% endif %}
+                                                    {% if delivery_status != -1 %}
+                                                        <li class="progress-point {% if delivery_status == 2 or delivery_status == 3 %} green {% endif %}">
+                                                            <div class="account-product-box">
+                                                                <p class="account-product-status">Order fulfilled</p>
+                                                                <p class="account-product-date">{{ fulfilled_date | time_tag: format: 'date' }}</p>
+                                                            </div>
+                                                        </li>
+                                                    {% endif %}
+                                                    {% if delivery_status != -1 %}
+                                                        <li class="progress-point {% if delivery_status == 3 %} green{% endif %}">
+                                                            <div class="account-product-box">
+                                                                <p class="account-product-status">Order shipped</p>
+                                                                <p class="account-product-date">{{ shipped_date | time_tag: format: 'date' }}</p>
+                                                            </div>
+                                                        </li>
+                                                    {% endif %}
+                                                </ul>
+                                                <div class="progress-status">
+                                                    <div class="account-product-box">
+                                                        <p class="account-product-status">
+                                                            {% if delivery_status == 0 %}
+                                                                Order placed
+                                                            {% elsif delivery_status == -1 %}
+                                                                Canceled
+                                                            {% elsif delivery_status == 2 %}
+                                                                Order fulfilled
+                                                            {% elsif delivery_status == 3 %}
+                                                                Order shipped
+                                                            {% endif %}
+                                                        </p>
+                                                        <p class="account-product-date">
+                                                            {% if delivery_status == 0 %}
+                                                                {{ order.created_at | time_tag: format: "date" }}
+                                                            {% elsif delivery_status == -1 %}
+                                                                {{ order.cancelled_at | time_tag: format: "date" }}
+                                                            {% elsif delivery_status == 2 %}
+                                                                {{ fulfilled_date | time_tag: format: 'date' }}
+                                                            {% elsif delivery_status == 3 %}
+                                                                {{ shipped_date | time_tag: format: 'date' }}
+                                                            {% endif %}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End component -->
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                <div class="account-card-content track-shipment-content" style="display: none">
+                                    <div class="account-product-info">
+                                        {%- for line_item in order.line_items -%}
+                                            <div class="field">
+                                                <div class="account-product-image">
+                                                    {% if line_item.image %}
+                                                        {{ line_item.image | image_url: width: 82, height: 82 | image_tag: srcset: nil }}
+                                                    {% endif %}
+                                                </div>
+                                                <div class="account-product-details">
+                                                    {%- if line_item.url != blank -%}
+                                                        <h5 class="account-product-title">
+                                                            <a href="{{ line_item.url }}">{{ line_item.product.title }}</a>
+                                                        </h5>
+                                                    {%- else -%}
+                                                        <h5 class="account-product-title">{{ line_item.product.title | truncate: 30 }}</h5>
+                                                    {%- endif -%}
+                                                    {%- unless line_item.has_only_default_variant %}
+                                                        <div class="options-value">
+                                                            {% for option in line_item.options_with_values -%}
+                                                                <span class="option-value">{{ option.name }}: {{ option.value }}</span>
+                                                            {%- endfor %}
+                                                        </div>
+                                                    {% endunless %}
+                                                </div>
+                                                <div class="account-product-price">
+                                                    {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
+                                                        {%- if line_item.original_price != line_item.final_price -%}
+                                                            <h3>{{ 'products.product.price.regular_price' | t }}</h3>
+                                                            <h3 class="regular-price">{{ line_item.original_price | money }}
+                                                            </h3>
+                                                            <h3>{{ 'products.product.price.sale_price' | t }}</h3>
+                                                            <h3>{{ line_item.final_price | money }}</h3>
+                                                        {%- else -%}
+                                                            <h3>{{ 'products.product.price.regular_price' | t }}</h3>
+                                                            <h3>{{ line_item.original_price | money }}</h3>
+                                                        {%- endif -%}
+                                                        {%- if line_item.unit_price_measurement -%}
+                                                            <h3>{{ 'products.product.price.unit_price' | t }}</h3>
+                                                            <h3 class="unit-price">
+                                                                {%- capture unit_price_separator -%}
+                                                                    {{ 'accessibility.unit_price_separator' | t }}
+                                                                {%- endcapture -%}
+                                                                {%- capture unit_price_base_unit -%}
+                                                                    {%- if line_item.unit_price_measurement.reference_value != 1 -%}
+                                                                        {{- line_item.unit_price_measurement.reference_value -}}
+                                                                    {%- endif -%}
+                                                                    {{ line_item.unit_price_measurement.reference_unit }}
+                                                                {%- endcapture -%}
+                                                                {{ line_item.unit_price | money }}{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                                                            </h3>
+                                                        {%- endif -%}
+
+                                                    {%- else -%}
+                                                        <h3 class="unit-price">{{ line_item.final_price | money_with_currency }}</h3>
+                                                    {%- endif -%}
+                                                </div>
+                                            </div>
+                                        {%- endfor -%}
+                                    </div>
+                                    <div class="account-order-total">
+                                        <ul class="price-item-list">
+                                            <li class="price-items-footers">
+                                                <h5>{{ 'customer.order.payment_info.subtotal' | t }}</h5>
+                                                <h5 data-label="{{ 'customer.order.payment_info.subtotal' | t }}">
+                                                    {{ order.line_items_subtotal_price | money_with_currency }}
+                                                </h5>
+                                            </li>
+                                            {%- if order.cart_level_discount_applications != blank -%}
+                                                {% for discount_application in order.cart_level_discount_applications %}
+                                                    <li class="price-items-footers">
+                                                        <h5>{{ 'customer.order.payment_info.discount' | t }} {% if discount_application.title %}({{ discount_application.title }}) {% endif %}</h5>
+                                                        <h5 data-label="{{ 'customer.order.payment_info.discount' | t }} {% if discount_application.title %}({{ discount_application.title }}) {% endif %}">
+                                                            {{ discount_application.total_allocated_amount | money_with_currency }}
+                                                        </h5>
+                                                    </li>
+                                                {% endfor %}
+                                            {% endif %}
+                                            {% for shipping_method in order.shipping_methods %}
+                                                <li class="price-items-footers">
+                                                    <h5>{{ 'customer.order.payment_info.shipping' | t }} {% if shipping_method.title %}{{ shipping_method.title }} {% endif %}</h5>
+                                                    <h5 data-label="{{ 'customer.order.payment_info.shipping' | t }} {% if shipping_method.title %}({{ shipping_method.title }}) {% endif %}">
+                                                        {{ shipping_method.price | money_with_currency }}
+                                                    </h5>
+                                                </li>
+                                            {% endfor %}
+                                            <li class="price-items-footers price-items-total">
+                                                <h4>
+                                                    <span>{{ 'customer.order.payment_info.total' | t }}</span>
+                                                    {%- assign total_tax = 0 -%}
+                                                    {% for tax_line in order.tax_lines %}
+                                                        {%- assign tax_price = tax_line.price | money_with_currency -%}
+                                                        <span class="tax">{{ 'customer.order.tax_include' | t: tax: tax_price }}</span>
+                                                    {% endfor %}
+                                                </h4>
+                                                <h4>{{ order.total_price | money_with_currency }}</h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endfor -%}
+                    </div>
+                    {%- if paginate.pages > 1 -%}
+                        {%- if paginate.parts.size > 0 -%}
+                            <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                                <ul role="list">
+                                    {%- if paginate.previous -%}
+                                        <li>
+                                            <a href="{{ paginate.previous.url }}&path=orders"
+                                               aria-label="{{ 'general.pagination.previous' | t }}">
+                                                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                                          fill="currentColor">
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+
+                                    {%- for part in paginate.parts -%}
+                                        <li>
+                                            {%- if part.is_link -%}
+                                                <a href="{{ part.url }}&path=orders"
+                                                   aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
+                                            {%- else -%}
+                                                {%- if part.title == paginate.current_page -%}
+                                                    <span aria-current="page"
+                                                          aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
+                                                {%- else -%}
+                                                    <span>{{ part.title }}</span>
+                                                {%- endif -%}
+                                            {%- endif -%}
+                                        </li>
+                                    {%- endfor -%}
+
+                                    {%- if paginate.next -%}
+                                        <li>
+                                            <a href="{{ paginate.next.url }}&path=orders"
+                                               aria-label="{{ 'general.pagination.next' | t }}">
+                                                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                          d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                                          fill="currentColor">
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    {%- endif -%}
+                                </ul>
+                            </nav>
+                        {%- endif -%}
+                    {%- endif -%}
+                {% else %}
+                    <div class="btn-wrp empty-container">
+                        <span class="icon">
+                            <img src="{{ 'no-order.png' | asset_url }}">
+                        </span>
+                        <h4>{{ 'customer.order.no-order.title' | t }}</h4>
+                        <button type="button" onclick="window.location.href='/'">{{ 'customer.order.no-order.button' | t }}</button>
+                    </div>
+                {%- endif -%}
+
+            {% endpaginate %}
         </div>
-        
-        <div class="button-wrapper">
-          <button type="button" class="sharebutton mobile-sharebtn">{% render 'icon-share' %}</button>
-          <button type="button" class="sharebutton desktop-sharebtn" href="#wishlist_share_modal" data-toggle="modal" data-target="#wishlist_share_modal">Share Wishlist</button>
-          <button type="button" class="addbutton" id="addallbutton">Add All</button>
+
+        <div class="detail-container wishlist-container" style="display:none">
+            <div class="account-header-container">
+                <div class="account-header-text">
+                    <h1>Wish List</h1>
+                    <p>Manage your wish list</p>
+                </div>
+
+                <div class="button-wrapper">
+                    <button type="button" class="sharebutton mobile-sharebtn">{% render 'icon-share' %}</button>
+                    <button type="button" class="sharebutton desktop-sharebtn" href="#wishlist_share_modal"
+                            data-toggle="modal" data-target="#wishlist_share_modal">Share Wishlist
+                    </button>
+                    <button type="button" class="addbutton" id="addallbutton">Add All</button>
+                </div>
+            </div>
+
+            {% include 'wishlist' %}
         </div>
-      </div>
-      
-      {% include 'wishlist' %}
+
+        <div class="detail-container rewards-container" style="display:none">
+            <h1>Rewards</h1>
+            <p>Manage your Rewards</p>
+            <div data-lion-account></div>
+        </div>
     </div>
-    
-    <div class="detail-container rewards-container" style="display:none">
-      <h1>Rewards</h1>
-      <p>Manage your Rewards</p>
-      <div data-lion-account></div>
-    </div>
-  </div>
 </div>
 <script>
-    let accountMenus = document.querySelector(".account-details-menu").querySelectorAll("li");
-    let detailContainers = document.querySelectorAll(".detail-container");
+    let accountMenus = document.querySelector('.account-details-menu').querySelectorAll('li');
+    let detailContainers = document.querySelectorAll('.detail-container');
     let url = new URL(window.location.href);
-    let path = url.searchParams.get("path");
+    let path = url.searchParams.get('path');
 
     accountMenus.forEach(accountMenu => {
         accountMenu.classList.remove('active');
     });
 
     switch (path) {
-        case "orders":
-            document.querySelector(".orders-container").style.display = "block";
-            document.querySelector("[data-selector=orders-container]").classList.add('active');
+        case 'orders':
+            document.querySelector('.orders-container').style.display = 'block';
+            document.querySelector('li[data-selector=orders-container]').classList.add('active');
             break;
-        case "addresses":
-            document.querySelector(".addresses-container").style.display = "block";
-            document.querySelector("[data-selector=addresses-container]").classList.add('active');
+        case 'addresses':
+            document.querySelector('.addresses-container').style.display = 'block';
+            document.querySelector('li[data-selector=addresses-container]').classList.add('active');
             break;
-        case "wishlist":
-            document.querySelector(".wishlist-container").style.display = "block";
-            document.querySelector("[data-selector=wishlist-container]").classList.add('active');
+        case 'wishlist':
+            document.querySelector('.wishlist-container').style.display = 'block';
+            document.querySelector('li[data-selector=wishlist-container]').classList.add('active');
             break;
-        case "rewards":
-            document.querySelector(".rewards-container").style.display = "block";
-            document.querySelector("[data-selector=rewards-container]").classList.add('active');
+        case 'rewards':
+            document.querySelector('.rewards-container').style.display = 'block';
+            document.querySelector('li[data-selector=rewards-container]').classList.add('active');
             break;
         default:
-            detailContainers[0].style.display = "block";
+            detailContainers[0].style.display = 'block';
             accountMenus[0].classList.add('active');
     }
 
     accountMenus.forEach(accountMenu => {
         accountMenu.addEventListener('click', (event) => accountMenuButtonClick(event));
     });
-    document.querySelector(".update-default-address-button").addEventListener('click', (event) => accountMenuButtonClick(event));
+    document.querySelector('.update-default-address-button').
+        addEventListener('click', (event) => accountMenuButtonClick(event));
 
     function accountMenuButtonClick(event) {
         detailContainers.forEach(detailContainer => {
-            detailContainer.style.display = "none";
+            detailContainer.style.display = 'none';
         });
-        document.querySelector(".profile-main-container ." + event.target.dataset.selector).style.display = "block";
+        document.querySelector('.profile-main-container .' + event.target.dataset.selector).style.display = 'block';
 
         accountMenus.forEach(accountMenu => {
             accountMenu.classList.remove('active');
         });
-        event.target.classList.add('active');
+
+        if(event.target.tagName == 'LI') {
+            event.target.classList.add('active');
+        } else {
+            event.target.parentElement.classList.add('active');
+        }
         let str = window.location.search;
 
         switch (event.target.dataset.selector) {
-            case "orders-container":
+            case 'orders-container':
                 str = replaceQueryParam('path', 'orders', str);
                 window.history.pushState('Orders', 'Title', window.location.pathname + str);
                 break;
-            case "addresses-container":
+            case 'addresses-container':
                 str = replaceQueryParam('path', 'addresses', str);
                 window.history.pushState('Addresses', 'Title', window.location.pathname + str);
                 break;
-            case "wishlist-container":
+            case 'wishlist-container':
                 str = replaceQueryParam('path', 'wishlist', str);
                 window.history.pushState('Wish List', 'Title', window.location.pathname + str);
                 break;
-            case "rewards-container":
+            case 'rewards-container':
                 str = replaceQueryParam('path', 'rewards', str);
                 window.history.pushState('Rewards', 'Title', window.location.pathname + str);
                 break;
@@ -552,10 +516,10 @@
     }
 
     function replaceQueryParam(param, newval, search) {
-        var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
-        var query = search.replace(regex, "$1").replace(/&$/, '');
+        var regex = new RegExp('([?;&])' + param + '[^&;]*[;&]?');
+        var query = search.replace(regex, '$1').replace(/&$/, '');
 
-        return (query.length > 2 ? query + "&" : "?") + (newval ? param + "=" + newval : '');
+        return (query.length > 2 ? query + '&' : '?') + (newval ? param + '=' + newval : '');
     }
 </script>
 <script>
@@ -569,10 +533,10 @@
             eles.each(function (i, el) {
                 var ele = $(el);
                 var reset = function () {
-                    ele.siblings("span").removeClass("error");
-                    ele.siblings("span").removeClass("success");
-                    ele.closest(".iti").siblings("span").removeClass("error");
-                    ele.closest(".iti").siblings("span").removeClass("success");
+                    ele.siblings('span').removeClass('error');
+                    ele.siblings('span').removeClass('success');
+                    ele.closest('.iti').siblings('span').removeClass('error');
+                    ele.closest('.iti').siblings('span').removeClass('success');
                 };
 
                 ele.on('blur', () => {
@@ -590,10 +554,10 @@
             eles.each(function (i, el) {
                 var ele = $(el);
                 var reset = function () {
-                    ele.siblings("span").removeClass("error");
-                    ele.siblings("span").removeClass("success");
-                    ele.closest(".iti").siblings("span").removeClass("error");
-                    ele.closest(".iti").siblings("span").removeClass("success");
+                    ele.siblings('span').removeClass('error');
+                    ele.siblings('span').removeClass('success');
+                    ele.closest('.iti').siblings('span').removeClass('error');
+                    ele.closest('.iti').siblings('span').removeClass('success');
                 };
 
                 ele.on('change', () => {
@@ -605,17 +569,16 @@
         }
 
         // phone number
-        var newAddress_phoneNumber = $("input[type=tel]");
+        var newAddress_phoneNumber = $('input[type=tel]');
         newAddress_phoneNumber.intlTelInput({
             allowDropdown: true,
-            autoPlaceholder: "aggressive",
-            formatOnDisplay: true,
-            initialCountry: "ae",
-            onlyCountries: ["ae", "sa", "kw", "bh", "om", "qa"],
+            autoPlaceholder: 'aggressive',
+            initialCountry: 'ae',
+            onlyCountries: ['ae', 'sa', 'kw', 'bh', 'om', 'qa'],
             separateDialCode: true,
             formatOnDisplay: true,
-            placeholderNumberType: "number",
-            utilsScript: "{{ 'intlTelInputUtils.js' | asset_url }}",
+            placeholderNumberType: 'number',
+            utilsScript: "{{ 'intlTelInputUtils.js' | asset_url }}"
         });
         $('#AddressZipNew').closest('.field').css('display', 'none');
         jQuery.fn.ForceNumericOnly =
@@ -639,11 +602,12 @@
         newAddress_phoneNumber.ForceNumericOnly();
 
         function validatePhoneNumber(newAddress_phoneNumber) {
-            if (newAddress_phoneNumber.val().trim().length > 5 && newAddress_phoneNumber.data("plugin_intlTelInput").isValidNumber()) {
-                newAddress_phoneNumber.closest(".iti").siblings("span").addClass("success");
+            if (newAddress_phoneNumber.val().trim().length > 5 &&
+                newAddress_phoneNumber.data('plugin_intlTelInput').isValidNumber()) {
+                newAddress_phoneNumber.closest('.iti').siblings('span').addClass('success');
                 return true;
             } else {
-                newAddress_phoneNumber.closest(".iti").siblings("span").addClass("error");
+                newAddress_phoneNumber.closest('.iti').siblings('span').addClass('error');
                 //var errorCode = newAddress_phoneNumber.data("plugin_intlTelInput").getValidationError();
                 return false;
             }
@@ -651,16 +615,15 @@
 
         validateField('input[name="address[phone]"]', validatePhoneNumber);
 
+        $('select#AddressCountryNew').change(function () {
 
-        $("select#AddressCountryNew").change(function () {
-
-            var $selectedCountry = $(this).children("option:selected").val();
-            if ($selectedCountry === "United Arab Emirates") {
-                $("input#AddressPhoneNew").val("");	// removing 971 condition
-            } else if ($selectedCountry === "Saudi Arabia") {
-                $("input#AddressPhoneNew").val("");   // removing 971 condition
+            var $selectedCountry = $(this).children('option:selected').val();
+            if ($selectedCountry === 'United Arab Emirates') {
+                $('input#AddressPhoneNew').val('');	// removing 971 condition
+            } else if ($selectedCountry === 'Saudi Arabia') {
+                $('input#AddressPhoneNew').val('');   // removing 971 condition
             } else {
-                $("input#AddressPhoneNew").val("");
+                $('input#AddressPhoneNew').val('');
             }
 
         });
@@ -668,12 +631,12 @@
         //first name
         function validateFirstName(firstNameNew) {
             if (firstNameNew.val().trim().length > 0) {
-                firstNameNew.siblings("span").addClass("success");
-                firstNameNew.siblings("span").removeClass("error");
+                firstNameNew.siblings('span').addClass('success');
+                firstNameNew.siblings('span').removeClass('error');
                 return true;
             } else {
-                firstNameNew.siblings("span").addClass("error");
-                firstNameNew.siblings("span").removeClass("success");
+                firstNameNew.siblings('span').addClass('error');
+                firstNameNew.siblings('span').removeClass('success');
                 return false;
             }
         }
@@ -683,12 +646,12 @@
         //last name
         function validateLastName(lastNameNew) {
             if (lastNameNew.val().trim().length > 0) {
-                lastNameNew.siblings("span").addClass("success");
-                lastNameNew.siblings("span").removeClass("error");
+                lastNameNew.siblings('span').addClass('success');
+                lastNameNew.siblings('span').removeClass('error');
                 return true;
             } else {
-                lastNameNew.siblings("span").addClass("error");
-                lastNameNew.siblings("span").removeClass("success");
+                lastNameNew.siblings('span').addClass('error');
+                lastNameNew.siblings('span').removeClass('success');
                 return false;
             }
         }
@@ -698,12 +661,12 @@
         //address 1
         function validateAddress1(address1New) {
             if (address1New.val().trim().length > 0) {
-                address1New.siblings("span").addClass("success");
-                address1New.siblings("span").removeClass("error");
+                address1New.siblings('span').addClass('success');
+                address1New.siblings('span').removeClass('error');
                 return true;
             } else {
-                address1New.siblings("span").addClass("error");
-                address1New.siblings("span").removeClass("success");
+                address1New.siblings('span').addClass('error');
+                address1New.siblings('span').removeClass('success');
                 return false;
             }
         }
@@ -713,12 +676,12 @@
         //address 2
         function validateAddress2(address2New) {
             if (address2New.val().trim().length > 0) {
-                address2New.siblings("span").addClass("success");
-                address2New.siblings("span").removeClass("error");
+                address2New.siblings('span').addClass('success');
+                address2New.siblings('span').removeClass('error');
                 return true;
             } else {
-                address2New.siblings("span").addClass("error");
-                address2New.siblings("span").removeClass("success");
+                address2New.siblings('span').addClass('error');
+                address2New.siblings('span').removeClass('success');
                 return false;
             }
         }
@@ -728,12 +691,12 @@
         //zip code
         function validateZip(newAddress_Zip) {
             if (/^\d{5}(?:-\d{4})?$/.test(newAddress_Zip.val().trim())) {
-                newAddress_Zip.siblings("span").addClass("success");
-                newAddress_Zip.siblings("span").removeClass("error");
+                newAddress_Zip.siblings('span').addClass('success');
+                newAddress_Zip.siblings('span').removeClass('error');
                 return true;
             } else {
-                newAddress_Zip.siblings("span").addClass("error");
-                newAddress_Zip.siblings("span").removeClass("success");
+                newAddress_Zip.siblings('span').addClass('error');
+                newAddress_Zip.siblings('span').removeClass('success');
                 return false;
             }
         }
@@ -743,12 +706,12 @@
         //city
         function validateCity(newAddress_City) {
             if (/^[a-zA-Z0-9\s\,\']*$/.test(newAddress_City.val().trim()) && newAddress_City.val().trim().length > 3) {
-                newAddress_City.siblings("span").addClass("success");
-                newAddress_City.siblings("span").removeClass("error");
+                newAddress_City.siblings('span').addClass('success');
+                newAddress_City.siblings('span').removeClass('error');
                 return true;
             } else {
-                newAddress_City.siblings("span").addClass("error");
-                newAddress_City.siblings("span").removeClass("success");
+                newAddress_City.siblings('span').addClass('error');
+                newAddress_City.siblings('span').removeClass('success');
                 return false;
             }
         }
@@ -757,192 +720,214 @@
 
         //City List Dropdown Functionality
         var cityField = $('input[name="address[city]"]');
-        var cityFiledWrap = cityField.parent('.field');
-
+//         var cityFiledWrap = cityField.parent('.field');
+//
         cityField.each((index, ele) => {
             var formId = $(ele).closest('form').attr('id');
-            if ($("#"+formId+' select[name="address[country]"]').val() == 'United Arab Emirates'
-                || $("#"+formId+' select[name="address[country]"]').val() == 'Qatar') {
-                $("#"+formId+' input[name="address[zip]"]').closest('.field').css('display', 'none');
+            if ($('#' + formId + ' select[name="address[country]"]').val() == 'United Arab Emirates'
+                || $('#' + formId + ' select[name="address[country]"]').val() == 'Qatar') {
+                $('#' + formId + ' input[name="address[zip]"]').closest('.field').css('display', 'none');
             }
-            $("#"+formId).submit((e) => {
+            $('#' + formId).submit((e) => {
 
-                if (($("#"+formId+' select[name="address[country]"]').val() == 'United Arab Emirates'
-                        || $("#"+formId+' select[name="address[country]"]').val() == 'Qatar' || validateZip($("#"+formId+' input[name="address[zip]"]'))) &
-                    validateAddress2($("#"+formId+' input[name="address[address2]"]')) &
-                    validateAddress1($("#"+formId+' input[name="address[address1]"]')) &
-                    validateLastName($("#"+formId+' input[name="address[last_name]"]')) &
-                    validateFirstName($("#"+formId+' input[name="address[first_name]"]')) &
-                    validateCity($("#"+formId+' input[name="address[city]"]')) &
-                    validatePhoneNumber($("#"+formId+' input[name="address[phone]"]'))) {
+                if (($('#' + formId + ' select[name="address[country]"]').val() == 'United Arab Emirates'
+                        || $('#' + formId + ' select[name="address[country]"]').val() == 'Qatar' ||
+                        validateZip($('#' + formId + ' input[name="address[zip]"]'))) &
+                    validateAddress2($('#' + formId + ' input[name="address[address2]"]')) &
+                    validateAddress1($('#' + formId + ' input[name="address[address1]"]')) &
+                    validateLastName($('#' + formId + ' input[name="address[last_name]"]')) &
+                    validateFirstName($('#' + formId + ' input[name="address[first_name]"]')) &
+                    validateCity($('#' + formId + ' input[name="address[city]"]')) &
+                    validatePhoneNumber($('#' + formId + ' input[name="address[phone]"]'))) {
 
                 } else {
                     e.preventDefault();
                 }
             });
         });
+//
+//
+//
+//         var citydropdown = '<div class="cityDropdownCustom">' +
+//             '<div class="cityDropdownFieldWrap">' + '<input type="text" id="cityDropdownField" placeholder="Search...">' + '</div>' +
+//             '<ul>' + '</ul>' + '</div>';
+//
+//         cityFiledWrap.each((index, ele) =>{
+//             $(ele).append(citydropdown);
+//         });
+//
+// //       Cities List Array
+//         var cities_Bahrain = ["Aali", "Abu Beham", "Abu Saiba", "Adliya", "Amwaj", "Arad", "Bahrain", "Bani Jamra", "Barbar", "Budaiya", "Buquwa", "Buri", "Busaiteen", "Dair", "Dar Kulaib", "Diraz", "Dumistan", "East Riffa", "Ghurayfah", "Hajar", "Hamad Town", "Hamala", "Hidd", "Hillat Abdulsaleh", "Isa Town", "Janabiya", "Jannusan", "Jasra", "Jiblat Habshi", "Jid Alhaj", "Jidhafs", "Jordab", "Juffair", "Karbabad", "Karrana", "Karzakan", "Khamis", "Malikiya", "Manama", "Markh", "Meqsha", "Mina Salman", "Muharraq", "Muqaba", "Musalla", "Nasfah", "North Sehla", "Qadam", "Qalali", "Qella", "Qofool", "Qudaibiya", "Qurayya", "Ras Ruman", "Saar", "Sadad", "Sakheir", "Salmabad", "Salmaniya", "Samaheej", "Sanad", "Seef", "Shahrakan", "Shakhura", "Sitra", "South Sehla", "Tala Island", "Tashan", "Tubli", "Um Alhassam", "Umm Alsabban (Mohammadiya)", "West Riffa", "Zallaq", "Zayed Town"];
+//         var cities_Oman = ["Adam", "Al Aqir", "Al Ashkarah", "Al Awabi - Barka", "Al Awabi - Muscat", "Al Bidayah", "Al Duqm", "Al Ghazir", "Al Hamra", "Al Jadida", "Al Kabil", "Al Kamil Wal Wafi", "Al Khodh", "Al Khuwair", "Al Mazyunah", "Al Mudhaibi", "Al Saada", "Amerat", "As Sulaif", "Azaiba", "Bahla", "Barka", "Bidbid", "Bidiya", "Bisiyah", "Bowsher", "Bukha", "BURAIMI", "Dhalkut", "Dhank", "Diba", "Dima Wattayeen", "Fahud", "Falaj Al Qabail", "Fanja", "Firq", "Ghala", "Ghubra", "Haima", "Hamriya", "Ibra", "Ibri", "Izki", "Jaalan Bani Bu Ali ", "Jaalan ni Bu Hassan", "Jabal Akhdar", "Jibroo", "Khabourah", "Khasab", "Liwa", "Madha", "Madinat Sultan Qaboos", "Mahdha", "Mahout", "Manah", "Marmul", "Masirah", "Mawaleh", "Musannah", "Muscat", "Muttrah", "Nakhl", "Nizwa", "Qatana", "Qurayat", "Qurum", "Rusayl", "rustaq", "Ruwi", "Sadah", "Saham", "Salalah", "Samad Al Shan", "Samayil", "Seeb", "Shinas", "Sidab", "Sinaw", "Sohar", "Sunaina", "Sur", "Suwaiq", "Thamrait", "Tiwi", "Wadi Adai", "Wadi al Maawil", "Wadi Bani Khalid", "Wadi Kabir", "Wattaya", "Wudam Al Sahil", "Yankul"];
+//         var cities_Qatar = ["Doha", "Dukhan", "Al Rayyan", "Umm Salal Muhammad"];
+//         var cities_Saudia_Arabia = ["Aba Alworood", "Abha", "Abha Manhal", "Abqaiq", "Abu Ajram", "Abu Areish", "Ad Dahinah", "Ad Dubaiyah", "Addayer", "Adham", "Afif", "Aflaj", "Ahad Masarha", "Ahad Rufaidah", "Ain Dar", "Al Adari", "Al Ais", "Al Ajfar", "Al Ammarah", "Al Ardah", "Al Arja", "Al Asyah", "Al Bada", "Al Bashayer", "Al Batra", "Al Bijadyah", "Al Dalemya", "Al Fuwaileq", "Al hait", "Al Haith", "Al Hassa", "Al Hayathem", "Al Hufayyirah", "Al Hulayfah As Sufla", "Al Idabi", "Al Khishaybi", "Al Khitah", "Al Laqayit", "Al Mada", "Al Mahd", "Al Midrij", "Al Moya", "Al Qarin", "Al Uwayqilah", "Al Wasayta", "Al-Jsh", "Alghat", "Alhada", "Alnabhanya", "Alrass", "Amaq", "An Nabk Abu Qasr", "An Nafiah", "An Nuqrah", "Anak", "Aqiq", "Ar Radifah", "Ar Rafi'ah", "Ar Rishawiyah", "Arar", "Artawiah", "As Sulaimaniyah", "As Sulubiayh", "Asfan", "Ash Shaara", "Ash Shamli", "Ash Shananah", "Ash Shimasiyah", "Ash Shuqaiq", "At Tuwayr", "Atawleh", "Ath Thybiyah", "Awamiah", "Ayn Fuhayd", "Badaya", "Bader", "Badr Al Janoub", "Baha", "Bahara", "Bahrat Al Moujoud", "Balahmar", "Balasmar", "Balqarn", "Baqa Ash Sharqiyah", "Baqaa", "Baqiq", "Bareq", "Batha", "Biljurashi", "Birk", "Bish", "Bisha", "Bukeiriah", "Buraidah", "Daelim", "Damad", "Dammam", "Darb", "Dariyah", "Dawadmi", "Deraab", "Dere'Iyeh", "Dhahban", "Dhahran", "Dhahran Al Janoob", "Dhurma", "Domat Al Jandal", "Duba", "Duhknah", "Dulay Rashid", "Farasan", "Ghazalah", "Ghtai", "Gilwa", "Gizan", "Hadeethah", "Hafer Al Batin", "Hail", "Hajrah", "Halat Ammar", "Hali", "Haqil", "Harad", "Harajah", "Hareeq", "Hawea/Taif", "Haweyah", "Hawtat Bani Tamim", "Hazm Al Jalamid", "Hedeb", "Hinakeya", "Hofuf", "Horaimal", "Hotat Sudair", "Hubuna", "Huraymala", "Ja'Araneh", "Jafar", "Jalajel", "Jeddah", "Jouf", "Jubail", "Jumum", "Kahlah", "Kara", "Kara'A", "Karboos", "Khafji", "Khaibar", "Khairan", "Khamaseen", "Khamis Mushait", "Kharj", "Khasawyah", "Khobar", "Khodaria", "Khulais", "Khurma", "King Khalid Military City", "Kubadah", "Laith", "Layla", "Madinah", "Mahad Al Dahab", "Majarda", "Majma", "Makkah", "Mandak", "Mastura", "Mawqaq", "Midinhab", "Mikhwa", "Mohayel Aseer", "Moqaq", "Mrat", "Mubaraz", "Mubayid", "Mulaija", "Mulayh", "Munifat Al Qaid", "Muthaleif", "Muzahmiah", "Muzneb", "Nabiya", "Najran", "Namas", "Nimra", "Nisab", "Noweirieh", "Nwariah", "Ojam", "Onaiza", "Othmanyah", "Oula", "Oyaynah", "Oyoon Al Jawa", "Qahmah", "Qarah", "Qariya Al Olaya", "Qasab", "Qassim", "Qatif", "Qaysoomah", "Qbah", "Qouz", "Qufar", "Qunfudah", "Qurayat", "Qusayba", "Quwei'Ieh", "Rabigh", "Rafha", "Rahima", "Rania", "Ras Al Kheir", "Ras Tanura", "Rawdat Habbas", "Rejal Alma'A", "Remah", "Riyadh", "Riyadh Al Khabra", "Rowdat Sodair", "Rvaya Aljamsh", "Rwaydah", "Sabt El Alaya", "Sabya", "Sadyan", "Safanyah", "Safwa", "Sahna", "Sajir", "Sakaka", "Salbookh", "Salwa", "Samtah", "Saqf", "Sarar", "Sarat Obeida", "Satorp", "Seihat", "Shaqra", "Shari", "Sharourah", "Shefa'A", "Shinanh", "Shoaiba", "Shraie'E", "Shumeisi", "Siir", "Simira", "Subheka", "Sulaiyl", "Suwayr", "Tabrjal", "Tabuk", "Taiba", "Taif", "Tanda", "Tanjeeb", "Tanuma", "Tanumah", "Tarut", "Tatleeth", "Tayma", "Tebrak", "Thabya", "Thadek", "Tharmada", "Thebea", "Thumair", "Thuqba", "Towal", "Turaib", "Turaif", "Turba", "Udhaliyah", "Um Aljamajim", "Umluj", "Uqlat Al Suqur", "Ushayqir", "Uyun", "Wadeien", "Wadi Bin Hasbal", "Wadi El Dwaser", "Wadi Fatmah", "Wajeh (Al Wajh)", "Yanbu", "Yanbu Al Baher", "Yanbu Nakhil", "Zahban", "Zallum", "Zulfi"];
+// //	  var cities_Dubai = ["Abadilah","Abu Al Abyad Island","Abu Dhabi","Abu Dhabi University","Abu Hayl ","Airport Road AXD","Akamiyah ","Al Ardiyah ","Al Aryam Island","Al Bander","Al Barakkah","Al Bateen AXD","Al Buteen AXD","Al Dhafra Area","Al Dhafrah AXD","Al Dharbaniyah ","Al Dhayd ","Al Duss ","Al Falah Area","Al Falah Street","Al Ghuwaifat","Al Hadbah Street","Al Haliya","Al Hamra Island","Al Hayr ","Al Khalej Al Arabi","Al Ladeem Street","Al Mafraq ","Al Manaser","Al Manasir Alain","Al Maqta ","Al Marfa ","Al Maryah Island","Al Muneera","Al Muroor","Al Muzoon","Al Nahda Al Askarya","Al Nahyan Area","Al Najda Street","Al Qurm","Al Qusirah","Al Raha Beach","Al Raha Gardens","Al Rawdah","Al Rayhan","Al Reef Villas","Al Reem Island","Al Ruways ","Al Saada Street","Al Sab Area","Al Seef Compound","Al Tawila","Al Zaab","Al Zahraa","Al Zahraa ","Al Zina","Bahya","Banyas","Bida Zayed","Bidda Al Motawah","Bin Al Jesrin","Corniche","Dalma SR","Defence Road","Delma Island","Delma Street","Dhabiya","Electra Street","Gayathi","Golf Gardens","Grand Moshq Area","Hamdan Street","Haneem Street","Hazaa Bin Zayed Street","Hazza Bin Zayed Street","Hills Abu Dhabi","Hydra Village AXD","Istaqlal St","Jawasat","Karama Street AXD","Khalidiyah AXD","Khalifa City","Khalifa City A","Khalifa City B","Khalifa Garden","Khalifa Street AXD","Liwa","Liwa Sr","Liwa Street","Liwa Village","Madinat Zayed","Madinat Zayed AXD","Mafrq Area","Maharba","Mangrove One Compound","Mangrove Village","Marfa","Marina Mall","Masdar City","Mina Road AXD","Mohammed Bin Zayed City","Musafah","Mushref","Nadisiya","Nahda New","Nahel Town","Nasser Street","Navy Gate","New cornich AXD","New Shahama","Officers City","Old Mazda Road","Old Shahama","Rahba","Rima ","Ruwais","Sadiyat Island","Salam Street","SAS Al Nakheel","Shahama","Shakhbouth City","Shalila","Shamha","Shamkah","Shanin","Shawamak","Shuwayhat Island","Sila","Sila ","Sir Bani Yas Island","Suwayhan ","Tarif","Tourist Club","Umm Al Nar","Wathba","Yas Island","Yasat Ali Island","Zafarana Area","Zayed Sport City","Zayed Street","Zayed The First Street","Ajman Freezone","Al Alia","Al Azara","Al Bahya Ajman","Al Bustan","Al Butain","Al Hamerah","Al Hamidiya","Al Hamriyaa","Al Heliow","Al Jerf","Al Jurf","Al Montaz","Al Muwainat","Al Owan","Al Raqqib","Al Sawan","Al Talla","Al Zahra ","Al Zahya","Al Zubair","Corniche Ajman","Emirates City","Hamediya","Hamriya Freezone","Khalifa Street Ajman","Masfut ","Mina Villa Ajman","Musharh","Musherif","Naimiya","Rashidya Ajman","Safia","Siti Sintir","Sweihan ","Abu Samra","Ain Al Fayda","Airport East District","Al Agabiyaa","Al Ain City","Al Ain City Centre","Al Aliya","Al Ameriya","Al Asharaj","Al Barsa Garden","Al Batin","Al bhuraimi Oman","Al Dhahera","Al Faqah","Al Foah","Al Ganeema","Al Hayer","Al Hili","Al Jahili","Al Jimi","Al Khabisi","Al Khalidia Alain","Al khalif","Al Khatim","Al Khazna","Al Kubisi","Al Kuwaitat","Al Manasif","Al Manasir Alain","Al Maqam","Al Markhaniya","Al Masoudi","Al Muntazi","Al Muroor Alain","Al Mutaredh","Al Mutawaa","Al Muwaiji","Al Naifa","Al Niama","Al Niyadat","Al Qattara","Al Qua","Al Saad","Al Salamat","Al Sanaiyyah","Al Sarooj","Al Shuaibah","Al Shwaib","Al Shwaib Fujairah Rd","Al Touba","Al Towayya","Al Wagan","Al Yahar","Alain City Centre","Andalus Complex","Asharej","Central District","Falaj Hazza","Green Land Comp","Hilton","Industrial area Alain","Jabet Hafeet","Khalifa Street Alain","Kharis","Khatim Shukla Buraimi","Libab","Lisiely","Lisily","Markam","Masakin","Meyzad","Mubarak R/A","Murabba","Murejib","Nahel Town","Nahil","Remah","Rumaila Alain","Sanaiya","Shiab Al Ashkhar","Surouj","Sweihan","Swihen Alain","Tawam","Tower Clock Area","Town Centre","Um Ghaffa","Wadi Alain","Zakhir","Abu Hail","Acadamic City","Airport Area Dubai","Al Badaa","Al Badia","Al Baraha","Al Barari","Al Barsha","Al Barsha 1","Al Barsha 2","Al Barsha 3","Al Barsha South 1","Al Barsha South 2","Al Barsha South 3","Al Furjan","Al Ghadeer DXB","Al Ghadeer Village","Al Hamriya DXB","Al Hudaiba","Al Jaddaf","Al Karama DXB","Al Kawaneej","Al Khabaisi","Al khail gate","Al Lisaili","Al Mamzar","Al Manara","Al Mina Road - Dubai","Al Mizhar","Al Muraqqabat","Al Muteena","Al Nahda DXB","Al Quoz","Al Quoz Ind 2","Al Qusais 1","Al Qusais 2","Al Qusais 3","Al Raffa Burdubai","Al Ras Deira","Al Rigga","Al Ruwaiya ","Al Safa","Al Safa 1","Al Safa 2","Al Satwa","Al Shandaghah","Al shindagha","Al Souk Al Kabeer","Al Sufu","Al Twar","Al Waha","Al Warkha","Arabian Ranches","Arabian Ranches 2","Awir","Bur Dubai","Burj Dubai Sk Zyed Rd","Burjuman","Business Bay","Cargo Village","Corniche Deira","Crown Residence","Deira","Desert Palm","DIP","Discovery Gardens","Diyafah","Downtown Burj Dubai","Downtown Dubai","Dubai","Dubai Festival City","Dubai Health Care City","Dubai International Financial Center","Dubai Internet city","Dubai Land","Dubai Marina","Dubai Media City","Dubai Outlet Mall","Dubai Silicon Oasis","DWC","Emirates Hills","Emirates Living","Falcon City","Festival City","Ganthoot ","Gardens","Garhoud","Global Village","Green Community","Greens","Hatta","Hatta Area","Hatta Road","Hoot","Hor Al Anz","IMPZ","International Academic City","International City","Jaflia","Jebel Ali","Jebel Ali Free Zone","Jebel Ali Village","JLT","Jumeirah","Jumeirah 1","Jumeirah 2","Jumeirah 3","Jumeirah 4","Jumeirah 5","Jumeirah Beach Residence","Jumeirah Golf Estates","Jumeirah Heights","Jumeirah Islands","Jumeirah Park","Jumeirah Park ( JLT )","Jumeirah Village","Knowledge Village","Lahabab","Layan Community","Madam","Mankhool","Margham Alain Road","Marsa","Meadows","Meydan Heights","Mina Sufooh ","Mirdiff","Motor City","Mudon","Muhaisinah","Musalla Rd","Mushrif ","Nad Al Ham","Nad Al Shama","Nad Al Shiba","Naif","Naser Squre","Old Town","Oud Al Muteena","Oud Metha","Palm Deira","Palm Jumeirah","Port Rashid","Port Saeed","Ras Al Kohar","Rashidya","Reem Ram","Saih Sheib","Sk Zyed Rd","Skycourts","Sports City","Springs","Tecom","The Lakes","The Sustainable City","The Villa","Trade Centre1","Trade Centre2","Umm Hurair 1","Umm Hurair 2","Umm Ramool","Umm Squim","Umm Suqeim 2","Umm Suqeim3","Ummel Sheif","Wassel","Zaabil","Adan","Al Basera","Al Bithnah","Al Bulaidha","Al Farfar","Al Faseel","Al Ghail","Al Hail","Al Hala","Al Khulabiya","Al Madhar","Al Riyafa","Al Tuween","Aliqya","Asma","Bidiya","Bitna","Dadna","Daftah","Dana Plaza","Dhaid","Dibba","Dibba Al Hassan","Difta","Falaj Al Mulla","Falakh","FUJ City Centre","Ghurfa","Gidfa","Hassan Dibba ","Hatein","Huwailat","Kadra","Kalba","Khor Fakkan","Kidfa ","Luliya","Madhab","Maliha","Mamduh","Manama","Marbah","Masafi","Merashid","Munai","Old Etisalat Area","Qadisiya","Qirat","Quraya","Rughaylat ","Shakamkam","Sharm","Shawka","Siji","Tarif Kalba ","Tayyabah","Wadi Al Abadila","Wadi Mai","Wadi Safni","Wadi Saham","Wadi Sena","Wadighob","Wadighod","Wadihala","Wadiisfini","Wadil Khor","Adan RAK","Adhan","Air Port Road","Al Burrairat","Al Dhait North","Al Dhait South","Al Fulayyah ","Al Gail RAK","Al Ghail","Al Ghoub","Al Goub","Al Hamra Village","Al Hamraniya","Al Hamriya","Al Jazeera","Al Jazeera- Al Hamra","Al Jeer Oman Border","Al Julan","Al Kharan","Al Khat","Al Khuzam","Al Maireed","Al Mamourah","Al Manamah ","Al Nakheel","Al Oraibi","Al Rafa","Al Rams","Al Reefa","Al Seih","Al Shammal","Al Shams","Al Tuween RAK","Al Zara","Babal Bahar","Corniche RAK","Dahan","Dayah","Digdhaga","Dreamland","Fahalin","Gallilah","Idhn","Jebel Jais","Julphar","Julphar Tower","Kabdah","Khor Khawir","Khor Khoir","Kuwaiti Road","Marjan Island","Masafi ","Mina Al Arab RAK","Muntasir Road","Old Town Rak","Qusaidat","RAK1 SR","Ras Al Khaimah city ","Sabith Arabia","Sabith Rashid","Sadia Area","Selayia","Shamel","Shammal Julphar","Suhaila","Wadi Ghob","Yasmin Village","Abu Shagara","Al Abrar","Al Arouba","Al Azra","Al Badiyah","Al Barashi","Al Bataya","Al Budaniq","Al Darari","Al Fahiya ","Al Falah","Al Falaj","Al Fisht","Al Gafiya","Al Ghaphiya","Al Gharb","Al Goaz","Al Hamriyah ","Al Jazzat","Al Jubail","Al Juraina","Al Juraina 1","Al Kaliya","Al Khaleej","Al Khalidia","Al Khan","Al Khashfah ","Al Khezamia","Al Layyeh","Al Mahatah","Al Majaz","Al Manak ","Al Mansoora","Al Mirgab","Al Mujarrah","Al Mulla Plaza","Al Muraija","Al Muroor SHJ","Al Nabba","Al Nahda DXB","Al Nahda SHJ","Al Nakhil","Al Nekhailat","Al Nesserya","Al Noaf","Al Nud","Al Qadsiya","Al Qarayan","Al Qasaba","Al Quran Rnd About","Al Rahmania","Al Rahmaniyah","Al Ramla","Al Ramtha","Al Rawda","Al Rifah","Al Riffa","Al Rigqa","Al Rumailah","Al Sabkha","Al Sajaa","Al Shahba","Al Sharq","Al Shuwaihean","Al Soor","Al Suyoh","Al Sweihat","Al Talaa","Al Talha","Al Tawar 1","Al TAwar 2","Al Tawuun","Al Turfa","Al Wada","Al Wasit ","Al Yarmook","Al Yas","Al Yash","Al Zahiya","Aqouz","Asimah","Book Roundabout","Buhairah","Butina","CORNICH SHJ","Dashman Park","Dasman ","Dhaid ","Elyash","Falag","Gold Souk","Gubaiba","Gulaiya","Halwan","Hamariya ","Hazzana","Heera","Hunaywah","Immigration Road","Industrail Area SHJ","Industrial Area1","Jamal Abdul Naser Rd","Juraina","Juwaizaa","Khalid Port","Khalwan","Khannur ","Kharayan ","Khezamia","King Faisa","Kuwaiti Hospital","Kuwaiti Round About","Maliha Area","Maysaloon","Mega Mall","Mina Road SHJ","Mughaidir","Musallah","Muwafjah","Muwaila","Nasriya","National Paint","Nekhalat","Qassimiya","Quasis","Ramakiya","Ramlah ","Rigga SHJ","Rolla","Saabah ","Saif ","Samnan","Shahba","Shaqan","Sharjah","Sharjah Airport Area","Sharjah University","Sherqan ","SHJ Nouf","SHJ Womans Club","Sweihat","Tarfaana","Um Khanoor","Wadi Shi ","Wasit ","Yarmook ","Al Aahad","Al Abrab","Al Dar Al Baida","Al Haditha","Al Hawiyah","Al Humrah","Al Khor","Al Limghadar","Al Maidan","Al Raas","Al Ramlah","Al Riqqah","Al Salamah","Defence Camp Area","Falaj Al Mulla ","Industrail Area Ajman","Industrail Area UAQ","Old Town uaq","UAQ","UAQ Marina","Umm Al Quwain"];
+//         var cities_Dubai = ["Abu Dhabi", "Ajman", "Al Ain", "Dubai", "Fujairah", "Ras Al Khaimah", "Sharjah", "Umm Al Quwain"];
+//         var cities_Kuwait = ["Safat", "Jabriya", "Nuzha", "Salmiya", "Surra", "Ahmadi", "Fahaheel", "Abraq Khaitan", "Bayan", "Fintas", "Hadiya", "Mahboula", "Mishref", "Salwa", "Abdali", "Abu Halifa", "Farwaniyah", "Kuwait City", "Sharq", "Shuwaikh", "Mubarak Al kabeer", "Adailiya", "Daiya", "Doha", "Khaldiya", "Rai", "Rawda", "Sulaibikhat", "Yarmouk", "Airport", "Ardiya", "Dajeej", "Dhaher", "Funaitees", "Jaber Al Ali", "Manqaf", "Qurain", "Rehab", "Riqqa", "Rumaithiya", "Sabah Al Salem", "Sabahiya", "Sabhan", "Zahra", "Abdulla Al Mubarak Al Sabah", "Abdulla Al Salem", "Abdulla Port", "Abu Hasaniya", "Al Adan", "Al Jahra", "Al Khiran Pearl City", "Al Mubarakyia", "Al Rabiah", "Al Salam", "Al Shuhada", "Al Zour", "Ali Sabah Al Salem", "Amghara", "Amghara Industrial Area", "Andalous", "Ardiya Industrial", "A'youn", "Beneid Al Gar", "Bnaider", "Dasma", "Dasman", "Dhajeej", "Fahad Al Ahmed Area", "Fahaheel Industrial", "Faiha", "Firdous", "Granada", "Hateen", "Hawally", "Hijil", "Ishbilya", "Jabir Al Ahmad", "Jahra Industrial Area", "Jeleeb Shoyoukh", "Kabd", "Kaifan", "Khiran City", "Mansouriya", "Messila", "Minaa Abdulla", "Mirqab", "Mubarak Al Abdulla Al Jaber Area", "Naeem", "Nahda", "Nassem", "North West Sulaibikhat", "Nuwaiseeb", "Omariyah", "Qadsiya", "Qasr", "Qeirawan", "Qublah", "Qublah Area", "Qurtuba", "Saad Abdullah City", "Sabah Al Naser", "Sabriya", "Salhiya", "Sawaber", "Sha'ab", "Shuaiba Industrial Area", "Shuwaikh Education Area", "Shuwaikh Health Area", "Shuwaikh Industrial Area", "Shuwaikh Port", "Sideeq", "South Sabahiyah", "Subiya", "Sulaibiyah", "Sulaibiyah Industrial Area", "Taima", "Um Seddah", "Wafra", "Waha", "Al Bidaa", "Aqeela", "Khaitan", "Qusor", "Regiee", "Sabah Al Ahmad", "Shamiyah", "Abbasiyah", "Abu Fateera", "Al Hasawi", "Al Metlaa", "Al Qaysariya", "Al Salmi", "Al Shadadiya", "Al Soor", "Al Wetiyah", "Ayoun", "Jaber Al Ahmad", "Jaleeb Al-Shyoukh", "Julaiya", "Kazma", "Khairan", "Maidan Hawalliy", "Masayel", "Qairawan", "Qiblah", "Rawdatain", "Umm Al Aish"];
+//
+//         $(cityField).prop('readonly', true);
+//         citiesInit("address_form_new");
+//         $('select[name="address[country]"]').each((index, element) => {
+//             $(element).change(country_change);
+//         });
+//
+//         function country_change(e) {
+//             var form_id = $(this).closest('form').attr('id');
+//             $('#'+form_id+' input[name="address[city]"]').val('');
+//             $("#"+form_id+" "+'.cityDropdownCustom').find('ul').html('');
+//
+//             if ($(this).val() == 'Bahrain') {
+//                 var getCities = cityList(cities_Bahrain);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else if ($(this).val() == 'Oman') {
+//                 var getCities = cityList(cities_Oman);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else if ($(this).val() == 'Qatar') {
+//                 var getCities = cityList(cities_Qatar);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
+//
+//             } else if ($(this).val() == 'Saudi Arabia') {
+//                 var getCities = cityList(cities_Saudia_Arabia);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else if ($(this).val() == 'United Arab Emirates') {
+//                 var getCities = cityList(cities_Dubai);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
+//             } else if ($(this).val() == 'Kuwait') {
+//                 var getCities = cityList(cities_Kuwait);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//                 $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
+//             } else {
+//
+//             }
+//         }
+//
+//         function citiesInit(form_id) {
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Bahrain') {
+//                 var getCities = cityList(cities_Bahrain);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Oman') {
+//                 var getCities = cityList(cities_Oman);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Qatar') {
+//                 var getCities = cityList(cities_Qatar);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Saudi Arabia') {
+//                 var getCities = cityList(cities_Saudia_Arabia);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'United Arab Emirates') {
+//                 var getCities = cityList(cities_Dubai);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//
+//             if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Kuwait') {
+//                 var getCities = cityList(cities_Kuwait);
+//                 $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
+//             }
+//         }
+//
+//
+//         function cityList(cityArra) {
+//             var i;
+//             var cityOptions = "";
+//
+//             for (i = 0; i < cityArra.length; i++) {
+//                 cityOptions += `<li data-city-item data-list-item="${cityArra[i]}">${cityArra[i]}</li>`
+//             }
+//             return cityOptions;
+//         }
+//
+//         $(cityField).each((index, ele) => {
+//             var formId = $(ele).closest('form').attr('id');
+//             $(ele).click(function () {
+//                 $('#'+formId+' .cityDropdownCustom').show();
+//                 $('#'+formId+' #cityDropdownField').focus();
+//             });
+//             //       Select City Function
+//             $('#'+formId+' .cityDropdownCustom ul').on('click', '[data-city-item]', function () {
+//                 $('.cityDropdownCustom').hide();
+// //              Reset value of search field after select City
+//                 $('#cityDropdownField').val('');
+//
+// //              Show All cities after search and select
+//                 $('#'+formId+' .cityDropdownCustom ul li').show();
+//
+//                 $(ele).val($(this).attr('data-list-item'));
+//                 $('#'+formId+' input[name="address[province]"]').val($(this).attr('data-list-item'));
+//
+//                 validateCity($('#'+formId+' input[name="address[city]"]'));
+//             });
+//         });
+//
+//
+//
+//
+//
+//         //Close city dropdown click outside the dropdown
+//
+//         $(document).mouseup(e => {
+//             if (!cityFiledWrap.is(e.target) // if the target of the click isn't the container...
+//                 && cityFiledWrap.has(e.target).length === 0) // ... nor a descendant of the container
+//             {
+//                 $('.cityDropdownCustom').hide();
+//                 //validateCity ($("input#AddressCityNew"));
+//             }
+//         });
+//
+//
+//         //Search Functionality in City Dropdown
+//
+//         $('.cityDropdownCustom .cityDropdownFieldWrap').on('keyup', '#cityDropdownField', function () {
+//             var value = $(this).val().toUpperCase();
+//             console.log(value);
+//
+//             var listItems = $('.cityDropdownCustom ul li');
+//
+//             $(listItems).each(function () {
+//                 if ($(this).text().toUpperCase().search(value) > -1) {
+//                     $(this).show();
+//                 } else {
+//                     $(this).hide();
+//                 }
+//             });
+//         });
+//
+// //       Allow Cities form list
+//         var allCities = [];
+//         allCities.push(...cities_Kuwait, ...cities_Dubai, ...cities_Saudia_Arabia, ...cities_Qatar, ...cities_Oman, ...cities_Bahrain);
+    });
 
-
-
-        var citydropdown = '<div class="cityDropdownCustom">' +
-            '<div class="cityDropdownFieldWrap">' + '<input type="text" id="cityDropdownField" placeholder="Search...">' + '</div>' +
-            '<ul>' + '</ul>' + '</div>';
-
-        cityFiledWrap.each((index, ele) =>{
-            $(ele).append(citydropdown);
-        });
-
-//       Cities List Array
-        var cities_Bahrain = ["Aali", "Abu Beham", "Abu Saiba", "Adliya", "Amwaj", "Arad", "Bahrain", "Bani Jamra", "Barbar", "Budaiya", "Buquwa", "Buri", "Busaiteen", "Dair", "Dar Kulaib", "Diraz", "Dumistan", "East Riffa", "Ghurayfah", "Hajar", "Hamad Town", "Hamala", "Hidd", "Hillat Abdulsaleh", "Isa Town", "Janabiya", "Jannusan", "Jasra", "Jiblat Habshi", "Jid Alhaj", "Jidhafs", "Jordab", "Juffair", "Karbabad", "Karrana", "Karzakan", "Khamis", "Malikiya", "Manama", "Markh", "Meqsha", "Mina Salman", "Muharraq", "Muqaba", "Musalla", "Nasfah", "North Sehla", "Qadam", "Qalali", "Qella", "Qofool", "Qudaibiya", "Qurayya", "Ras Ruman", "Saar", "Sadad", "Sakheir", "Salmabad", "Salmaniya", "Samaheej", "Sanad", "Seef", "Shahrakan", "Shakhura", "Sitra", "South Sehla", "Tala Island", "Tashan", "Tubli", "Um Alhassam", "Umm Alsabban (Mohammadiya)", "West Riffa", "Zallaq", "Zayed Town"];
-        var cities_Oman = ["Adam", "Al Aqir", "Al Ashkarah", "Al Awabi - Barka", "Al Awabi - Muscat", "Al Bidayah", "Al Duqm", "Al Ghazir", "Al Hamra", "Al Jadida", "Al Kabil", "Al Kamil Wal Wafi", "Al Khodh", "Al Khuwair", "Al Mazyunah", "Al Mudhaibi", "Al Saada", "Amerat", "As Sulaif", "Azaiba", "Bahla", "Barka", "Bidbid", "Bidiya", "Bisiyah", "Bowsher", "Bukha", "BURAIMI", "Dhalkut", "Dhank", "Diba", "Dima Wattayeen", "Fahud", "Falaj Al Qabail", "Fanja", "Firq", "Ghala", "Ghubra", "Haima", "Hamriya", "Ibra", "Ibri", "Izki", "Jaalan Bani Bu Ali ", "Jaalan ni Bu Hassan", "Jabal Akhdar", "Jibroo", "Khabourah", "Khasab", "Liwa", "Madha", "Madinat Sultan Qaboos", "Mahdha", "Mahout", "Manah", "Marmul", "Masirah", "Mawaleh", "Musannah", "Muscat", "Muttrah", "Nakhl", "Nizwa", "Qatana", "Qurayat", "Qurum", "Rusayl", "rustaq", "Ruwi", "Sadah", "Saham", "Salalah", "Samad Al Shan", "Samayil", "Seeb", "Shinas", "Sidab", "Sinaw", "Sohar", "Sunaina", "Sur", "Suwaiq", "Thamrait", "Tiwi", "Wadi Adai", "Wadi al Maawil", "Wadi Bani Khalid", "Wadi Kabir", "Wattaya", "Wudam Al Sahil", "Yankul"];
-        var cities_Qatar = ["Doha", "Dukhan", "Al Rayyan", "Umm Salal Muhammad"];
-        var cities_Saudia_Arabia = ["Aba Alworood", "Abha", "Abha Manhal", "Abqaiq", "Abu Ajram", "Abu Areish", "Ad Dahinah", "Ad Dubaiyah", "Addayer", "Adham", "Afif", "Aflaj", "Ahad Masarha", "Ahad Rufaidah", "Ain Dar", "Al Adari", "Al Ais", "Al Ajfar", "Al Ammarah", "Al Ardah", "Al Arja", "Al Asyah", "Al Bada", "Al Bashayer", "Al Batra", "Al Bijadyah", "Al Dalemya", "Al Fuwaileq", "Al hait", "Al Haith", "Al Hassa", "Al Hayathem", "Al Hufayyirah", "Al Hulayfah As Sufla", "Al Idabi", "Al Khishaybi", "Al Khitah", "Al Laqayit", "Al Mada", "Al Mahd", "Al Midrij", "Al Moya", "Al Qarin", "Al Uwayqilah", "Al Wasayta", "Al-Jsh", "Alghat", "Alhada", "Alnabhanya", "Alrass", "Amaq", "An Nabk Abu Qasr", "An Nafiah", "An Nuqrah", "Anak", "Aqiq", "Ar Radifah", "Ar Rafi'ah", "Ar Rishawiyah", "Arar", "Artawiah", "As Sulaimaniyah", "As Sulubiayh", "Asfan", "Ash Shaara", "Ash Shamli", "Ash Shananah", "Ash Shimasiyah", "Ash Shuqaiq", "At Tuwayr", "Atawleh", "Ath Thybiyah", "Awamiah", "Ayn Fuhayd", "Badaya", "Bader", "Badr Al Janoub", "Baha", "Bahara", "Bahrat Al Moujoud", "Balahmar", "Balasmar", "Balqarn", "Baqa Ash Sharqiyah", "Baqaa", "Baqiq", "Bareq", "Batha", "Biljurashi", "Birk", "Bish", "Bisha", "Bukeiriah", "Buraidah", "Daelim", "Damad", "Dammam", "Darb", "Dariyah", "Dawadmi", "Deraab", "Dere'Iyeh", "Dhahban", "Dhahran", "Dhahran Al Janoob", "Dhurma", "Domat Al Jandal", "Duba", "Duhknah", "Dulay Rashid", "Farasan", "Ghazalah", "Ghtai", "Gilwa", "Gizan", "Hadeethah", "Hafer Al Batin", "Hail", "Hajrah", "Halat Ammar", "Hali", "Haqil", "Harad", "Harajah", "Hareeq", "Hawea/Taif", "Haweyah", "Hawtat Bani Tamim", "Hazm Al Jalamid", "Hedeb", "Hinakeya", "Hofuf", "Horaimal", "Hotat Sudair", "Hubuna", "Huraymala", "Ja'Araneh", "Jafar", "Jalajel", "Jeddah", "Jouf", "Jubail", "Jumum", "Kahlah", "Kara", "Kara'A", "Karboos", "Khafji", "Khaibar", "Khairan", "Khamaseen", "Khamis Mushait", "Kharj", "Khasawyah", "Khobar", "Khodaria", "Khulais", "Khurma", "King Khalid Military City", "Kubadah", "Laith", "Layla", "Madinah", "Mahad Al Dahab", "Majarda", "Majma", "Makkah", "Mandak", "Mastura", "Mawqaq", "Midinhab", "Mikhwa", "Mohayel Aseer", "Moqaq", "Mrat", "Mubaraz", "Mubayid", "Mulaija", "Mulayh", "Munifat Al Qaid", "Muthaleif", "Muzahmiah", "Muzneb", "Nabiya", "Najran", "Namas", "Nimra", "Nisab", "Noweirieh", "Nwariah", "Ojam", "Onaiza", "Othmanyah", "Oula", "Oyaynah", "Oyoon Al Jawa", "Qahmah", "Qarah", "Qariya Al Olaya", "Qasab", "Qassim", "Qatif", "Qaysoomah", "Qbah", "Qouz", "Qufar", "Qunfudah", "Qurayat", "Qusayba", "Quwei'Ieh", "Rabigh", "Rafha", "Rahima", "Rania", "Ras Al Kheir", "Ras Tanura", "Rawdat Habbas", "Rejal Alma'A", "Remah", "Riyadh", "Riyadh Al Khabra", "Rowdat Sodair", "Rvaya Aljamsh", "Rwaydah", "Sabt El Alaya", "Sabya", "Sadyan", "Safanyah", "Safwa", "Sahna", "Sajir", "Sakaka", "Salbookh", "Salwa", "Samtah", "Saqf", "Sarar", "Sarat Obeida", "Satorp", "Seihat", "Shaqra", "Shari", "Sharourah", "Shefa'A", "Shinanh", "Shoaiba", "Shraie'E", "Shumeisi", "Siir", "Simira", "Subheka", "Sulaiyl", "Suwayr", "Tabrjal", "Tabuk", "Taiba", "Taif", "Tanda", "Tanjeeb", "Tanuma", "Tanumah", "Tarut", "Tatleeth", "Tayma", "Tebrak", "Thabya", "Thadek", "Tharmada", "Thebea", "Thumair", "Thuqba", "Towal", "Turaib", "Turaif", "Turba", "Udhaliyah", "Um Aljamajim", "Umluj", "Uqlat Al Suqur", "Ushayqir", "Uyun", "Wadeien", "Wadi Bin Hasbal", "Wadi El Dwaser", "Wadi Fatmah", "Wajeh (Al Wajh)", "Yanbu", "Yanbu Al Baher", "Yanbu Nakhil", "Zahban", "Zallum", "Zulfi"];
-//	  var cities_Dubai = ["Abadilah","Abu Al Abyad Island","Abu Dhabi","Abu Dhabi University","Abu Hayl ","Airport Road AXD","Akamiyah ","Al Ardiyah ","Al Aryam Island","Al Bander","Al Barakkah","Al Bateen AXD","Al Buteen AXD","Al Dhafra Area","Al Dhafrah AXD","Al Dharbaniyah ","Al Dhayd ","Al Duss ","Al Falah Area","Al Falah Street","Al Ghuwaifat","Al Hadbah Street","Al Haliya","Al Hamra Island","Al Hayr ","Al Khalej Al Arabi","Al Ladeem Street","Al Mafraq ","Al Manaser","Al Manasir Alain","Al Maqta ","Al Marfa ","Al Maryah Island","Al Muneera","Al Muroor","Al Muzoon","Al Nahda Al Askarya","Al Nahyan Area","Al Najda Street","Al Qurm","Al Qusirah","Al Raha Beach","Al Raha Gardens","Al Rawdah","Al Rayhan","Al Reef Villas","Al Reem Island","Al Ruways ","Al Saada Street","Al Sab Area","Al Seef Compound","Al Tawila","Al Zaab","Al Zahraa","Al Zahraa ","Al Zina","Bahya","Banyas","Bida Zayed","Bidda Al Motawah","Bin Al Jesrin","Corniche","Dalma SR","Defence Road","Delma Island","Delma Street","Dhabiya","Electra Street","Gayathi","Golf Gardens","Grand Moshq Area","Hamdan Street","Haneem Street","Hazaa Bin Zayed Street","Hazza Bin Zayed Street","Hills Abu Dhabi","Hydra Village AXD","Istaqlal St","Jawasat","Karama Street AXD","Khalidiyah AXD","Khalifa City","Khalifa City A","Khalifa City B","Khalifa Garden","Khalifa Street AXD","Liwa","Liwa Sr","Liwa Street","Liwa Village","Madinat Zayed","Madinat Zayed AXD","Mafrq Area","Maharba","Mangrove One Compound","Mangrove Village","Marfa","Marina Mall","Masdar City","Mina Road AXD","Mohammed Bin Zayed City","Musafah","Mushref","Nadisiya","Nahda New","Nahel Town","Nasser Street","Navy Gate","New cornich AXD","New Shahama","Officers City","Old Mazda Road","Old Shahama","Rahba","Rima ","Ruwais","Sadiyat Island","Salam Street","SAS Al Nakheel","Shahama","Shakhbouth City","Shalila","Shamha","Shamkah","Shanin","Shawamak","Shuwayhat Island","Sila","Sila ","Sir Bani Yas Island","Suwayhan ","Tarif","Tourist Club","Umm Al Nar","Wathba","Yas Island","Yasat Ali Island","Zafarana Area","Zayed Sport City","Zayed Street","Zayed The First Street","Ajman Freezone","Al Alia","Al Azara","Al Bahya Ajman","Al Bustan","Al Butain","Al Hamerah","Al Hamidiya","Al Hamriyaa","Al Heliow","Al Jerf","Al Jurf","Al Montaz","Al Muwainat","Al Owan","Al Raqqib","Al Sawan","Al Talla","Al Zahra ","Al Zahya","Al Zubair","Corniche Ajman","Emirates City","Hamediya","Hamriya Freezone","Khalifa Street Ajman","Masfut ","Mina Villa Ajman","Musharh","Musherif","Naimiya","Rashidya Ajman","Safia","Siti Sintir","Sweihan ","Abu Samra","Ain Al Fayda","Airport East District","Al Agabiyaa","Al Ain City","Al Ain City Centre","Al Aliya","Al Ameriya","Al Asharaj","Al Barsa Garden","Al Batin","Al bhuraimi Oman","Al Dhahera","Al Faqah","Al Foah","Al Ganeema","Al Hayer","Al Hili","Al Jahili","Al Jimi","Al Khabisi","Al Khalidia Alain","Al khalif","Al Khatim","Al Khazna","Al Kubisi","Al Kuwaitat","Al Manasif","Al Manasir Alain","Al Maqam","Al Markhaniya","Al Masoudi","Al Muntazi","Al Muroor Alain","Al Mutaredh","Al Mutawaa","Al Muwaiji","Al Naifa","Al Niama","Al Niyadat","Al Qattara","Al Qua","Al Saad","Al Salamat","Al Sanaiyyah","Al Sarooj","Al Shuaibah","Al Shwaib","Al Shwaib Fujairah Rd","Al Touba","Al Towayya","Al Wagan","Al Yahar","Alain City Centre","Andalus Complex","Asharej","Central District","Falaj Hazza","Green Land Comp","Hilton","Industrial area Alain","Jabet Hafeet","Khalifa Street Alain","Kharis","Khatim Shukla Buraimi","Libab","Lisiely","Lisily","Markam","Masakin","Meyzad","Mubarak R/A","Murabba","Murejib","Nahel Town","Nahil","Remah","Rumaila Alain","Sanaiya","Shiab Al Ashkhar","Surouj","Sweihan","Swihen Alain","Tawam","Tower Clock Area","Town Centre","Um Ghaffa","Wadi Alain","Zakhir","Abu Hail","Acadamic City","Airport Area Dubai","Al Badaa","Al Badia","Al Baraha","Al Barari","Al Barsha","Al Barsha 1","Al Barsha 2","Al Barsha 3","Al Barsha South 1","Al Barsha South 2","Al Barsha South 3","Al Furjan","Al Ghadeer DXB","Al Ghadeer Village","Al Hamriya DXB","Al Hudaiba","Al Jaddaf","Al Karama DXB","Al Kawaneej","Al Khabaisi","Al khail gate","Al Lisaili","Al Mamzar","Al Manara","Al Mina Road - Dubai","Al Mizhar","Al Muraqqabat","Al Muteena","Al Nahda DXB","Al Quoz","Al Quoz Ind 2","Al Qusais 1","Al Qusais 2","Al Qusais 3","Al Raffa Burdubai","Al Ras Deira","Al Rigga","Al Ruwaiya ","Al Safa","Al Safa 1","Al Safa 2","Al Satwa","Al Shandaghah","Al shindagha","Al Souk Al Kabeer","Al Sufu","Al Twar","Al Waha","Al Warkha","Arabian Ranches","Arabian Ranches 2","Awir","Bur Dubai","Burj Dubai Sk Zyed Rd","Burjuman","Business Bay","Cargo Village","Corniche Deira","Crown Residence","Deira","Desert Palm","DIP","Discovery Gardens","Diyafah","Downtown Burj Dubai","Downtown Dubai","Dubai","Dubai Festival City","Dubai Health Care City","Dubai International Financial Center","Dubai Internet city","Dubai Land","Dubai Marina","Dubai Media City","Dubai Outlet Mall","Dubai Silicon Oasis","DWC","Emirates Hills","Emirates Living","Falcon City","Festival City","Ganthoot ","Gardens","Garhoud","Global Village","Green Community","Greens","Hatta","Hatta Area","Hatta Road","Hoot","Hor Al Anz","IMPZ","International Academic City","International City","Jaflia","Jebel Ali","Jebel Ali Free Zone","Jebel Ali Village","JLT","Jumeirah","Jumeirah 1","Jumeirah 2","Jumeirah 3","Jumeirah 4","Jumeirah 5","Jumeirah Beach Residence","Jumeirah Golf Estates","Jumeirah Heights","Jumeirah Islands","Jumeirah Park","Jumeirah Park ( JLT )","Jumeirah Village","Knowledge Village","Lahabab","Layan Community","Madam","Mankhool","Margham Alain Road","Marsa","Meadows","Meydan Heights","Mina Sufooh ","Mirdiff","Motor City","Mudon","Muhaisinah","Musalla Rd","Mushrif ","Nad Al Ham","Nad Al Shama","Nad Al Shiba","Naif","Naser Squre","Old Town","Oud Al Muteena","Oud Metha","Palm Deira","Palm Jumeirah","Port Rashid","Port Saeed","Ras Al Kohar","Rashidya","Reem Ram","Saih Sheib","Sk Zyed Rd","Skycourts","Sports City","Springs","Tecom","The Lakes","The Sustainable City","The Villa","Trade Centre1","Trade Centre2","Umm Hurair 1","Umm Hurair 2","Umm Ramool","Umm Squim","Umm Suqeim 2","Umm Suqeim3","Ummel Sheif","Wassel","Zaabil","Adan","Al Basera","Al Bithnah","Al Bulaidha","Al Farfar","Al Faseel","Al Ghail","Al Hail","Al Hala","Al Khulabiya","Al Madhar","Al Riyafa","Al Tuween","Aliqya","Asma","Bidiya","Bitna","Dadna","Daftah","Dana Plaza","Dhaid","Dibba","Dibba Al Hassan","Difta","Falaj Al Mulla","Falakh","FUJ City Centre","Ghurfa","Gidfa","Hassan Dibba ","Hatein","Huwailat","Kadra","Kalba","Khor Fakkan","Kidfa ","Luliya","Madhab","Maliha","Mamduh","Manama","Marbah","Masafi","Merashid","Munai","Old Etisalat Area","Qadisiya","Qirat","Quraya","Rughaylat ","Shakamkam","Sharm","Shawka","Siji","Tarif Kalba ","Tayyabah","Wadi Al Abadila","Wadi Mai","Wadi Safni","Wadi Saham","Wadi Sena","Wadighob","Wadighod","Wadihala","Wadiisfini","Wadil Khor","Adan RAK","Adhan","Air Port Road","Al Burrairat","Al Dhait North","Al Dhait South","Al Fulayyah ","Al Gail RAK","Al Ghail","Al Ghoub","Al Goub","Al Hamra Village","Al Hamraniya","Al Hamriya","Al Jazeera","Al Jazeera- Al Hamra","Al Jeer Oman Border","Al Julan","Al Kharan","Al Khat","Al Khuzam","Al Maireed","Al Mamourah","Al Manamah ","Al Nakheel","Al Oraibi","Al Rafa","Al Rams","Al Reefa","Al Seih","Al Shammal","Al Shams","Al Tuween RAK","Al Zara","Babal Bahar","Corniche RAK","Dahan","Dayah","Digdhaga","Dreamland","Fahalin","Gallilah","Idhn","Jebel Jais","Julphar","Julphar Tower","Kabdah","Khor Khawir","Khor Khoir","Kuwaiti Road","Marjan Island","Masafi ","Mina Al Arab RAK","Muntasir Road","Old Town Rak","Qusaidat","RAK1 SR","Ras Al Khaimah city ","Sabith Arabia","Sabith Rashid","Sadia Area","Selayia","Shamel","Shammal Julphar","Suhaila","Wadi Ghob","Yasmin Village","Abu Shagara","Al Abrar","Al Arouba","Al Azra","Al Badiyah","Al Barashi","Al Bataya","Al Budaniq","Al Darari","Al Fahiya ","Al Falah","Al Falaj","Al Fisht","Al Gafiya","Al Ghaphiya","Al Gharb","Al Goaz","Al Hamriyah ","Al Jazzat","Al Jubail","Al Juraina","Al Juraina 1","Al Kaliya","Al Khaleej","Al Khalidia","Al Khan","Al Khashfah ","Al Khezamia","Al Layyeh","Al Mahatah","Al Majaz","Al Manak ","Al Mansoora","Al Mirgab","Al Mujarrah","Al Mulla Plaza","Al Muraija","Al Muroor SHJ","Al Nabba","Al Nahda DXB","Al Nahda SHJ","Al Nakhil","Al Nekhailat","Al Nesserya","Al Noaf","Al Nud","Al Qadsiya","Al Qarayan","Al Qasaba","Al Quran Rnd About","Al Rahmania","Al Rahmaniyah","Al Ramla","Al Ramtha","Al Rawda","Al Rifah","Al Riffa","Al Rigqa","Al Rumailah","Al Sabkha","Al Sajaa","Al Shahba","Al Sharq","Al Shuwaihean","Al Soor","Al Suyoh","Al Sweihat","Al Talaa","Al Talha","Al Tawar 1","Al TAwar 2","Al Tawuun","Al Turfa","Al Wada","Al Wasit ","Al Yarmook","Al Yas","Al Yash","Al Zahiya","Aqouz","Asimah","Book Roundabout","Buhairah","Butina","CORNICH SHJ","Dashman Park","Dasman ","Dhaid ","Elyash","Falag","Gold Souk","Gubaiba","Gulaiya","Halwan","Hamariya ","Hazzana","Heera","Hunaywah","Immigration Road","Industrail Area SHJ","Industrial Area1","Jamal Abdul Naser Rd","Juraina","Juwaizaa","Khalid Port","Khalwan","Khannur ","Kharayan ","Khezamia","King Faisa","Kuwaiti Hospital","Kuwaiti Round About","Maliha Area","Maysaloon","Mega Mall","Mina Road SHJ","Mughaidir","Musallah","Muwafjah","Muwaila","Nasriya","National Paint","Nekhalat","Qassimiya","Quasis","Ramakiya","Ramlah ","Rigga SHJ","Rolla","Saabah ","Saif ","Samnan","Shahba","Shaqan","Sharjah","Sharjah Airport Area","Sharjah University","Sherqan ","SHJ Nouf","SHJ Womans Club","Sweihat","Tarfaana","Um Khanoor","Wadi Shi ","Wasit ","Yarmook ","Al Aahad","Al Abrab","Al Dar Al Baida","Al Haditha","Al Hawiyah","Al Humrah","Al Khor","Al Limghadar","Al Maidan","Al Raas","Al Ramlah","Al Riqqah","Al Salamah","Defence Camp Area","Falaj Al Mulla ","Industrail Area Ajman","Industrail Area UAQ","Old Town uaq","UAQ","UAQ Marina","Umm Al Quwain"];
-        var cities_Dubai = ["Abu Dhabi", "Ajman", "Al Ain", "Dubai", "Fujairah", "Ras Al Khaimah", "Sharjah", "Umm Al Quwain"];
-        var cities_Kuwait = ["Safat", "Jabriya", "Nuzha", "Salmiya", "Surra", "Ahmadi", "Fahaheel", "Abraq Khaitan", "Bayan", "Fintas", "Hadiya", "Mahboula", "Mishref", "Salwa", "Abdali", "Abu Halifa", "Farwaniyah", "Kuwait City", "Sharq", "Shuwaikh", "Mubarak Al kabeer", "Adailiya", "Daiya", "Doha", "Khaldiya", "Rai", "Rawda", "Sulaibikhat", "Yarmouk", "Airport", "Ardiya", "Dajeej", "Dhaher", "Funaitees", "Jaber Al Ali", "Manqaf", "Qurain", "Rehab", "Riqqa", "Rumaithiya", "Sabah Al Salem", "Sabahiya", "Sabhan", "Zahra", "Abdulla Al Mubarak Al Sabah", "Abdulla Al Salem", "Abdulla Port", "Abu Hasaniya", "Al Adan", "Al Jahra", "Al Khiran Pearl City", "Al Mubarakyia", "Al Rabiah", "Al Salam", "Al Shuhada", "Al Zour", "Ali Sabah Al Salem", "Amghara", "Amghara Industrial Area", "Andalous", "Ardiya Industrial", "A'youn", "Beneid Al Gar", "Bnaider", "Dasma", "Dasman", "Dhajeej", "Fahad Al Ahmed Area", "Fahaheel Industrial", "Faiha", "Firdous", "Granada", "Hateen", "Hawally", "Hijil", "Ishbilya", "Jabir Al Ahmad", "Jahra Industrial Area", "Jeleeb Shoyoukh", "Kabd", "Kaifan", "Khiran City", "Mansouriya", "Messila", "Minaa Abdulla", "Mirqab", "Mubarak Al Abdulla Al Jaber Area", "Naeem", "Nahda", "Nassem", "North West Sulaibikhat", "Nuwaiseeb", "Omariyah", "Qadsiya", "Qasr", "Qeirawan", "Qublah", "Qublah Area", "Qurtuba", "Saad Abdullah City", "Sabah Al Naser", "Sabriya", "Salhiya", "Sawaber", "Sha'ab", "Shuaiba Industrial Area", "Shuwaikh Education Area", "Shuwaikh Health Area", "Shuwaikh Industrial Area", "Shuwaikh Port", "Sideeq", "South Sabahiyah", "Subiya", "Sulaibiyah", "Sulaibiyah Industrial Area", "Taima", "Um Seddah", "Wafra", "Waha", "Al Bidaa", "Aqeela", "Khaitan", "Qusor", "Regiee", "Sabah Al Ahmad", "Shamiyah", "Abbasiyah", "Abu Fateera", "Al Hasawi", "Al Metlaa", "Al Qaysariya", "Al Salmi", "Al Shadadiya", "Al Soor", "Al Wetiyah", "Ayoun", "Jaber Al Ahmad", "Jaleeb Al-Shyoukh", "Julaiya", "Kazma", "Khairan", "Maidan Hawalliy", "Masayel", "Qairawan", "Qiblah", "Rawdatain", "Umm Al Aish"];
-
-        $(cityField).prop('readonly', true);
-        citiesInit("address_form_new");
-        $('select[name="address[country]"]').each((index, element) => {
-            $(element).change(country_change);
-        });
-
-        function country_change(e) {
-            var form_id = $(this).closest('form').attr('id');
-            $('#'+form_id+' input[name="address[city]"]').val('');
-            $("#"+form_id+" "+'.cityDropdownCustom').find('ul').html('');
-
-            if ($(this).val() == 'Bahrain') {
-                var getCities = cityList(cities_Bahrain);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else if ($(this).val() == 'Oman') {
-                var getCities = cityList(cities_Oman);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else if ($(this).val() == 'Qatar') {
-                var getCities = cityList(cities_Qatar);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
-
-            } else if ($(this).val() == 'Saudi Arabia') {
-                var getCities = cityList(cities_Saudia_Arabia);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else if ($(this).val() == 'United Arab Emirates') {
-                var getCities = cityList(cities_Dubai);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'none');
-            } else if ($(this).val() == 'Kuwait') {
-                var getCities = cityList(cities_Kuwait);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-                $("#"+form_id+" "+'input[name="address[zip]"]').closest('.field').css('display', 'block');
-            } else {
-            
-            }
-        }
-
-        function citiesInit(form_id) {
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Bahrain') {
-                var getCities = cityList(cities_Bahrain);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Oman') {
-                var getCities = cityList(cities_Oman);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Qatar') {
-                var getCities = cityList(cities_Qatar);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Saudi Arabia') {
-                var getCities = cityList(cities_Saudia_Arabia);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'United Arab Emirates') {
-                var getCities = cityList(cities_Dubai);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-
-            if ($("#"+form_id+" "+'select[name="address[country]"]').val() == 'Kuwait') {
-                var getCities = cityList(cities_Kuwait);
-                $("#"+form_id+" "+'.cityDropdownCustom').find('ul').append(getCities);
-            }
-        }
-
-
-        function cityList(cityArra) {
-            var i;
-            var cityOptions = "";
-
-            for (i = 0; i < cityArra.length; i++) {
-                cityOptions += `<li data-city-item data-list-item="${cityArra[i]}">${cityArra[i]}</li>`
-            }
-            return cityOptions;
-        }
-
-        $(cityField).each((index, ele) => {
-            var formId = $(ele).closest('form').attr('id');
-            $(ele).click(function () {
-                $('#'+formId+' .cityDropdownCustom').show();
-                $('#'+formId+' #cityDropdownField').focus();
-            });
-            //       Select City Function
-            $('#'+formId+' .cityDropdownCustom ul').on('click', '[data-city-item]', function () {
-                $('.cityDropdownCustom').hide();
-//              Reset value of search field after select City
-                $('#cityDropdownField').val('');
-
-//              Show All cities after search and select
-                $('#'+formId+' .cityDropdownCustom ul li').show();
-
-                $(ele).val($(this).attr('data-list-item'));
-                $('#'+formId+' input[name="address[province]"]').val($(this).attr('data-list-item'));
-
-                validateCity($('#'+formId+' input[name="address[city]"]'));
-            });
-        });
-
-
-
-
-
-        //Close city dropdown click outside the dropdown
-
-        $(document).mouseup(e => {
-            if (!cityFiledWrap.is(e.target) // if the target of the click isn't the container...
-                && cityFiledWrap.has(e.target).length === 0) // ... nor a descendant of the container
-            {
-                $('.cityDropdownCustom').hide();
-                //validateCity ($("input#AddressCityNew"));
-            }
-        });
-
-
-        //Search Functionality in City Dropdown
-
-        $('.cityDropdownCustom .cityDropdownFieldWrap').on('keyup', '#cityDropdownField', function () {
-            var value = $(this).val().toUpperCase();
-            console.log(value);
-
-            var listItems = $('.cityDropdownCustom ul li');
-
-            $(listItems).each(function () {
-                if ($(this).text().toUpperCase().search(value) > -1) {
-                    $(this).show();
+</script>
+<script>
+    $(document).ready(function () {
+        const viewTrackButtons = document.querySelectorAll('.view-track-shipment')
+        viewTrackButtons.forEach((viewTrackButton) => {
+            viewTrackButton.addEventListener('click', (event) => {
+                const current = event.target.classList.contains('.view-track-shipment') ? event.target : event.target.closest('.view-track-shipment');
+                const parent = current.parentElement.parentElement;
+                if(current.classList.contains('active')) {
+                    current.closest('.view-track-shipment').classList.remove("active");
+                    parent.querySelector('.track-shipment-content').style.display = 'none';
+                    parent.querySelector('.account-order-status').classList.remove('active');
                 } else {
-                    $(this).hide();
+                    current.classList.add("active");
+                    parent.querySelector('.track-shipment-content').style.display = 'flex';
+                    parent.querySelector('.account-order-status').classList.add('active');
                 }
             });
         });
 
-//       Allow Cities form list
-        var allCities = [];
-        allCities.push(...cities_Kuwait, ...cities_Dubai, ...cities_Saudia_Arabia, ...cities_Qatar, ...cities_Oman, ...cities_Bahrain);
     });
-
 </script>

@@ -2,442 +2,444 @@
 
 {% assign init_tracking_data_availble_date = '2022-01-01 00:00:00' | datetime %}
 <div class="customer order container-v1">
-  <div class="order-page-header">
-    <h1>{{ 'customer.order.title' | t: name: order.name }}</h1>
-    <button onclick="window.location = '{{ routes.account_url }}?path=orders'">{{- 'customer.order.return' | t -}}</button>
-  </div>
+    <div class="order-page-header">
+        <h1>{{ 'customer.order.title' | t: name: order.name }}</h1>
+        <button onclick="window.location = '{{ routes.account_url }}?path=orders'">{{- 'customer.order.return' | t -}}</button>
+    </div>
     <div class="order-page-content">
-      <div class="account-details-card account-order-card order-single-item">
-        <div class="account-card-top">
-          <div class="account-card-title-container">
-            <h4 class="account-card-title">{{ 'customer.order.title' | t: name: order.name }}</h4>
-            {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}
-            <span>{{ 'customer.order.date_html' | t: date: order_date }}</span>
-            {%- if order.cancelled -%}
-              {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
-              <span>{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</span>
-              <span>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</span>
-            {%- endif -%}
-          </div>
-        </div>
-        {%- for line_item in order.line_items -%}
-        <div class="account-card-content">
-          <div class="field">
-            <div class="account-product-image">
-              {{ line_item.image | image_url: width: 75, height: 75 | image_tag: srcset: nil }}
+        <div class="account-details-card account-order-card order-single-item">
+            <div class="account-card-top">
+                <div class="account-card-title-container">
+                    <h4 class="account-card-title">{{ 'customer.order.title' | t: name: order.name }}</h4>
+                    {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}
+                    <span>{{ 'customer.order.date_html' | t: date: order_date }}</span>
+                    {%- if order.cancelled -%}
+                        {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+                        <span>{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</span>
+                        <span>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</span>
+                    {%- endif -%}
+                </div>
             </div>
-            <div class="account-product-details">
-              <p class="account-product-brand">{{ line_item.product.vendor }}</p>
-              {%- if line_item.url != blank -%}
-                <h5 class="account-product-title"><a href="{{ line_item.url }}">{{ line_item.product.title }}</a></h5>
-              {%- else -%}
-                <h5 class="account-product-title">{{ line_item.product.title | truncate: 30 }}</h5>
-              {%- endif -%}
-              {%- unless line_item.selling_plan_allocation == nil and property_size == 0 -%}
-                <div class="properties">
-                  {%- unless line_item.product.has_only_default_variant or line_item.product.variants.size > 1 -%}
-                    <span>
+            {%- for line_item in order.line_items -%}
+                <div class="account-card-content">
+                    <div class="field">
+                        <div class="account-product-image">
+                            {{ line_item.image | image_url: width: 75, height: 75 | image_tag: srcset: nil }}
+                        </div>
+                        <div class="account-product-details">
+                            <p class="account-product-brand">{{ line_item.product.vendor }}</p>
+                            {%- if line_item.url != blank -%}
+                                <h5 class="account-product-title"><a
+                                            href="{{ line_item.url }}">{{ line_item.product.title }}</a></h5>
+                            {%- else -%}
+                                <h5 class="account-product-title">{{ line_item.product.title | truncate: 30 }}</h5>
+                            {%- endif -%}
+                            {%- unless line_item.selling_plan_allocation == nil and property_size == 0 -%}
+                                <div class="properties">
+                                    {%- unless line_item.product.has_only_default_variant or line_item.product.variants.size > 1 -%}
+                                        <span>
                       {{ line_item.variant.title }}
                     </span>
-                  {%- endunless -%}
-                  {%- unless line_item.selling_plan_allocation == nil -%}
-                    <span>
+                                    {%- endunless -%}
+                                    {%- unless line_item.selling_plan_allocation == nil -%}
+                                        <span>
                       {{ line_item.selling_plan_allocation.selling_plan.name }}
                     </span>
-                  {%- endunless -%}
-                  {%- if property_size != 0 -%}
-                    {%- for property in line_item.properties -%}
-                      {% assign property_first_char = property.first | slice: 0 %}
-                      {%- if property.last != blank and property_first_char != '_' -%}
-                        <span>
+                                    {%- endunless -%}
+                                    {%- if property_size != 0 -%}
+                                        {%- for property in line_item.properties -%}
+                                            {% assign property_first_char = property.first | slice: 0 %}
+                                            {%- if property.last != blank and property_first_char != '_' -%}
+                                                <span>
                           {{ property.first }}:&nbsp;
                           {%- if property.last contains '/uploads/' -%}
-                            <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
+                              <a href="{{ property.last }}">{{ property.last | split: '/' | last }}</a>
                           {%- else -%}
-                            {{ property.last }}
+                              {{ property.last }}
                           {%- endif -%}
                         </span>
-                      {%- endif -%}
-                    {%- endfor -%}
-                  {%- endif -%}
-                </div>
-              {%- endunless -%}
-              {%- if line_item.line_level_discount_allocations != blank -%}
-                <ul role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                  {%- for discount_allocation in line_item.line_level_discount_allocations -%}
-                    <li>
-                      <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
-                        <use href="#icon-discount" />
-                      </svg>
-                      {{- discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money -}})
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              {%- endif -%}
-  
-              {%- if line_item.fulfillment -%}
-                <p>
-                  {%- if line_item.fulfillment.tracking_url and line_item.fulfillment.tracking_number -%}
-                    <a href="{{ line_item.fulfillment.tracking_url }}" class="account-product-date">
-                     #{{ line_item.fulfillment.tracking_number }}
-                    </a>
-                  {%- endif -%}
-                </p>
-              {%- endif -%}
-              {% if order.cancelled %}
-                <p class="account-product-status red">Cancelled</p>
-              {% elsif line_item.successfully_fulfilled_quantity > 0 %}
-                {% assign tracking_number = line_item.fulfillment.tracking_number %}
-                {% if tracking_number %}
-                  {% if order.metafields.shipping.tracking_status.value %}
-                    {% assign tracking_statuses = order.metafields.shipping.tracking_status.value %}
-                  {% else %}
-                    {% assign tracking_statuses = order.metafields.shipping.tracking_status %}
-                  {% endif %}
-                  {% assign stages = false %}
-                  {% for tracking_status in tracking_statuses %}
-                    {% if tracking_number == tracking_status.awb %}
-                      {% assign stages = tracking_status.stages %}
-                    {% endif %}
-                  {% endfor %}
-                  {% if stages %}
-                    {% assign stage = stages | last %}
-                    {% if stage.status_type == "1" %}
-                      <p class="account-product-status blue">In-Transit</p>
-                    {%  elsif stage.status_type == "2" %}
-                      <p class="account-product-status green">Delivered</p>
-                    {%  elsif stage.status_type == "3" %}
-                      <p class="account-product-status yellow">On-Hold</p>
-                    {%  elsif stage.status_type == "4" %}
-                      <p class="account-product-status red">Returned</p>
-                    {%  elsif stage.status_type == "5" %}
-                      <p class="account-product-status red">Returned</p>
-                    {% endif %}
-                  {% elsif order.created_at < init_tracking_data_availble_date %}
-                    <p class="account-product-status"></p>
-                  {% else %}
-                    <p class="account-product-status">Dispatched</p>
-                  {% endif %}
-                {%  else %}
-                  <p class="account-product-status green">Sent via Email</p>
-                {% endif %}
-              {%  else %}
-                <p class="account-product-status">Processing</p>
-              {% endif %}
-            </div>
-          </div>
-          <div style="text-align: right">
-            {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
-                {%- if line_item.original_price != line_item.final_price -%}
-                  <h3>{{ 'products.product.price.regular_price' | t }}</h3>
-                  <h3 class="regular-price">{{ line_item.original_price | money }}
-                  </h3>
-                  <h3>{{ 'products.product.price.sale_price' | t }}</h3>
-                  <h3>{{ line_item.final_price | money }}</h3>
-                {%- else -%}
-                  <h3>{{ 'products.product.price.regular_price' | t }}</h3>
-                  <h3>{{ line_item.original_price | money }}</h3>
-                {%- endif -%}
-                {%- if line_item.unit_price_measurement -%}
-                  <h3>{{ 'products.product.price.unit_price' | t }}</h3>
-                  <h3 class="unit-price">
-                    {%- capture unit_price_separator -%}
-                      {{ 'accessibility.unit_price_separator' | t }}
-                    {%- endcapture -%}
-                    {%- capture unit_price_base_unit -%}
-                      {%- if line_item.unit_price_measurement.reference_value != 1 -%}
-                        {{- line_item.unit_price_measurement.reference_value -}}
-                      {%- endif -%}
-                      {{ line_item.unit_price_measurement.reference_unit }}
-                    {%- endcapture -%}
-                   {{ line_item.unit_price | money }}{{- unit_price_separator -}}{{- unit_price_base_unit -}}
-                  </h3>
-                {%- endif -%}
-  
-            {%- else -%}
-              <h3 class="unit-price">{{ line_item.final_price | money_with_currency }}</h3>
-            {%- endif -%}
-  
-            <h4 data-label="{{ 'customer.order.quantity' | t }}" style="color:#b1b1b1">
-              x {{ line_item.quantity }} Unit
-            </h4>
-          </div>
-        </div>
-        {% if order.created_at > init_tracking_data_availble_date %}
-        {% liquid
-          assign trackWidth = 75
-          assign progressWidth = 10
-          assign delivery_status = 0
-          assign delivery_by_mail = false
-          assign dispatched_date = ""
-          assign delivered_date = ""
-          assign onhold_date = ""
-          assign returned_date = ""
-          assign stages = false
-          if order.cancelled
-            assign delivery_status = -1
-            assign trackWidth = 25
-            assign progressWidth = 100
-          elsif line_item.successfully_fulfilled_quantity > 0
-            assign tracking_number = line_item.fulfillment.tracking_number
-            if tracking_number
-              assign delivery_status = 0
-              assign trackWidth = 75
-              assign progressWidth = 10
-              if order.metafields.shipping.tracking_status.value
-                assign tracking_statuses = order.metafields.shipping.tracking_status.value
-              else
-                assign tracking_statuses = order.metafields.shipping.tracking_status
-              endif
-              assign stages = false
-              for tracking_status in tracking_statuses
-                if tracking_number == tracking_status.awb
-                  assign stages = tracking_status.stages
-                  assign dispatched_stage = stages | where: "status_type", "1"
-                  assign dispatched_stage = dispatched_stage | first
-                  if dispatched_stage
-                    assign dispatched_status = dispatched_stage.statuses | first
-                    assign dispatched_date = dispatched_status.update_time
-                  endif
-                  assign delivered_stage = stages | where: "status_type", "2"
-                  assign delivered_stage = delivered_stage | first
-                  if delivered_stage
-                    assign delivered_status = delivered_stage.statuses | last
-                    assign delivered_date = delivered_status.update_time
-                  endif
-                  assign onhold_stage = stages | where: "status_type", "3"
-                  assign onhold_stage = onhold_stage | first
-                  if onhold_stage
-                    assign onhold_status = onhold_stage.statuses | last
-                    assign onhold_date = onhold_status.update_time
-                  endif
-                  assign returned_stage = stages | where: "status_type", "4"
-                  assign returned_stage = returned_stage | first
-                  if returned_stage
-                    assign returned_status = returned_stage.statuses | last
-                    assign returned_date = returned_status.update_time
-                  endif
-                endif
-              endfor
-              if stages
-                assign stage = stages | last
-                  if stage.status_type == "1"
-                    assign delivery_status = 1
-                    assign trackWidth = 75
-                    assign progressWidth = 75
-                  elsif stage.status_type == "2"
-                    assign delivery_status = 2
-                    assign trackWidth = 75
-                    assign progressWidth = 100
-                  elsif stage.status_type == "3"
-                    assign delivery_status = 3
-                    assign trackWidth = 100
-                    assign progressWidth = 75
-                  elsif stage.status_type == "4"
-                    assign delivery_status = 4
-                    assign trackWidth = 100
-                    assign progressWidth = 100
-                  elsif stage.status_type == "5"
-                    assign delivery_status = 5
-                    assign trackWidth = 25
-                    assign progressWidth = 25
-                  endif
-              else
-                assign delivery_status = 6
-              endif
-            else
-              assign delivery_status = 7
-              assign trackWidth = 25
-              assign progressWidth = 100
-            endif
-          else
-            assign delivery_status = 0
-          endif
-        %}
-        
-        <div class="account-card-bottom">
-          <div class="inlined">
-            <!-- Start component -->
-            <div class="progress-meter">
-              <div class="track" style="width: 93%">
-                <span class="progress" style="width: {{ progressWidth }}%"></span>
-              </div>
-              <ul class="progress-points" data-current="4">
-                <li class="progress-point green">
-                    <div class="account-product-box">
-                        <p class="account-product-status">Processing</p>
-                        <p class="account-product-date">{{ order.created_at | time_tag: format: "date" }}</p>
-                    </div>
-                </li>
-                {% if delivery_status == -1 or delivery_status == 5 %}
-                <li class="progress-point red">
-                    <div class="account-product-box">
-                        <p class="account-product-status">Canceled</p>
-                        <p class="account-product-date">{{ order.cancelled_at | time_tag: format: "date" }}</p>
-                    </div>
-                </li>
-                {% endif %}
-                {% if delivery_status != 5 and delivery_status != -1 and delivery_status != 7 %}
-                <li class="progress-point {% if delivery_status > 0 %} green {% endif %}">
-                    <div class="account-product-box">
-                        <p class="account-product-status">Dispatched</p>
-                        <p class="account-product-date">{{ dispatched_date | time_tag: format: 'date' }}</p>
-                    </div>
-                </li>
-                {% endif %}
-                {% if delivery_status != 5 and delivery_status != -1 and delivery_status != 7 %}
-                <li class="progress-point {% if delivery_status > 0 %} green {% endif %}">
-                    <div class="account-product-box">
-                        <p class="account-product-status">In-Transit</p>
-                        <p class="account-product-date">{{ dispatched_date | time_tag: format: 'date' }}</p>
-                    </div>
-                </li>
-                {% endif %}
-                {% if delivery_status != 5 and delivery_status != -1 and delivery_status != 7 %}
-                <li class="progress-point {% if delivery_status == 2 or delivery_status == 4 %} green{% endif %}">
-                    <div class="account-product-box">
-                        <p class="account-product-status">Delivered</p>
-                        <p class="account-product-date">{{ order.cancelled_at | time_tag: format: 'date' }}</p>
-                    </div>
-                </li>
-                {% endif %}
-                {% if delivery_status == 7 %}
-                  <li class="progress-point {% if delivery_status == 7 %} green{% endif %}">
-                      <div class="account-product-box">
-                          <p class="account-product-status">Sent via Email</p>
-                          <p class="account-product-date">{{ line_item.fulfillment.created_at | time_tag: format: 'date' }}</p>
-                      </div>
-                  </li>
-                {% endif %}
-                {% if delivery_status == 3 %}
-                  <li class="progress-point {% if delivery_status == 3 %} yellow{% endif %}">
-                      <div class="account-product-box">
-                          <p class="account-product-status">ON Hold</p>
-                          <p class="account-product-date">{{ onhold_date | time_tag: format: 'date' }}</p>
-                      </div>
-                  </li>
-                {% endif %}
-                {% if delivery_status == 4 %}
-                <li class="progress-point red">
-                    <div class="account-product-box">
-                        <p class="account-product-status">Returned</p>
-                        <p class="account-product-date">{{ returned_date | time_tag: format: 'date' }}</p>
-                    </div>
-                </li>
-                {% endif %}
-              </ul>
-            </div>
-            <!-- End component -->
-          </div>
-          {% if delivery_status != 0 and delivery_status != -1 and delivery_status != 5 and delivery_status != 7 %}
-          <div class="account-shipment-box">
-            <ul class="shipment-details-box">
-              <li class="shipment-details-header">
-                <h4>Status</h4>
-                <h4>Location</h4>
-                <h4>Timestamp</h4>
-              </li>
-              <li class="shipment-details-content">
-                <div class="shipment-details-item">
-                  <div class="progress-outer">
-                    <div class="progress-point">
-                      <div class="progress-border"></div>
-                    </div>
-                  </div>
-                  <p class="account-product-status">Order placed</p>
-                </div>
-                <div class="shipment-details-item">
-                  <p class="shipment-product-location">Mena Feelunique</p>
-                </div>
-                <div class="shipment-details-item">
-                  <p class="shipment-product-date">{{ order_date | time_tag: format: 'date_at_time' }}</p>
-                </div>
-              </li>
-                {% for stage in stages %}
-          
-                  {% if stage.status_type == "1" %}
-                    <li class="shipment-details-content">
-                      <div class="shipment-details-item">
-                        <div class="progress-outer">
-                          <div class="progress-point">
-                            <div class="progress-border"></div>
-                          </div>
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    {%- endif -%}
+                                </div>
+                            {%- endunless -%}
+                            {%- if line_item.line_level_discount_allocations != blank -%}
+                                <ul role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                                    {%- for discount_allocation in line_item.line_level_discount_allocations -%}
+                                        <li>
+                                            <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
+                                                <use href="#icon-discount" />
+                                            </svg>
+                                            {{- discount_allocation.discount_application.title }}
+                                            (-{{ discount_allocation.amount | money -}})
+                                        </li>
+                                    {%- endfor -%}
+                                </ul>
+                            {%- endif -%}
+
+                            {%- if line_item.fulfillment -%}
+                                <p>
+                                    {%- if line_item.fulfillment.tracking_url and line_item.fulfillment.tracking_number -%}
+                                        <a href="{{ line_item.fulfillment.tracking_url }}" class="account-product-date">
+                                            #{{ line_item.fulfillment.tracking_number }}
+                                        </a>
+                                    {%- endif -%}
+                                </p>
+                            {%- endif -%}
+                            {% if order.cancelled %}
+                                <p class="account-product-status red">Cancelled</p>
+                            {% elsif line_item.successfully_fulfilled_quantity > 0 %}
+                                {% assign tracking_number = line_item.fulfillment.tracking_number %}
+                                {% if tracking_number %}
+                                    {% if order.metafields.shipping.tracking_status.value %}
+                                        {% assign tracking_statuses = order.metafields.shipping.tracking_status.value %}
+                                    {% else %}
+                                        {% assign tracking_statuses = order.metafields.shipping.tracking_status %}
+                                    {% endif %}
+                                    {% assign stages = false %}
+                                    {% for tracking_status in tracking_statuses %}
+                                        {% if tracking_number == tracking_status.awb %}
+                                            {% assign stages = tracking_status.stages %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if stages %}
+                                        {% assign stage = stages | last %}
+                                        {% if stage.status_type == "1" %}
+                                            <p class="account-product-status blue">In-Transit</p>
+                                        {% elsif stage.status_type == "2" %}
+                                            <p class="account-product-status green">Delivered</p>
+                                        {% elsif stage.status_type == "3" %}
+                                            <p class="account-product-status yellow">On-Hold</p>
+                                        {% elsif stage.status_type == "4" %}
+                                            <p class="account-product-status red">Returned</p>
+                                        {% elsif stage.status_type == "5" %}
+                                            <p class="account-product-status red">Returned</p>
+                                        {% endif %}
+                                    {% elsif order.created_at < init_tracking_data_availble_date %}
+                                        <p class="account-product-status"></p>
+                                    {% else %}
+                                        <p class="account-product-status">Dispatched</p>
+                                    {% endif %}
+                                {% else %}
+                                    <p class="account-product-status green">Sent via Email</p>
+                                {% endif %}
+                            {% else %}
+                                <p class="account-product-status">Processing</p>
+                            {% endif %}
                         </div>
-                        <p class="account-product-status">Dispatched</p>
-                      </div>
-                      <div class="shipment-details-item">
-                        <p class="shipment-product-location">Mena Feelunique</p>
-                      </div>
-                      <div class="shipment-details-item">
-                        {% assign detailed_status = stage.statuses | first %}
-                        <p class="shipment-product-date">{{ detailed_status.update_time | time_tag: format: 'date_at_time' }}</p>
-                      </div>
-                    </li>
-                  {% endif %}
-                  <li class="shipment-details-content">
-                    <div class="shipment-details-item">
-                      <div class="progress-outer">
-                        <div class="progress-point">
-                          <div class="progress-border"></div>
+                    </div>
+                    <div style="text-align: right">
+                        {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
+                            {%- if line_item.original_price != line_item.final_price -%}
+                                <h3>{{ 'products.product.price.regular_price' | t }}</h3>
+                                <h3 class="regular-price">{{ line_item.original_price | money }}
+                                </h3>
+                                <h3>{{ 'products.product.price.sale_price' | t }}</h3>
+                                <h3>{{ line_item.final_price | money }}</h3>
+                            {%- else -%}
+                                <h3>{{ 'products.product.price.regular_price' | t }}</h3>
+                                <h3>{{ line_item.original_price | money }}</h3>
+                            {%- endif -%}
+                            {%- if line_item.unit_price_measurement -%}
+                                <h3>{{ 'products.product.price.unit_price' | t }}</h3>
+                                <h3 class="unit-price">
+                                    {%- capture unit_price_separator -%}
+                                        {{ 'accessibility.unit_price_separator' | t }}
+                                    {%- endcapture -%}
+                                    {%- capture unit_price_base_unit -%}
+                                        {%- if line_item.unit_price_measurement.reference_value != 1 -%}
+                                            {{- line_item.unit_price_measurement.reference_value -}}
+                                        {%- endif -%}
+                                        {{ line_item.unit_price_measurement.reference_unit }}
+                                    {%- endcapture -%}
+                                    {{ line_item.unit_price | money }}{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                                </h3>
+                            {%- endif -%}
+
+                        {%- else -%}
+                            <h3 class="unit-price">{{ line_item.final_price | money_with_currency }}</h3>
+                        {%- endif -%}
+
+                        <h4 class="quantity" data-label="{{ 'customer.order.quantity' | t }}" style="color:#b1b1b1">
+                            x {{ line_item.quantity }} Unit
+                        </h4>
+                    </div>
+                </div>
+                {% if order.created_at > init_tracking_data_availble_date %}
+                    {% liquid
+                        assign trackWidth = 75
+                        assign progressWidth = 10
+                        assign delivery_status = 0
+                        assign delivery_by_mail = false
+                        assign dispatched_date = ""
+                        assign delivered_date = ""
+                        assign onhold_date = ""
+                        assign returned_date = ""
+                        assign stages = false
+                        if order.cancelled
+                            assign delivery_status = -1
+                            assign trackWidth = 25
+                            assign progressWidth = 100
+                        elsif line_item.successfully_fulfilled_quantity > 0
+                            assign tracking_number = line_item.fulfillment.tracking_number
+                            if tracking_number
+                                assign delivery_status = 0
+                                assign trackWidth = 75
+                                assign progressWidth = 10
+                                if order.metafields.shipping.tracking_status.value
+                                    assign tracking_statuses = order.metafields.shipping.tracking_status.value
+                                else
+                                    assign tracking_statuses = order.metafields.shipping.tracking_status
+                                endif
+                                assign stages = false
+                                for tracking_status in tracking_statuses
+                                    if tracking_number == tracking_status.awb
+                                        assign stages = tracking_status.stages
+                                        assign dispatched_stage = stages | where: "status_type", "1"
+                                        assign dispatched_stage = dispatched_stage | first
+                                        if dispatched_stage
+                                            assign dispatched_status = dispatched_stage.statuses | first
+                                            assign dispatched_date = dispatched_status.update_time
+                                        endif
+                                        assign delivered_stage = stages | where: "status_type", "2"
+                                        assign delivered_stage = delivered_stage | first
+                                        if delivered_stage
+                                            assign delivered_status = delivered_stage.statuses | last
+                                            assign delivered_date = delivered_status.update_time
+                                        endif
+                                        assign onhold_stage = stages | where: "status_type", "3"
+                                        assign onhold_stage = onhold_stage | first
+                                        if onhold_stage
+                                            assign onhold_status = onhold_stage.statuses | last
+                                            assign onhold_date = onhold_status.update_time
+                                        endif
+                                        assign returned_stage = stages | where: "status_type", "4"
+                                        assign returned_stage = returned_stage | first
+                                        if returned_stage
+                                            assign returned_status = returned_stage.statuses | last
+                                            assign returned_date = returned_status.update_time
+                                        endif
+                                    endif
+                                endfor
+                                if stages
+                                    assign stage = stages | last
+                                    if stage.status_type == "1"
+                                        assign delivery_status = 1
+                                        assign trackWidth = 75
+                                        assign progressWidth = 75
+                                    elsif stage.status_type == "2"
+                                        assign delivery_status = 2
+                                        assign trackWidth = 75
+                                        assign progressWidth = 100
+                                    elsif stage.status_type == "3"
+                                        assign delivery_status = 3
+                                        assign trackWidth = 100
+                                        assign progressWidth = 75
+                                    elsif stage.status_type == "4"
+                                        assign delivery_status = 4
+                                        assign trackWidth = 100
+                                        assign progressWidth = 100
+                                    elsif stage.status_type == "5"
+                                        assign delivery_status = 5
+                                        assign trackWidth = 25
+                                        assign progressWidth = 25
+                                    endif
+                                else
+                                    assign delivery_status = 6
+                                endif
+                            else
+                                assign delivery_status = 7
+                                assign trackWidth = 25
+                                assign progressWidth = 100
+                            endif
+                        else
+                            assign delivery_status = 0
+                        endif
+                    %}
+
+                    <div class="account-card-bottom">
+                        <div class="inlined">
+                            <!-- Start component -->
+                            <div class="progress-meter">
+                                <div class="track" style="width: 93%">
+                                    <span class="progress" style="width: {{ progressWidth }}%"></span>
+                                </div>
+                                <ul class="progress-points" data-current="4">
+                                    <li class="progress-point green">
+                                        <div class="account-product-box">
+                                            <p class="account-product-status">Processing</p>
+                                            <p class="account-product-date">{{ order.created_at | time_tag: format: "date" }}</p>
+                                        </div>
+                                    </li>
+                                    {% if delivery_status == -1 or delivery_status == 5 %}
+                                        <li class="progress-point red">
+                                            <div class="account-product-box">
+                                                <p class="account-product-status">Canceled</p>
+                                                <p class="account-product-date">{{ order.cancelled_at | time_tag: format: "date" }}</p>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                    {% if delivery_status != 5 and delivery_status != -1 and delivery_status != 7 %}
+                                        <li class="progress-point {% if delivery_status > 0 %} green {% endif %}">
+                                            <div class="account-product-box">
+                                                <p class="account-product-status">Dispatched</p>
+                                                <p class="account-product-date">{{ dispatched_date | time_tag: format: 'date' }}</p>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                    {% if delivery_status != 5 and delivery_status != -1 and delivery_status != 7 %}
+                                        <li class="progress-point {% if delivery_status > 0 %} green {% endif %}">
+                                            <div class="account-product-box">
+                                                <p class="account-product-status">In-Transit</p>
+                                                <p class="account-product-date">{{ dispatched_date | time_tag: format: 'date' }}</p>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                    {% if delivery_status != 5 and delivery_status != -1 and delivery_status != 7 %}
+                                        <li class="progress-point {% if delivery_status == 2 or delivery_status == 4 %} green{% endif %}">
+                                            <div class="account-product-box">
+                                                <p class="account-product-status">Delivered</p>
+                                                <p class="account-product-date">{{ order.cancelled_at | time_tag: format: 'date' }}</p>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                    {% if delivery_status == 7 %}
+                                        <li class="progress-point {% if delivery_status == 7 %} green{% endif %}">
+                                            <div class="account-product-box">
+                                                <p class="account-product-status">Sent via Email</p>
+                                                <p class="account-product-date">{{ line_item.fulfillment.created_at | time_tag: format: 'date' }}</p>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                    {% if delivery_status == 3 %}
+                                        <li class="progress-point {% if delivery_status == 3 %} yellow{% endif %}">
+                                            <div class="account-product-box">
+                                                <p class="account-product-status">ON Hold</p>
+                                                <p class="account-product-date">{{ onhold_date | time_tag: format: 'date' }}</p>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                    {% if delivery_status == 4 %}
+                                        <li class="progress-point red">
+                                            <div class="account-product-box">
+                                                <p class="account-product-status">Returned</p>
+                                                <p class="account-product-date">{{ returned_date | time_tag: format: 'date' }}</p>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            <!-- End component -->
                         </div>
-                      </div>
-                      <p class="account-product-status">
-                        {% case stage.status_type %}
-                          {% when "1" %}
-                            In-Transit
-                          {% when "2" %}
-                            Delivered
-                          {% when "3" %}
-                            ON Hold
-                          {% when "4" %}
-                            return
-                          {% else %}
-                            cancel
-                        {% endcase %}
-                      </p>
-                    </div>
-                    <div class="shipment-details-item">
-                      <p class="shipment-product-location"></p>
-                    </div>
-                    <div class="shipment-details-item">
-                      <p class="shipment-product-date">
-                        {% assign details_date = order_date %}
-                        {% assign detailed_status = false %}
-                        {% if stage.status_type == "1" %}
-                          {% assign detailed_status = stage.statuses | first %}
-                        {% else %}
-                          {% assign detailed_status = stage.statuses | last %}
+                        {% if delivery_status != 0 and delivery_status != -1 and delivery_status != 5 and delivery_status != 7 %}
+                            <div class="account-shipment-box">
+                                <ul class="shipment-details-box">
+                                    <li class="shipment-details-header">
+                                        <h4>Status</h4>
+                                        <h4>Location</h4>
+                                        <h4>Timestamp</h4>
+                                    </li>
+                                    <li class="shipment-details-content">
+                                        <div class="shipment-details-item">
+                                            <div class="progress-outer">
+                                                <div class="progress-point">
+                                                    <div class="progress-border"></div>
+                                                </div>
+                                            </div>
+                                            <p class="account-product-status">Order placed</p>
+                                        </div>
+                                        <div class="shipment-details-item">
+                                            <p class="shipment-product-location">Mena Feelunique</p>
+                                        </div>
+                                        <div class="shipment-details-item">
+                                            <p class="shipment-product-date">{{ order_date | time_tag: format: 'date_at_time' }}</p>
+                                        </div>
+                                    </li>
+                                    {% for stage in stages %}
+
+                                        {% if stage.status_type == "1" %}
+                                            <li class="shipment-details-content">
+                                                <div class="shipment-details-item">
+                                                    <div class="progress-outer">
+                                                        <div class="progress-point">
+                                                            <div class="progress-border"></div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="account-product-status">Dispatched</p>
+                                                </div>
+                                                <div class="shipment-details-item">
+                                                    <p class="shipment-product-location">Mena Feelunique</p>
+                                                </div>
+                                                <div class="shipment-details-item">
+                                                    {% assign detailed_status = stage.statuses | first %}
+                                                    <p class="shipment-product-date">{{ detailed_status.update_time | time_tag: format: 'date_at_time' }}</p>
+                                                </div>
+                                            </li>
+                                        {% endif %}
+                                        <li class="shipment-details-content">
+                                            <div class="shipment-details-item">
+                                                <div class="progress-outer">
+                                                    <div class="progress-point">
+                                                        <div class="progress-border"></div>
+                                                    </div>
+                                                </div>
+                                                <p class="account-product-status">
+                                                    {% case stage.status_type %}
+                                                        {% when "1" %}
+                                                            In-Transit
+                                                        {% when "2" %}
+                                                            Delivered
+                                                        {% when "3" %}
+                                                            ON Hold
+                                                        {% when "4" %}
+                                                            return
+                                                        {% else %}
+                                                            cancel
+                                                    {% endcase %}
+                                                </p>
+                                            </div>
+                                            <div class="shipment-details-item">
+                                                <p class="shipment-product-location"></p>
+                                            </div>
+                                            <div class="shipment-details-item">
+                                                <p class="shipment-product-date">
+                                                    {% assign details_date = order_date %}
+                                                    {% assign detailed_status = false %}
+                                                    {% if stage.status_type == "1" %}
+                                                        {% assign detailed_status = stage.statuses | first %}
+                                                    {% else %}
+                                                        {% assign detailed_status = stage.statuses | last %}
+                                                    {% endif %}
+                                                    {{ detailed_status.update_time | time_tag: format: 'date_at_time' }}
+                                                </p>
+                                            </div>
+                                        </li>
+                                        {% for status in stage.statuses %}
+                                            <li class="shipment-details-content">
+                                                <div class="shipment-details-item">
+                                                    <div class="progress-outer">
+                                                        <div class="progress-point">
+                                                            <div class="progress-border"></div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="account-product-status">{{ status.code_desc }}</p>
+                                                </div>
+                                                <div class="shipment-details-item">
+                                                    <p class="shipment-product-location">{{ status.update_location }}</p>
+                                                </div>
+                                                <div class="shipment-details-item">
+                                                    <p class="shipment-product-date">{{ status.update_time | time_tag: format: 'date_at_time' }}</p>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         {% endif %}
-                        {{ detailed_status.update_time | time_tag: format: 'date_at_time' }}
-                      </p>
                     </div>
-                  </li>
-                  {% for status in stage.statuses %}
-                    <li class="shipment-details-content">
-                      <div class="shipment-details-item">
-                        <div class="progress-outer">
-                          <div class="progress-point">
-                            <div class="progress-border"></div>
-                          </div>
-                        </div>
-                        <p class="account-product-status">{{ status.code_desc }}</p>
-                      </div>
-                      <div class="shipment-details-item">
-                        <p class="shipment-product-location">{{ status.update_location }}</p>
-                      </div>
-                      <div class="shipment-details-item">
-                        <p class="shipment-product-date">{{ status.update_time | time_tag: format: 'date_at_time' }}</p>
-                      </div>
-                    </li>
-                  {% endfor %}
-                {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
+                {% endif %}
+            {% endfor %}
         </div>
-        {%  endif %}
-        {% endfor %}
-      </div>
         <div class="account-details-card account-address-card address-only">
             <div class="account-card-top">
                 <h4 class="account-card-title">{{ 'customer.order.delivery_info.title' | t }}</h4>
@@ -470,34 +472,35 @@
                     <li class="price-items-footers">
                         <h5>{{ 'customer.order.payment_info.subtotal' | t }}</h5>
                         <h5 data-label="{{ 'customer.order.payment_info.subtotal' | t }}">
-                          {{ order.line_items_subtotal_price | money_with_currency }}
+                            {{ order.line_items_subtotal_price | money_with_currency }}
                         </h5>
                     </li>
                     {%- if order.cart_level_discount_applications != blank -%}
                         {% for discount_application in order.cart_level_discount_applications %}
-                          <li class="price-items-footers">
-                            <h5>{{ 'customer.order.payment_info.discount' | t }} {% if discount_application.title %}({{ discount_application.title }}) {% endif %}</h5>
-                            <h5 data-label="{{ 'customer.order.payment_info.discount' | t }} {% if discount_application.title %}({{ discount_application.title }}) {% endif %}">
-                              {{ discount_application.total_allocated_amount | money_with_currency }}
-                            </h5>
-                          </li>
+                            <li class="price-items-footers">
+                                <h5>{{ 'customer.order.payment_info.discount' | t }} {% if discount_application.title %}({{ discount_application.title }}) {% endif %}</h5>
+                                <h5 data-label="{{ 'customer.order.payment_info.discount' | t }} {% if discount_application.title %}({{ discount_application.title }}) {% endif %}">
+                                    {{ discount_application.total_allocated_amount | money_with_currency }}
+                                </h5>
+                            </li>
                         {% endfor %}
                     {% endif %}
                     {% for shipping_method in order.shipping_methods %}
-                      <li class="price-items-footers">
-                          <h5>{{ 'customer.order.payment_info.shipping' | t }} {% if shipping_method.title %}{{ shipping_method.title }} {% endif %}</h5>
-                          <h5 data-label="{{ 'customer.order.payment_info.shipping' | t }} {% if shipping_method.title %}({{ shipping_method.title }}) {% endif %}">
-                            {{ shipping_method.price | money_with_currency }}
-                          </h5>
-                      </li>
+                        <li class="price-items-footers">
+                            <h5>{{ 'customer.order.payment_info.shipping' | t }} {% if shipping_method.title %}{{ shipping_method.title }} {% endif %}</h5>
+                            <h5 data-label="{{ 'customer.order.payment_info.shipping' | t }} {% if shipping_method.title %}({{ shipping_method.title }}) {% endif %}">
+                                {{ shipping_method.price | money_with_currency }}
+                            </h5>
+                        </li>
                     {% endfor %}
                     {% for tax_line in order.tax_lines %}
-                      <li class="price-items-footers">
-                        <h5>{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</h5>
-                        <h5 data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)">
-                          {{ tax_line.price | money_with_currency }}
-                        </h5>
-                      </li>
+                        <li class="price-items-footers">
+                            <h5>{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}
+                                %)</h5>
+                            <h5 data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)">
+                                {{ tax_line.price | money_with_currency }}
+                            </h5>
+                        </li>
                     {% endfor %}
                     <li class="price-items-footers">
                         <h4>{{ 'customer.order.payment_info.total' | t }}</h4>

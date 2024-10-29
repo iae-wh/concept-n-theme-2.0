@@ -1,0 +1,274 @@
+<script src="{{ 'intlTelInput-jquery.min.js' | asset_url }}"></script>
+<script src="{{ 'jquery.validate.min.js' | asset_url }}"></script>
+<link rel="stylesheet" href="{{ 'intlTelInput.min.css' | asset_url }}">
+{% assign product_name = product_request.title %}
+{% assign product_desc = product_request.description | strip_html | truncatewords: 50 %}
+<div class="popup jsreqprod_popup d-none">
+    <div class="modal-overlay"></div>
+    <div class="modal-window modal-w-pr">
+        <div class="window-window">
+            <div class="window-content clearfix">
+                <a class="close_edit jsclosepoup" title="Close" href="javascript:void(0)">
+          <span class="  set-14-svg flex justify-content-center align-items-center w-100 h-100">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                 x="0px" y="0px" viewBox="0 0 298.667 298.667" style="enable-background:new 0 0 298.667 298.667;"
+                 xml:space="preserve">
+              <g>
+                <g>
+                  <polygon
+                          points="298.667,30.187 268.48,0 149.333,119.147 30.187,0 0,30.187 119.147,149.333 0,268.48 30.187,298.667     149.333,179.52 268.48,298.667 298.667,268.48 179.52,149.333   "></polygon>
+                </g>
+              </g>
+            </svg>
+          </span>
+                </a>
+                <div class="request-product-content">
+                    <h2 class="title">REQUEST PRODUCT</h2>
+                    <div class="request-product-form-container mt-3">
+                        <form method="post" action="{{ settings.request_product_url }}" id="customer_product_request"
+                              accept-charset="UTF-8">
+                            <input type="hidden" name="form_type" value="customer_product_request">
+                            <input type="hidden" name="utf8" value="✓">
+                            <div class="row">
+                                <div class="form-group col-md-6 col-xs-12">
+                                    <input type="text" class="form-control"
+                                           name="customer[first_name]" {% if customer %} value="{{ customer.first_name }}" {% endif %}
+                                           placeholder="First Name" required="">
+                                </div>
+
+                                <div class="form-group col-md-6 col-xs-12">
+                                    <input type="text" class="form-control"
+                                           placeholder="Last Name" {% if customer %} value="{{ customer.last_name }}" {% endif %}
+                                           name="customer[last_name]" required="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Email  Address" {% if customer %} value="{{ customer.email }}" {% endif %}
+                                       name="customer[email]" required="">
+                            </div>
+
+                            <div class="form-group">
+                                <input value="{{ product_name }}" type="text" class="form-control"
+                                       placeholder="Product Name" name="product_name" required="">
+                            </div>
+
+                            <div class="form-group">
+                                <textarea rows="4" cols="50" class="form-control" placeholder="Product Description"
+                                          name="product_description" required=""></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="tel" autocomplete="tel"
+                                       class="form-control" {% if customer %} value="{{ customer.default_address.phone }}" {% endif %}
+                                       placeholder="Mobile No" name="customer[contact_no]" required="">
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100 form-control btn-product-request-submit"
+                                    value="Submit">
+                                Submit
+                            </button>
+                            <div type="submit" class="w-100 btn-product-request-submit-loading d-none">
+                                <svg xml:space="preserve" style="enable-background:new 0 0 50 50;margin-top: -1px;"
+                                     viewBox="0 0 24 30" height="20px" width="21px" y="0px" x="0px"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                     id="Layer_1" version="1.1"><rect opacity="0.2" fill="#000" height="8" width="3"
+                                                                      y="10" x="0">
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0s" values="0.2; 1; .2"
+                                                 attributeType="XML" attributeName="opacity" />
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0s" values="10; 20; 10"
+                                                 attributeType="XML" attributeName="height" />
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0s" values="10; 5; 10"
+                                                 attributeType="XML" attributeName="y" />
+                                    </rect>
+                                    <rect opacity="0.2" fill="#000" height="8" width="3" y="10" x="8">
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0.15s" values="0.2; 1; .2"
+                                                 attributeType="XML" attributeName="opacity" />
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0.15s" values="10; 20; 10"
+                                                 attributeType="XML" attributeName="height" />
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0.15s" values="10; 5; 10"
+                                                 attributeType="XML" attributeName="y" />
+                                    </rect>
+                                    <rect opacity="0.2" fill="#000" height="8" width="3" y="10" x="16">
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0.3s" values="0.2; 1; .2"
+                                                 attributeType="XML" attributeName="opacity" />
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0.3s" values="10; 20; 10"
+                                                 attributeType="XML" attributeName="height" />
+                                        <animate repeatCount="indefinite" dur="0.6s" begin="0.3s" values="10; 5; 10"
+                                                 attributeType="XML" attributeName="y" />
+                                    </rect></svg>
+                            </div>
+                        </form>
+                        <div class="customer_product_request-done d-none" method="post"
+                             action="{{ section.settings.url }}" id="customer_product_request-done"
+                             accept-charset="UTF-8">
+                            <div></div>
+                            <div>
+                                <div class="title_newletter mb-3">
+                                    <h3 class="title mb-0">Thanks for using our<br />
+                                        request product feature</h3>
+                                </div>
+
+                                <p class="mb-3 content">One of our product specialist will contact you soon</p>
+                            </div>
+                            <button class="btn btn-dark w-100 form-control btn-product-request-done">
+                                Done
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .popup .modal-window.modal-w-pr {
+        min-height: 620px;
+        margin: 0 auto;
+        position: relative;
+        width: 500px;
+        margin: auto;
+        top: calc((100% - 622px) / 2);
+    }
+
+    .request-product-form-container {
+        height: 465px;
+    }
+
+    @media (max-width: 575.98px) {
+
+        .request-product-form-container {
+            height: 536px;
+        }
+    }
+
+
+    @media (max-width: 575.98px) {
+
+        .popup .modal-window.modal-w-pr {
+            min-height: 710px;
+            margin: 0 auto;
+            position: relative;
+            width: 98%;
+            top: calc((100% - 710px) / 2);
+        }
+    }
+
+
+    .form-control {
+        height: 55px;
+        border-radius: 0;
+    }
+
+    .popup .title {
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 0px;
+    }
+
+    .request-product-content {
+        padding: 50px;
+    }
+
+    .popup .modal-window .window-window .window-content {
+        float: unset;
+    }
+
+    .popup .modal-window .window-window .window-content .close_edit {
+        right: 0px;
+        top: 0px;
+        background: none;
+    }
+
+    .iti.iti--allow-dropdown.iti--separate-dial-code {
+        width: 100%;
+    }
+
+    .btn-product-request-submit-loading {
+        text-align: center;
+        height: 55px;
+    }
+
+    .customer_product_request-done {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .customer_product_request-done .title {
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: 0px;
+        line-height: 30px;
+    }
+
+    .customer_product_request-done .content {
+        text-align: center;
+        letter-spacing: 0px;
+
+    }
+</style>
+<script>
+    $('.jsclosepoup').on('click', function () {
+        $('.jsreqprod_popup').addClass('d-none');
+
+    });
+    $('.modal-overlay').on('click', function () {
+        $('.jsreqprod_popup').addClass('d-none');
+
+    });
+    $('.btn-request-product').on('click', function () {
+        $('.jsreqprod_popup').removeClass('d-none');
+
+    });
+    $('.btn-product-request-done').on('click', function () {
+        $('.jsreqprod_popup').addClass('d-none');
+        $('#customer_product_request-done').addClass('d-none');
+        $('#customer_product_request').removeClass('d-none');
+
+    });
+    // phone number
+    var newAddress_phoneNumber = $('input[type=tel]');
+    newAddress_phoneNumber.intlTelInput({
+        allowDropdown: true,
+        autoPlaceholder: 'aggressive',
+        formatOnDisplay: true,
+        initialCountry: 'ae',
+        separateDialCode: true,
+        formatOnDisplay: true,
+        placeholderNumberType: 'number',
+        utilsScript: "{{ 'intlTelInputUtils.js' | asset_url }}"
+    });
+    $('#customer_product_request').submit(function (e) {
+
+        e.preventDefault();
+
+        var form = $(this);
+        var actionUrl = form.attr('action');
+
+        $.ajax({
+            type: 'POST',
+            url: actionUrl,
+            data: form.serialize(),
+            beforeSend: function () {
+                $('.btn-product-request-submit-loading').removeClass('d-none');
+                $('.btn-product-request-submit').addClass('d-none');
+            },
+            complete: function () {
+                $('.btn-product-request-submit-loading').addClass('d-none');
+                $('.btn-product-request-submit').removeClass('d-none');
+                $('#customer_product_request-done').removeClass('d-none');
+                $('#customer_product_request').addClass('d-none');
+            },
+            success: function (data) {
+                alert(data); // show response from the php script.
+            }
+        });
+
+    });
+
+
+</script>

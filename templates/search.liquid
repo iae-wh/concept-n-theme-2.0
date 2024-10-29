@@ -11,6 +11,8 @@ To return only products or pages in results:
 Set grid_results to true and set search results as a grid instead of a list.
 This works well when your search is only for products.
 {% endcomment %}
+{{ 'search.css' | asset_url | stylesheet_tag }}
+{{ 'search.js' | asset_url | script_tag }}
 {% assign grid_results = true %}
 
 {% comment %}
@@ -19,50 +21,71 @@ Check to enforce respond.js
 {% assign respond_js_secret_key = shop.domain | md5 %}
 {% unless search.terms == respond_js_secret_key %}
 
-{% comment %}
-Avoid accessing search.results before the opening paginate tag.
-If you do, the pagination of results will be broken.
-{% endcomment %}
-{% paginate search.results by 12 %}
-
-
-<h1 class="sr-only mt-5">{{page.title}}</h1>
-<section>
-  <div class="container py-5">
-    <div class="text-center">
-      {% if search.performed %}
-      {% if search.results_count == 0 %}
-      <h3 class="text-uppercase h5">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h3>
-      {% else %}
-      <h3 class="text-uppercase h5">{{ 'general.search.results_for_html' | t: terms: search.terms }}</h3>
-      {% endif %}
-      {% else %}
-      <h3 class="text-uppercase h5">{{ 'general.search.title' | t }}</h3>
-      {% endif %}
-    </div>
-  </div>
-</section>
-
-{% if search.performed and grid_results == true %}
-<div class="container container-v1 my-3 my-lg-5">
-    <div class="row">
-      {% for product in search.results %}
-      <div class="col-md-3 col-sm-6 col-6">
-        {% include 'product-item-v1' %}
-      </div>
-      {% endfor %}
-    </div>
-    {% if paginate.pages > 1 %}
-    <div class="pagi-nav">
-      {{ paginate | default_pagination | replace: '&laquo; Previous', '<i class="fa fa-angle-left"></i>' | replace: 'Next &raquo;', '<i class="fa fa-angle-right"></i>' }}
-    </div>
-    {% endif %}
-</div>
-{% endif %}
-
-{% endpaginate %}
-
+    {% comment %}
+    Avoid accessing search.results before the opening paginate tag.
+    If you do, the pagination of results will be broken.
+    {% endcomment %}
+    {% paginate search.results by 12 %}
+        <h1 class="sr-only mt-5">{{ page.title }}</h1>
+        <section>
+            <div class="container pt-5 pb-0 pb-md-5 mt-0 mt-md-3">
+                <div class="text-center">
+                    <h3 class="text-uppercase h5 title-search">{{ 'general.search.title' | t }}</h3>
+                </div>
+            </div>
+        </section>
+        <div class="container container-v1 my-3 my-lg-5">
+            {%- if search.performed and search.results_count == 0 -%}
+                <h3 class="text-center text-black">No product found!</h3>
+            {% elsif search.performed and grid_results == true and search.results_count > 0 %}
+                <div class="collection-filter_container col-12 mb-2 mb-md-5 row mx-0">
+                    <div class="d-flex gap-3 align-items-center position-relative">
+                        <button id="filter-opener" data-toggle data-open-filter class="btn-link d-flex gap-1 align-items-center">
+                            <span class="text-black fs-7 text-uppercase text-decoration-none">Filters</span>
+                            <i class="fa-solid fa-chevron-down fa-sm" style="color: #000000;"></i>
+                        </button>
+                        <button data-toggle data-open-sort class="btn-link d-flex gap-1 align-items-center">
+                            <span class="text-black fs-7 text-uppercase text-decoration-none">Sort by</span>
+                            <i class="fa-solid fa-chevron-down fa-sm" style="color: #000000;"></i>
+                        </button>
+                        <div class="bg-white z-3 collection-sort_container d-flex flex-column position-absolute">
+                            {%- assign sort_by = search.sort_by | default: search.default_sort_by -%}
+                            {%- for option in search.sort_options -%}
+                                <div class="collection-sort_option bg-white z-3 fs-7 {% if option.value == sort_by %}active{% endif %}"
+                                     data-sort="{{ option.value | escape }}"
+                                >
+                                    {{ option.name | escape }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div id="search-container-wrapper" class="col-12 row ms-0">
+                    <div class="row custom-padding">
+                        {% for product in search.results %}
+                            <div class="col-md-3 col-sm-6 col-6">
+                                {% comment %}{% include 'product-item-v1' %}{% endcomment %}
+                                {% include 'product-card', product: product %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {%- if paginate.pages > 1 and paginate.current_page < paginate.pages -%}
+                    <div class="col-12 mt-2 mt-sm-4 d-flex justify-content-center align-items-center">
+                        <button is="show-more-button"
+                                data-max-page="{{ paginate.pages }}"
+                                data-current-page="{{ paginate.current_page }}"
+                                class="show-more-button btn btn-primary justify-content-center align-items-center"
+                                style="display: flex">
+                            <span>{{ 'general.search.show_more' | t }}</span>
+                        </button>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endpaginate %}
+    {% include 'filter-modal', filters: search.filters %}
 {% else %}
-{% include 'respond' %}
-{% layout none %}
+    {% include 'respond' %}
+    {% layout none %}
 {% endunless %}

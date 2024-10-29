@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "meta": {
@@ -6,7 +15,7 @@
     },
     "404": {
       "title": "404 Página não encontrada",
-      "subtext_html": "A página que você solicitou não existe. Clique <a href=\"\/collections\/all\">aqui<\/a> para voltar às compras."
+      "subtext_html": "A página que você solicitou não existe. Clique <a href=\"/collections/all\">aqui</a> para voltar às compras."
     },
     "breadcrumbs": {
       "home": "Início",
@@ -62,7 +71,7 @@
       "update": "Atualizar Carrinho",
       "checkout": "Fechar pedido",
       "empty": "Seu carrinho está vazio no momento.",
-      "continue_browsing_html": "Continue navegando <a href=\"\/collections\/all\">aqui<\/a>.",
+      "continue_browsing_html": "Continue navegando <a href=\"/collections/all\">aqui</a>.",
       "close_cart": "Fechar carrinho"
     },
     "label": {
@@ -223,10 +232,10 @@
     },
     "onboarding": {
       "modal_title": "Quase lá...",
-      "no_products_html": "Não há produtos na sua coleção \"Primeira Página\". Este espaço reservado aparecerá até que você <a href=\"\/admin\/collections?tutorial=Frontpage\">adicione um produto a esta coleção<\/a>.",
+      "no_products_html": "Não há produtos na sua coleção \"Primeira Página\". Este espaço reservado aparecerá até que você <a href=\"/admin/collections?tutorial=Frontpage\">adicione um produto a esta coleção</a>.",
       "add_product": "Adicionar um produto",
       "product_title": "Exemplo de título de produto",
-      "no_collections_html": "Você não tem coleções para exibir aqui. <a href=\"\/admin\/custom_collections\">Adicione algumas coleções<\/a> para acompanhar a \"Primeira Página\" padrão.",
+      "no_collections_html": "Você não tem coleções para exibir aqui. <a href=\"/admin/custom_collections\">Adicione algumas coleções</a> para acompanhar a \"Primeira Página\" padrão.",
       "add_collection": "Adicionar uma coleção",
       "collection_title": "Exemplo de título de coleção"
     }
@@ -270,7 +279,7 @@
     "product": {
       "sold_out": "Esgotado",
       "on_sale": "Em promoção",
-      "on_sale_from_html": "<strong>Em promoção<\/strong>, a partir de {{ price }}",
+      "on_sale_from_html": "<strong>Em promoção</strong>, a partir de {{ price }}",
       "unavailable": "Indisponível",
       "compare_at": "Preço normal:",
       "quantity": "Quantidade",

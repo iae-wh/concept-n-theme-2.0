@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "meta": {
@@ -18,7 +27,7 @@
       "signup_form_email_placeholder2": "Enter Your email ",
       "signup_form_submit": "Submit",
       "signup_form_success": "We will send you an email right before we open!",
-      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"text-link\">Log in here<\/a>",
+      "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"text-link\">Log in here</a>",
       "password_link": "Enter using password",
       "powered_by_shopify_html": "This shop will be powered by ShopiLaunch, LLC"
     },
@@ -26,7 +35,7 @@
       "title": "Error Page",
       "content_one": "Well! Something you go wrong pages",
       "content_two": "If you want go back to my hotel. Please in put the box below",
-      "subtext_html": "or go back <a href=\"\/collections\/all\">here<\/a> to continue shopping."
+      "subtext_html": "or go back <a href=\"/collections/all\">here</a> to continue shopping."
     },
     "breadcrumbs": {
       "home": "Home",
@@ -35,19 +44,20 @@
     "newsletter_form": {
       "newsletter_email": "Enter your email...",
       "submit": "Subscribe now",
-      "submit_footer": "SUBSCRIBE",
+      "submit_footer": "Sign Up",
       "newsletter_emailh6": "Email Address..."
     },
     "search": {
       "no_results_html": "Your search for \"{{ terms }}\" did not yield any results.",
       "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
-      "title": "Start typing and hit Enter",
+      "title": "Search results",
       "placeholder": "Search for product...",
       "submit": "Search",
       "no_result": "No result found for your search.",
       "required_2charters": "You must enter at least 2 characters.",
       "sold_out": "Sold out",
-      "loading": "Loading..."
+      "loading": "Loading...",
+      "show_more": "Show more"
     },
     "contact": {
       "title": "Contact"
@@ -101,17 +111,18 @@
   },
   "cart": {
     "general": {
-      "title": "Cart",
-      "remove": "Remove",
+      "title": "Shopping Bag",
+      "remove": "Remove from Bag",
       "note": "Special instructions for seller",
       "subtotal": "sub totals",
       "shipping_at_checkout": "Shipping & taxes calculated at checkout",
       "update": "Update Cart",
-      "checkout": "Proceed to checkout",
-      "empty": "Your cart is currently empty.",
-      "continue_browsing_html": "Continue browsing <a href=\"\/collections\/all\">here<\/a>.",
+      "checkout": "Continue To Checkout",
+      "empty": "Your Shopping Bag Is Empty",
+      "continue_browsing_html": "Continue browsing <a href=\"/collections/all\">here</a>.",
       "close_cart": "Close Cart",
-      "continue": "Continue Shopping"
+      "continue": "Continue Shopping",
+      "shop_now": "Shop New In"
     },
     "label": {
       "thumbnail": "Thumbnail",
@@ -120,8 +131,10 @@
       "quantity": "Quantity",
       "del": "Del",
       "cart_note": "Cart Note",
-      "cart_total": "CART TOTALS",
+      "cart_total": "Order Summary",
       "total": "Total",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
       "term": "Agree with term and conditional.",
       "text_count": "There are",
       "item": "items",
@@ -135,8 +148,8 @@
       "view_cart": "View cart",
       "checkout": "Check out",
       "empty": "Your shopping bag is empty",
-      "title": "Shopping Cart",
-      "shop_now": "Go to the shop"
+      "title": "Shopping Bag",
+      "shop_now": "Shop New In"
     }
   },
   "list_collection": {
@@ -210,14 +223,15 @@
   },
   "customer": {
     "account": {
-      "title": "Account",
+      "title": "My Account",
       "general_information": "General information",
       "details": "Account details",
       "view_addresses": "View addresses",
       "return": "Return to Account details",
-      "register_now": "Register now"
+      "register_now": "Register now",
+      "password": "Password"
     },
-    "account_fallback": "Hi, ",
+    "account_fallback": "Welcome Back, ",
     "activate_account": {
       "title": "Activate Account",
       "subtext": "Create your password to activate your account.",
@@ -229,7 +243,7 @@
     "addresses": {
       "title": "Your Addresses",
       "sub_title": "Address",
-      "email": "Email",
+      "email": "Email Address",
       "default": "Default",
       "add_new": "Add a New Address",
       "edit_address": "Edit Address",
@@ -237,33 +251,37 @@
       "first_name": "First Name",
       "last_name": "Last Name",
       "company": "Company",
-      "address1": "Address1",
-      "address2": "Address2",
+      "address1": "Address Line One",
+      "address2": "Address Line Two (Optional)",
       "city": "City",
       "country": "Country",
       "province": "Province",
-      "zip": "Postal\/Zip Code",
-      "phone": "Phone",
+      "zip": "Postal/Zip Code",
+      "phone": "Phone Number",
       "set_default": "Set as default address",
-      "add": "Add Address",
-      "update": "Update Address",
+      "add": "Add an address",
+      "add_popup": "Add Addresses",
+      "update": "Save",
       "cancel": "Cancel",
       "edit": "Edit",
       "delete": "Delete",
-      "delete_confirm": "Are you sure you wish to delete this address?"
+      "delete_confirm": "Are you sure you wish to delete this address?",
+      "no_address": "You Don’t Have Any Saved Addresses",
+      "no_address_description": "Add An Address To Check Out More Quickly"
     },
     "log_in": "Log in",
     "log_out": "Log out",
     "log_up": "Sign Up",
     "login_page": {
       "cancel": "Cancel",
-      "create_account": "Create account",
+      "create_account": "Register Now",
+      "create_account_message": "You don’t have an account?",
       "email": "Email",
       "forgot_password": "Forgot your password?",
       "guest_continue": "Continue",
       "guest_title": "Continue as a guest",
       "password": "Password",
-      "title": "Login",
+      "title": "Sign In",
       "sign_in": "Sign in",
       "submit": "Submit"
     },
@@ -307,21 +325,29 @@
         "shipping": "",
         "total": "Total",
         "tax": "Tax"
+      },
+      "tax_include": "Including {{ tax }} in taxes",
+      "no-order": {
+        "title": "You Haven’t Placed Any Orders Yet",
+        "button": "Shop New In"
       }
     },
     "login": {
+      "account_fallback": "Hi ",
       "title": "Login",
-      "email": "Email adress",
+      "email": "Email",
       "password": "Password",
+      "password_confirm": "Confirm Password",
       "description": "If you have an account with us, log in using your email address.",
       "forgot_password": "Forgot your password?",
-      "log_in": "Log In",
+      "log_in": "Sign In",
       "cancel": "Return to Store",
       "guest_title": "Continue as a guest",
       "guest_continue": "Continue",
       "back_to_login": "Back to login",
       "or": "or",
-      "title-2": "Don’t have an account?"
+      "title-2": "Don’t have an account?",
+      "title_menu_mb": "Sign In / Register"
     },
     "orders": {
       "title": "Order history",
@@ -344,12 +370,15 @@
     "register": {
       "title": "Register",
       "description": "Registering for this site allows you to access your order status and history. Just fill in the fields below, and we’ll get a new account set up for you in no time. We will only ask you for information necessary to make the purchase process faster and easier.",
-      "first_name": "First Name",
-      "last_name": "Last Name",
-      "email": "Email address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
       "password": "Password",
-      "submit": "register",
-      "cancel": "Return to Store"
+      "password_confirm": "Confirm Password",
+      "submit": "Sign Up",
+      "cancel": "Return to Store",
+      "login": "Sign In",
+      "login_message": "You already have an account?"
     },
     "reset_password": {
       "title": "Reset account password",
@@ -367,10 +396,10 @@
     },
     "onboarding": {
       "modal_title": "Almost there...",
-      "no_products_html": "You have no products in your Frontpage collection. This placeholder will appear until you <a href=\"\/admin\/collections?tutorial=Frontpage\">add a product to this collection<\/a>.",
+      "no_products_html": "You have no products in your Frontpage collection. This placeholder will appear until you <a href=\"/admin/collections?tutorial=Frontpage\">add a product to this collection</a>.",
       "add_product": "Add a Product",
       "product_title": "Example Product Title",
-      "no_collections_html": "You don't have any collections to show here. <a href=\"\/admin\/custom_collections\">Add some collections<\/a> to go along with the default Frontpage.",
+      "no_collections_html": "You don't have any collections to show here. <a href=\"/admin/custom_collections\">Add some collections</a> to go along with the default Frontpage.",
       "add_collection": "Add a Collection",
       "collection_title": "Example Collection Title"
     }
@@ -397,10 +426,10 @@
     "customer": {
       "account": "Account",
       "logged_in_as_html": "Logged in as {{ first_name }}",
-      "log_out": "Log out",
+      "log_out": "Sign out",
       "log_in": "Log in",
       "create_account": "Register",
-      "login_register": "Login\/Register",
+      "login_register": "Login/Register",
       "view_cart": "View Cart",
       "wishlist": "Wishlist",
       "favourite": "Favorites",
@@ -435,7 +464,7 @@
       "on_sale": "Sale",
       "in_stock": "In Stock",
       "out_of_stock": "Out Of Stock",
-      "on_sale_from_html": "<strong>On Sale<\/strong> from {{ price }}",
+      "on_sale_from_html": "<strong>On Sale</strong> from {{ price }}",
       "unavailable": "Unavailable",
       "compare_at": "Compare at",
       "quantity": "Quantity",
@@ -447,10 +476,10 @@
       "share_this": "Share this",
       "video": "video",
       "filter": "filter",
-      "add_whlist": "Add to Whishlist",
       "close": "close",
       "prev": "Prev",
-      "next": "Next"
+      "next": "Next",
+      "price_text": "Import duties included"
     },
     "variants": {
       "size": "Size",
@@ -498,5 +527,14 @@
   },
   "quickview": {
     "total": "Total"
+  },
+  "localization": {
+    "country_label": "Country/region",
+    "language_label": "Language",
+    "update_language": "Update language",
+    "update_country": "Update country/region",
+    "search": "Search",
+    "popular_countries_regions": "Popular countries/regions",
+    "country_results_count": "{{ count }} countries/regions found"
   }
 }

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "meta": {
@@ -6,7 +15,7 @@
     },
     "404": {
       "title": "404 Página Não Encontrada",
-      "subtext_html": "A página que solicitou não existe. Clique <a href=\"\/collections\/all\">aqui<\/a> para continuar as suas compras."
+      "subtext_html": "A página que solicitou não existe. Clique <a href=\"/collections/all\">aqui</a> para continuar as suas compras."
     },
     "breadcrumbs": {
       "home": "Início",
@@ -62,7 +71,7 @@
       "update": "Atualizar Carrinho de Compras",
       "checkout": "Check-Out",
       "empty": "O seu carrinho de compras está neste momento vazio.",
-      "continue_browsing_html": "Continue a ver <a href=\"\/collections\/all\">aqui<\/a>.",
+      "continue_browsing_html": "Continue a ver <a href=\"/collections/all\">aqui</a>.",
       "close_cart": "Fechar Carrinho de Compras"
     },
     "label": {
@@ -223,10 +232,10 @@
     },
     "onboarding": {
       "modal_title": "Quase lá...",
-      "no_products_html": "Não tem produtos na sua Coleção Frontpage. Esta imagem de preenchimento será exibida até <a href=\"\/admin\/collections?tutorial=Frontpage\">adicionar um produto a esta coleção<\/a>.",
+      "no_products_html": "Não tem produtos na sua Coleção Frontpage. Esta imagem de preenchimento será exibida até <a href=\"/admin/collections?tutorial=Frontpage\">adicionar um produto a esta coleção</a>.",
       "add_product": "Adicionar um produto",
       "product_title": "Título do Produto Exemplo",
-      "no_collections_html": "Ainda não tem coleções para exibir aqui. <a href=\"\/admin\/custom_collections\">Adicione algumas coleções<\/a> para continuar com a Frontpage predefinida.",
+      "no_collections_html": "Ainda não tem coleções para exibir aqui. <a href=\"/admin/custom_collections\">Adicione algumas coleções</a> para continuar com a Frontpage predefinida.",
       "add_collection": "Adicionar uma coleção",
       "collection_title": "Título da Coleção Exemplo"
     }
@@ -270,7 +279,7 @@
     "product": {
       "sold_out": "Esgotado",
       "on_sale": "Em Promoção",
-      "on_sale_from_html": "<strong>Em Promoção<\/strong> desde {{ price }}",
+      "on_sale_from_html": "<strong>Em Promoção</strong> desde {{ price }}",
       "unavailable": "Indisponível",
       "compare_at": "Comparar em",
       "quantity": "Quantidade",

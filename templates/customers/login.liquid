@@ -2,188 +2,261 @@
 <script src="{{ 'social-login.js' | asset_url }}" defer="defer"></script>
 
 <section class="page-width container">
-  <h1 id="login" tabindex="-1" class="customer-header">
-    {{ 'customer.login_page.title' | t }}
-  </h1>
-  <div class="grid grid--1-col grid--2-col-tablet customer-container">
-    <div class="grid__item customer login-wrp active">     
-      <div>
-        {%- if recover_success == true -%}
-          <h3 class="form__message" tabindex="-1" autofocus>
-            <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
-              <path d="M6.5 12.35C9.73087 12.35 12.35 9.73086 12.35 6.5C12.35 3.26913 9.73087 0.65 6.5 0.65C3.26913 0.65 0.65 3.26913 0.65 6.5C0.65 9.73086 3.26913 12.35 6.5 12.35Z" fill="#428445" stroke="white" stroke-width="0.7"/>
-              <path d="M5.53271 8.66357L9.25213 4.68197" stroke="white"/>
-              <path d="M4.10645 6.7688L6.13766 8.62553" stroke="white">
-            </svg>
-            {{ 'customer.recover_password.success' | t }}
-          </h3>
-        {%- endif -%}
-        {%- form 'customer_login', novalidate: 'novalidate' -%}
-          {%- if form.errors -%}
-            <h2 class="form__message" tabindex="-1" autofocus>
-              <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
-              <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
-                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
-                <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
-                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
-                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
-              </svg>
-              Login failed
-            </h2>
-            {{ form.errors | default_errors }}
-          {%- endif -%}
-    
-          <div class="field">        
-            <input
-              type="email"
-              name="customer[email]"
-              id="CustomerEmail"
-              autocomplete="email"
-              autocorrect="off"
-              autocapitalize="off"
-              {% if form.errors contains 'form' %}
-                aria-invalid="true"
-              {% endif %}
-              placeholder="{{ 'customer.login_page.email' | t }}"
-            >
-            <label for="CustomerEmail">
-              {{ 'customer.login_page.email' | t }}
-            </label>
-          </div>
-    
-          {%- if form.password_needed -%}
-            <div class="field">          
-              <input
-                type="password"
-                value=""
-                name="customer[password]"
-                id="CustomerPassword"
-                autocomplete="current-password"
-                {% if form.errors contains 'form' %}
-                  aria-invalid="true"
-                {% endif %}
-                placeholder="{{ 'customer.login_page.password' | t }}"
-              >
-              <label for="CustomerPassword">
-                {{ 'customer.login_page.password' | t }}
-              </label>
-            </div>
-    
-            <a href="#" class="recover-link link">
-              {{ 'customer.login_page.forgot_password' | t }}
-            </a>
-          {%- endif -%}
-    
-          <button class="login-main-button">
-            {{ 'customer.login_page.sign_in' | t }}
-          </button>
-    
-          <a href="{{ routes.account_register_url }}" class="create-account-link link">
-            {{ 'customer.login_page.create_account' | t }}
-          </a>
-          <input type="hidden" name="return_to" value="/" />
-          
-        {%- endform -%}
-      </div>
-      
-      {%- if shop.checkout.guest_login -%}
-        <div>
-          <hr>
-          <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
-    
-          {%- form 'guest_login' -%}
-            <button>
-              {{ 'customer.login_page.guest_continue' | t }}
-            </button>
-          {%- endform -%}
-        </div>
-      {%- endif -%}
+    <h1 id="login" tabindex="-1" class="customer-header">
+        {{ 'customer.login_page.title' | t }}
+    </h1>
+    <div class="grid grid--1-col grid--2-col-tablet customer-container">
+        <div class="grid__item customer login-wrp active">
+            <div>
+                {%- if recover_success == true -%}
+                    <h3 class="form__message" tabindex="-1" autofocus>
+                        <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+                            <path d="M6.5 12.35C9.73087 12.35 12.35 9.73086 12.35 6.5C12.35 3.26913 9.73087 0.65 6.5 0.65C3.26913 0.65 0.65 3.26913 0.65 6.5C0.65 9.73086 3.26913 12.35 6.5 12.35Z"
+                                  fill="#428445" stroke="white" stroke-width="0.7" />
+                            <path d="M5.53271 8.66357L9.25213 4.68197" stroke="white" />
+                            <path d="M4.10645 6.7688L6.13766 8.62553" stroke="white">
+                        </svg>
+                        {{ 'customer.recover_password.success' | t }}
+                    </h3>
+                {%- endif -%}
+                {%- form 'customer_login', novalidate: 'novalidate' -%}
+                    {%- if form.errors -%}
+                        <h2 class="form__message" tabindex="-1" autofocus>
+                            <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+                            <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+                                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"></circle>
+                                <circle cx="6.5" cy="6.5" r="5.5" fill="#ffffff" stroke="#D60000" stroke-width="0.7"></circle>
+                                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="#D60000"></path>
+                                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="#D60000" stroke="white" stroke-width="0.7">
+                                </path></svg>
+                            Login failed
+                        </h2>
+                        <div class="errors">
+                            <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+                                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"></circle>
+                                <circle cx="6.5" cy="6.5" r="5.5" fill="#ffffff" stroke="#D60000" stroke-width="0.7"></circle>
+                                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="#D60000"></path>
+                                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="#D60000" stroke="white" stroke-width="0.7">
+                                </path></svg>
+                            <ul>
+                                {%- for field in form.errors -%}
+                                    <li>
+                                        {%- if field == 'form' -%}
+                                            {{ form.errors.messages[field] }}
+                                        {%- else -%}
+                                            {{ form.errors.translated_fields[field] | capitalize }}
+                                            {{ form.errors.messages[field] }}
+                                        {%- endif -%}
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                        </div>
+                    {%- endif -%}
 
-      
-    </div>
-    <div class="customer login recover-wrp grid__item">
-      <!-- <h1 id="recover" tabindex="-1">
+                    <div class="field">
+                        <label for="CustomerEmail">
+                            {{ 'customer.login_page.email' | t }}
+                        </label>
+                        <input
+                                type="email"
+                                name="customer[email]"
+                                id="CustomerEmail"
+                                autocomplete="email"
+                                autocorrect="off"
+                                autocapitalize="off"
+                                {% if form.errors contains 'form' %}
+                                    aria-invalid="true"
+                                {% endif %}
+                                placeholder="{{ 'customer.login_page.email' | t }}"
+                        >
+                    </div>
+
+                    {%- if form.password_needed -%}
+                        <div class="field">
+                            <label for="CustomerPassword">
+                                {{ 'customer.login_page.password' | t }}
+                            </label>
+                            <div class="password-content">
+                                <input
+                                        type="password"
+                                        value=""
+                                        name="customer[password]"
+                                        id="CustomerPassword"
+                                        autocomplete="current-password"
+                                        {% if form.errors contains 'form' %}
+                                            aria-invalid="true"
+                                        {% endif %}
+                                        placeholder="{{ 'customer.login_page.password' | t }}"
+                                >
+                                <button type="button" class="show-password">
+                                    <span class="icon-hide" style="display: none">
+                                        <svg id="Component_19_2" data-name="Component 19 – 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.92" height="13.704" viewBox="0 0 19.92 13.704">
+                                          <defs>
+                                            <clipPath id="clip-path">
+                                              <rect id="Rectangle_2749" data-name="Rectangle 2749" width="19.92" height="13.704" fill="#656565"/>
+                                            </clipPath>
+                                          </defs>
+                                          <g id="Group_45424" data-name="Group 45424" transform="translate(0 0)">
+                                            <g id="Group_45420" data-name="Group 45420" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                              <path id="Path_61229" data-name="Path 61229" d="M9.96,0C4.459,0,0,6.852,0,6.852S4.459,13.7,9.96,13.7s9.96-6.852,9.96-6.852S15.461,0,9.96,0m0,11.6a4.753,4.753,0,1,1,4.753-4.753A4.753,4.753,0,0,1,9.96,11.6" transform="translate(0)" fill="#656565"/>
+                                              <path id="Path_61230" data-name="Path 61230" d="M88.292,49.331a2.852,2.852,0,1,1-2.852-2.852,2.852,2.852,0,0,1,2.852,2.852" transform="translate(-75.48 -42.479)" fill="#656565"/>
+                                            </g>
+                                          </g>
+                                        </svg>
+                                    </span>
+                                    <span class="icon-show">
+                                        <svg id="Component_19_2" data-name="Component 19 – 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.92" height="16.794" viewBox="0 0 19.92 16.794">
+                                          <defs>
+                                            <clipPath id="clip-path">
+                                              <rect id="Rectangle_2750" data-name="Rectangle 2750" width="19.92" height="16.794" fill="#656565"/>
+                                            </clipPath>
+                                          </defs>
+                                          <g id="Group_45423" data-name="Group 45423" transform="translate(0 0)">
+                                            <g id="Group_45422" data-name="Group 45422" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                              <path id="Path_61231" data-name="Path 61231" d="M74.842,11.385a4.754,4.754,0,0,1,4.19,7L81,20.351a21.38,21.38,0,0,0,3.8-4.213s-4.459-6.852-9.96-6.852a8.181,8.181,0,0,0-3.85,1.056L72.6,11.948a4.728,4.728,0,0,1,2.244-.563" transform="translate(-64.882 -8.487)" fill="#656565"/>
+                                              <path id="Path_61232" data-name="Path 61232" d="M106.5,55.874l3.533,3.533a2.853,2.853,0,0,0-3.533-3.533" transform="translate(-97.336 -50.963)" fill="#656565"/>
+                                              <path id="Path_61233" data-name="Path 61233" d="M.592,1.206,3.277,3.892A21.516,21.516,0,0,0,0,7.651S4.459,14.5,9.96,14.5a7.786,7.786,0,0,0,3.195-.734l3.025,3.025,1.206-1.206L1.8,0Zm4.88,4.88L7.11,7.725A2.851,2.851,0,0,0,9.887,10.5l1.638,1.638A4.754,4.754,0,0,1,5.471,6.086" transform="translate(0)" fill="#656565"/>
+                                            </g>
+                                          </g>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <a href="#" class="recover-link link">
+                            {{ 'customer.login_page.forgot_password' | t }}
+                        </a>
+                    {%- endif -%}
+
+                    <button class="login-main-button">
+                        {{ 'customer.login_page.sign_in' | t }}
+                    </button>
+                    <div class="create-account-message"> {{ 'customer.login_page.create_account_message' | t }}</div>
+                    <a href="{{ routes.account_register_url }}" class="create-account-link link">
+                        {{ 'customer.login_page.create_account' | t }}
+                    </a>
+                    <input type="hidden" name="return_to" value="/" />
+
+                {%- endform -%}
+            </div>
+
+            {%- if shop.checkout.guest_login -%}
+                <div>
+                    <hr>
+                    <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+
+                    {%- form 'guest_login' -%}
+                        <button class="login-main-button">
+                            {{ 'customer.login_page.guest_continue' | t }}
+                        </button>
+                    {%- endform -%}
+                </div>
+            {%- endif -%}
+
+
+        </div>
+        <div class="customer login recover-wrp grid__item">
+            <!-- <h1 id="recover" tabindex="-1">
         {{ 'customer.recover_password.title' | t }}
       </h1> -->
-      <div>
-        <p>
-          {{ 'customer.recover_password.subtext' | t }}
-        </p>
-    
-        {%- form 'recover_customer_password' -%}
-          {% assign recover_success = form.posted_successfully? %}
-          <div class="field">
-            <input type="email"
-              value=""
-              name="email"
-              id="RecoverEmail"
-              autocorrect="off"
-              autocapitalize="off"
-              autocomplete="email"
-              {% if form.errors %}
-                aria-invalid="true"
-                aria-describedby="RecoverEmail-email-error"
-                autofocus
-              {% endif %}
-              placeholder="{{ 'customer.login_page.email' | t }}"
-            >
-            <label for="RecoverEmail">
-              {{ 'customer.login_page.email' | t }}
-            </label>
-          </div>
-          {%- if form.errors -%}
-            <small id="RecoverEmail-email-error" class="form__message">
-              <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
-                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
-                <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
-                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
-                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
-              </svg>
-              {{ form.errors.messages['form'] }}
-            </small>
-          {%- endif -%}
-    
-          <button>
-            {{ 'customer.login_page.submit' | t }}
-          </button>          
-          <a href="#" class="link link-cancel">
-            {{ 'customer.login_page.cancel' | t }}
-          </a>
-        {%- endform -%}
-      </div>  
+            <div>
+                <p>
+                    {{ 'customer.recover_password.subtext' | t }}
+                </p>
+
+                {%- form 'recover_customer_password' -%}
+                    {% assign recover_success = form.posted_successfully? %}
+                    <div class="field">
+                        <label for="RecoverEmail">
+                            {{ 'customer.login_page.email' | t }}
+                        </label>
+                        <input type="email"
+                               value=""
+                               name="email"
+                               id="RecoverEmail"
+                               autocorrect="off"
+                               autocapitalize="off"
+                               autocomplete="email"
+                                {% if form.errors %}
+                                    aria-invalid="true"
+                                    aria-describedby="RecoverEmail-email-error"
+                                    autofocus
+                                {% endif %}
+                               placeholder="{{ 'customer.login_page.email' | t }}"
+                        >
+                    </div>
+                    {%- if form.errors -%}
+                        <small id="RecoverEmail-email-error" class="form__message">
+                            <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+                                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2" />
+                                <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7" />
+                                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z"
+                                      fill="white" />
+                                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z"
+                                      fill="white" stroke="#EB001B" stroke-width="0.7">
+                            </svg>
+                            {{ form.errors.messages['form'] }}
+                        </small>
+                    {%- endif -%}
+
+                    <button class="login-main-button">
+                        {{ 'customer.login_page.submit' | t }}
+                    </button>
+                    <a href="#" class="link link-cancel">
+                        {{ 'customer.login_page.cancel' | t }}
+                    </a>
+                {%- endform -%}
+            </div>
+        </div>
+        <div class="devider-container">
+            <div class="devider-line"></div>
+            <div class="devider-text"><span>Or</span></div>
+            <div class="devider-line"></div>
+        </div>
+        <div class="grid__item social-login">
+            <div class="one-click-social-login"></div>
+
+            <a class="btnL btn-social" rel="nofollow"
+               href="https://shop.miniorange.com/social-login/openidcallback/apple?shop=feelunique-me.myshopify.com&hosts={{ request.host }}">
+                <i class="fab fa-apple"></i> Apple Login</a><br>
+
+        </div>
     </div>
-    <div class="devider-container">
-      <div class="devider-line"></div>
-      <div class="devider-text"><span>Or</span></div>
-      <div class="devider-line"></div>
-    </div>
-    <div class="grid__item social-login">
-      <div class="one-click-social-login"></div>    
-       
-      <a class="btnL btn-social" rel="nofollow" href="https://shop.miniorange.com/social-login/openidcallback/apple?shop=feelunique-me.myshopify.com&hosts={{ request.host }}"> <i class="fab fa-apple"></i> Apple Login</a><br>            
-      
-    </div>
-  </div>
 </section>
 
 
 <script>
-  var recoverLink = document.querySelector('.recover-link');
-  var cancelLink = document.querySelector('.link-cancel');
-  var loginWrp = document.querySelector('.login-wrp');
-  var recoverWrp = document.querySelector('.recover-wrp');
-  
+    var recoverLink = document.querySelector('.recover-link');
+    var cancelLink = document.querySelector('.link-cancel');
+    var loginWrp = document.querySelector('.login-wrp');
+    var recoverWrp = document.querySelector('.recover-wrp');
 
-  recoverLink.addEventListener("click", function () {   
-    recoverWrp.classList.add("active");
-    loginWrp.classList.remove("active");   
-    document.querySelector("#login").innerHTML = "Reset your password";
-    
-  });
-  cancelLink.addEventListener("click", function () {   
-    recoverWrp.classList.remove("active");
-    loginWrp.classList.add("active");   
-    document.querySelector("#login").innerHTML = "Login"
-  }); 
+    recoverLink.addEventListener('click', function () {
+        recoverWrp.classList.add('active');
+        loginWrp.classList.remove('active');
+        document.querySelector('#login').innerHTML = 'Reset your password';
+
+    });
+    cancelLink.addEventListener('click', function () {
+        recoverWrp.classList.remove('active');
+        loginWrp.classList.add('active');
+        document.querySelector('#login').innerHTML = 'Login';
+    });
+
+    var passwordButton = document.querySelector('.show-password');
+    var passwordInput = document.getElementById('CustomerPassword');
+
+    passwordButton.addEventListener('click', function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordButton.querySelector('.icon-show').style.display = 'none';
+            passwordButton.querySelector('.icon-hide').style.display = 'block';
+        } else {
+            passwordInput.type = "password";
+            passwordButton.querySelector('.icon-hide').style.display = 'none';
+            passwordButton.querySelector('.icon-show').style.display = 'block';
+        }
+    });
 
 </script>

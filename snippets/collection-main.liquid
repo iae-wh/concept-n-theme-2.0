@@ -1,0 +1,51 @@
+<section class="container container-v1 mt-4 mt-md-5">
+    <div class="collection-filter_container {% if collection.filters.size == 0 %}no-filter{% endif %} col-12 mb-2 mb-md-5 row mx-0">
+        <div class="d-flex gap-3 align-items-center position-relative">
+            {% if collection.filters.size > 0 %}
+                <button id="filter-opener" data-toggle data-open-filter class="btn-link d-flex gap-1 align-items-center">
+                    <span class="text-black fs-7 text-uppercase text-decoration-none">Filters</span>
+                    <i class="fa-solid fa-chevron-down fa-sm" style="color: #000000;"></i>
+                </button>
+            {% endif %}
+            <button data-toggle data-open-sort class="btn-link d-flex gap-1 align-items-center">
+                <span class="text-black fs-7 text-uppercase text-decoration-none">Sort by</span>
+                <i class="fa-solid fa-chevron-down fa-sm" style="color: #000000;"></i>
+            </button>
+            <div class="bg-white z-3 collection-sort_container d-flex flex-column position-absolute">
+                {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                {%- for option in collection.sort_options -%}
+                    <div
+                        class="collection-sort_option bg-white z-3 fs-7 {% if option.value == sort_by %}active{% endif %}"
+                        data-sort="{{ option.value | escape }}"
+                    >
+                        {{ option.name | escape }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {%- if collection.products.size == 0 -%}
+        <h1 class="text-center text-black">No product found!</h1>
+    {% else %}
+        {% paginate collection.products by section.settings.prod_per_page %}
+            <div id="collection-wrapper" class="col-12 row ms-0 custom-padding">
+                {% for product in collection.products %}
+                    <div class="col-6 col-sm-{{ section.settings.prod_per_row }}">
+                        {% include 'product-card', product: product %}
+                    </div>
+                {% endfor %}
+            </div>
+            {%- if paginate.current_page < paginate.pages -%}
+                <div class="col-12 mt-2 mt-sm-4 d-flex justify-content-center align-items-center">
+                    <button is="show-more-button"
+                            data-max-page="{{ paginate.pages }}"
+                            data-current-page="{{ paginate.current_page }}"
+                            class="show-more-button btn btn-primary justify-content-center align-items-center"
+                            style="display: flex">
+                        <span>{{ section.settings.show_more_btn_text }}</span>
+                    </button>
+                </div>
+            {% endif %}
+        {% endpaginate %}
+    {% endif %}
+</section>
